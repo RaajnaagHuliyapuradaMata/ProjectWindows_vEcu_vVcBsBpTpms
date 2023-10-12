@@ -28,8 +28,13 @@ add_executable(
 target_include_directories(
    pIntegrationRdcXnf_cB_LATEST PUBLIC
 
+#TBD: Rearrange as per priority
    "${PROJECT_SOURCE_DIR}/source/common"
-   "${PROJECT_SOURCE_DIR}/source/stubs"
+   "${PROJECT_SOURCE_DIR}/source/ProjectARA"
+   "${PROJECT_SOURCE_DIR}/source/ProjectCfg"
+   "${PROJECT_SOURCE_DIR}/source/ProjectCompiler"
    "${PROJECT_SOURCE_DIR}/source/RDCi_wrapper"
+   "${PROJECT_SOURCE_DIR}/source/stubs"
+   "${PROJECT_SOURCE_DIR}/source/SwcApplTpms"
 )
 
