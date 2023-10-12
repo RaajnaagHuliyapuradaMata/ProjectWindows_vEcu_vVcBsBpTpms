@@ -14,7 +14,7 @@
 /* certain responsibilities, if you distribute copies of the software, or if  */
 /* you modify it: responsibilities to respect the freedom of others.          */
 /*                                                                            */
-/* All rights reserved. Copyright © 1982 Raajnaag HULIYAPURADA MATA           */
+/* All rights reserved. Copyright ï¿½ 1982 Raajnaag HULIYAPURADA MATA           */
 /*                                                                            */
 /* Always refer latest software version from:                                 */
 /* https://github.com/RaajnaagHuliyapuradaMata?tab=repositories               */
@@ -57,8 +57,6 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-#define Rdci_START_SEC_CODE
-#include "Rdci_MemMap.hpp"
 extern void swc_rdci_init_context(
       void                   (*get_vehicle_state            )(Dtms_signal_quali_et*                  const, Dtms_bmw_vehicle_state_et*             const              )
    ,  void                   (*get_vehicle_velocity         )(Dtms_signal_quali_et*                  const, uint16_t*                              const              )
@@ -97,8 +95,6 @@ extern void swc_rdci_init_context(
    ,  uint8_t                (*set_nvm_write_block_request  )(Dtms_nvm_block_ids_et                                                                                   )
    ,  void                   (*set_diagnostic_log_and_trace )(uint8_t,                                      uint16_t                                                  )
 );
-#define Rdci_STOP_SEC_CODE
-#include "Rdci_MemMap.hpp"
 
 /******************************************************************************/
 /* EOF                                                                        */
