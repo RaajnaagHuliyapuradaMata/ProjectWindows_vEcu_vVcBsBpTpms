@@ -13,7 +13,7 @@ cd ./ProjectCompiler
 cd ./SwcApplTpms
 ./b_git_push.sh
 
-cd ..
+cd ../..
 git add .
 git status
 git commit -m "AUTOSAR - Hotfixes - cB_LATEST"
