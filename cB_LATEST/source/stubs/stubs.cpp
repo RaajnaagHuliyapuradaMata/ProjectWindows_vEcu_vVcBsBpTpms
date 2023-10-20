@@ -54,46 +54,53 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-void                   receive_vehicle_state           (Dtms_signal_quali_et*             const, Dtms_bmw_vehicle_state_et*             const){}
-void                   receive_vehicle_velocity        (Dtms_signal_quali_et*             const, uint16*                                const){}
-void                   receive_odometer                (Dtms_signal_quali_et*             const, uint32*                                const){}
-void                   receive_air_temperature         (Dtms_signal_quali_et*             const, sint16*                                const){}
-void                   receive_date_and_time           (Dtms_signal_quali_et*             const, Dtms_signal_grp_date_and_time_type_st* const){}
-void                   receive_atmospheric_pressure    (Dtms_signal_quali_et*             const, uint16*                                const){}
-void                   receive_relative_time           (Dtms_signal_quali_et*             const, uint32*                                const){}
-void                   receive_altitude                (Dtms_signal_quali_et*             const, float*                                 const, float* const){}
-void                   receive_vehicle_gear            (Dtms_signal_quali_et*             const, Dtms_bmw_vehicle_gear_et*              const){}
-Dtms_network_status_et receive_network_status          (void){return 0;}
-uint8                  receive_network_dtc_suppression (void){return 0;}
-uint8                  receive_rdci_coding_parameters  (Dtms_coding_type_st*){return 0;}
-void                   send_check_control_message      (Dtms_ccm_type_st*                       const){}
-void                   send_tyre_current_data          (Dtms_display_pressure_type_st*          const, Dtms_display_temperature_type_st* const){}
-void                   send_tyre_target_pressures      (Dtms_display_pressure_type_st*          const){}
-void                   send_rdci_debug_msg             (uint8* development_log_p){UNUSED(development_log_p);}
-void                   send_tyre_status                (Dtms_tyre_status_type_st*               const){}
-void                   send_fbd_control                (Dtms_fbd_control_data_type_st*          const){}
-void                   send_tyre_mileage               (Dtms_tyre_mileage_data_type_st*         const){}
-void                   send_tyre_qr_code               (Dtms_qr_code_data_type_st*              const){}
-void                   send_tyre_last_internal_data    (Dtms_last_internal_data_type_st*        const){}
-void                   send_tyre_parking_supervision   (Dtms_tyre_parking_supervision_type_st*  const){}
-void                   send_wheel_status_change        (Dtms_wheel_status_change_type_st*       const){}
-void                   send_parking_monitoring         (Dtms_parking_monitoring_type_st*        const){}
-void                   send_calibration_data           (Dtms_calibration_data_type_st*          const){}
-void                   send_erfs_actual_tyre_data      (Dtms_erfs_actual_tyre_data_type_st*     const){}
-void                   send_erfs_hmi_axle_tyre_data    (Dtms_erfs_hmi_axle_tyre_type_st*        const){}
-void                   send_erfs_hmi_status            (Dtms_erfs_status_type_st*               const){}
-void                   send_tyre_pressure_level_data   (Dtms_pressure_level_indicator_type_st*  const){}
-void                   send_erfs_hmi_notification      (Dtms_erfs_hmi_notification_type_st*     const){}
-uint8                  receive_rdci_coding_erfs_caf    (Dtms_coding_erfs_caf_type_st*){return 0;}
-uint8                  send_dtc_event_status           (Dtms_dtc_id_et,                                Dtms_dtc_set_event_et){return 0;}
-void                   receive_nvm_block_addresses     (Dtms_nvm_block_addresses_type_st* const){}
+static void                   receive_vehicle_state           (Dtms_signal_quali_et*             const, Dtms_bmw_vehicle_state_et*             const){}
+static void                   receive_vehicle_velocity        (Dtms_signal_quali_et*             const, uint16*                                const){}
+static void                   receive_odometer                (Dtms_signal_quali_et*             const, uint32*                                const){}
+static void                   receive_air_temperature         (Dtms_signal_quali_et*             const, sint16*                                const){}
+static void                   receive_date_and_time           (Dtms_signal_quali_et*             const, Dtms_signal_grp_date_and_time_type_st* const){}
+static void                   receive_atmospheric_pressure    (Dtms_signal_quali_et*             const, uint16*                                const){}
+static void                   receive_relative_time           (Dtms_signal_quali_et*             const, uint32*                                const){}
+static void                   receive_altitude                (Dtms_signal_quali_et*             const, float*                                 const, float* const){}
+static void                   receive_vehicle_gear            (Dtms_signal_quali_et*             const, Dtms_bmw_vehicle_gear_et*              const){}
+static Dtms_network_status_et receive_network_status          (void){return 0;}
+static uint8                  receive_network_dtc_suppression (void){return 0;}
+static uint8                  receive_rdci_coding_parameters  (Dtms_coding_type_st*){return 0;}
+static uint8                  receive_rdci_coding_erfs_caf    (Dtms_coding_erfs_caf_type_st*){return 0;}
+static void                   receive_nvm_block_addresses     (Dtms_nvm_block_addresses_type_st* const){}
+static void                   send_check_control_message      (Dtms_ccm_type_st*                       const){}
+static void                   send_tyre_current_data          (Dtms_display_pressure_type_st*          const, Dtms_display_temperature_type_st* const){}
+static void                   send_tyre_target_pressures      (Dtms_display_pressure_type_st*          const){}
+static void                   send_tyre_status                (Dtms_tyre_status_type_st*               const){}
+static void                   send_fbd_control                (Dtms_fbd_control_data_type_st*          const){}
+static void                   send_tyre_mileage               (Dtms_tyre_mileage_data_type_st*         const){}
+static void                   send_tyre_qr_code               (Dtms_qr_code_data_type_st*              const){}
+static void                   send_tyre_last_internal_data    (Dtms_last_internal_data_type_st*        const){}
+static void                   send_tyre_parking_supervision   (Dtms_tyre_parking_supervision_type_st*  const){}
+static void                   send_wheel_status_change        (Dtms_wheel_status_change_type_st*       const){}
+static void                   send_parking_monitoring         (Dtms_parking_monitoring_type_st*        const){}
+static void                   send_calibration_data           (Dtms_calibration_data_type_st*          const){}
+static void                   send_erfs_actual_tyre_data      (Dtms_erfs_actual_tyre_data_type_st*     const){}
+static void                   send_erfs_hmi_axle_tyre_data    (Dtms_erfs_hmi_axle_tyre_type_st*        const){}
+static void                   send_erfs_hmi_status            (Dtms_erfs_status_type_st*               const){}
+static void                   send_tyre_pressure_level_data   (Dtms_pressure_level_indicator_type_st*  const){}
+static void                   send_erfs_hmi_notification      (Dtms_erfs_hmi_notification_type_st*     const){}
+static uint8                  send_dtc_event_status           (Dtms_dtc_id_et,                                Dtms_dtc_set_event_et){return 0;}
+static uint8                  send_nvm_write_block_request    (Dtms_nvm_block_ids_et){return 0;}
 
-void receive_nvm_block_error_status(Dtms_nvm_block_ids_et, Dtms_nvm_req_et* const){
+static void receive_nvm_block_error_status(Dtms_nvm_block_ids_et, Dtms_nvm_req_et* const){
    //TBD: if(CfgSwcApplTpms_dSizeReqNvM > Dtms_nvm_block_ids_et){}
 }
 
-uint8                  send_nvm_write_block_request    (Dtms_nvm_block_ids_et){return 0;}
-void                   send_diagnostic_log_and_trace   (uint8 source_file_id, uint16 line_number){UNUSED(source_file_id);UNUSED(line_number);}
+static void send_rdci_debug_msg(uint8* development_log_p){
+   UNUSED(development_log_p);
+   //TBD: if(NULL_PTR != development_log_p){}
+}
+
+static void send_diagnostic_log_and_trace(uint8 source_file_id, uint16 line_number){
+   UNUSED(source_file_id);
+   UNUSED(line_number);
+}
 
 int main(void){
    Type_infSwcApplTpmsAra_stContext lstContext;
