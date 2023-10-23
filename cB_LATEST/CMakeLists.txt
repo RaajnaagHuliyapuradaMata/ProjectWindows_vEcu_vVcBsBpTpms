@@ -21,7 +21,13 @@ add_definitions(
 add_executable(
    pIntegrationRdcXnf_cB_LATEST
 
-   ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SwcApplTpms.cpp
+   ${PROJECT_SOURCE_DIR}/source/SwcApplDcm/infSwcApplDcmAra.cpp
+#   ${PROJECT_SOURCE_DIR}/source/SwcApplDem/infSwcApplDemAra.cpp
+#   ${PROJECT_SOURCE_DIR}/source/SwcApplNvM/infSwcApplNvMAra.cpp
+   ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/infSwcApplTpmsAra.cpp
+#   ${PROJECT_SOURCE_DIR}/source/SwcServiceDcm/infSwcServiceDcmAra.cpp
+#   ${PROJECT_SOURCE_DIR}/source/SwcServiceDem/infSwcServiceDemAra.cpp
+#   ${PROJECT_SOURCE_DIR}/source/SwcServiceNvM/infSwcServiceNvMAra.cpp
    ${PROJECT_SOURCE_DIR}/source/stubs/stubs.cpp
 )
 
@@ -33,7 +39,13 @@ target_include_directories(
    "${PROJECT_SOURCE_DIR}/source/ProjectCfg"
    "${PROJECT_SOURCE_DIR}/source/ProjectCompiler"
    "${PROJECT_SOURCE_DIR}/source/Ara"
+   "${PROJECT_SOURCE_DIR}/source/SwcApplDcm"
+   "${PROJECT_SOURCE_DIR}/source/SwcApplDem"
+   "${PROJECT_SOURCE_DIR}/source/SwcApplNvM"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms"
+   "${PROJECT_SOURCE_DIR}/source/SwcServiceDcm"
+   "${PROJECT_SOURCE_DIR}/source/SwcServiceDem"
+   "${PROJECT_SOURCE_DIR}/source/SwcServiceNvM"
    "${PROJECT_SOURCE_DIR}/source/stubs"
 )
 
