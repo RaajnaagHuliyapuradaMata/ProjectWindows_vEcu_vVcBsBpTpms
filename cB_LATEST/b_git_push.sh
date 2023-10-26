@@ -1,13 +1,16 @@
-cd ./source/common
+cd ./source/Ara
 ./b_git_push.sh
 
-cd ../Ara
+cd ../common
 ./b_git_push.sh
 
 cd ../ProjectCfg
 ./b_git_push.sh
 
 cd ../ProjectCompiler
+./b_git_push.sh
+
+cd ../ReSimVehicle
 ./b_git_push.sh
 
 cd ../SwcApplDcm

@@ -28,7 +28,7 @@ add_executable(
 #   ${PROJECT_SOURCE_DIR}/source/SwcServiceDcm/infSwcServiceDcmAra.cpp
 #   ${PROJECT_SOURCE_DIR}/source/SwcServiceDem/infSwcServiceDemAra.cpp
 #   ${PROJECT_SOURCE_DIR}/source/SwcServiceNvM/infSwcServiceNvMAra.cpp
-   ${PROJECT_SOURCE_DIR}/source/stubs/stubs.cpp
+   ${PROJECT_SOURCE_DIR}/source/ReSimVehicle/wrappers.cpp
 )
 
 target_include_directories(
@@ -46,6 +46,6 @@ target_include_directories(
    "${PROJECT_SOURCE_DIR}/source/SwcServiceDcm"
    "${PROJECT_SOURCE_DIR}/source/SwcServiceDem"
    "${PROJECT_SOURCE_DIR}/source/SwcServiceNvM"
-   "${PROJECT_SOURCE_DIR}/source/stubs"
+   "${PROJECT_SOURCE_DIR}/source/ReSimVehicle"
 )
 
