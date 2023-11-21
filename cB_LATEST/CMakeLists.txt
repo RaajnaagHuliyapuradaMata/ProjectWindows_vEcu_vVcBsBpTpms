@@ -37,7 +37,7 @@ target_include_directories(
 #TBD: Rearrange as per priority
    "${PROJECT_SOURCE_DIR}/source/common"
    "${PROJECT_SOURCE_DIR}/source/ProjectCfg"
-   "${PROJECT_SOURCE_DIR}/source/ProjectCompiler"
+   "${PROJECT_SOURCE_DIR}/source/ProjectMemMap"
    "${PROJECT_SOURCE_DIR}/source/Ara"
    "${PROJECT_SOURCE_DIR}/source/SwcApplDcm"
    "${PROJECT_SOURCE_DIR}/source/SwcApplDem"

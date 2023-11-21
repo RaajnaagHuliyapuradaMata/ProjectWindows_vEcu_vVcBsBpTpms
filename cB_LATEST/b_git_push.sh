@@ -7,7 +7,7 @@ cd ../common
 cd ../ProjectCfg
 ./b_git_push.sh
 
-cd ../ProjectCompiler
+cd ../ProjectMemMap
 ./b_git_push.sh
 
 cd ../ReSimVehicle
@@ -37,5 +37,5 @@ cd ../SwcServiceNvM
 cd ../..
 git add .
 git status
-git commit -m "AUTOSAR - Hotfixes - pIntegrationRdcXnf_cB_LATEST"
+git commit -m "AUTOSAR Migration Activities - EcuResim_vVcBsBpTpms_cB_LATEST"
 git push
