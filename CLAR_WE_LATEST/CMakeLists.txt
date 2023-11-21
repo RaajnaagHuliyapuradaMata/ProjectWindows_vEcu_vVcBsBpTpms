@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.25.3)
 
 project(
-   pIntegrationLibTpms_CLAR_WE_LATEST
+   EcuResim_vVcBsBpTpms_CLAR_WE_LATEST
    VERSION 1.0
 )
 
@@ -21,28 +21,9 @@ add_definitions(
 )
 
 add_executable(
-   pIntegrationLibTpms_CLAR_WE_LATEST
+   EcuResim_vVcBsBpTpms_CLAR_WE_LATEST
 
-   ${PROJECT_SOURCE_DIR}/source/IDE/RDCi.cpp
    ${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Logging/Logging.cpp
-   ${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Util/Util.cpp
-   ${PROJECT_SOURCE_DIR}/source/IDE/RTE_Stub_Dialog.cpp
-   ${PROJECT_SOURCE_DIR}/source/IDE/stdafx.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CalPrm.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CalPrmNvmBlock.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_Ccm.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CddData.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_DcmServices.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_DemServices.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_DtcNvmBlock.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_FlexRayData.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_JumpTable.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_NvmServices.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_Output.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_RDCiSystem.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_SettingsNvmBlock.cpp
-   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_StbMB.cpp
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/CtApHufTpmsSWC.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Bandmode/Bandmode.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/BedAnz/BreakTire.c
@@ -89,7 +70,6 @@ add_executable(
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/EEPROM/EeWarnStatusBlock.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/EEPROM/EeZomBlock.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/eRFS/eRFS.c
-   ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/JumpTable/JumpTable.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/RID/RID.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Statemanager/state_bz.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Statemanager/state_fzz.c
@@ -113,16 +93,34 @@ add_executable(
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/WarnHler/WT_Pwarn.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/WarnHler/WT_PwarnTol.c
    ${PROJECT_SOURCE_DIR}/source/wrappers/wrapper.c
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CalPrm.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CalPrmNvmBlock.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_Ccm.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CddData.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_DcmServices.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_DemServices.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_DtcNvmBlock.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_FlexRayData.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_NvmServices.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_Output.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_RDCiSystem.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_SettingsNvmBlock.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_StbMB.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_JumpTable.cpp
+   ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/JumpTable/JumpTable.c
+   ${PROJECT_SOURCE_DIR}/source/IDE/RDCi.cpp
+   ${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Util/Util.cpp
+   ${PROJECT_SOURCE_DIR}/source/IDE/RTE_Stub_Dialog.cpp
+   ${PROJECT_SOURCE_DIR}/source/IDE/stdafx.cpp
 )
 
 target_include_directories(
-   pIntegrationLibTpms_CLAR_WE_LATEST PUBLIC
+   EcuResim_vVcBsBpTpms_CLAR_WE_LATEST PUBLIC
 
 #TBD: Rearrange as per priority
    "${PROJECT_SOURCE_DIR}/source/IDE"
    "${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Logging"
-   "${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Util"
-   "${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include/CtApHufTpmsSWC"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include/CtApHufTpmsSWC/_Common"
@@ -132,10 +130,12 @@ target_include_directories(
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/DiagServices"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/EEPROM"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/eRFS"
-   "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/JumpTable"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/RID"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Statemanager"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Walloc"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/WarnHler"
    "${PROJECT_SOURCE_DIR}/source/stubs"
+   "${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub"
+   "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/JumpTable"
+   "${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Util"
 )
