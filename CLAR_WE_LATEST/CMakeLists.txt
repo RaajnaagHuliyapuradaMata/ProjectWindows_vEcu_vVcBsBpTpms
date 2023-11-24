@@ -16,14 +16,13 @@ add_definitions(
 #  -Werror         TBD: Too may errors to fix!
 #  -Wextra         TBD: Too may errors to fix!
 #  -Wuninitialized TBD: Too may errors to fix!
+   -D_SwcApplTpms_CLAR_WE
    -DWIN32         #TBD: Enable WIN32 based ECU Simulation later!
    -D_EcuVirtual
 )
 
 add_executable(
-   EcuResim_vVcBsBpTpms_CLAR_WE_LATEST
-
-   ${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Logging/Logging.cpp
+   ${PROJECT_NAME}
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/CtApHufTpmsSWC.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Bandmode/Bandmode.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/BedAnz/BreakTire.c
@@ -92,7 +91,7 @@ add_executable(
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/WarnHler/WT_Pvorw.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/WarnHler/WT_Pwarn.c
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/WarnHler/WT_PwarnTol.c
-   ${PROJECT_SOURCE_DIR}/source/wrappers/wrapper.c
+   ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/JumpTable/JumpTable.c
    ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub.cpp
    ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CalPrm.cpp
    ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CalPrmNvmBlock.cpp
@@ -108,7 +107,8 @@ add_executable(
    ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_SettingsNvmBlock.cpp
    ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_StbMB.cpp
    ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_JumpTable.cpp
-   ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/JumpTable/JumpTable.c
+   ${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Logging/Logging.cpp
+   ${PROJECT_SOURCE_DIR}/source/wrappers/wrapper.c
    ${PROJECT_SOURCE_DIR}/source/IDE/RDCi.cpp
    ${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Util/Util.cpp
    ${PROJECT_SOURCE_DIR}/source/IDE/RTE_Stub_Dialog.cpp
@@ -116,11 +116,9 @@ add_executable(
 )
 
 target_include_directories(
-   EcuResim_vVcBsBpTpms_CLAR_WE_LATEST PUBLIC
+   ${PROJECT_NAME} PUBLIC
 
 #TBD: Rearrange as per priority
-   "${PROJECT_SOURCE_DIR}/source/IDE"
-   "${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Logging"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include/CtApHufTpmsSWC"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include/CtApHufTpmsSWC/_Common"
@@ -134,8 +132,11 @@ target_include_directories(
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Statemanager"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Walloc"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/WarnHler"
-   "${PROJECT_SOURCE_DIR}/source/stubs"
-   "${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/JumpTable"
+   "${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub"
+   "${PROJECT_SOURCE_DIR}/source/IDE"
+   "${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Logging"
    "${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Util"
+   "${PROJECT_SOURCE_DIR}/source/stubs"
 )
+

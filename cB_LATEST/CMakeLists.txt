@@ -19,7 +19,7 @@ add_definitions(
 )
 
 add_executable(
-   pIntegrationRdcXnf_cB_LATEST
+   ${PROJECT_NAME}
 
    ${PROJECT_SOURCE_DIR}/source/SwcApplDcm/infSwcApplDcmAra.cpp
 #   ${PROJECT_SOURCE_DIR}/source/SwcApplDem/infSwcApplDemAra.cpp
@@ -32,7 +32,7 @@ add_executable(
 )
 
 target_include_directories(
-   pIntegrationRdcXnf_cB_LATEST PUBLIC
+   ${PROJECT_NAME} PUBLIC
 
 #TBD: Rearrange as per priority
    "${PROJECT_SOURCE_DIR}/source/common"
