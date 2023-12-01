@@ -103,13 +103,13 @@ void NVM_WriteAllDTC(void)
   static uint16 ushLastCrc;
 
   NvmBlockDtc.Version = 0x0100;
-  NvmBlockDtc.Chksum = ushCalcCrc16( (uint8 *) &NvmBlockDtc.Data, (uint16) sizeof(NvmBlockDtc.Data));
+  NvmBlockDtc.Chksum = ushCalcCrc16( (uint8*) &NvmBlockDtc.Data, (uint16) sizeof(NvmBlockDtc.Data));
 
   if(NvmBlockDtc.Chksum != ushLastCrc)
   {
     if( fopen_s(&fStream, filename, mode) == 0)
     {
-      fwrite( (uint8 *) &NvmBlockDtc, sizeof(uint8), sizeof(NvmBlockDtc), fStream);
+      fwrite( (uint8*) &NvmBlockDtc, sizeof(uint8), sizeof(NvmBlockDtc), fStream);
       fclose( fStream);
     }
     ushLastCrc = NvmBlockDtc.Chksum;

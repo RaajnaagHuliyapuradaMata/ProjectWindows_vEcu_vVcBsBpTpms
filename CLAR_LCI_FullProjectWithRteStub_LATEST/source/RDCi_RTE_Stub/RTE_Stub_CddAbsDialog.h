@@ -119,7 +119,7 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
     case 0:
 
-      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &absData);
+      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &absData);
 
       if(numericNoOfABSMsgs->Value < numericNoOfABSMsgs->Maximum)
       {
@@ -132,7 +132,7 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
     case 1:
 
-      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &speedData);
+      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &speedData);
 
       if(checkBoxSelSpeedSource->Checked == true)
       {
@@ -160,7 +160,7 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
     case 2:
 
-      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &temperatureData);
+      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &temperatureData);
 
       if(checkBoxSelTempExSource->Checked == true)
       {
@@ -190,7 +190,7 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
     case 3:
 
-      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &direction);
+      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &direction);
 
       if(checkBoxSelGearSource->Checked == true)
       {
@@ -228,7 +228,7 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
     case 4:
 
-      if( ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &rdcData) == 0)
+      if( ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &rdcData) == 0)
       {
 
         if(numericNoOfRFMsgs->Value < numericNoOfRFMsgs->Maximum)
@@ -529,12 +529,12 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
             }
           }
         } /* if( (rdcData.PCKG_ID == ... */
-      } /* if( ReadMessageFromFile( myStream, msgType, &msgTimestamp, (void *) &rdcData) == 0) */
+      } /* if( ReadMessageFromFile( myStream, msgType, &msgTimestamp, (void*) &rdcData) == 0) */
     break;
 
     case 5:
 
-      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &pressureData);
+      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &pressureData);
 
       if(checkBoxSelPressExSource->Checked == true)
       {
@@ -572,7 +572,7 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
     case 6:
 
-      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &ucPwfData);
+      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &ucPwfData);
 
       if(checkBoxSetPWFSource->Checked == true)
       {
@@ -674,7 +674,7 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
     case 7:
 
-      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &tBedienungFahrwerk);
+      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &tBedienungFahrwerk);
 
       if(checkBoxBedienungFahrwerkSource->Checked == true)
       {
@@ -717,7 +717,7 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
     case 8:
 
-      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &tEinheitenBn2020);
+      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &tEinheitenBn2020);
 
       if(checkBoxSetUnitsSource->Checked == true)
       {
@@ -788,7 +788,7 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
     case 9:
 
-      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &tGpsAltitude);
+      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &tGpsAltitude);
 
       if(checkBoxSelNMEARawData2Source->Checked == true)
       {
@@ -838,7 +838,7 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
     case 20:
 
-      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void *) &tCodingData);
+      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &tCodingData);
 
       ushTemp = tCodingData.ucCRdciCorHoldOffTime * 5;
 

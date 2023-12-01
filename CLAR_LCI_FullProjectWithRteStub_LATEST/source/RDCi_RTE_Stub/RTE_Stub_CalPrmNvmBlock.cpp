@@ -232,14 +232,14 @@ void NVM_ReadAllCalPrmBlocks(void)
 void NVM_WriteAllCalPrmBlocks(void)
 {
   NvmBlockDscCodierdatenAllgemein.Version = 0x0100;
-  NvmBlockDscCodierdatenAllgemein.Chksum = ushCalcCrc16( (uint8 *) &NvmBlockDscCodierdatenAllgemein.Data, (uint16) sizeof(NvmBlockDscCodierdatenAllgemein.Data));
+  NvmBlockDscCodierdatenAllgemein.Chksum = ushCalcCrc16( (uint8*) &NvmBlockDscCodierdatenAllgemein.Data, (uint16) sizeof(NvmBlockDscCodierdatenAllgemein.Data));
   (void) NvmDscCodierdatenAllgemein_WriteBlock();
 
   NvmBlockDscCodierdatenRDCi[EU].Version = 0x0200;
-  NvmBlockDscCodierdatenRDCi[EU].Chksum = ushCalcCrc16( (uint8 *) &NvmBlockDscCodierdatenRDCi[EU].Data, (uint16) sizeof(NvmBlockDscCodierdatenRDCi[EU].Data));
+  NvmBlockDscCodierdatenRDCi[EU].Chksum = ushCalcCrc16( (uint8*) &NvmBlockDscCodierdatenRDCi[EU].Data, (uint16) sizeof(NvmBlockDscCodierdatenRDCi[EU].Data));
 
   NvmBlockDscCodierdatenRDCi[US].Version = 0x0200;
-  NvmBlockDscCodierdatenRDCi[US].Chksum = ushCalcCrc16( (uint8 *) &NvmBlockDscCodierdatenRDCi[US].Data, (uint16) sizeof(NvmBlockDscCodierdatenRDCi[US].Data));
+  NvmBlockDscCodierdatenRDCi[US].Chksum = ushCalcCrc16( (uint8*) &NvmBlockDscCodierdatenRDCi[US].Data, (uint16) sizeof(NvmBlockDscCodierdatenRDCi[US].Data));
 
   (void) NvmDscCodierdatenRDCi_WriteBlock();
 }
@@ -273,7 +273,7 @@ static Std_ReturnType NvmDscCodierdatenAllgemein_WriteBlock(void)
 
   if( fopen_s(&fStream, filename, mode) == 0)
   {
-    fwrite( (uint8 *) &NvmBlockDscCodierdatenAllgemein, sizeof(uint8), sizeof(NvmBlockDscCodierdatenAllgemein), fStream);
+    fwrite( (uint8*) &NvmBlockDscCodierdatenAllgemein, sizeof(uint8), sizeof(NvmBlockDscCodierdatenAllgemein), fStream);
     fclose( fStream);
   }
 #else
@@ -282,9 +282,12 @@ static Std_ReturnType NvmDscCodierdatenAllgemein_WriteBlock(void)
   return E_OK;
 }
 
-uint8 NvmDscCodierdatenAllgemein_ReadByte( uint8 ucIx, uint8 ucMask)
-{
-  return (NvmBlockDscCodierdatenAllgemein.Data[ucIx] & ucMask);
+uint8 NvmDscCodierdatenAllgemein_ReadByte(uint8 ucIx, uint8 ucMask){
+#ifdef _EcuVirtual
+   return AKTIV_RDC;
+#else
+   return (NvmBlockDscCodierdatenAllgemein.Data[ucIx] & ucMask);
+#endif
 }
 
 void NvmDscCodierdatenAllgemein_WriteByte( uint8 ucIx, uint8 ucMask, uint8 ucValue)
@@ -417,7 +420,7 @@ Std_ReturnType NvmDscCodierdatenRDCi_WriteBlock(void)
 
   if( fopen_s(&fStream, filename, mode) == 0)
   {
-    fwrite( (uint8 *) &NvmBlockDscCodierdatenRDCi, sizeof(uint8), sizeof(NvmBlockDscCodierdatenRDCi), fStream);
+    fwrite( (uint8*) &NvmBlockDscCodierdatenRDCi, sizeof(uint8), sizeof(NvmBlockDscCodierdatenRDCi), fStream);
     fclose( fStream);
   }
 #else

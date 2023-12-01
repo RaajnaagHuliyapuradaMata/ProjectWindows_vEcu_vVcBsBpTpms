@@ -29,7 +29,7 @@
 #include <string.h>
 
 #include "crc16X.h"
-#include "Wrapper_HBG_JumpTableX.h"
+#include "JumpTableX.h"
 
 #ifdef _EcuVirtual
 #include "EcuVirtual_stdio.h"
@@ -66,18 +66,18 @@ static uint8 ucDataIndexEcoBlock;
 /******************************************************************************/
 void NVM_ReadAll(void)
 {
-  (void) Stub_Rte_Call_NvmRdciCommonBlock_ReadBlock( (uint8 *) Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
-  (void) Stub_Rte_Call_NvmRdciDiagBlock1_ReadBlock( (uint8 *) Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
-  (void) Stub_Rte_Call_NvmRdciDiagBlock2_ReadBlock( (uint8 *) Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
-  (void) Stub_Rte_Call_NvmRdciErfsBlock_ReadBlock( (uint8 *) Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciCommonBlock_ReadBlock( (uint8*) Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciDiagBlock1_ReadBlock( (uint8*) Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciDiagBlock2_ReadBlock( (uint8*) Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciErfsBlock_ReadBlock( (uint8*) Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
-  (void) Stub_Rte_Call_NvmRdciErfsTsaBlock_ReadBlock( (uint8 *) Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
-  (void) Stub_Rte_Call_NvmRdciRidQrBlock1_ReadBlock( (uint8 *) Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
-  (void) Stub_Rte_Call_NvmRdciRidQrBlock2_ReadBlock( (uint8 *) Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
-  (void) Stub_Rte_Call_NvmRdciWarnStatusBlock_ReadBlock( (uint8 *) Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
-  (void) Stub_Rte_Call_NvmRdciZoHistoryBlock_ReadBlock( (uint8 *) Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
-  (void) Stub_Rte_Call_NvmRdciZomBlock1_ReadBlock( (uint8 *) Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
-  (void) Stub_Rte_Call_NvmRdciZomBlock2_ReadBlock( (uint8 *) Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciErfsTsaBlock_ReadBlock( (uint8*) Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciRidQrBlock1_ReadBlock( (uint8*) Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciRidQrBlock2_ReadBlock( (uint8*) Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciWarnStatusBlock_ReadBlock( (uint8*) Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciZoHistoryBlock_ReadBlock( (uint8*) Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciZomBlock1_ReadBlock( (uint8*) Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  (void) Stub_Rte_Call_NvmRdciZomBlock2_ReadBlock( (uint8*) Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 }
 
 void NVM_WriteAll(void)
@@ -87,54 +87,54 @@ void NVM_WriteAll(void)
 
 #ifdef _SwcApplTpms_CLAR_LCI
 #else
-  (void) RDCi_ROpInvDcmStatusRdcVersion_ReadData_093( Rte_Inst_CtApHufTpmsSWC, (uint8 *) &Data);
+  (void) RDCi_FunctiontablePtr->RDCi_ROpInvDcmStatusRdcVersion_ReadData_093(Rte_Inst_CtApHufTpmsSWC, (uint8*) &Data);
 #endif
 
   ushVersion = (uint16) (Data[0] << 8) + Data[1];
 
   Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciCommonBlock_WriteBlock( (uint8 *) Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciCommonBlock_WriteBlock( (uint8*) Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
   Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciDiagBlock1_WriteBlock( (uint8 *) Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciDiagBlock1_WriteBlock( (uint8*) Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
   Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciDiagBlock2_WriteBlock( (uint8 *) Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciDiagBlock2_WriteBlock( (uint8*) Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
   Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciErfsBlock_WriteBlock( (uint8 *) Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciErfsBlock_WriteBlock( (uint8*) Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
   Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciErfsTsaBlock_WriteBlock( (uint8 *) Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciErfsTsaBlock_WriteBlock( (uint8*) Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
   Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciRidQrBlock1_WriteBlock( (uint8 *) Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciRidQrBlock1_WriteBlock( (uint8*) Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
   Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciRidQrBlock2_WriteBlock( (uint8 *) Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciRidQrBlock2_WriteBlock( (uint8*) Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
   Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciWarnStatusBlock_WriteBlock( (uint8 *) Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciWarnStatusBlock_WriteBlock( (uint8*) Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
   Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciZoHistoryBlock_WriteBlock( (uint8 *) Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciZoHistoryBlock_WriteBlock( (uint8*) Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
   Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciZomBlock1_WriteBlock( (uint8 *) Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciZomBlock1_WriteBlock( (uint8*) Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 
   Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Version = ushVersion;
-  Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8 *) Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
-  (void) Stub_Rte_Call_NvmRdciZomBlock2_WriteBlock( (uint8 *) Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
+  Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Chksum = ushCalcCrc16( (uint8*) Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data, (uint16) sizeof(Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC)->Data));
+  (void) Stub_Rte_Call_NvmRdciZomBlock2_WriteBlock( (uint8*) Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC));
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciCommonBlock_GetDataIndex( uint8 *DataIndex)
@@ -168,7 +168,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciCommonBlock_ReadBlock(P2VAR(
     fclose( fStream);
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -205,11 +205,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciCommonBlock_WriteBlock(P2CON
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciCommonBlockType), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciCommonBlock_NvMNotifyJobFinished_JobFinished_153( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciCommonBlock_NvMNotifyJobFinished_JobFinished_153( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciCommonBlock_NvMNotifyJobFinished_JobFinished_153( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciCommonBlock_NvMNotifyJobFinished_JobFinished_153( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
   return E_OK;
 }
@@ -274,11 +274,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciErfsEcoBlock_WriteBlock(P2CO
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciErfsEcoBlockType), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciErfsEcoBlock_NvMNotifyJobFinished_JobFinished_157( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciErfsEcoBlock_NvMNotifyJobFinished_JobFinished_157( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciErfsEcoBlock_NvMNotifyJobFinished_JobFinished_157( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciErfsEcoBlock_NvMNotifyJobFinished_JobFinished_157( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
 
   return E_OK;
@@ -314,7 +314,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciDiagBlock1_ReadBlock(P2VAR(u
     fclose( fStream);
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciDiagBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -350,11 +350,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciDiagBlock1_WriteBlock(P2CONS
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciDiagBlock1Type), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciDiagBlock1_NvMNotifyJobFinished_JobFinished_154( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciDiagBlock1_NvMNotifyJobFinished_JobFinished_154( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciDiagBlock1_NvMNotifyJobFinished_JobFinished_154( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciDiagBlock1_NvMNotifyJobFinished_JobFinished_154( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
 
   return E_OK;
@@ -390,7 +390,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciDiagBlock2_ReadBlock(P2VAR(u
     fclose( fStream);
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciDiagBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -426,11 +426,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciDiagBlock2_WriteBlock(P2CONS
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciDiagBlock2Type), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciDiagBlock2_NvMNotifyJobFinished_JobFinished_155( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciDiagBlock2_NvMNotifyJobFinished_JobFinished_155( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciDiagBlock2_NvMNotifyJobFinished_JobFinished_155( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciDiagBlock2_NvMNotifyJobFinished_JobFinished_155( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
 
   return E_OK;
@@ -466,7 +466,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciErfsBlock_ReadBlock(P2VAR(ui
     fclose( fStream);
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciErfsBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -503,7 +503,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciErfsBlock_WriteBlock(P2CONST
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciErfsBlockType), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciErfsBlock_NvMNotifyJobFinished_JobFinished_156( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciErfsBlock_NvMNotifyJobFinished_JobFinished_156( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
     ucRetVal = RTE_E_OK;
   }
   else
@@ -545,7 +545,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciErfsTsaBlock_ReadBlock(P2VAR
     fclose( fStream);
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciErfsTsaBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -581,11 +581,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciErfsTsaBlock_WriteBlock(P2CO
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciErfsTsaBlockType), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciErfsTsaBlock_NvMNotifyJobFinished_JobFinished_158( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciErfsTsaBlock_NvMNotifyJobFinished_JobFinished_158( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciErfsTsaBlock_NvMNotifyJobFinished_JobFinished_158( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciErfsTsaBlock_NvMNotifyJobFinished_JobFinished_158( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
   return E_OK;
 }
@@ -620,7 +620,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciWarnStatusBlock_ReadBlock(P2
     fclose( fStream);
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciWarnStatusBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -656,11 +656,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciWarnStatusBlock_WriteBlock(P
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciWarnStatusBlockType), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciWarnStatusBlock_NvMNotifyJobFinished_JobFinished_161( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciWarnStatusBlock_NvMNotifyJobFinished_JobFinished_161( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciWarnStatusBlock_NvMNotifyJobFinished_JobFinished_161( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciWarnStatusBlock_NvMNotifyJobFinished_JobFinished_161( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
   return E_OK;
 }
@@ -712,7 +712,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciZoHistoryBlock_ReadBlock(P2V
     }
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciZoHistoryBlock_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -748,11 +748,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciZoHistoryBlock_WriteBlock(P2
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciZoHistoryBlockType), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciZoHistoryBlock_NvMNotifyJobFinished_JobFinished_162( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciZoHistoryBlock_NvMNotifyJobFinished_JobFinished_162( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciZoHistoryBlock_NvMNotifyJobFinished_JobFinished_162( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciZoHistoryBlock_NvMNotifyJobFinished_JobFinished_162( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
   return E_OK;
 }
@@ -788,7 +788,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciRidQrBlock1_ReadBlock(P2VAR(
     fclose( fStream);
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciRidQrBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -825,11 +825,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciRidQrBlock1_WriteBlock(P2CON
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciRidQrBlock1Type), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciRidQrBlock1_NvMNotifyJobFinished_JobFinished_159( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciRidQrBlock1_NvMNotifyJobFinished_JobFinished_159( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciRidQrBlock1_NvMNotifyJobFinished_JobFinished_159( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciRidQrBlock1_NvMNotifyJobFinished_JobFinished_159( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
   return E_OK;
 }
@@ -865,7 +865,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciRidQrBlock2_ReadBlock(P2VAR(
     fclose( fStream);
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciRidQrBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -902,11 +902,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciRidQrBlock2_WriteBlock(P2CON
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciRidQrBlock2Type), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciRidQrBlock2_NvMNotifyJobFinished_JobFinished_160( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciRidQrBlock2_NvMNotifyJobFinished_JobFinished_160( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciRidQrBlock2_NvMNotifyJobFinished_JobFinished_160( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciRidQrBlock2_NvMNotifyJobFinished_JobFinished_160( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
   return E_OK;
 }
@@ -942,7 +942,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciZomBlock1_ReadBlock(P2VAR(ui
     fclose( fStream);
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciZomBlock1_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -979,11 +979,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciZomBlock1_WriteBlock(P2CONST
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciZomBlock1Type), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciZomBlock1_NvMNotifyJobFinished_JobFinished_163( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciZomBlock1_NvMNotifyJobFinished_JobFinished_163( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciZomBlock1_NvMNotifyJobFinished_JobFinished_163( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciZomBlock1_NvMNotifyJobFinished_JobFinished_163( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
   return E_OK;
 }
@@ -1019,7 +1019,7 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciZomBlock2_ReadBlock(P2VAR(ui
     fclose( fStream);
   }
 
-  Data = (uint8 *) Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
+  Data = (uint8*) Rte_Pim_NvmRdciZomBlock2_NVBlock_MirrorBlock( Rte_Inst_CtApHufTpmsSWC);
 #ifdef _EcuVirtual
   UNUSED(Data);
 #else
@@ -1056,11 +1056,11 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_NvmRdciZomBlock2_WriteBlock(P2CONST
   {
     fwrite( Data, sizeof(uint8), sizeof(NvmRdciZomBlock2Type), fStream);
     fclose( fStream);
-    RDCi_ROpInvNvmRdciZomBlock2_NvMNotifyJobFinished_JobFinished_164( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciZomBlock2_NvMNotifyJobFinished_JobFinished_164( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_OK);
   }
   else
   {
-    RDCi_ROpInvNvmRdciZomBlock2_NvMNotifyJobFinished_JobFinished_164( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
+    RDCi_FunctiontablePtr->RDCi_ROpInvNvmRdciZomBlock2_NvMNotifyJobFinished_JobFinished_164( Rte_Inst_CtApHufTpmsSWC, NVM_WRITE_BLOCK, NVM_REQ_NOT_OK);
   }
   return E_OK;
 }

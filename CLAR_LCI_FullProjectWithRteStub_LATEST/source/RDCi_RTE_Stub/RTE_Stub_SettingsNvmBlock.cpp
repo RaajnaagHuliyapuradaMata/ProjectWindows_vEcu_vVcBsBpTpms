@@ -134,7 +134,7 @@ void NVM_WriteRteStubSettings(void)
 
   if( fopen_s(&fStream, filename, mode) == 0)
   {
-    fwrite( (uint8 *) &tRteStubSettingsDataRAM, sizeof(uint8), sizeof(tRteStubSettingsDataRAM), fStream);
+    fwrite( (uint8*) &tRteStubSettingsDataRAM, sizeof(uint8), sizeof(tRteStubSettingsDataRAM), fStream);
     fclose( fStream);
   }
 #else

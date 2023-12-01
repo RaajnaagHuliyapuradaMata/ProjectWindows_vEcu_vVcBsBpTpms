@@ -23,7 +23,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "Wrapper_HBG_JumpTableX.h"
+#include "JumpTableX.h"
 #include "Wrapper_HBG_RDCiSystem.h"
 
 /******************************************************************************/
@@ -54,15 +54,11 @@
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 int main(void){
-   RDCi_RInitRDCiStartup_002(Rte_Inst_CtApHufTpmsSWC);
-   for(
-      uint8 u8IndexLoop =  0;
-            u8IndexLoop < 10;
-            u8IndexLoop ++
-   ){
+   RDCi_FunctiontablePtr->RDCi_RInitRDCiStartup_002(Rte_Inst_CtApHufTpmsSWC);
+   while(1){
       TriggerRunnableCyclicRDCiTask();
    }
-   RDCi_RExitRDCiBye_003(Rte_Inst_CtApHufTpmsSWC);
+   RDCi_FunctiontablePtr->RDCi_RExitRDCiBye_003(Rte_Inst_CtApHufTpmsSWC);
    return 0;
 }
 

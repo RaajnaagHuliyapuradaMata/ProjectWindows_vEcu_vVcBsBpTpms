@@ -198,7 +198,7 @@ long ReadMessageFromFile(System::IO::Stream^ myStream, uint32 dataType, unsigned
       case 3:
 
         *pullTimestamp = (ReadLongLongIntFromStream( myStream) / 1000);
-        * (uint8 *) FileData = (uint8) ReadLongIntFromStream( myStream);
+        * (uint8*) FileData = (uint8) ReadLongIntFromStream( myStream);
         ulRet = 0;
      break;
 
@@ -272,7 +272,7 @@ long ReadMessageFromFile(System::IO::Stream^ myStream, uint32 dataType, unsigned
       case 6:
 
         *pullTimestamp = (ReadLongLongIntFromStream( myStream) / 1000);
-        * ((uint8 *) FileData) = (uint8) ReadLongIntFromStream( myStream);
+        * ((uint8*) FileData) = (uint8) ReadLongIntFromStream( myStream);
         ulRet = 0;
       break;
 

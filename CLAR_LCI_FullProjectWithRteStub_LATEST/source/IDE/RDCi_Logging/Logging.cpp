@@ -199,7 +199,7 @@ void PutInitRecToBufferLOG(void)
     if( bEventLOG == TRUE)
     {
 
-      AddToBufferLOG( (uint8 *) ucInitLineRec, sizeof(ucInitLineRec) - 1);
+      AddToBufferLOG( (uint8*) ucInitLineRec, sizeof(ucInitLineRec) - 1);
       ucLastRecEventZomPos = cSumWE;
     }
   }
@@ -216,7 +216,7 @@ void PutInitWhlToBufferLOG(void)
       if((ucSetLOG & LOG_SET_WHL) == LOG_SET_WHL)
       {
 
-        AddToBufferLOG( (uint8 *) ucInitLineWhl, sizeof(ucInitLineWhl) - 1);
+        AddToBufferLOG( (uint8*) ucInitLineWhl, sizeof(ucInitLineWhl) - 1);
       }
     }
   }
@@ -233,7 +233,7 @@ void PutInitWalToBufferLOG(void)
       if((ucSetLOG & LOG_SET_WAL) == LOG_SET_WAL)
       {
 
-        AddToBufferLOG( (uint8 *) ucInitLineWal, sizeof(ucInitLineWal) - 1);
+        AddToBufferLOG( (uint8*) ucInitLineWal, sizeof(ucInitLineWal) - 1);
       }
     }
   }
@@ -250,7 +250,7 @@ void PutInitOutToBufferLOG(void)
       if((ucSetLOG & LOG_SET_OUT) == LOG_SET_OUT)
       {
 
-        AddToBufferLOG( (uint8 *) ucInitLineOut, sizeof(ucInitLineOut) - 1);
+        AddToBufferLOG( (uint8*) ucInitLineOut, sizeof(ucInitLineOut) - 1);
       }
     }
   }
@@ -267,7 +267,7 @@ void PutInitDtcToBufferLOG(void)
       if((ucSetLOG & LOG_SET_DTC) == LOG_SET_DTC)
       {
 
-        AddToBufferLOG( (uint8 *) ucInitLineDtc, sizeof(ucInitLineDtc) - 1);
+        AddToBufferLOG( (uint8*) ucInitLineDtc, sizeof(ucInitLineDtc) - 1);
       }
     }
   }
@@ -284,7 +284,7 @@ void PutInitDbgToBufferLOG(void)
       if((ucSetLOG & LOG_SET_DBG) == LOG_SET_DBG)
       {
 
-        AddToBufferLOG( (uint8 *) ucInitLineDbg, sizeof(ucInitLineDbg) - 1);
+        AddToBufferLOG( (uint8*) ucInitLineDbg, sizeof(ucInitLineDbg) - 1);
       }
     }
   }

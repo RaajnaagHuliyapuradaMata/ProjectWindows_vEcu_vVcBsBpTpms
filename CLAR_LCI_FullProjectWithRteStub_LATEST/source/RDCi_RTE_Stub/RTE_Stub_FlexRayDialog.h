@@ -511,29 +511,21 @@
 
       }
 
-      /* Set and start data output timer (collect data from "RTE") */
       GetOutputDataTimer->Interval = System::Decimal::ToInt32(OutputTimerInterval->Value);
       GetOutputDataTimer->Start();
 
-      /* Set RDCi Cyclic Task timer */
       timerRDCiCyclicTask->Interval = System::Decimal::ToInt32(numericUpDownRDCiCyclicTask->Value);
       timerRDCiCyclicTask->Start();
 
-      /* Set FlexRay timer */
       PutFRDataTimer->Interval = System::Decimal::ToInt32(FrTimerInterval->Value);
       PutFRDataTimer->Start();
 
-      /* Read ABS and RF data from CAN message file */
-
-      RDCi_RInitRDCiStartup_002( Rte_Inst_CtApHufTpmsSWC);
-
-      /* Init the Flexray tab elements */
-      /* ----------------------------- */
+      RDCi_FunctiontablePtr->RDCi_RInitRDCiStartup_002( Rte_Inst_CtApHufTpmsSWC);
 
       InitRecCddRdcData();
 
-    } /* if(radioButtonStandfunktionen->Checked == TRUE) */
-  } /* private: System::Void radioButtonStandfunktionen_CheckedChanged(System::Object^  sender, System::EventArgs^  e)  */
+    }
+  }
 
   private: System::Void radioButtonWohnen_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
   {
@@ -549,11 +541,8 @@
         radioButtonFahren->Enabled = FALSE;
       }
 
-      /* Timer fuer fiktive ABS/RDC Werte Generator */
       if(false == checkBoxDataSelection->Checked)
       {
-        /* Set and start ABS data timer */
-
         PutAbsDataTimer->Interval = System::Decimal::ToInt32(ABSRecEvSimInterval->Value);
         PutAbsDataTimer->Start();
 

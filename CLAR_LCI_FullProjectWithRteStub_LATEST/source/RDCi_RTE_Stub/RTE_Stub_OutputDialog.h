@@ -1804,45 +1804,41 @@
         PutByteToBufferLOG( tNwMonData.tMonV_VEH.ucSigQualifErrorTimeout);
       }
 
-      if(checkBoxLogDBG->Checked == TRUE)
-      {
-        if( ucFrDbgDscSuppMux != *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_0 (  Rte_Inst_CtApHufTpmsSWC))
-        {
-
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_0 ( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_1 ( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_2 ( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_3 ( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_4 ( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_5 ( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_6 ( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_7 ( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_8 ( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_9 ( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_10( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_11( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_12( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_13( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_14( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_15( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_16( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_17( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_18( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_19( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_20( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_21( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_22( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_23( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_24( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_25( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_26( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_27( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_28( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_29( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_30( Rte_Inst_CtApHufTpmsSWC));
-          PutByteToBufferLOG( *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_31( Rte_Inst_CtApHufTpmsSWC));
-
-          ucFrDbgDscSuppMux = *(uint8 *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_0 (  Rte_Inst_CtApHufTpmsSWC);
+      if(TRUE == checkBoxLogDBG->Checked){
+        if(ucFrDbgDscSuppMux != *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_0->value){
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_0->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_1->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_2->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_3->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_4->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_5->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_6->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_7->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_8->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_9->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_10->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_11->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_12->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_13->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_14->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_15->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_16->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_17->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_18->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_19->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_20->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_21->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_22->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_23->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_24->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_25->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_26->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_27->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_28->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_29->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_30->value);
+          PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_31->value);
+          ucFrDbgDscSuppMux = *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_0->value;
         }
         else
         {

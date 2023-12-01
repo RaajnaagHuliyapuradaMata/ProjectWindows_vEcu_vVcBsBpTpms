@@ -70,7 +70,7 @@
 #include "HS_KalibrierereignisX.h"
 #include "DataManagerX.h"
 #include "SpeedCcmX.h"
-#include "Wrapper_HBG_JumpTableX.h"
+#include "JumpTableX.h"
 #include "RTE_Stub_SettingsNvmBlock.h"
 #include  "StatusRdcExtParkSupervisionLesenX.h"
 
@@ -24883,51 +24883,40 @@ private:
         groupBoxRDCiTaskTimer->Enabled = false;
         groupBoxDataSelection->Enabled = false;
 
-        if(ucEnabled == 0)
-        {
-          RDCi_RInitRDCiStartup_002( Rte_Inst_CtApHufTpmsSWC);
-
+        if(ucEnabled == 0){
+          RDCi_FunctiontablePtr->RDCi_RInitRDCiStartup_002( Rte_Inst_CtApHufTpmsSWC);
           ValueV_VEH_COG->Value = SliderV_VEH_COG->Value;
-
           scTemp = GETscTAmbValEE( Rte_Inst_CtApHufTpmsSWC);
-          if((scTemp >= SliderTEMP_EX->Minimum) && (scTemp <= SliderTEMP_EX->Maximum))
-          {
+          if((scTemp >= SliderTEMP_EX->Minimum) && (scTemp <= SliderTEMP_EX->Maximum)){
             SliderTEMP_EX->Value = scTemp;
           }
-          else
-          {
+          else{
             SliderTEMP_EX->Value = SliderTEMP_EX->Minimum;
           }
           ValueTEMP_EX->Value = SliderTEMP_EX->Value;
-
           ushTemp = (uint16)GETucPAmbValEE( Rte_Inst_CtApHufTpmsSWC);
           ushTemp *= 25;
-
-          if((ushTemp >= trackBarAIP_ENG_DRV->Minimum) && (ushTemp <= trackBarAIP_ENG_DRV->Maximum))
-          {
+          if((ushTemp >= trackBarAIP_ENG_DRV->Minimum) && (ushTemp <= trackBarAIP_ENG_DRV->Maximum)){
             trackBarAIP_ENG_DRV->Value = ushTemp;
-          }else{
+          }
+          else{
             trackBarAIP_ENG_DRV->Value = trackBarAIP_ENG_DRV->Minimum;
           }
           numericUpDownAIP_ENG_DRV->Value = trackBarAIP_ENG_DRV->Value;
-
-          switch (GETucUnTempEE( Rte_Inst_CtApHufTpmsSWC))
-          {
+          switch(GETucUnTempEE( Rte_Inst_CtApHufTpmsSWC)){
             case eTEMPERATURE_UNIT_FAHRENHEIT:  radioUnitFahrenheit->Checked = true;  break;
             case eTEMPERATURE_UNIT_CELSIUS:
             default:                            radioUnitCelsius->Checked = true;     break;
           }
 
-          switch (GETucUnAipEE( Rte_Inst_CtApHufTpmsSWC))
-          {
+          switch (GETucUnAipEE( Rte_Inst_CtApHufTpmsSWC)){
             case ePRESSURE_UNIT_KPA: radioUnitKpa->Checked = true; break;
             case ePRESSURE_UNIT_PSI: radioUnitPsi->Checked = true; break;
             case ePRESSURE_UNIT_BAR:
             default:                 radioUnitBar->Checked = true; break;
           }
 
-          switch (GETucUnMileEE( Rte_Inst_CtApHufTpmsSWC))
-          {
+          switch (GETucUnMileEE( Rte_Inst_CtApHufTpmsSWC)){
             case eMILEAGE_UNIT_MEILEN:    radioUnitMile->Checked = true; break;
             case eMILEAGE_UNIT_KILOMETER:
             default:                      radioUnitkmh->Checked = true; break;
@@ -24935,29 +24924,22 @@ private:
 
           ushTemp = (uint16)GETulMileKmEE( Rte_Inst_CtApHufTpmsSWC);
           mileageKilometer->Value = ushTemp;
-
         }
 
         radioButton0x48069B->Checked = true;
-
         InitRecCddRdcData();
-
         StartButton->Text = "Stop RTE Emulation";
         ucEnabled = 2;
       }
-      else
-      {
+      else{
         timerRDCiCyclicTask->Stop();
         PutFRDataTimer->Stop();
         GetOutputDataTimer->Stop();
         PutAbsDataTimer->Stop();
         PutRdcDataTimer->Stop();
-
         fileToolStripMenuItem->Enabled = true;
         toolStripMenuItemSettings->Enabled = true;
-
         DataTabInputControl->Enabled = false;
-
         TabFlexRayData->Enabled = false;
         TabRdcData->Enabled = false;
         TabAbsData->Enabled = false;
@@ -24966,7 +24948,6 @@ private:
         tabPageDCM->Enabled = false;
         tabRID->Enabled = false;
         tabPageUWB->Enabled = false;
-
         groupBoxOutputDataTimer->Enabled = true;
         groupBoxFlexRayTimer->Enabled = true;
         groupBoxRDCiTaskTimer->Enabled = true;
@@ -24977,23 +24958,16 @@ private:
       }
     }
 
-    #include "RTE_Stub_FlexRayDialog.h"
-    #include "RTE_Stub_OutputDialog.h"
-    #include "RTE_Stub_CddRdcDialog.h"
-
-    #include "RTE_Stub_RDCiSystemDialog.h"
-
-    #include "RTE_Stub_WarnHlerDialog.h"
-
-    #include "RTE_Stub_WAllocDialog.h"
-
-    #include "RTE_Stub_DcmDialog.h"
-
-    #include "RTE_Stub_CalPrmDialog.h"
-
-    #include "RTE_Stub_CddAbsDialog.h"
-
-    #include "RTE_Stub_RIDDialog.h"
+#include "RTE_Stub_FlexRayDialog.h"
+#include "RTE_Stub_OutputDialog.h"
+#include "RTE_Stub_CddRdcDialog.h"
+#include "RTE_Stub_RDCiSystemDialog.h"
+#include "RTE_Stub_WarnHlerDialog.h"
+#include "RTE_Stub_WAllocDialog.h"
+#include "RTE_Stub_DcmDialog.h"
+#include "RTE_Stub_CalPrmDialog.h"
+#include "RTE_Stub_CddAbsDialog.h"
+#include "RTE_Stub_RIDDialog.h"
 
     private: System::Void exitToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
     {

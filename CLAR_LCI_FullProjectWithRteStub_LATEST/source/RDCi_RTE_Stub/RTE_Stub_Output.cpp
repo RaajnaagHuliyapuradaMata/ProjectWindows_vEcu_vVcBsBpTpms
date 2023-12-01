@@ -496,1042 +496,1031 @@ Rte_PimType_CtApHufTpmsSWC_NvmRdciZoHistoryBlockType              tNvmRdciZoHist
 Rte_PimType_CtApHufTpmsSWC_NvmRdciZomBlock1Type                   tNvmRdciZomBlock1_NVBlock_MirrorBlock;
 Rte_PimType_CtApHufTpmsSWC_NvmRdciZomBlock2Type                   tNvmRdciZomBlock2_NVBlock_MirrorBlock;
 
-
-const struct Rte_CDS_CtApHufTpmsSWC tRte_CDS_CtApHufTpmsSWC =
-{
-  &tAVL_P_TYR_FLH,
-  &tAVL_P_TYR_FRH,
-  &tAVL_P_TYR_RLH,
-  &tAVL_P_TYR_RRH,
-  &tAVL_TEMP_TYR_FLH,
-  &tAVL_TEMP_TYR_FRH,
-  &tAVL_TEMP_TYR_RLH,
-  &tAVL_TEMP_TYR_RRH,
-  &tAA_BAX_TYP_TYR,
-  &tAG_BAX_TYP_TYR,
-  &tBAX_TYP_TYR_ID2,
-  &tCAC_BAX_TYP_TYR,
-  &tIDX_LCC_BAX_TYP_TYR,
-  &tIDX_V_BAX_TYP_TYR,
-  &tLOR_BAX_TYP_TYR,
-  &tRAD_BAX_TYP_TYR,
-  &tRELA_SIDE_BAX_TYP_TYR,
-  &tRFL_BAX_TYP_TYR,
-  &tSEA_BAX_TYP_TYR,
-  &tST_SLCTN_BAX_TYP_TYR,
-  &tWID_BAX_TYP_TYR,
-  &tCNTR_FBD_TPMS_1_ID2,
-  &tCTR_FIL_ACTV_1,
-  &tCTR_SUPP_ID_1,
-  &tCTR_TYR_ID_1,
-  &tCNTR_FBD_TPMS_2_ID2,
-  &tCTR_FIL_ACTV_2,
-  &tCTR_SUPP_ID_2,
-  &tCTR_TYR_ID_2,
-  &tCNTR_FBD_TPMS_3_ID2,
-  &tCTR_FIL_ACTV_3,
-  &tCTR_SUPP_ID_3,
-  &tCTR_TYR_ID_3,
-  &tCNTR_FBD_TPMS_4_ID2,
-  &tCTR_FIL_ACTV_4,
-  &tCTR_SUPP_ID_4,
-  &tCTR_TYR_ID_4,
-  &tRDCI_DATA_0 ,
-  &tRDCI_DATA_1 ,
-  &tRDCI_DATA_2 ,
-  &tRDCI_DATA_3 ,
-  &tRDCI_DATA_4 ,
-  &tRDCI_DATA_5 ,
-  &tRDCI_DATA_6 ,
-  &tRDCI_DATA_7 ,
-  &tRDCI_DATA_8 ,
-  &tRDCI_DATA_9 ,
-  &tRDCI_DATA_10,
-  &tRDCI_DATA_11,
-  &tRDCI_DATA_12,
-  &tRDCI_DATA_13,
-  &tRDCI_DATA_14,
-  &tRDCI_DATA_15,
-  &tRDCI_DATA_16,
-  &tRDCI_DATA_17,
-  &tRDCI_DATA_18,
-  &tRDCI_DATA_19,
-  &tRDCI_DATA_20,
-  &tRDCI_DATA_21,
-  &tRDCI_DATA_22,
-  &tRDCI_DATA_23,
-  &tRDCI_DATA_24,
-  &tRDCI_DATA_25,
-  &tRDCI_DATA_26,
-  &tRDCI_DATA_27,
-  &tRDCI_DATA_28,
-  &tRDCI_DATA_29,
-  &tRDCI_DATA_30,
-  &tRDCI_DATA_31,
-  &tAA_FTAX_TYP_TYR,
-  &tAG_FTAX_TYP_TYR,
-  &tCAC_FTAX_TYP_TYR,
-  &tFTAX_TYP_TYR_ID2,
-  &tIDX_LCC_FTAX_TYP_TYR,
-  &tIDX_V_FTAX_TYP_TYR,
-  &tLOR_FTAX_TYP_TYR,
-  &tRAD_FTAX_TYP_TYR,
-  &tRELA_SIDE_FTAX_TYP_TYR,
-  &tRFL_FTAX_TYP_TYR,
-  &tSEA_FTAX_TYP_TYR,
-  &tWID_FTAX_TYP_TYR,
-  &tCAC_TYP_TYR,
-  &tIDX_LCC_TYP_TYR,
-  &tIDX_V_TYP_TYR,
-  &tOL_AVLB_TYP_TYR_ID2,
-  &tRAD_TYP_TYR,
-  &tRELA_SIDE_TYP_TYR,
-  &tRFL_TYP_TYR,
-  &tSEA_TYP_TYR,
-  &tST_TYR_OL_ID,
-  &tWID_TYP_TYR,
-  &tACTVN_PM,
-  &tPM_ID2,
-  &tRQ_PM_DT,
-  &tQrCodeDotNoId3,
-  &tQrCodeDotNoId4,
-  &tQrCodeDotProdDateId3,
-  &tQrCodeDotProdDateId4,
-  &tQrCodeInventoryNoId3,
-  &tQrCodeInventoryNoId4,
-  &tQrCodeMountingStateId3,
-  &tQrCodeMountingStateId4,
-  &tQrCodePositionId3,
-  &tQrCodePositionId4,
-  &tQrCodeRubberSerialNoPartAId3,
-  &tQrCodeRubberSerialNoPartAId4,
-  &tQrCodeRubberSerialNoPartBId3,
-  &tQrCodeRubberSerialNoPartBId4,
-  &tQrCodeTireDimensionsId3,
-  &tQrCodeTireDimensionsId4,
-  &tQrCodeTireTypeId3,
-  &tQrCodeTireTypeId4,
-  &tQrCodeDotNoId1,
-  &tQrCodeDotNoId2,
-  &tQrCodeDotProdDateId1,
-  &tQrCodeDotProdDateId2,
-  &tQrCodeInventoryNoId1,
-  &tQrCodeInventoryNoId2,
-  &tQrCodeMountingStateId1,
-  &tQrCodeMountingStateId2,
-  &tQrCodePositionId1,
-  &tQrCodePositionId2,
-  &tQrCodeRubberSerialNoPartAId1,
-  &tQrCodeRubberSerialNoPartAId2,
-  &tQrCodeRubberSerialNoPartBId1,
-  &tQrCodeRubberSerialNoPartBId2,
-  &tQrCodeTireDimensionsId1,
-  &tQrCodeTireDimensionsId2,
-  &tQrCodeTireTypeId1,
-  &tQrCodeTireTypeId2,
-  &tCAC_SUTR_TYP_TYR,
-  &tIDX_LCC_SUTR_TYP_TYR,
-  &tIDX_V_SUTR_TYP_TYR,
-  &tRAD_SUTR_TYP_TYR,
-  &tRELA_SIDE_SUTR_TYP_TYR,
-  &tRFL_SUTR_TYP_TYR,
-  &tSEA_SUTR_TYP_TYR,
-  &tSOTR_TYP_TYR_ID2,
-  &tWID_SUTR_TYP_TYR,
-  &tL_OL_TYP_TYR,
-  &tOP_IDR_MSGC,
-  &tQU_RDC_INIT_DISP,
-  &tST_MAN_SLCTN,
-  &tST_SLCTN_SUTR_AVLB,
-  &tST_SLCTN_TYR,
-  &tST_SLCTN_WITR_AVLB,
-  &tST_TAR_P_LOCO_TPCT,
-  &tST_TYR_SEA_TPCT,
-  &tStatusWheelTypeChangeDetection,
-  &tStatusWheelTypeChangePosition,
-  &tTAR_P_TYR_FLH,
-  &tTAR_P_TYR_FRH,
-  &tTAR_P_TYR_RLH,
-  &tTAR_P_TYR_RRH,
-  &tTpmsInternalLastBatteryStatusId1,
-  &tTpmsInternalLastBatteryStatusId2,
-  &tTpmsInternalLastBatteryStatusId3,
-  &tTpmsInternalLastBatteryStatusId4,
-  &tTpmsInternalLastPositionId1,
-  &tTpmsInternalLastPositionId2,
-  &tTpmsInternalLastPositionId3,
-  &tTpmsInternalLastPositionId4,
-  &tTpmsInternalLastPressureMbarId1,
-  &tTpmsInternalLastPressureMbarId2,
-  &tTpmsInternalLastPressureMbarId3,
-  &tTpmsInternalLastPressureMbarId4,
-  &tTpmsInternalLastReceptionRssiId1,
-  &tTpmsInternalLastReceptionRssiId2,
-  &tTpmsInternalLastReceptionRssiId3,
-  &tTpmsInternalLastReceptionRssiId4,
-  &tTpmsInternalLastReceptionYieldId1,
-  &tTpmsInternalLastReceptionYieldId2,
-  &tTpmsInternalLastReceptionYieldId3,
-  &tTpmsInternalLastReceptionYieldId4,
-  &tTpmsInternalLastSensorSerNoId1,
-  &tTpmsInternalLastSensorSerNoId2,
-  &tTpmsInternalLastSensorSerNoId3,
-  &tTpmsInternalLastSensorSerNoId4,
-  &tTpmsInternalLastTargetPressureMbarId1,
-  &tTpmsInternalLastTargetPressureMbarId2,
-  &tTpmsInternalLastTargetPressureMbarId3,
-  &tTpmsInternalLastTargetPressureMbarId4,
-  &tTpmsInternalLastTemperatureDegCId1,
-  &tTpmsInternalLastTemperatureDegCId2,
-  &tTpmsInternalLastTemperatureDegCId3,
-  &tTpmsInternalLastTemperatureDegCId4,
-  &tTireMileageInventoryNoId1,
-  &tTireMileageInventoryNoId2,
-  &tTireMileageLastAssemblyDateId1,
-  &tTireMileageLastAssemblyDateId2,
-  &tTireMileageLastAssemblyVehicleMileageId1,
-  &tTireMileageLastAssemblyVehicleMileageId2,
-  &tTireMileageLastDisassemblyDateId1,
-  &tTireMileageLastDisassemblyDateId2,
-  &tTireMileageLastDisassemblyVehicleMileageId1,
-  &tTireMileageLastDisassemblyVehicleMileageId2,
-  &tTireMileagePositionId1,
-  &tTireMileagePositionId2,
-  &tTireMileageTotalTireMileageOnVehicleId1,
-  &tTireMileageTotalTireMileageOnVehicleId2,
-  &tTireMileageInventoryNoId3,
-  &tTireMileageInventoryNoId4,
-  &tTireMileageLastAssemblyDateId3,
-  &tTireMileageLastAssemblyDateId4,
-  &tTireMileageLastAssemblyVehicleMileageId3,
-  &tTireMileageLastAssemblyVehicleMileageId4,
-  &tTireMileageLastDisassemblyDateId3,
-  &tTireMileageLastDisassemblyDateId4,
-  &tTireMileageLastDisassemblyVehicleMileageId3,
-  &tTireMileageLastDisassemblyVehicleMileageId4,
-  &tTireMileagePositionId3,
-  &tTireMileagePositionId4,
-  &tTireMileageTotalTireMileageOnVehicleId3,
-  &tTireMileageTotalTireMileageOnVehicleId4,
-  &tTpmsCalibrationActualTirePressureId1,
-  &tTpmsCalibrationActualTirePressureId2,
-  &tTpmsCalibrationActualTirePressureId3,
-  &tTpmsCalibrationActualTirePressureId4,
-  &tTpmsCalibrationActualTireTemperatureId1,
-  &tTpmsCalibrationActualTireTemperatureId2,
-  &tTpmsCalibrationActualTireTemperatureId3,
-  &tTpmsCalibrationActualTireTemperatureId4,
-  &tTpmsCalibrationAmbientPressure,
-  &tTpmsCalibrationAmbientTemperature,
-  &tTpmsCalibrationCalibrationType,
-  &tTpmsCalibrationDate,
-  &tTpmsCalibrationMileage,
-  &tTpmsCalibrationNoOfCalibrations,
-  &tTpmsCalibrationPlausibility,
-  &tTpmsCalibrationPositionId1,
-  &tTpmsCalibrationPositionId2,
-  &tTpmsCalibrationPositionId3,
-  &tTpmsCalibrationPositionId4,
-  &tTpmsCalibrationTime,
-  &tTpmsCalibrationTireTargetPressureId1,
-  &tTpmsCalibrationTireTargetPressureId2,
-  &tTpmsCalibrationTireTargetPressureId3,
-  &tTpmsCalibrationTireTargetPressureId4,
-  &tTpmsErfsActTireDimSummerCarcass,
-  &tTpmsErfsActTireDimSummerCrossSection,
-  &tTpmsErfsActTireDimSummerDiameter,
-  &tTpmsErfsActTireDimSummerLoadIndex,
-  &tTpmsErfsActTireDimSummerMounted,
-  &tTpmsErfsActTireDimSummerMountedInFactory,
-  &tTpmsErfsActTireDimSummerPosition,
-  &tTpmsErfsActTireDimSummerRunflat,
-  &tTpmsErfsActTireDimSummerSeason,
-  &tTpmsErfsActTireDimSummerSpeedIndex,
-  &tTpmsErfsActTireDimSummerTargetPressureFaGroup0,
-  &tTpmsErfsActTireDimSummerTargetPressureFaGroup1,
-  &tTpmsErfsActTireDimSummerTargetPressureFaGroup2,
-  &tTpmsErfsActTireDimSummerTargetPressureRaGroup0,
-  &tTpmsErfsActTireDimSummerTargetPressureRaGroup1,
-  &tTpmsErfsActTireDimSummerTargetPressureRaGroup2,
-  &tTpmsErfsActTireDimSummerWidth,
-  &tTpmsErfsActTireDimWinterCarcass,
-  &tTpmsErfsActTireDimWinterCrossSection,
-  &tTpmsErfsActTireDimWinterDiameter,
-  &tTpmsErfsActTireDimWinterLoadIndex,
-  &tTpmsErfsActTireDimWinterMounted,
-  &tTpmsErfsActTireDimWinterMountedInFactory,
-  &tTpmsErfsActTireDimWinterPosition,
-  &tTpmsErfsActTireDimWinterRunflat,
-  &tTpmsErfsActTireDimWinterSeason,
-  &tTpmsErfsActTireDimWinterSpeedIndex,
-  &tTpmsErfsActTireDimWinterTargetPressureFaGroup0,
-  &tTpmsErfsActTireDimWinterTargetPressureFaGroup1,
-  &tTpmsErfsActTireDimWinterTargetPressureFaGroup2,
-  &tTpmsErfsActTireDimWinterTargetPressureRaGroup0,
-  &tTpmsErfsActTireDimWinterTargetPressureRaGroup1,
-  &tTpmsErfsActTireDimWinterTargetPressureRaGroup2,
-  &tTpmsErfsActTireDimWinterWidth,
-  &tExtParkSupConfig,
-  &tLastReceivedAmbientPressure,
-  &tMobilityLossThresholdValue,
-  &tNotificationThresholdValueC,
-  &tNotificationThresholdValueNc,
-  &tPwfChange,
-  &tRDCSystemReferenceTemp,
-  &tRelRecommendedColdInflationPressureFrontAxle,
-  &tRelRecommendedColdInflationPressureRearAxle,
-  &tTolNoTempComp,
-  &tTolTempComp,
-  &tWarningThresholdValueC,
-  &tWarningThresholdValueNc,
-  &tCAC_WITR_TYP_TYR,
-  &tIDX_LCC_WITR_TYP_TYR,
-  &tIDX_V_WITR_TYP_TYR,
-  &tRAD_WITR_TYP_TYR,
-  &tRELA_SIDE_WITR_TYP_TYR,
-  &tRFL_WITR_TYP_TYR,
-  &tSEA_WITR_TYP_TYR,
-  &tWID_WITR_TYP_TYR,
-  &tWITR_TYP_TYR_ID2,
-
-  &tAVL_P_TYR_FLH,
-  &tAVL_P_TYR_FRH,
-  &tAVL_P_TYR_RLH,
-  &tAVL_P_TYR_RRH,
-  &tAVL_TEMP_TYR_FLH,
-  &tAVL_TEMP_TYR_FRH,
-  &tAVL_TEMP_TYR_RLH,
-  &tAVL_TEMP_TYR_RRH,
-  &tAA_BAX_TYP_TYR,
-  &tAG_BAX_TYP_TYR,
-  &tBAX_TYP_TYR_ID2,
-  &tCAC_BAX_TYP_TYR,
-  &tIDX_LCC_BAX_TYP_TYR,
-  &tIDX_V_BAX_TYP_TYR,
-  &tLOR_BAX_TYP_TYR,
-  &tRAD_BAX_TYP_TYR,
-  &tRELA_SIDE_BAX_TYP_TYR,
-  &tRFL_BAX_TYP_TYR,
-  &tSEA_BAX_TYP_TYR,
-  &tST_SLCTN_BAX_TYP_TYR,
-  &tWID_BAX_TYP_TYR,
-  &tCNTR_FBD_TPMS_1_ID2,
-  &tCTR_FIL_ACTV_1,
-  &tCTR_SUPP_ID_1,
-  &tCTR_TYR_ID_1,
-  &tCNTR_FBD_TPMS_2_ID2,
-  &tCTR_FIL_ACTV_2,
-  &tCTR_SUPP_ID_2,
-  &tCTR_TYR_ID_2,
-  &tCNTR_FBD_TPMS_3_ID2,
-  &tCTR_FIL_ACTV_3,
-  &tCTR_SUPP_ID_3,
-  &tCTR_TYR_ID_3,
-  &tCNTR_FBD_TPMS_4_ID2,
-  &tCTR_FIL_ACTV_4,
-  &tCTR_SUPP_ID_4,
-  &tCTR_TYR_ID_4,
-  &tRDCI_DATA_0 ,
-  &tRDCI_DATA_1 ,
-  &tRDCI_DATA_2 ,
-  &tRDCI_DATA_3 ,
-  &tRDCI_DATA_4 ,
-  &tRDCI_DATA_5 ,
-  &tRDCI_DATA_6 ,
-  &tRDCI_DATA_7 ,
-  &tRDCI_DATA_8 ,
-  &tRDCI_DATA_9 ,
-  &tRDCI_DATA_10,
-  &tRDCI_DATA_11,
-  &tRDCI_DATA_12,
-  &tRDCI_DATA_13,
-  &tRDCI_DATA_14,
-  &tRDCI_DATA_15,
-  &tRDCI_DATA_16,
-  &tRDCI_DATA_17,
-  &tRDCI_DATA_18,
-  &tRDCI_DATA_19,
-  &tRDCI_DATA_20,
-  &tRDCI_DATA_21,
-  &tRDCI_DATA_22,
-  &tRDCI_DATA_23,
-  &tRDCI_DATA_24,
-  &tRDCI_DATA_25,
-  &tRDCI_DATA_26,
-  &tRDCI_DATA_27,
-  &tRDCI_DATA_28,
-  &tRDCI_DATA_29,
-  &tRDCI_DATA_30,
-  &tRDCI_DATA_31,
-  &tAA_FTAX_TYP_TYR,
-  &tAG_FTAX_TYP_TYR,
-  &tCAC_FTAX_TYP_TYR,
-  &tFTAX_TYP_TYR_ID2,
-  &tIDX_LCC_FTAX_TYP_TYR,
-  &tIDX_V_FTAX_TYP_TYR,
-  &tLOR_FTAX_TYP_TYR,
-  &tRAD_FTAX_TYP_TYR,
-  &tRELA_SIDE_FTAX_TYP_TYR,
-  &tRFL_FTAX_TYP_TYR,
-  &tSEA_FTAX_TYP_TYR,
-  &tWID_FTAX_TYP_TYR,
-  &tCAC_TYP_TYR,
-  &tIDX_LCC_TYP_TYR,
-  &tIDX_V_TYP_TYR,
-  &tOL_AVLB_TYP_TYR_ID2,
-  &tRAD_TYP_TYR,
-  &tRELA_SIDE_TYP_TYR,
-  &tRFL_TYP_TYR,
-  &tSEA_TYP_TYR,
-  &tST_TYR_OL_ID,
-  &tWID_TYP_TYR,
-  &tACTVN_PM,
-  &tPM_ID2,
-  &tRQ_PM_DT,
-  &tQrCodeDotNoId3,
-  &tQrCodeDotNoId4,
-  &tQrCodeDotProdDateId3,
-  &tQrCodeDotProdDateId4,
-  &tQrCodeInventoryNoId3,
-  &tQrCodeInventoryNoId4,
-  &tQrCodeMountingStateId3,
-  &tQrCodeMountingStateId4,
-  &tQrCodePositionId3,
-  &tQrCodePositionId4,
-  &tQrCodeRubberSerialNoPartAId3,
-  &tQrCodeRubberSerialNoPartAId4,
-  &tQrCodeRubberSerialNoPartBId3,
-  &tQrCodeRubberSerialNoPartBId4,
-  &tQrCodeTireDimensionsId3,
-  &tQrCodeTireDimensionsId4,
-  &tQrCodeTireTypeId3,
-  &tQrCodeTireTypeId4,
-  &tQrCodeDotNoId1,
-  &tQrCodeDotNoId2,
-  &tQrCodeDotProdDateId1,
-  &tQrCodeDotProdDateId2,
-  &tQrCodeInventoryNoId1,
-  &tQrCodeInventoryNoId2,
-  &tQrCodeMountingStateId1,
-  &tQrCodeMountingStateId2,
-  &tQrCodePositionId1,
-  &tQrCodePositionId2,
-  &tQrCodeRubberSerialNoPartAId1,
-  &tQrCodeRubberSerialNoPartAId2,
-  &tQrCodeRubberSerialNoPartBId1,
-  &tQrCodeRubberSerialNoPartBId2,
-  &tQrCodeTireDimensionsId1,
-  &tQrCodeTireDimensionsId2,
-  &tQrCodeTireTypeId1,
-  &tQrCodeTireTypeId2,
-  &tCAC_SUTR_TYP_TYR,
-  &tIDX_LCC_SUTR_TYP_TYR,
-  &tIDX_V_SUTR_TYP_TYR,
-  &tRAD_SUTR_TYP_TYR,
-  &tRELA_SIDE_SUTR_TYP_TYR,
-  &tRFL_SUTR_TYP_TYR,
-  &tSEA_SUTR_TYP_TYR,
-  &tSOTR_TYP_TYR_ID2,
-  &tWID_SUTR_TYP_TYR,
-  &tL_OL_TYP_TYR,
-  &tOP_IDR_MSGC,
-  &tQU_RDC_INIT_DISP,
-  &tST_MAN_SLCTN,
-  &tST_SLCTN_SUTR_AVLB,
-  &tST_SLCTN_TYR,
-  &tST_SLCTN_WITR_AVLB,
-  &tST_TAR_P_LOCO_TPCT,
-  &tST_TYR_SEA_TPCT,
-  &tStatusWheelTypeChangeDetection,
-  &tStatusWheelTypeChangePosition,
-  &tTAR_P_TYR_FLH,
-  &tTAR_P_TYR_FRH,
-  &tTAR_P_TYR_RLH,
-  &tTAR_P_TYR_RRH,
-  &tTpmsInternalLastBatteryStatusId1,
-  &tTpmsInternalLastBatteryStatusId2,
-  &tTpmsInternalLastBatteryStatusId3,
-  &tTpmsInternalLastBatteryStatusId4,
-  &tTpmsInternalLastPositionId1,
-  &tTpmsInternalLastPositionId2,
-  &tTpmsInternalLastPositionId3,
-  &tTpmsInternalLastPositionId4,
-  &tTpmsInternalLastPressureMbarId1,
-  &tTpmsInternalLastPressureMbarId2,
-  &tTpmsInternalLastPressureMbarId3,
-  &tTpmsInternalLastPressureMbarId4,
-  &tTpmsInternalLastReceptionRssiId1,
-  &tTpmsInternalLastReceptionRssiId2,
-  &tTpmsInternalLastReceptionRssiId3,
-  &tTpmsInternalLastReceptionRssiId4,
-  &tTpmsInternalLastReceptionYieldId1,
-  &tTpmsInternalLastReceptionYieldId2,
-  &tTpmsInternalLastReceptionYieldId3,
-  &tTpmsInternalLastReceptionYieldId4,
-  &tTpmsInternalLastSensorSerNoId1,
-  &tTpmsInternalLastSensorSerNoId2,
-  &tTpmsInternalLastSensorSerNoId3,
-  &tTpmsInternalLastSensorSerNoId4,
-  &tTpmsInternalLastTargetPressureMbarId1,
-  &tTpmsInternalLastTargetPressureMbarId2,
-  &tTpmsInternalLastTargetPressureMbarId3,
-  &tTpmsInternalLastTargetPressureMbarId4,
-  &tTpmsInternalLastTemperatureDegCId1,
-  &tTpmsInternalLastTemperatureDegCId2,
-  &tTpmsInternalLastTemperatureDegCId3,
-  &tTpmsInternalLastTemperatureDegCId4,
-  &tTireMileageInventoryNoId1,
-  &tTireMileageInventoryNoId2,
-  &tTireMileageLastAssemblyDateId1,
-  &tTireMileageLastAssemblyDateId2,
-  &tTireMileageLastAssemblyVehicleMileageId1,
-  &tTireMileageLastAssemblyVehicleMileageId2,
-  &tTireMileageLastDisassemblyDateId1,
-  &tTireMileageLastDisassemblyDateId2,
-  &tTireMileageLastDisassemblyVehicleMileageId1,
-  &tTireMileageLastDisassemblyVehicleMileageId2,
-  &tTireMileagePositionId1,
-  &tTireMileagePositionId2,
-  &tTireMileageTotalTireMileageOnVehicleId1,
-  &tTireMileageTotalTireMileageOnVehicleId2,
-  &tTireMileageInventoryNoId3,
-  &tTireMileageInventoryNoId4,
-  &tTireMileageLastAssemblyDateId3,
-  &tTireMileageLastAssemblyDateId4,
-  &tTireMileageLastAssemblyVehicleMileageId3,
-  &tTireMileageLastAssemblyVehicleMileageId4,
-  &tTireMileageLastDisassemblyDateId3,
-  &tTireMileageLastDisassemblyDateId4,
-  &tTireMileageLastDisassemblyVehicleMileageId3,
-  &tTireMileageLastDisassemblyVehicleMileageId4,
-  &tTireMileagePositionId3,
-  &tTireMileagePositionId4,
-  &tTireMileageTotalTireMileageOnVehicleId3,
-  &tTireMileageTotalTireMileageOnVehicleId4,
-  &tTpmsCalibrationActualTirePressureId1,
-  &tTpmsCalibrationActualTirePressureId2,
-  &tTpmsCalibrationActualTirePressureId3,
-  &tTpmsCalibrationActualTirePressureId4,
-  &tTpmsCalibrationActualTireTemperatureId1,
-  &tTpmsCalibrationActualTireTemperatureId2,
-  &tTpmsCalibrationActualTireTemperatureId3,
-  &tTpmsCalibrationActualTireTemperatureId4,
-  &tTpmsCalibrationAmbientPressure,
-  &tTpmsCalibrationAmbientTemperature,
-  &tTpmsCalibrationCalibrationType,
-  &tTpmsCalibrationDate,
-  &tTpmsCalibrationMileage,
-  &tTpmsCalibrationNoOfCalibrations,
-  &tTpmsCalibrationPlausibility,
-  &tTpmsCalibrationPositionId1,
-  &tTpmsCalibrationPositionId2,
-  &tTpmsCalibrationPositionId3,
-  &tTpmsCalibrationPositionId4,
-  &tTpmsCalibrationTime,
-  &tTpmsCalibrationTireTargetPressureId1,
-  &tTpmsCalibrationTireTargetPressureId2,
-  &tTpmsCalibrationTireTargetPressureId3,
-  &tTpmsCalibrationTireTargetPressureId4,
-  &tTpmsErfsActTireDimSummerCarcass,
-  &tTpmsErfsActTireDimSummerCrossSection,
-  &tTpmsErfsActTireDimSummerDiameter,
-  &tTpmsErfsActTireDimSummerLoadIndex,
-  &tTpmsErfsActTireDimSummerMounted,
-  &tTpmsErfsActTireDimSummerMountedInFactory,
-  &tTpmsErfsActTireDimSummerPosition,
-  &tTpmsErfsActTireDimSummerRunflat,
-  &tTpmsErfsActTireDimSummerSeason,
-  &tTpmsErfsActTireDimSummerSpeedIndex,
-  &tTpmsErfsActTireDimSummerTargetPressureFaGroup0,
-  &tTpmsErfsActTireDimSummerTargetPressureFaGroup1,
-  &tTpmsErfsActTireDimSummerTargetPressureFaGroup2,
-  &tTpmsErfsActTireDimSummerTargetPressureRaGroup0,
-  &tTpmsErfsActTireDimSummerTargetPressureRaGroup1,
-  &tTpmsErfsActTireDimSummerTargetPressureRaGroup2,
-  &tTpmsErfsActTireDimSummerWidth,
-  &tTpmsErfsActTireDimWinterCarcass,
-  &tTpmsErfsActTireDimWinterCrossSection,
-  &tTpmsErfsActTireDimWinterDiameter,
-  &tTpmsErfsActTireDimWinterLoadIndex,
-  &tTpmsErfsActTireDimWinterMounted,
-  &tTpmsErfsActTireDimWinterMountedInFactory,
-  &tTpmsErfsActTireDimWinterPosition,
-  &tTpmsErfsActTireDimWinterRunflat,
-  &tTpmsErfsActTireDimWinterSeason,
-  &tTpmsErfsActTireDimWinterSpeedIndex,
-  &tTpmsErfsActTireDimWinterTargetPressureFaGroup0,
-  &tTpmsErfsActTireDimWinterTargetPressureFaGroup1,
-  &tTpmsErfsActTireDimWinterTargetPressureFaGroup2,
-  &tTpmsErfsActTireDimWinterTargetPressureRaGroup0,
-  &tTpmsErfsActTireDimWinterTargetPressureRaGroup1,
-  &tTpmsErfsActTireDimWinterTargetPressureRaGroup2,
-  &tTpmsErfsActTireDimWinterWidth,
-  &tExtParkSupConfig,
-  &tLastReceivedAmbientPressure,
-  &tMobilityLossThresholdValue,
-  &tNotificationThresholdValueC,
-  &tNotificationThresholdValueNc,
-  &tPwfChange,
-  &tRDCSystemReferenceTemp,
-  &tRelRecommendedColdInflationPressureFrontAxle,
-  &tRelRecommendedColdInflationPressureRearAxle,
-  &tTolNoTempComp,
-  &tTolTempComp,
-  &tWarningThresholdValueC,
-  &tWarningThresholdValueNc,
-  &tCAC_WITR_TYP_TYR,
-  &tIDX_LCC_WITR_TYP_TYR,
-  &tIDX_V_WITR_TYP_TYR,
-  &tRAD_WITR_TYP_TYR,
-  &tRELA_SIDE_WITR_TYP_TYR,
-  &tRFL_WITR_TYP_TYR,
-  &tSEA_WITR_TYP_TYR,
-  &tWID_WITR_TYP_TYR,
-  &tWITR_TYP_TYR_ID2,
-
-  &tAVL_P_TYR_FLH,
-  &tAVL_P_TYR_FRH,
-  &tAVL_P_TYR_RLH,
-  &tAVL_P_TYR_RRH,
-  &tAVL_TEMP_TYR_FLH,
-  &tAVL_TEMP_TYR_FRH,
-  &tAVL_TEMP_TYR_RLH,
-  &tAVL_TEMP_TYR_RRH,
-  &tAA_BAX_TYP_TYR,
-  &tAG_BAX_TYP_TYR,
-  &tBAX_TYP_TYR_ID2,
-  &tCAC_BAX_TYP_TYR,
-  &tIDX_LCC_BAX_TYP_TYR,
-  &tIDX_V_BAX_TYP_TYR,
-  &tLOR_BAX_TYP_TYR,
-  &tRAD_BAX_TYP_TYR,
-  &tRELA_SIDE_BAX_TYP_TYR,
-  &tRFL_BAX_TYP_TYR,
-  &tSEA_BAX_TYP_TYR,
-  &tST_SLCTN_BAX_TYP_TYR,
-  &tWID_BAX_TYP_TYR,
-  &tCNTR_FBD_TPMS_1_ID2,
-  &tCTR_FIL_ACTV_1,
-  &tCTR_SUPP_ID_1,
-  &tCTR_TYR_ID_1,
-  &tCNTR_FBD_TPMS_2_ID2,
-  &tCTR_FIL_ACTV_2,
-  &tCTR_SUPP_ID_2,
-  &tCTR_TYR_ID_2,
-  &tCNTR_FBD_TPMS_3_ID2,
-  &tCTR_FIL_ACTV_3,
-  &tCTR_SUPP_ID_3,
-  &tCTR_TYR_ID_3,
-  &tCNTR_FBD_TPMS_4_ID2,
-  &tCTR_FIL_ACTV_4,
-  &tCTR_SUPP_ID_4,
-  &tCTR_TYR_ID_4,
-  &tRDCI_DATA_0 ,
-  &tRDCI_DATA_1 ,
-  &tRDCI_DATA_2 ,
-  &tRDCI_DATA_3 ,
-  &tRDCI_DATA_4 ,
-  &tRDCI_DATA_5 ,
-  &tRDCI_DATA_6 ,
-  &tRDCI_DATA_7 ,
-  &tRDCI_DATA_8 ,
-  &tRDCI_DATA_9 ,
-  &tRDCI_DATA_10,
-  &tRDCI_DATA_11,
-  &tRDCI_DATA_12,
-  &tRDCI_DATA_13,
-  &tRDCI_DATA_14,
-  &tRDCI_DATA_15,
-  &tRDCI_DATA_16,
-  &tRDCI_DATA_17,
-  &tRDCI_DATA_18,
-  &tRDCI_DATA_19,
-  &tRDCI_DATA_20,
-  &tRDCI_DATA_21,
-  &tRDCI_DATA_22,
-  &tRDCI_DATA_23,
-  &tRDCI_DATA_24,
-  &tRDCI_DATA_25,
-  &tRDCI_DATA_26,
-  &tRDCI_DATA_27,
-  &tRDCI_DATA_28,
-  &tRDCI_DATA_29,
-  &tRDCI_DATA_30,
-  &tRDCI_DATA_31,
-  &tAA_FTAX_TYP_TYR,
-  &tAG_FTAX_TYP_TYR,
-  &tCAC_FTAX_TYP_TYR,
-  &tFTAX_TYP_TYR_ID2,
-  &tIDX_LCC_FTAX_TYP_TYR,
-  &tIDX_V_FTAX_TYP_TYR,
-  &tLOR_FTAX_TYP_TYR,
-  &tRAD_FTAX_TYP_TYR,
-  &tRELA_SIDE_FTAX_TYP_TYR,
-  &tRFL_FTAX_TYP_TYR,
-  &tSEA_FTAX_TYP_TYR,
-  &tWID_FTAX_TYP_TYR,
-  &tCAC_TYP_TYR,
-  &tIDX_LCC_TYP_TYR,
-  &tIDX_V_TYP_TYR,
-  &tOL_AVLB_TYP_TYR_ID2,
-  &tRAD_TYP_TYR,
-  &tRELA_SIDE_TYP_TYR,
-  &tRFL_TYP_TYR,
-  &tSEA_TYP_TYR,
-  &tST_TYR_OL_ID,
-  &tWID_TYP_TYR,
-  &tACTVN_PM,
-  &tPM_ID2,
-  &tRQ_PM_DT,
-  &tQrCodeDotNoId3,
-  &tQrCodeDotNoId4,
-  &tQrCodeDotProdDateId3,
-  &tQrCodeDotProdDateId4,
-  &tQrCodeInventoryNoId3,
-  &tQrCodeInventoryNoId4,
-  &tQrCodeMountingStateId3,
-  &tQrCodeMountingStateId4,
-  &tQrCodePositionId3,
-  &tQrCodePositionId4,
-  &tQrCodeRubberSerialNoPartAId3,
-  &tQrCodeRubberSerialNoPartAId4,
-  &tQrCodeRubberSerialNoPartBId3,
-  &tQrCodeRubberSerialNoPartBId4,
-  &tQrCodeTireDimensionsId3,
-  &tQrCodeTireDimensionsId4,
-  &tQrCodeTireTypeId3,
-  &tQrCodeTireTypeId4,
-  &tQrCodeDotNoId1,
-  &tQrCodeDotNoId2,
-  &tQrCodeDotProdDateId1,
-  &tQrCodeDotProdDateId2,
-  &tQrCodeInventoryNoId1,
-  &tQrCodeInventoryNoId2,
-  &tQrCodeMountingStateId1,
-  &tQrCodeMountingStateId2,
-  &tQrCodePositionId1,
-  &tQrCodePositionId2,
-  &tQrCodeRubberSerialNoPartAId1,
-  &tQrCodeRubberSerialNoPartAId2,
-  &tQrCodeRubberSerialNoPartBId1,
-  &tQrCodeRubberSerialNoPartBId2,
-  &tQrCodeTireDimensionsId1,
-  &tQrCodeTireDimensionsId2,
-  &tQrCodeTireTypeId1,
-  &tQrCodeTireTypeId2,
-  &tCAC_SUTR_TYP_TYR,
-  &tIDX_LCC_SUTR_TYP_TYR,
-  &tIDX_V_SUTR_TYP_TYR,
-  &tRAD_SUTR_TYP_TYR,
-  &tRELA_SIDE_SUTR_TYP_TYR,
-  &tRFL_SUTR_TYP_TYR,
-  &tSEA_SUTR_TYP_TYR,
-  &tSOTR_TYP_TYR_ID2,
-  &tWID_SUTR_TYP_TYR,
-  &tL_OL_TYP_TYR,
-  &tOP_IDR_MSGC,
-  &tQU_RDC_INIT_DISP,
-  &tST_MAN_SLCTN,
-  &tST_SLCTN_SUTR_AVLB,
-  &tST_SLCTN_TYR,
-  &tST_SLCTN_WITR_AVLB,
-  &tST_TAR_P_LOCO_TPCT,
-  &tST_TYR_SEA_TPCT,
-  &tStatusWheelTypeChangeDetection,
-  &tStatusWheelTypeChangePosition,
-  &tTAR_P_TYR_FLH,
-  &tTAR_P_TYR_FRH,
-  &tTAR_P_TYR_RLH,
-  &tTAR_P_TYR_RRH,
-  &tTpmsInternalLastBatteryStatusId1,
-  &tTpmsInternalLastBatteryStatusId2,
-  &tTpmsInternalLastBatteryStatusId3,
-  &tTpmsInternalLastBatteryStatusId4,
-  &tTpmsInternalLastPositionId1,
-  &tTpmsInternalLastPositionId2,
-  &tTpmsInternalLastPositionId3,
-  &tTpmsInternalLastPositionId4,
-  &tTpmsInternalLastPressureMbarId1,
-  &tTpmsInternalLastPressureMbarId2,
-  &tTpmsInternalLastPressureMbarId3,
-  &tTpmsInternalLastPressureMbarId4,
-  &tTpmsInternalLastReceptionRssiId1,
-  &tTpmsInternalLastReceptionRssiId2,
-  &tTpmsInternalLastReceptionRssiId3,
-  &tTpmsInternalLastReceptionRssiId4,
-  &tTpmsInternalLastReceptionYieldId1,
-  &tTpmsInternalLastReceptionYieldId2,
-  &tTpmsInternalLastReceptionYieldId3,
-  &tTpmsInternalLastReceptionYieldId4,
-  &tTpmsInternalLastSensorSerNoId1,
-  &tTpmsInternalLastSensorSerNoId2,
-  &tTpmsInternalLastSensorSerNoId3,
-  &tTpmsInternalLastSensorSerNoId4,
-  &tTpmsInternalLastTargetPressureMbarId1,
-  &tTpmsInternalLastTargetPressureMbarId2,
-  &tTpmsInternalLastTargetPressureMbarId3,
-  &tTpmsInternalLastTargetPressureMbarId4,
-  &tTpmsInternalLastTemperatureDegCId1,
-  &tTpmsInternalLastTemperatureDegCId2,
-  &tTpmsInternalLastTemperatureDegCId3,
-  &tTpmsInternalLastTemperatureDegCId4,
-  &tTireMileageInventoryNoId1,
-  &tTireMileageInventoryNoId2,
-  &tTireMileageLastAssemblyDateId1,
-  &tTireMileageLastAssemblyDateId2,
-  &tTireMileageLastAssemblyVehicleMileageId1,
-  &tTireMileageLastAssemblyVehicleMileageId2,
-  &tTireMileageLastDisassemblyDateId1,
-  &tTireMileageLastDisassemblyDateId2,
-  &tTireMileageLastDisassemblyVehicleMileageId1,
-  &tTireMileageLastDisassemblyVehicleMileageId2,
-  &tTireMileagePositionId1,
-  &tTireMileagePositionId2,
-  &tTireMileageTotalTireMileageOnVehicleId1,
-  &tTireMileageTotalTireMileageOnVehicleId2,
-  &tTireMileageInventoryNoId3,
-  &tTireMileageInventoryNoId4,
-  &tTireMileageLastAssemblyDateId3,
-  &tTireMileageLastAssemblyDateId4,
-  &tTireMileageLastAssemblyVehicleMileageId3,
-  &tTireMileageLastAssemblyVehicleMileageId4,
-  &tTireMileageLastDisassemblyDateId3,
-  &tTireMileageLastDisassemblyDateId4,
-  &tTireMileageLastDisassemblyVehicleMileageId3,
-  &tTireMileageLastDisassemblyVehicleMileageId4,
-  &tTireMileagePositionId3,
-  &tTireMileagePositionId4,
-  &tTireMileageTotalTireMileageOnVehicleId3,
-  &tTireMileageTotalTireMileageOnVehicleId4,
-  &tTpmsCalibrationActualTirePressureId1,
-  &tTpmsCalibrationActualTirePressureId2,
-  &tTpmsCalibrationActualTirePressureId3,
-  &tTpmsCalibrationActualTirePressureId4,
-  &tTpmsCalibrationActualTireTemperatureId1,
-  &tTpmsCalibrationActualTireTemperatureId2,
-  &tTpmsCalibrationActualTireTemperatureId3,
-  &tTpmsCalibrationActualTireTemperatureId4,
-  &tTpmsCalibrationAmbientPressure,
-  &tTpmsCalibrationAmbientTemperature,
-  &tTpmsCalibrationCalibrationType,
-  &tTpmsCalibrationDate,
-  &tTpmsCalibrationMileage,
-  &tTpmsCalibrationNoOfCalibrations,
-  &tTpmsCalibrationPlausibility,
-  &tTpmsCalibrationPositionId1,
-  &tTpmsCalibrationPositionId2,
-  &tTpmsCalibrationPositionId3,
-  &tTpmsCalibrationPositionId4,
-  &tTpmsCalibrationTime,
-  &tTpmsCalibrationTireTargetPressureId1,
-  &tTpmsCalibrationTireTargetPressureId2,
-  &tTpmsCalibrationTireTargetPressureId3,
-  &tTpmsCalibrationTireTargetPressureId4,
-  &tTpmsErfsActTireDimSummerCarcass,
-  &tTpmsErfsActTireDimSummerCrossSection,
-  &tTpmsErfsActTireDimSummerDiameter,
-  &tTpmsErfsActTireDimSummerLoadIndex,
-  &tTpmsErfsActTireDimSummerMounted,
-  &tTpmsErfsActTireDimSummerMountedInFactory,
-  &tTpmsErfsActTireDimSummerPosition,
-  &tTpmsErfsActTireDimSummerRunflat,
-  &tTpmsErfsActTireDimSummerSeason,
-  &tTpmsErfsActTireDimSummerSpeedIndex,
-  &tTpmsErfsActTireDimSummerTargetPressureFaGroup0,
-  &tTpmsErfsActTireDimSummerTargetPressureFaGroup1,
-  &tTpmsErfsActTireDimSummerTargetPressureFaGroup2,
-  &tTpmsErfsActTireDimSummerTargetPressureRaGroup0,
-  &tTpmsErfsActTireDimSummerTargetPressureRaGroup1,
-  &tTpmsErfsActTireDimSummerTargetPressureRaGroup2,
-  &tTpmsErfsActTireDimSummerWidth,
-  &tTpmsErfsActTireDimWinterCarcass,
-  &tTpmsErfsActTireDimWinterCrossSection,
-  &tTpmsErfsActTireDimWinterDiameter,
-  &tTpmsErfsActTireDimWinterLoadIndex,
-  &tTpmsErfsActTireDimWinterMounted,
-  &tTpmsErfsActTireDimWinterMountedInFactory,
-  &tTpmsErfsActTireDimWinterPosition,
-  &tTpmsErfsActTireDimWinterRunflat,
-  &tTpmsErfsActTireDimWinterSeason,
-  &tTpmsErfsActTireDimWinterSpeedIndex,
-  &tTpmsErfsActTireDimWinterTargetPressureFaGroup0,
-  &tTpmsErfsActTireDimWinterTargetPressureFaGroup1,
-  &tTpmsErfsActTireDimWinterTargetPressureFaGroup2,
-  &tTpmsErfsActTireDimWinterTargetPressureRaGroup0,
-  &tTpmsErfsActTireDimWinterTargetPressureRaGroup1,
-  &tTpmsErfsActTireDimWinterTargetPressureRaGroup2,
-  &tTpmsErfsActTireDimWinterWidth,
-  &tExtParkSupConfig,
-  &tLastReceivedAmbientPressure,
-  &tMobilityLossThresholdValue,
-  &tNotificationThresholdValueC,
-  &tNotificationThresholdValueNc,
-  &tPwfChange,
-  &tRDCSystemReferenceTemp,
-  &tRelRecommendedColdInflationPressureFrontAxle,
-  &tRelRecommendedColdInflationPressureRearAxle,
-  &tTolNoTempComp,
-  &tTolTempComp,
-  &tWarningThresholdValueC,
-  &tWarningThresholdValueNc,
-  &tCAC_WITR_TYP_TYR,
-  &tIDX_LCC_WITR_TYP_TYR,
-  &tIDX_V_WITR_TYP_TYR,
-  &tRAD_WITR_TYP_TYR,
-  &tRELA_SIDE_WITR_TYP_TYR,
-  &tRFL_WITR_TYP_TYR,
-  &tSEA_WITR_TYP_TYR,
-  &tWID_WITR_TYP_TYR,
-  &tWITR_TYP_TYR_ID2,
-
-  &tNvmRdciCommonBlock_NVBlock_MirrorBlock,
-  &tNvmRdciDiagBlock1_NVBlock_MirrorBlock,
-  &tNvmRdciDiagBlock2_NVBlock_MirrorBlock,
-  &tNvmRdciErfsBlock_NVBlock_MirrorBlock,
-  &tNvmRdciErfsEcoBlock_NVBlock_MirrorBlock,
-  &tNvmRdciErfsTsaBlock_NVBlock_MirrorBlock,
-  &tNvmRdciRidQrBlock1_NVBlock_MirrorBlock,
-  &tNvmRdciRidQrBlock2_NVBlock_MirrorBlock,
-  &tNvmRdciWarnStatusBlock_NVBlock_MirrorBlock,
-  &tNvmRdciZoHistoryBlock_NVBlock_MirrorBlock,
-  &tNvmRdciZomBlock1_NVBlock_MirrorBlock,
-  &tNvmRdciZomBlock2_NVBlock_MirrorBlock,
-
-  tCpNvmRdciCommonBlock,
-  tCpNvmRdciDiagBlock1,
-  tCpNvmRdciDiagBlock2,
-  tCpNvmRdciErfsBlock,
-  tCpNvmRdciErfsEcoBlock,
-  tCpNvmRdciErfsTsaBlock,
-  tCpNvmRdciRidQrBlock1,
-  tCpNvmRdciRidQrBlock2,
-  tCpNvmRdciWarnStatusBlock,
-  tCpNvmRdciZoHistoryBlock,
-  tCpNvmRdciZomBlock1,
-  tCpNvmRdciZomBlock2,
-  tRpCalPrmRDCi,
-  tPpCcm_DISP_CC_BYPA_00,
-  tRpCddAbsData,
-  tRpCddRdcData,
-  tRpFrPdu_A_TEMP,
-  tRpFrPdu_BEDIENUNG_FAHRWERK,
-  tRpFrPdu_CON_VEH,
-  tRpFrPdu_DT_PT_1,
-  tRpFrPdu_EINHEITEN_BN2020,
-  tRpFrPdu_FZZSTD,
-  tRpFrPdu_KILOMETERSTAND,
-  tRpFrPdu_NMEARawData2Part2,
-  tRpFrPdu_NMEARawData2Part3,
-  tRpFrPdu_RELATIVZEIT,
-  tPpFrPdu_ST_TYR,
-  tRpFrPdu_UHRZEIT_DATUM,
-  tRpFrPdu_V_VEH,
-  tRpFrPdu_WMOM_DRV_4,
-
-  tRpRdci_FrBusState,
-
-  tDemErrorRdci1To3WrongWuMountedInfo,
-  tDemErrorRdci4WrongWuMountedInfo,
-  tDemErrorRdciATempInvalidInfo,
-  tDemErrorRdciATempTimeoutInfo,
-  tDemErrorRdciAusfallInfo,
-  tDemErrorRdciAutoLearningFailedInfo,
-  tDemErrorRdciBefuellhinweisInfo,
-  tDemErrorRdciConVehAliveInfo,
-  tDemErrorRdciConVehCrcInfo,
-  tDemErrorRdciConVehInvalidInfo,
-  tDemErrorRdciConVehTimeoutInfo,
-  tDemErrorRdciDruckwarnungInfo,
-  tDemErrorRdciEinheitenBn2020InvalidInfo,
-  tDemErrorRdciEinheitenBn2020TimeoutInfo,
-  tDemErrorRdciErfsCodingDataInconsistentInfo,
-  tDemErrorRdciGatewayOrAntennaErrorInfo,
-  tDemErrorRdciKalibrierungInfo,
-  tDemErrorRdciOtherWuSensorTypeInfo,
-  tDemErrorRdciPannenwarnungInfo,
-  tDemErrorRdciPartialSystemAvailabilityInfo,
-  tDemErrorRdciRdcDtPckg1AliveInfo,
-  tDemErrorRdciRdcDtPckg1InvalidInfo,
-  tDemErrorRdciRdcDtPckg1TimeoutInfo,
-  tDemErrorRdciRelativzeitInvalidInfo,
-  tDemErrorRdciRelativzeitTimeoutInfo,
-  tDemErrorRdciRfExternalInterferenceInfo,
-  tDemErrorRdciSystemNotAvailableInfo,
-  tDemErrorRdciTpmsManufactoryModeInfo,
-  tDemErrorRdciUnspecifiedWfcDefectInfo,
-  tDemErrorRdciUnspecifiedWuMuteInfo,
-  tDemErrorRdciVVehAliveFailureInfo,
-  tDemErrorRdciVVehCogInvalidInfo,
-  tDemErrorRdciVVehCogQualifierInfo,
-  tDemErrorRdciVVehCrcFailureInfo,
-  tDemErrorRdciVVehTimeoutInfo,
-  tDemErrorRdciWarnruecknahmeInfo,
-  tDemErrorRdciWuDefectFlInfo,
-  tDemErrorRdciWuDefectFrInfo,
-  tDemErrorRdciWuDefectRlInfo,
-  tDemErrorRdciWuDefectRrInfo,
-  tDemErrorRdciWuLocalisationFailedInfo,
-  tDemErrorRdciWuLowBatteryFlInfo,
-  tDemErrorRdciWuLowBatteryFrInfo,
-  tDemErrorRdciWuLowBatteryRlInfo,
-  tDemErrorRdciWuLowBatteryRrInfo,
-  tDemErrorRdciWuMuteFlInfo,
-  tDemErrorRdciWuMuteFrInfo,
-  tDemErrorRdciWuMuteRlInfo,
-  tDemErrorRdciWuMuteRrInfo,
-
-  tDemErrorRdci1To3WrongWuMounted,
-  tDemErrorRdci4WrongWuMounted,
-  tDemErrorRdciATempInvalid,
-  tDemErrorRdciATempTimeout,
-  tDemErrorRdciAusfall,
-  tDemErrorRdciAutoLearningFailed,
-  tDemErrorRdciBefuellhinweis,
-  tDemErrorRdciConVehAlive,
-  tDemErrorRdciConVehCrc,
-  tDemErrorRdciConVehInvalid,
-  tDemErrorRdciConVehTimeout,
-  tDemErrorRdciDruckwarnung,
-  tDemErrorRdciEinheitenBn2020Invalid,
-  tDemErrorRdciEinheitenBn2020Timeout,
-  tDemErrorRdciErfsCodingDataInconsistent,
-  tDemErrorRdciGatewayOrAntennaError,
-  tDemErrorRdciKalibrierung,
-  tDemErrorRdciOtherWuSensorType,
-  tDemErrorRdciPannenwarnung,
-  tDemErrorRdciPartialSystemAvailability,
-  tDemErrorRdciRdcDtPckg1Alive,
-  tDemErrorRdciRdcDtPckg1Invalid,
-  tDemErrorRdciRdcDtPckg1Timeout,
-  tDemErrorRdciRelativzeitInvalid,
-  tDemErrorRdciRelativzeitTimeout,
-  tDemErrorRdciRfExternalInterference,
-  tDemErrorRdciSystemNotAvailable,
-  tDemErrorRdciTpmsManufactoryMode,
-  tDemErrorRdciUnspecifiedWfcDefect,
-  tDemErrorRdciUnspecifiedWuMute,
-  tDemErrorRdciVVehAliveFailure,
-  tDemErrorRdciVVehCogInvalid,
-  tDemErrorRdciVVehCogQualifier,
-  tDemErrorRdciVVehCrcFailure,
-  tDemErrorRdciVVehTimeout,
-  tDemErrorRdciWarnruecknahme,
-  tDemErrorRdciWuDefectFl,
-  tDemErrorRdciWuDefectFr,
-  tDemErrorRdciWuDefectRl,
-  tDemErrorRdciWuDefectRr,
-  tDemErrorRdciWuLocalisationFailed,
-  tDemErrorRdciWuLowBatteryFl,
-  tDemErrorRdciWuLowBatteryFr,
-  tDemErrorRdciWuLowBatteryRl,
-  tDemErrorRdciWuLowBatteryRr,
-  tDemErrorRdciWuMuteFl,
-  tDemErrorRdciWuMuteFr,
-  tDemErrorRdciWuMuteRl,
-  tDemErrorRdciWuMuteRr,
-
-  tStbMB_AbsoluteTimeBaseValue
-
+const struct Rte_CDS_CtApHufTpmsSWC tRte_CDS_CtApHufTpmsSWC = {
+   &tAVL_P_TYR_FLH,
+   &tAVL_P_TYR_FRH,
+   &tAVL_P_TYR_RLH,
+   &tAVL_P_TYR_RRH,
+   &tAVL_TEMP_TYR_FLH,
+   &tAVL_TEMP_TYR_FRH,
+   &tAVL_TEMP_TYR_RLH,
+   &tAVL_TEMP_TYR_RRH,
+   &tAA_BAX_TYP_TYR,
+   &tAG_BAX_TYP_TYR,
+   &tBAX_TYP_TYR_ID2,
+   &tCAC_BAX_TYP_TYR,
+   &tIDX_LCC_BAX_TYP_TYR,
+   &tIDX_V_BAX_TYP_TYR,
+   &tLOR_BAX_TYP_TYR,
+   &tRAD_BAX_TYP_TYR,
+   &tRELA_SIDE_BAX_TYP_TYR,
+   &tRFL_BAX_TYP_TYR,
+   &tSEA_BAX_TYP_TYR,
+   &tST_SLCTN_BAX_TYP_TYR,
+   &tWID_BAX_TYP_TYR,
+   &tCNTR_FBD_TPMS_1_ID2,
+   &tCTR_FIL_ACTV_1,
+   &tCTR_SUPP_ID_1,
+   &tCTR_TYR_ID_1,
+   &tCNTR_FBD_TPMS_2_ID2,
+   &tCTR_FIL_ACTV_2,
+   &tCTR_SUPP_ID_2,
+   &tCTR_TYR_ID_2,
+   &tCNTR_FBD_TPMS_3_ID2,
+   &tCTR_FIL_ACTV_3,
+   &tCTR_SUPP_ID_3,
+   &tCTR_TYR_ID_3,
+   &tCNTR_FBD_TPMS_4_ID2,
+   &tCTR_FIL_ACTV_4,
+   &tCTR_SUPP_ID_4,
+   &tCTR_TYR_ID_4,
+   &tRDCI_DATA_0 ,
+   &tRDCI_DATA_1 ,
+   &tRDCI_DATA_2 ,
+   &tRDCI_DATA_3 ,
+   &tRDCI_DATA_4 ,
+   &tRDCI_DATA_5 ,
+   &tRDCI_DATA_6 ,
+   &tRDCI_DATA_7 ,
+   &tRDCI_DATA_8 ,
+   &tRDCI_DATA_9 ,
+   &tRDCI_DATA_10,
+   &tRDCI_DATA_11,
+   &tRDCI_DATA_12,
+   &tRDCI_DATA_13,
+   &tRDCI_DATA_14,
+   &tRDCI_DATA_15,
+   &tRDCI_DATA_16,
+   &tRDCI_DATA_17,
+   &tRDCI_DATA_18,
+   &tRDCI_DATA_19,
+   &tRDCI_DATA_20,
+   &tRDCI_DATA_21,
+   &tRDCI_DATA_22,
+   &tRDCI_DATA_23,
+   &tRDCI_DATA_24,
+   &tRDCI_DATA_25,
+   &tRDCI_DATA_26,
+   &tRDCI_DATA_27,
+   &tRDCI_DATA_28,
+   &tRDCI_DATA_29,
+   &tRDCI_DATA_30,
+   &tRDCI_DATA_31,
+   &tAA_FTAX_TYP_TYR,
+   &tAG_FTAX_TYP_TYR,
+   &tCAC_FTAX_TYP_TYR,
+   &tFTAX_TYP_TYR_ID2,
+   &tIDX_LCC_FTAX_TYP_TYR,
+   &tIDX_V_FTAX_TYP_TYR,
+   &tLOR_FTAX_TYP_TYR,
+   &tRAD_FTAX_TYP_TYR,
+   &tRELA_SIDE_FTAX_TYP_TYR,
+   &tRFL_FTAX_TYP_TYR,
+   &tSEA_FTAX_TYP_TYR,
+   &tWID_FTAX_TYP_TYR,
+   &tCAC_TYP_TYR,
+   &tIDX_LCC_TYP_TYR,
+   &tIDX_V_TYP_TYR,
+   &tOL_AVLB_TYP_TYR_ID2,
+   &tRAD_TYP_TYR,
+   &tRELA_SIDE_TYP_TYR,
+   &tRFL_TYP_TYR,
+   &tSEA_TYP_TYR,
+   &tST_TYR_OL_ID,
+   &tWID_TYP_TYR,
+   &tACTVN_PM,
+   &tPM_ID2,
+   &tRQ_PM_DT,
+   &tQrCodeDotNoId3,
+   &tQrCodeDotNoId4,
+   &tQrCodeDotProdDateId3,
+   &tQrCodeDotProdDateId4,
+   &tQrCodeInventoryNoId3,
+   &tQrCodeInventoryNoId4,
+   &tQrCodeMountingStateId3,
+   &tQrCodeMountingStateId4,
+   &tQrCodePositionId3,
+   &tQrCodePositionId4,
+   &tQrCodeRubberSerialNoPartAId3,
+   &tQrCodeRubberSerialNoPartAId4,
+   &tQrCodeRubberSerialNoPartBId3,
+   &tQrCodeRubberSerialNoPartBId4,
+   &tQrCodeTireDimensionsId3,
+   &tQrCodeTireDimensionsId4,
+   &tQrCodeTireTypeId3,
+   &tQrCodeTireTypeId4,
+   &tQrCodeDotNoId1,
+   &tQrCodeDotNoId2,
+   &tQrCodeDotProdDateId1,
+   &tQrCodeDotProdDateId2,
+   &tQrCodeInventoryNoId1,
+   &tQrCodeInventoryNoId2,
+   &tQrCodeMountingStateId1,
+   &tQrCodeMountingStateId2,
+   &tQrCodePositionId1,
+   &tQrCodePositionId2,
+   &tQrCodeRubberSerialNoPartAId1,
+   &tQrCodeRubberSerialNoPartAId2,
+   &tQrCodeRubberSerialNoPartBId1,
+   &tQrCodeRubberSerialNoPartBId2,
+   &tQrCodeTireDimensionsId1,
+   &tQrCodeTireDimensionsId2,
+   &tQrCodeTireTypeId1,
+   &tQrCodeTireTypeId2,
+   &tCAC_SUTR_TYP_TYR,
+   &tIDX_LCC_SUTR_TYP_TYR,
+   &tIDX_V_SUTR_TYP_TYR,
+   &tRAD_SUTR_TYP_TYR,
+   &tRELA_SIDE_SUTR_TYP_TYR,
+   &tRFL_SUTR_TYP_TYR,
+   &tSEA_SUTR_TYP_TYR,
+   &tSOTR_TYP_TYR_ID2,
+   &tWID_SUTR_TYP_TYR,
+   &tL_OL_TYP_TYR,
+   &tOP_IDR_MSGC,
+   &tQU_RDC_INIT_DISP,
+   &tST_MAN_SLCTN,
+   &tST_SLCTN_SUTR_AVLB,
+   &tST_SLCTN_TYR,
+   &tST_SLCTN_WITR_AVLB,
+   &tST_TAR_P_LOCO_TPCT,
+   &tST_TYR_SEA_TPCT,
+   &tStatusWheelTypeChangeDetection,
+   &tStatusWheelTypeChangePosition,
+   &tTAR_P_TYR_FLH,
+   &tTAR_P_TYR_FRH,
+   &tTAR_P_TYR_RLH,
+   &tTAR_P_TYR_RRH,
+   &tTpmsInternalLastBatteryStatusId1,
+   &tTpmsInternalLastBatteryStatusId2,
+   &tTpmsInternalLastBatteryStatusId3,
+   &tTpmsInternalLastBatteryStatusId4,
+   &tTpmsInternalLastPositionId1,
+   &tTpmsInternalLastPositionId2,
+   &tTpmsInternalLastPositionId3,
+   &tTpmsInternalLastPositionId4,
+   &tTpmsInternalLastPressureMbarId1,
+   &tTpmsInternalLastPressureMbarId2,
+   &tTpmsInternalLastPressureMbarId3,
+   &tTpmsInternalLastPressureMbarId4,
+   &tTpmsInternalLastReceptionRssiId1,
+   &tTpmsInternalLastReceptionRssiId2,
+   &tTpmsInternalLastReceptionRssiId3,
+   &tTpmsInternalLastReceptionRssiId4,
+   &tTpmsInternalLastReceptionYieldId1,
+   &tTpmsInternalLastReceptionYieldId2,
+   &tTpmsInternalLastReceptionYieldId3,
+   &tTpmsInternalLastReceptionYieldId4,
+   &tTpmsInternalLastSensorSerNoId1,
+   &tTpmsInternalLastSensorSerNoId2,
+   &tTpmsInternalLastSensorSerNoId3,
+   &tTpmsInternalLastSensorSerNoId4,
+   &tTpmsInternalLastTargetPressureMbarId1,
+   &tTpmsInternalLastTargetPressureMbarId2,
+   &tTpmsInternalLastTargetPressureMbarId3,
+   &tTpmsInternalLastTargetPressureMbarId4,
+   &tTpmsInternalLastTemperatureDegCId1,
+   &tTpmsInternalLastTemperatureDegCId2,
+   &tTpmsInternalLastTemperatureDegCId3,
+   &tTpmsInternalLastTemperatureDegCId4,
+   &tTireMileageInventoryNoId1,
+   &tTireMileageInventoryNoId2,
+   &tTireMileageLastAssemblyDateId1,
+   &tTireMileageLastAssemblyDateId2,
+   &tTireMileageLastAssemblyVehicleMileageId1,
+   &tTireMileageLastAssemblyVehicleMileageId2,
+   &tTireMileageLastDisassemblyDateId1,
+   &tTireMileageLastDisassemblyDateId2,
+   &tTireMileageLastDisassemblyVehicleMileageId1,
+   &tTireMileageLastDisassemblyVehicleMileageId2,
+   &tTireMileagePositionId1,
+   &tTireMileagePositionId2,
+   &tTireMileageTotalTireMileageOnVehicleId1,
+   &tTireMileageTotalTireMileageOnVehicleId2,
+   &tTireMileageInventoryNoId3,
+   &tTireMileageInventoryNoId4,
+   &tTireMileageLastAssemblyDateId3,
+   &tTireMileageLastAssemblyDateId4,
+   &tTireMileageLastAssemblyVehicleMileageId3,
+   &tTireMileageLastAssemblyVehicleMileageId4,
+   &tTireMileageLastDisassemblyDateId3,
+   &tTireMileageLastDisassemblyDateId4,
+   &tTireMileageLastDisassemblyVehicleMileageId3,
+   &tTireMileageLastDisassemblyVehicleMileageId4,
+   &tTireMileagePositionId3,
+   &tTireMileagePositionId4,
+   &tTireMileageTotalTireMileageOnVehicleId3,
+   &tTireMileageTotalTireMileageOnVehicleId4,
+   &tTpmsCalibrationActualTirePressureId1,
+   &tTpmsCalibrationActualTirePressureId2,
+   &tTpmsCalibrationActualTirePressureId3,
+   &tTpmsCalibrationActualTirePressureId4,
+   &tTpmsCalibrationActualTireTemperatureId1,
+   &tTpmsCalibrationActualTireTemperatureId2,
+   &tTpmsCalibrationActualTireTemperatureId3,
+   &tTpmsCalibrationActualTireTemperatureId4,
+   &tTpmsCalibrationAmbientPressure,
+   &tTpmsCalibrationAmbientTemperature,
+   &tTpmsCalibrationCalibrationType,
+   &tTpmsCalibrationDate,
+   &tTpmsCalibrationMileage,
+   &tTpmsCalibrationNoOfCalibrations,
+   &tTpmsCalibrationPlausibility,
+   &tTpmsCalibrationPositionId1,
+   &tTpmsCalibrationPositionId2,
+   &tTpmsCalibrationPositionId3,
+   &tTpmsCalibrationPositionId4,
+   &tTpmsCalibrationTime,
+   &tTpmsCalibrationTireTargetPressureId1,
+   &tTpmsCalibrationTireTargetPressureId2,
+   &tTpmsCalibrationTireTargetPressureId3,
+   &tTpmsCalibrationTireTargetPressureId4,
+   &tTpmsErfsActTireDimSummerCarcass,
+   &tTpmsErfsActTireDimSummerCrossSection,
+   &tTpmsErfsActTireDimSummerDiameter,
+   &tTpmsErfsActTireDimSummerLoadIndex,
+   &tTpmsErfsActTireDimSummerMounted,
+   &tTpmsErfsActTireDimSummerMountedInFactory,
+   &tTpmsErfsActTireDimSummerPosition,
+   &tTpmsErfsActTireDimSummerRunflat,
+   &tTpmsErfsActTireDimSummerSeason,
+   &tTpmsErfsActTireDimSummerSpeedIndex,
+   &tTpmsErfsActTireDimSummerTargetPressureFaGroup0,
+   &tTpmsErfsActTireDimSummerTargetPressureFaGroup1,
+   &tTpmsErfsActTireDimSummerTargetPressureFaGroup2,
+   &tTpmsErfsActTireDimSummerTargetPressureRaGroup0,
+   &tTpmsErfsActTireDimSummerTargetPressureRaGroup1,
+   &tTpmsErfsActTireDimSummerTargetPressureRaGroup2,
+   &tTpmsErfsActTireDimSummerWidth,
+   &tTpmsErfsActTireDimWinterCarcass,
+   &tTpmsErfsActTireDimWinterCrossSection,
+   &tTpmsErfsActTireDimWinterDiameter,
+   &tTpmsErfsActTireDimWinterLoadIndex,
+   &tTpmsErfsActTireDimWinterMounted,
+   &tTpmsErfsActTireDimWinterMountedInFactory,
+   &tTpmsErfsActTireDimWinterPosition,
+   &tTpmsErfsActTireDimWinterRunflat,
+   &tTpmsErfsActTireDimWinterSeason,
+   &tTpmsErfsActTireDimWinterSpeedIndex,
+   &tTpmsErfsActTireDimWinterTargetPressureFaGroup0,
+   &tTpmsErfsActTireDimWinterTargetPressureFaGroup1,
+   &tTpmsErfsActTireDimWinterTargetPressureFaGroup2,
+   &tTpmsErfsActTireDimWinterTargetPressureRaGroup0,
+   &tTpmsErfsActTireDimWinterTargetPressureRaGroup1,
+   &tTpmsErfsActTireDimWinterTargetPressureRaGroup2,
+   &tTpmsErfsActTireDimWinterWidth,
+   &tExtParkSupConfig,
+   &tLastReceivedAmbientPressure,
+   &tMobilityLossThresholdValue,
+   &tNotificationThresholdValueC,
+   &tNotificationThresholdValueNc,
+   &tPwfChange,
+   &tRDCSystemReferenceTemp,
+   &tRelRecommendedColdInflationPressureFrontAxle,
+   &tRelRecommendedColdInflationPressureRearAxle,
+   &tTolNoTempComp,
+   &tTolTempComp,
+   &tWarningThresholdValueC,
+   &tWarningThresholdValueNc,
+   &tCAC_WITR_TYP_TYR,
+   &tIDX_LCC_WITR_TYP_TYR,
+   &tIDX_V_WITR_TYP_TYR,
+   &tRAD_WITR_TYP_TYR,
+   &tRELA_SIDE_WITR_TYP_TYR,
+   &tRFL_WITR_TYP_TYR,
+   &tSEA_WITR_TYP_TYR,
+   &tWID_WITR_TYP_TYR,
+   &tWITR_TYP_TYR_ID2,
+   &tAVL_P_TYR_FLH,
+   &tAVL_P_TYR_FRH,
+   &tAVL_P_TYR_RLH,
+   &tAVL_P_TYR_RRH,
+   &tAVL_TEMP_TYR_FLH,
+   &tAVL_TEMP_TYR_FRH,
+   &tAVL_TEMP_TYR_RLH,
+   &tAVL_TEMP_TYR_RRH,
+   &tAA_BAX_TYP_TYR,
+   &tAG_BAX_TYP_TYR,
+   &tBAX_TYP_TYR_ID2,
+   &tCAC_BAX_TYP_TYR,
+   &tIDX_LCC_BAX_TYP_TYR,
+   &tIDX_V_BAX_TYP_TYR,
+   &tLOR_BAX_TYP_TYR,
+   &tRAD_BAX_TYP_TYR,
+   &tRELA_SIDE_BAX_TYP_TYR,
+   &tRFL_BAX_TYP_TYR,
+   &tSEA_BAX_TYP_TYR,
+   &tST_SLCTN_BAX_TYP_TYR,
+   &tWID_BAX_TYP_TYR,
+   &tCNTR_FBD_TPMS_1_ID2,
+   &tCTR_FIL_ACTV_1,
+   &tCTR_SUPP_ID_1,
+   &tCTR_TYR_ID_1,
+   &tCNTR_FBD_TPMS_2_ID2,
+   &tCTR_FIL_ACTV_2,
+   &tCTR_SUPP_ID_2,
+   &tCTR_TYR_ID_2,
+   &tCNTR_FBD_TPMS_3_ID2,
+   &tCTR_FIL_ACTV_3,
+   &tCTR_SUPP_ID_3,
+   &tCTR_TYR_ID_3,
+   &tCNTR_FBD_TPMS_4_ID2,
+   &tCTR_FIL_ACTV_4,
+   &tCTR_SUPP_ID_4,
+   &tCTR_TYR_ID_4,
+   &tRDCI_DATA_0 ,
+   &tRDCI_DATA_1 ,
+   &tRDCI_DATA_2 ,
+   &tRDCI_DATA_3 ,
+   &tRDCI_DATA_4 ,
+   &tRDCI_DATA_5 ,
+   &tRDCI_DATA_6 ,
+   &tRDCI_DATA_7 ,
+   &tRDCI_DATA_8 ,
+   &tRDCI_DATA_9 ,
+   &tRDCI_DATA_10,
+   &tRDCI_DATA_11,
+   &tRDCI_DATA_12,
+   &tRDCI_DATA_13,
+   &tRDCI_DATA_14,
+   &tRDCI_DATA_15,
+   &tRDCI_DATA_16,
+   &tRDCI_DATA_17,
+   &tRDCI_DATA_18,
+   &tRDCI_DATA_19,
+   &tRDCI_DATA_20,
+   &tRDCI_DATA_21,
+   &tRDCI_DATA_22,
+   &tRDCI_DATA_23,
+   &tRDCI_DATA_24,
+   &tRDCI_DATA_25,
+   &tRDCI_DATA_26,
+   &tRDCI_DATA_27,
+   &tRDCI_DATA_28,
+   &tRDCI_DATA_29,
+   &tRDCI_DATA_30,
+   &tRDCI_DATA_31,
+   &tAA_FTAX_TYP_TYR,
+   &tAG_FTAX_TYP_TYR,
+   &tCAC_FTAX_TYP_TYR,
+   &tFTAX_TYP_TYR_ID2,
+   &tIDX_LCC_FTAX_TYP_TYR,
+   &tIDX_V_FTAX_TYP_TYR,
+   &tLOR_FTAX_TYP_TYR,
+   &tRAD_FTAX_TYP_TYR,
+   &tRELA_SIDE_FTAX_TYP_TYR,
+   &tRFL_FTAX_TYP_TYR,
+   &tSEA_FTAX_TYP_TYR,
+   &tWID_FTAX_TYP_TYR,
+   &tCAC_TYP_TYR,
+   &tIDX_LCC_TYP_TYR,
+   &tIDX_V_TYP_TYR,
+   &tOL_AVLB_TYP_TYR_ID2,
+   &tRAD_TYP_TYR,
+   &tRELA_SIDE_TYP_TYR,
+   &tRFL_TYP_TYR,
+   &tSEA_TYP_TYR,
+   &tST_TYR_OL_ID,
+   &tWID_TYP_TYR,
+   &tACTVN_PM,
+   &tPM_ID2,
+   &tRQ_PM_DT,
+   &tQrCodeDotNoId3,
+   &tQrCodeDotNoId4,
+   &tQrCodeDotProdDateId3,
+   &tQrCodeDotProdDateId4,
+   &tQrCodeInventoryNoId3,
+   &tQrCodeInventoryNoId4,
+   &tQrCodeMountingStateId3,
+   &tQrCodeMountingStateId4,
+   &tQrCodePositionId3,
+   &tQrCodePositionId4,
+   &tQrCodeRubberSerialNoPartAId3,
+   &tQrCodeRubberSerialNoPartAId4,
+   &tQrCodeRubberSerialNoPartBId3,
+   &tQrCodeRubberSerialNoPartBId4,
+   &tQrCodeTireDimensionsId3,
+   &tQrCodeTireDimensionsId4,
+   &tQrCodeTireTypeId3,
+   &tQrCodeTireTypeId4,
+   &tQrCodeDotNoId1,
+   &tQrCodeDotNoId2,
+   &tQrCodeDotProdDateId1,
+   &tQrCodeDotProdDateId2,
+   &tQrCodeInventoryNoId1,
+   &tQrCodeInventoryNoId2,
+   &tQrCodeMountingStateId1,
+   &tQrCodeMountingStateId2,
+   &tQrCodePositionId1,
+   &tQrCodePositionId2,
+   &tQrCodeRubberSerialNoPartAId1,
+   &tQrCodeRubberSerialNoPartAId2,
+   &tQrCodeRubberSerialNoPartBId1,
+   &tQrCodeRubberSerialNoPartBId2,
+   &tQrCodeTireDimensionsId1,
+   &tQrCodeTireDimensionsId2,
+   &tQrCodeTireTypeId1,
+   &tQrCodeTireTypeId2,
+   &tCAC_SUTR_TYP_TYR,
+   &tIDX_LCC_SUTR_TYP_TYR,
+   &tIDX_V_SUTR_TYP_TYR,
+   &tRAD_SUTR_TYP_TYR,
+   &tRELA_SIDE_SUTR_TYP_TYR,
+   &tRFL_SUTR_TYP_TYR,
+   &tSEA_SUTR_TYP_TYR,
+   &tSOTR_TYP_TYR_ID2,
+   &tWID_SUTR_TYP_TYR,
+   &tL_OL_TYP_TYR,
+   &tOP_IDR_MSGC,
+   &tQU_RDC_INIT_DISP,
+   &tST_MAN_SLCTN,
+   &tST_SLCTN_SUTR_AVLB,
+   &tST_SLCTN_TYR,
+   &tST_SLCTN_WITR_AVLB,
+   &tST_TAR_P_LOCO_TPCT,
+   &tST_TYR_SEA_TPCT,
+   &tStatusWheelTypeChangeDetection,
+   &tStatusWheelTypeChangePosition,
+   &tTAR_P_TYR_FLH,
+   &tTAR_P_TYR_FRH,
+   &tTAR_P_TYR_RLH,
+   &tTAR_P_TYR_RRH,
+   &tTpmsInternalLastBatteryStatusId1,
+   &tTpmsInternalLastBatteryStatusId2,
+   &tTpmsInternalLastBatteryStatusId3,
+   &tTpmsInternalLastBatteryStatusId4,
+   &tTpmsInternalLastPositionId1,
+   &tTpmsInternalLastPositionId2,
+   &tTpmsInternalLastPositionId3,
+   &tTpmsInternalLastPositionId4,
+   &tTpmsInternalLastPressureMbarId1,
+   &tTpmsInternalLastPressureMbarId2,
+   &tTpmsInternalLastPressureMbarId3,
+   &tTpmsInternalLastPressureMbarId4,
+   &tTpmsInternalLastReceptionRssiId1,
+   &tTpmsInternalLastReceptionRssiId2,
+   &tTpmsInternalLastReceptionRssiId3,
+   &tTpmsInternalLastReceptionRssiId4,
+   &tTpmsInternalLastReceptionYieldId1,
+   &tTpmsInternalLastReceptionYieldId2,
+   &tTpmsInternalLastReceptionYieldId3,
+   &tTpmsInternalLastReceptionYieldId4,
+   &tTpmsInternalLastSensorSerNoId1,
+   &tTpmsInternalLastSensorSerNoId2,
+   &tTpmsInternalLastSensorSerNoId3,
+   &tTpmsInternalLastSensorSerNoId4,
+   &tTpmsInternalLastTargetPressureMbarId1,
+   &tTpmsInternalLastTargetPressureMbarId2,
+   &tTpmsInternalLastTargetPressureMbarId3,
+   &tTpmsInternalLastTargetPressureMbarId4,
+   &tTpmsInternalLastTemperatureDegCId1,
+   &tTpmsInternalLastTemperatureDegCId2,
+   &tTpmsInternalLastTemperatureDegCId3,
+   &tTpmsInternalLastTemperatureDegCId4,
+   &tTireMileageInventoryNoId1,
+   &tTireMileageInventoryNoId2,
+   &tTireMileageLastAssemblyDateId1,
+   &tTireMileageLastAssemblyDateId2,
+   &tTireMileageLastAssemblyVehicleMileageId1,
+   &tTireMileageLastAssemblyVehicleMileageId2,
+   &tTireMileageLastDisassemblyDateId1,
+   &tTireMileageLastDisassemblyDateId2,
+   &tTireMileageLastDisassemblyVehicleMileageId1,
+   &tTireMileageLastDisassemblyVehicleMileageId2,
+   &tTireMileagePositionId1,
+   &tTireMileagePositionId2,
+   &tTireMileageTotalTireMileageOnVehicleId1,
+   &tTireMileageTotalTireMileageOnVehicleId2,
+   &tTireMileageInventoryNoId3,
+   &tTireMileageInventoryNoId4,
+   &tTireMileageLastAssemblyDateId3,
+   &tTireMileageLastAssemblyDateId4,
+   &tTireMileageLastAssemblyVehicleMileageId3,
+   &tTireMileageLastAssemblyVehicleMileageId4,
+   &tTireMileageLastDisassemblyDateId3,
+   &tTireMileageLastDisassemblyDateId4,
+   &tTireMileageLastDisassemblyVehicleMileageId3,
+   &tTireMileageLastDisassemblyVehicleMileageId4,
+   &tTireMileagePositionId3,
+   &tTireMileagePositionId4,
+   &tTireMileageTotalTireMileageOnVehicleId3,
+   &tTireMileageTotalTireMileageOnVehicleId4,
+   &tTpmsCalibrationActualTirePressureId1,
+   &tTpmsCalibrationActualTirePressureId2,
+   &tTpmsCalibrationActualTirePressureId3,
+   &tTpmsCalibrationActualTirePressureId4,
+   &tTpmsCalibrationActualTireTemperatureId1,
+   &tTpmsCalibrationActualTireTemperatureId2,
+   &tTpmsCalibrationActualTireTemperatureId3,
+   &tTpmsCalibrationActualTireTemperatureId4,
+   &tTpmsCalibrationAmbientPressure,
+   &tTpmsCalibrationAmbientTemperature,
+   &tTpmsCalibrationCalibrationType,
+   &tTpmsCalibrationDate,
+   &tTpmsCalibrationMileage,
+   &tTpmsCalibrationNoOfCalibrations,
+   &tTpmsCalibrationPlausibility,
+   &tTpmsCalibrationPositionId1,
+   &tTpmsCalibrationPositionId2,
+   &tTpmsCalibrationPositionId3,
+   &tTpmsCalibrationPositionId4,
+   &tTpmsCalibrationTime,
+   &tTpmsCalibrationTireTargetPressureId1,
+   &tTpmsCalibrationTireTargetPressureId2,
+   &tTpmsCalibrationTireTargetPressureId3,
+   &tTpmsCalibrationTireTargetPressureId4,
+   &tTpmsErfsActTireDimSummerCarcass,
+   &tTpmsErfsActTireDimSummerCrossSection,
+   &tTpmsErfsActTireDimSummerDiameter,
+   &tTpmsErfsActTireDimSummerLoadIndex,
+   &tTpmsErfsActTireDimSummerMounted,
+   &tTpmsErfsActTireDimSummerMountedInFactory,
+   &tTpmsErfsActTireDimSummerPosition,
+   &tTpmsErfsActTireDimSummerRunflat,
+   &tTpmsErfsActTireDimSummerSeason,
+   &tTpmsErfsActTireDimSummerSpeedIndex,
+   &tTpmsErfsActTireDimSummerTargetPressureFaGroup0,
+   &tTpmsErfsActTireDimSummerTargetPressureFaGroup1,
+   &tTpmsErfsActTireDimSummerTargetPressureFaGroup2,
+   &tTpmsErfsActTireDimSummerTargetPressureRaGroup0,
+   &tTpmsErfsActTireDimSummerTargetPressureRaGroup1,
+   &tTpmsErfsActTireDimSummerTargetPressureRaGroup2,
+   &tTpmsErfsActTireDimSummerWidth,
+   &tTpmsErfsActTireDimWinterCarcass,
+   &tTpmsErfsActTireDimWinterCrossSection,
+   &tTpmsErfsActTireDimWinterDiameter,
+   &tTpmsErfsActTireDimWinterLoadIndex,
+   &tTpmsErfsActTireDimWinterMounted,
+   &tTpmsErfsActTireDimWinterMountedInFactory,
+   &tTpmsErfsActTireDimWinterPosition,
+   &tTpmsErfsActTireDimWinterRunflat,
+   &tTpmsErfsActTireDimWinterSeason,
+   &tTpmsErfsActTireDimWinterSpeedIndex,
+   &tTpmsErfsActTireDimWinterTargetPressureFaGroup0,
+   &tTpmsErfsActTireDimWinterTargetPressureFaGroup1,
+   &tTpmsErfsActTireDimWinterTargetPressureFaGroup2,
+   &tTpmsErfsActTireDimWinterTargetPressureRaGroup0,
+   &tTpmsErfsActTireDimWinterTargetPressureRaGroup1,
+   &tTpmsErfsActTireDimWinterTargetPressureRaGroup2,
+   &tTpmsErfsActTireDimWinterWidth,
+   &tExtParkSupConfig,
+   &tLastReceivedAmbientPressure,
+   &tMobilityLossThresholdValue,
+   &tNotificationThresholdValueC,
+   &tNotificationThresholdValueNc,
+   &tPwfChange,
+   &tRDCSystemReferenceTemp,
+   &tRelRecommendedColdInflationPressureFrontAxle,
+   &tRelRecommendedColdInflationPressureRearAxle,
+   &tTolNoTempComp,
+   &tTolTempComp,
+   &tWarningThresholdValueC,
+   &tWarningThresholdValueNc,
+   &tCAC_WITR_TYP_TYR,
+   &tIDX_LCC_WITR_TYP_TYR,
+   &tIDX_V_WITR_TYP_TYR,
+   &tRAD_WITR_TYP_TYR,
+   &tRELA_SIDE_WITR_TYP_TYR,
+   &tRFL_WITR_TYP_TYR,
+   &tSEA_WITR_TYP_TYR,
+   &tWID_WITR_TYP_TYR,
+   &tWITR_TYP_TYR_ID2,
+   &tAVL_P_TYR_FLH,
+   &tAVL_P_TYR_FRH,
+   &tAVL_P_TYR_RLH,
+   &tAVL_P_TYR_RRH,
+   &tAVL_TEMP_TYR_FLH,
+   &tAVL_TEMP_TYR_FRH,
+   &tAVL_TEMP_TYR_RLH,
+   &tAVL_TEMP_TYR_RRH,
+   &tAA_BAX_TYP_TYR,
+   &tAG_BAX_TYP_TYR,
+   &tBAX_TYP_TYR_ID2,
+   &tCAC_BAX_TYP_TYR,
+   &tIDX_LCC_BAX_TYP_TYR,
+   &tIDX_V_BAX_TYP_TYR,
+   &tLOR_BAX_TYP_TYR,
+   &tRAD_BAX_TYP_TYR,
+   &tRELA_SIDE_BAX_TYP_TYR,
+   &tRFL_BAX_TYP_TYR,
+   &tSEA_BAX_TYP_TYR,
+   &tST_SLCTN_BAX_TYP_TYR,
+   &tWID_BAX_TYP_TYR,
+   &tCNTR_FBD_TPMS_1_ID2,
+   &tCTR_FIL_ACTV_1,
+   &tCTR_SUPP_ID_1,
+   &tCTR_TYR_ID_1,
+   &tCNTR_FBD_TPMS_2_ID2,
+   &tCTR_FIL_ACTV_2,
+   &tCTR_SUPP_ID_2,
+   &tCTR_TYR_ID_2,
+   &tCNTR_FBD_TPMS_3_ID2,
+   &tCTR_FIL_ACTV_3,
+   &tCTR_SUPP_ID_3,
+   &tCTR_TYR_ID_3,
+   &tCNTR_FBD_TPMS_4_ID2,
+   &tCTR_FIL_ACTV_4,
+   &tCTR_SUPP_ID_4,
+   &tCTR_TYR_ID_4,
+   &tRDCI_DATA_0 ,
+   &tRDCI_DATA_1 ,
+   &tRDCI_DATA_2 ,
+   &tRDCI_DATA_3 ,
+   &tRDCI_DATA_4 ,
+   &tRDCI_DATA_5 ,
+   &tRDCI_DATA_6 ,
+   &tRDCI_DATA_7 ,
+   &tRDCI_DATA_8 ,
+   &tRDCI_DATA_9 ,
+   &tRDCI_DATA_10,
+   &tRDCI_DATA_11,
+   &tRDCI_DATA_12,
+   &tRDCI_DATA_13,
+   &tRDCI_DATA_14,
+   &tRDCI_DATA_15,
+   &tRDCI_DATA_16,
+   &tRDCI_DATA_17,
+   &tRDCI_DATA_18,
+   &tRDCI_DATA_19,
+   &tRDCI_DATA_20,
+   &tRDCI_DATA_21,
+   &tRDCI_DATA_22,
+   &tRDCI_DATA_23,
+   &tRDCI_DATA_24,
+   &tRDCI_DATA_25,
+   &tRDCI_DATA_26,
+   &tRDCI_DATA_27,
+   &tRDCI_DATA_28,
+   &tRDCI_DATA_29,
+   &tRDCI_DATA_30,
+   &tRDCI_DATA_31,
+   &tAA_FTAX_TYP_TYR,
+   &tAG_FTAX_TYP_TYR,
+   &tCAC_FTAX_TYP_TYR,
+   &tFTAX_TYP_TYR_ID2,
+   &tIDX_LCC_FTAX_TYP_TYR,
+   &tIDX_V_FTAX_TYP_TYR,
+   &tLOR_FTAX_TYP_TYR,
+   &tRAD_FTAX_TYP_TYR,
+   &tRELA_SIDE_FTAX_TYP_TYR,
+   &tRFL_FTAX_TYP_TYR,
+   &tSEA_FTAX_TYP_TYR,
+   &tWID_FTAX_TYP_TYR,
+   &tCAC_TYP_TYR,
+   &tIDX_LCC_TYP_TYR,
+   &tIDX_V_TYP_TYR,
+   &tOL_AVLB_TYP_TYR_ID2,
+   &tRAD_TYP_TYR,
+   &tRELA_SIDE_TYP_TYR,
+   &tRFL_TYP_TYR,
+   &tSEA_TYP_TYR,
+   &tST_TYR_OL_ID,
+   &tWID_TYP_TYR,
+   &tACTVN_PM,
+   &tPM_ID2,
+   &tRQ_PM_DT,
+   &tQrCodeDotNoId3,
+   &tQrCodeDotNoId4,
+   &tQrCodeDotProdDateId3,
+   &tQrCodeDotProdDateId4,
+   &tQrCodeInventoryNoId3,
+   &tQrCodeInventoryNoId4,
+   &tQrCodeMountingStateId3,
+   &tQrCodeMountingStateId4,
+   &tQrCodePositionId3,
+   &tQrCodePositionId4,
+   &tQrCodeRubberSerialNoPartAId3,
+   &tQrCodeRubberSerialNoPartAId4,
+   &tQrCodeRubberSerialNoPartBId3,
+   &tQrCodeRubberSerialNoPartBId4,
+   &tQrCodeTireDimensionsId3,
+   &tQrCodeTireDimensionsId4,
+   &tQrCodeTireTypeId3,
+   &tQrCodeTireTypeId4,
+   &tQrCodeDotNoId1,
+   &tQrCodeDotNoId2,
+   &tQrCodeDotProdDateId1,
+   &tQrCodeDotProdDateId2,
+   &tQrCodeInventoryNoId1,
+   &tQrCodeInventoryNoId2,
+   &tQrCodeMountingStateId1,
+   &tQrCodeMountingStateId2,
+   &tQrCodePositionId1,
+   &tQrCodePositionId2,
+   &tQrCodeRubberSerialNoPartAId1,
+   &tQrCodeRubberSerialNoPartAId2,
+   &tQrCodeRubberSerialNoPartBId1,
+   &tQrCodeRubberSerialNoPartBId2,
+   &tQrCodeTireDimensionsId1,
+   &tQrCodeTireDimensionsId2,
+   &tQrCodeTireTypeId1,
+   &tQrCodeTireTypeId2,
+   &tCAC_SUTR_TYP_TYR,
+   &tIDX_LCC_SUTR_TYP_TYR,
+   &tIDX_V_SUTR_TYP_TYR,
+   &tRAD_SUTR_TYP_TYR,
+   &tRELA_SIDE_SUTR_TYP_TYR,
+   &tRFL_SUTR_TYP_TYR,
+   &tSEA_SUTR_TYP_TYR,
+   &tSOTR_TYP_TYR_ID2,
+   &tWID_SUTR_TYP_TYR,
+   &tL_OL_TYP_TYR,
+   &tOP_IDR_MSGC,
+   &tQU_RDC_INIT_DISP,
+   &tST_MAN_SLCTN,
+   &tST_SLCTN_SUTR_AVLB,
+   &tST_SLCTN_TYR,
+   &tST_SLCTN_WITR_AVLB,
+   &tST_TAR_P_LOCO_TPCT,
+   &tST_TYR_SEA_TPCT,
+   &tStatusWheelTypeChangeDetection,
+   &tStatusWheelTypeChangePosition,
+   &tTAR_P_TYR_FLH,
+   &tTAR_P_TYR_FRH,
+   &tTAR_P_TYR_RLH,
+   &tTAR_P_TYR_RRH,
+   &tTpmsInternalLastBatteryStatusId1,
+   &tTpmsInternalLastBatteryStatusId2,
+   &tTpmsInternalLastBatteryStatusId3,
+   &tTpmsInternalLastBatteryStatusId4,
+   &tTpmsInternalLastPositionId1,
+   &tTpmsInternalLastPositionId2,
+   &tTpmsInternalLastPositionId3,
+   &tTpmsInternalLastPositionId4,
+   &tTpmsInternalLastPressureMbarId1,
+   &tTpmsInternalLastPressureMbarId2,
+   &tTpmsInternalLastPressureMbarId3,
+   &tTpmsInternalLastPressureMbarId4,
+   &tTpmsInternalLastReceptionRssiId1,
+   &tTpmsInternalLastReceptionRssiId2,
+   &tTpmsInternalLastReceptionRssiId3,
+   &tTpmsInternalLastReceptionRssiId4,
+   &tTpmsInternalLastReceptionYieldId1,
+   &tTpmsInternalLastReceptionYieldId2,
+   &tTpmsInternalLastReceptionYieldId3,
+   &tTpmsInternalLastReceptionYieldId4,
+   &tTpmsInternalLastSensorSerNoId1,
+   &tTpmsInternalLastSensorSerNoId2,
+   &tTpmsInternalLastSensorSerNoId3,
+   &tTpmsInternalLastSensorSerNoId4,
+   &tTpmsInternalLastTargetPressureMbarId1,
+   &tTpmsInternalLastTargetPressureMbarId2,
+   &tTpmsInternalLastTargetPressureMbarId3,
+   &tTpmsInternalLastTargetPressureMbarId4,
+   &tTpmsInternalLastTemperatureDegCId1,
+   &tTpmsInternalLastTemperatureDegCId2,
+   &tTpmsInternalLastTemperatureDegCId3,
+   &tTpmsInternalLastTemperatureDegCId4,
+   &tTireMileageInventoryNoId1,
+   &tTireMileageInventoryNoId2,
+   &tTireMileageLastAssemblyDateId1,
+   &tTireMileageLastAssemblyDateId2,
+   &tTireMileageLastAssemblyVehicleMileageId1,
+   &tTireMileageLastAssemblyVehicleMileageId2,
+   &tTireMileageLastDisassemblyDateId1,
+   &tTireMileageLastDisassemblyDateId2,
+   &tTireMileageLastDisassemblyVehicleMileageId1,
+   &tTireMileageLastDisassemblyVehicleMileageId2,
+   &tTireMileagePositionId1,
+   &tTireMileagePositionId2,
+   &tTireMileageTotalTireMileageOnVehicleId1,
+   &tTireMileageTotalTireMileageOnVehicleId2,
+   &tTireMileageInventoryNoId3,
+   &tTireMileageInventoryNoId4,
+   &tTireMileageLastAssemblyDateId3,
+   &tTireMileageLastAssemblyDateId4,
+   &tTireMileageLastAssemblyVehicleMileageId3,
+   &tTireMileageLastAssemblyVehicleMileageId4,
+   &tTireMileageLastDisassemblyDateId3,
+   &tTireMileageLastDisassemblyDateId4,
+   &tTireMileageLastDisassemblyVehicleMileageId3,
+   &tTireMileageLastDisassemblyVehicleMileageId4,
+   &tTireMileagePositionId3,
+   &tTireMileagePositionId4,
+   &tTireMileageTotalTireMileageOnVehicleId3,
+   &tTireMileageTotalTireMileageOnVehicleId4,
+   &tTpmsCalibrationActualTirePressureId1,
+   &tTpmsCalibrationActualTirePressureId2,
+   &tTpmsCalibrationActualTirePressureId3,
+   &tTpmsCalibrationActualTirePressureId4,
+   &tTpmsCalibrationActualTireTemperatureId1,
+   &tTpmsCalibrationActualTireTemperatureId2,
+   &tTpmsCalibrationActualTireTemperatureId3,
+   &tTpmsCalibrationActualTireTemperatureId4,
+   &tTpmsCalibrationAmbientPressure,
+   &tTpmsCalibrationAmbientTemperature,
+   &tTpmsCalibrationCalibrationType,
+   &tTpmsCalibrationDate,
+   &tTpmsCalibrationMileage,
+   &tTpmsCalibrationNoOfCalibrations,
+   &tTpmsCalibrationPlausibility,
+   &tTpmsCalibrationPositionId1,
+   &tTpmsCalibrationPositionId2,
+   &tTpmsCalibrationPositionId3,
+   &tTpmsCalibrationPositionId4,
+   &tTpmsCalibrationTime,
+   &tTpmsCalibrationTireTargetPressureId1,
+   &tTpmsCalibrationTireTargetPressureId2,
+   &tTpmsCalibrationTireTargetPressureId3,
+   &tTpmsCalibrationTireTargetPressureId4,
+   &tTpmsErfsActTireDimSummerCarcass,
+   &tTpmsErfsActTireDimSummerCrossSection,
+   &tTpmsErfsActTireDimSummerDiameter,
+   &tTpmsErfsActTireDimSummerLoadIndex,
+   &tTpmsErfsActTireDimSummerMounted,
+   &tTpmsErfsActTireDimSummerMountedInFactory,
+   &tTpmsErfsActTireDimSummerPosition,
+   &tTpmsErfsActTireDimSummerRunflat,
+   &tTpmsErfsActTireDimSummerSeason,
+   &tTpmsErfsActTireDimSummerSpeedIndex,
+   &tTpmsErfsActTireDimSummerTargetPressureFaGroup0,
+   &tTpmsErfsActTireDimSummerTargetPressureFaGroup1,
+   &tTpmsErfsActTireDimSummerTargetPressureFaGroup2,
+   &tTpmsErfsActTireDimSummerTargetPressureRaGroup0,
+   &tTpmsErfsActTireDimSummerTargetPressureRaGroup1,
+   &tTpmsErfsActTireDimSummerTargetPressureRaGroup2,
+   &tTpmsErfsActTireDimSummerWidth,
+   &tTpmsErfsActTireDimWinterCarcass,
+   &tTpmsErfsActTireDimWinterCrossSection,
+   &tTpmsErfsActTireDimWinterDiameter,
+   &tTpmsErfsActTireDimWinterLoadIndex,
+   &tTpmsErfsActTireDimWinterMounted,
+   &tTpmsErfsActTireDimWinterMountedInFactory,
+   &tTpmsErfsActTireDimWinterPosition,
+   &tTpmsErfsActTireDimWinterRunflat,
+   &tTpmsErfsActTireDimWinterSeason,
+   &tTpmsErfsActTireDimWinterSpeedIndex,
+   &tTpmsErfsActTireDimWinterTargetPressureFaGroup0,
+   &tTpmsErfsActTireDimWinterTargetPressureFaGroup1,
+   &tTpmsErfsActTireDimWinterTargetPressureFaGroup2,
+   &tTpmsErfsActTireDimWinterTargetPressureRaGroup0,
+   &tTpmsErfsActTireDimWinterTargetPressureRaGroup1,
+   &tTpmsErfsActTireDimWinterTargetPressureRaGroup2,
+   &tTpmsErfsActTireDimWinterWidth,
+   &tExtParkSupConfig,
+   &tLastReceivedAmbientPressure,
+   &tMobilityLossThresholdValue,
+   &tNotificationThresholdValueC,
+   &tNotificationThresholdValueNc,
+   &tPwfChange,
+   &tRDCSystemReferenceTemp,
+   &tRelRecommendedColdInflationPressureFrontAxle,
+   &tRelRecommendedColdInflationPressureRearAxle,
+   &tTolNoTempComp,
+   &tTolTempComp,
+   &tWarningThresholdValueC,
+   &tWarningThresholdValueNc,
+   &tCAC_WITR_TYP_TYR,
+   &tIDX_LCC_WITR_TYP_TYR,
+   &tIDX_V_WITR_TYP_TYR,
+   &tRAD_WITR_TYP_TYR,
+   &tRELA_SIDE_WITR_TYP_TYR,
+   &tRFL_WITR_TYP_TYR,
+   &tSEA_WITR_TYP_TYR,
+   &tWID_WITR_TYP_TYR,
+   &tWITR_TYP_TYR_ID2,
+   &tNvmRdciCommonBlock_NVBlock_MirrorBlock,
+   &tNvmRdciDiagBlock1_NVBlock_MirrorBlock,
+   &tNvmRdciDiagBlock2_NVBlock_MirrorBlock,
+   &tNvmRdciErfsBlock_NVBlock_MirrorBlock,
+   &tNvmRdciErfsEcoBlock_NVBlock_MirrorBlock,
+   &tNvmRdciErfsTsaBlock_NVBlock_MirrorBlock,
+   &tNvmRdciRidQrBlock1_NVBlock_MirrorBlock,
+   &tNvmRdciRidQrBlock2_NVBlock_MirrorBlock,
+   &tNvmRdciWarnStatusBlock_NVBlock_MirrorBlock,
+   &tNvmRdciZoHistoryBlock_NVBlock_MirrorBlock,
+   &tNvmRdciZomBlock1_NVBlock_MirrorBlock,
+   &tNvmRdciZomBlock2_NVBlock_MirrorBlock,
+   tCpNvmRdciCommonBlock,
+   tCpNvmRdciDiagBlock1,
+   tCpNvmRdciDiagBlock2,
+   tCpNvmRdciErfsBlock,
+   tCpNvmRdciErfsEcoBlock,
+   tCpNvmRdciErfsTsaBlock,
+   tCpNvmRdciRidQrBlock1,
+   tCpNvmRdciRidQrBlock2,
+   tCpNvmRdciWarnStatusBlock,
+   tCpNvmRdciZoHistoryBlock,
+   tCpNvmRdciZomBlock1,
+   tCpNvmRdciZomBlock2,
+   tRpCalPrmRDCi,
+   tPpCcm_DISP_CC_BYPA_00,
+   tRpCddAbsData,
+   tRpCddRdcData,
+   tRpFrPdu_A_TEMP,
+   tRpFrPdu_BEDIENUNG_FAHRWERK,
+   tRpFrPdu_CON_VEH,
+   tRpFrPdu_DT_PT_1,
+   tRpFrPdu_EINHEITEN_BN2020,
+   tRpFrPdu_FZZSTD,
+   tRpFrPdu_KILOMETERSTAND,
+   tRpFrPdu_NMEARawData2Part2,
+   tRpFrPdu_NMEARawData2Part3,
+   tRpFrPdu_RELATIVZEIT,
+   tPpFrPdu_ST_TYR,
+   tRpFrPdu_UHRZEIT_DATUM,
+   tRpFrPdu_V_VEH,
+   tRpFrPdu_WMOM_DRV_4,
+   tRpRdci_FrBusState,
+   tDemErrorRdci1To3WrongWuMountedInfo,
+   tDemErrorRdci4WrongWuMountedInfo,
+   tDemErrorRdciATempInvalidInfo,
+   tDemErrorRdciATempTimeoutInfo,
+   tDemErrorRdciAusfallInfo,
+   tDemErrorRdciAutoLearningFailedInfo,
+   tDemErrorRdciBefuellhinweisInfo,
+   tDemErrorRdciConVehAliveInfo,
+   tDemErrorRdciConVehCrcInfo,
+   tDemErrorRdciConVehInvalidInfo,
+   tDemErrorRdciConVehTimeoutInfo,
+   tDemErrorRdciDruckwarnungInfo,
+   tDemErrorRdciEinheitenBn2020InvalidInfo,
+   tDemErrorRdciEinheitenBn2020TimeoutInfo,
+   tDemErrorRdciErfsCodingDataInconsistentInfo,
+   tDemErrorRdciGatewayOrAntennaErrorInfo,
+   tDemErrorRdciKalibrierungInfo,
+   tDemErrorRdciOtherWuSensorTypeInfo,
+   tDemErrorRdciPannenwarnungInfo,
+   tDemErrorRdciPartialSystemAvailabilityInfo,
+   tDemErrorRdciRdcDtPckg1AliveInfo,
+   tDemErrorRdciRdcDtPckg1InvalidInfo,
+   tDemErrorRdciRdcDtPckg1TimeoutInfo,
+   tDemErrorRdciRelativzeitInvalidInfo,
+   tDemErrorRdciRelativzeitTimeoutInfo,
+   tDemErrorRdciRfExternalInterferenceInfo,
+   tDemErrorRdciSystemNotAvailableInfo,
+   tDemErrorRdciTpmsManufactoryModeInfo,
+   tDemErrorRdciUnspecifiedWfcDefectInfo,
+   tDemErrorRdciUnspecifiedWuMuteInfo,
+   tDemErrorRdciVVehAliveFailureInfo,
+   tDemErrorRdciVVehCogInvalidInfo,
+   tDemErrorRdciVVehCogQualifierInfo,
+   tDemErrorRdciVVehCrcFailureInfo,
+   tDemErrorRdciVVehTimeoutInfo,
+   tDemErrorRdciWarnruecknahmeInfo,
+   tDemErrorRdciWuDefectFlInfo,
+   tDemErrorRdciWuDefectFrInfo,
+   tDemErrorRdciWuDefectRlInfo,
+   tDemErrorRdciWuDefectRrInfo,
+   tDemErrorRdciWuLocalisationFailedInfo,
+   tDemErrorRdciWuLowBatteryFlInfo,
+   tDemErrorRdciWuLowBatteryFrInfo,
+   tDemErrorRdciWuLowBatteryRlInfo,
+   tDemErrorRdciWuLowBatteryRrInfo,
+   tDemErrorRdciWuMuteFlInfo,
+   tDemErrorRdciWuMuteFrInfo,
+   tDemErrorRdciWuMuteRlInfo,
+   tDemErrorRdciWuMuteRrInfo,
+   tDemErrorRdci1To3WrongWuMounted,
+   tDemErrorRdci4WrongWuMounted,
+   tDemErrorRdciATempInvalid,
+   tDemErrorRdciATempTimeout,
+   tDemErrorRdciAusfall,
+   tDemErrorRdciAutoLearningFailed,
+   tDemErrorRdciBefuellhinweis,
+   tDemErrorRdciConVehAlive,
+   tDemErrorRdciConVehCrc,
+   tDemErrorRdciConVehInvalid,
+   tDemErrorRdciConVehTimeout,
+   tDemErrorRdciDruckwarnung,
+   tDemErrorRdciEinheitenBn2020Invalid,
+   tDemErrorRdciEinheitenBn2020Timeout,
+   tDemErrorRdciErfsCodingDataInconsistent,
+   tDemErrorRdciGatewayOrAntennaError,
+   tDemErrorRdciKalibrierung,
+   tDemErrorRdciOtherWuSensorType,
+   tDemErrorRdciPannenwarnung,
+   tDemErrorRdciPartialSystemAvailability,
+   tDemErrorRdciRdcDtPckg1Alive,
+   tDemErrorRdciRdcDtPckg1Invalid,
+   tDemErrorRdciRdcDtPckg1Timeout,
+   tDemErrorRdciRelativzeitInvalid,
+   tDemErrorRdciRelativzeitTimeout,
+   tDemErrorRdciRfExternalInterference,
+   tDemErrorRdciSystemNotAvailable,
+   tDemErrorRdciTpmsManufactoryMode,
+   tDemErrorRdciUnspecifiedWfcDefect,
+   tDemErrorRdciUnspecifiedWuMute,
+   tDemErrorRdciVVehAliveFailure,
+   tDemErrorRdciVVehCogInvalid,
+   tDemErrorRdciVVehCogQualifier,
+   tDemErrorRdciVVehCrcFailure,
+   tDemErrorRdciVVehTimeout,
+   tDemErrorRdciWarnruecknahme,
+   tDemErrorRdciWuDefectFl,
+   tDemErrorRdciWuDefectFr,
+   tDemErrorRdciWuDefectRl,
+   tDemErrorRdciWuDefectRr,
+   tDemErrorRdciWuLocalisationFailed,
+   tDemErrorRdciWuLowBatteryFl,
+   tDemErrorRdciWuLowBatteryFr,
+   tDemErrorRdciWuLowBatteryRl,
+   tDemErrorRdciWuLowBatteryRr,
+   tDemErrorRdciWuMuteFl,
+   tDemErrorRdciWuMuteFr,
+   tDemErrorRdciWuMuteRl,
+   tDemErrorRdciWuMuteRr,
+   tStbMB_AbsoluteTimeBaseValue
 };
 
 #ifdef _SwcApplTpms_CLAR_LCI
@@ -1544,19 +1533,15 @@ Rdci_TAR_P_TYR_FLH_Type                                 TAR_P_TYR_FLH;
 Rdci_TAR_P_TYR_FRH_Type                                 TAR_P_TYR_FRH;
 Rdci_TAR_P_TYR_RLH_Type                                 TAR_P_TYR_RLH;
 Rdci_TAR_P_TYR_RRH_Type                                 TAR_P_TYR_RRH;
-
 Rdci_AVL_P_TYR_FLH_Type                                 AVL_P_TYR_FLH;
 Rdci_AVL_P_TYR_FRH_Type                                 AVL_P_TYR_FRH;
 Rdci_AVL_P_TYR_RLH_Type                                 AVL_P_TYR_RLH;
 Rdci_AVL_P_TYR_RRH_Type                                 AVL_P_TYR_RRH;
-
 Rdci_AVL_TEMP_TYR_FLH_Type                              AVL_TEMP_TYR_FLH;
 Rdci_AVL_TEMP_TYR_FRH_Type                              AVL_TEMP_TYR_FRH;
 Rdci_AVL_TEMP_TYR_RLH_Type                              AVL_TEMP_TYR_RLH;
 Rdci_AVL_TEMP_TYR_RRH_Type                              AVL_TEMP_TYR_RRH;
-
 Rdci_ST_TYR_Type                                        tST_TYR;
-
 Rdci_L_OL_TYP_TYR_Type                                  LengthOfObjectList;
 Rdci_QU_RDC_INIT_DISP_Type                              QU_RDC_INIT_DISP;
 Rdci_ST_SLCTN_SUTR_AVLB_Type                            ST_SLCTN_SUTR_AVLB;
@@ -1566,7 +1551,6 @@ Rdci_ST_TAR_P_LOCO_TPCT_Type                            ST_TAR_P_LOCO_TPCT;
 Rdci_ST_TYR_SEA_TPCT_Type                               ST_TYR_SEA_TPCT;
 Rdci_OP_IDR_MSGC_Type                                   OP_IDR_MSGC;
 Rdci_ST_MAN_SLCTN_Type                                  ST_MAN_SLCTN;
-
 Rdci_AA_BAX_TYP_TYR_Type                                AA_BAX_TYP_TYR;
 Rdci_AG_BAX_TYP_TYR_Type                                AG_BAX_TYP_TYR;
 Rdci_BAX_TYP_TYR_ID2_Type                               BAX_TYP_TYR_ID2;
@@ -1580,7 +1564,6 @@ Rdci_RFL_BAX_TYP_TYR_Type                               RFL_BAX_TYP_TYR;
 Rdci_SEA_BAX_TYP_TYR_Type                               SEA_BAX_TYP_TYR;
 Rdci_ST_SLCTN_BAX_TYP_TYR_Type                          ST_SLCTN_BAX_TYP_TYR;
 Rdci_WID_BAX_TYP_TYR_Type                               WID_BAX_TYP_TYR;
-
 Rdci_AA_FTAX_TYP_TYR_Type                               AA_FTAX_TYP_TYR;
 Rdci_AG_FTAX_TYP_TYR_Type                               AG_FTAX_TYP_TYR;
 Rdci_CAC_FTAX_TYP_TYR_Type                              CAC_FTAX_TYP_TYR;
@@ -1593,7 +1576,6 @@ Rdci_RELA_SIDE_FTAX_TYP_TYR_Type                        RELA_SIDE_FTAX_TYP_TYR;
 Rdci_RFL_FTAX_TYP_TYR_Type                              RFL_FTAX_TYP_TYR;
 Rdci_SEA_FTAX_TYP_TYR_Type                              SEA_FTAX_TYP_TYR;
 Rdci_WID_FTAX_TYP_TYR_Type                              WID_FTAX_TYP_TYR;
-
 Rdci_CAC_TYP_TYR_Type                                   CAC_TYP_TYR;
 Rdci_IDX_LCC_TYP_TYR_Type                               IDX_LCC_TYP_TYR;
 Rdci_IDX_V_TYP_TYR_Type                                 IDX_V_TYP_TYR;
@@ -1604,7 +1586,6 @@ Rdci_RFL_TYP_TYR_Type                                   RFL_TYP_TYR;
 Rdci_SEA_TYP_TYR_Type                                   SEA_TYP_TYR;
 Rdci_ST_TYR_OL_ID_Type                                  ST_TYR_OL_ID;
 Rdci_WID_TYP_TYR_Type                                   WID_TYP_TYR;
-
 Rdci_CAC_SUTR_TYP_TYR_Type                              CAC_SUTR_TYP_TYR;
 Rdci_IDX_LCC_SUTR_TYP_TYR_Type                          IDX_LCC_SUTR_TYP_TYR;
 Rdci_IDX_V_SUTR_TYP_TYR_Type                            IDX_V_SUTR_TYP_TYR;
@@ -1614,7 +1595,6 @@ Rdci_RFL_SUTR_TYP_TYR_Type                              RFL_SUTR_TYP_TYR;
 Rdci_SEA_SUTR_TYP_TYR_Type                              SEA_SUTR_TYP_TYR;
 Rdci_SOTR_TYP_TYR_ID2_Type                              SOTR_TYP_TYR_ID2;
 Rdci_WID_SUTR_TYP_TYR_Type                              WID_SUTR_TYP_TYR;
-
 Rdci_CAC_WITR_TYP_TYR_Type                              CAC_WITR_TYP_TYR;
 Rdci_IDX_LCC_WITR_TYP_TYR_Type                          IDX_LCC_WITR_TYP_TYR;
 Rdci_IDX_V_WITR_TYP_TYR_Type                            IDX_V_WITR_TYP_TYR;
@@ -1624,34 +1604,27 @@ Rdci_RFL_WITR_TYP_TYR_Type                              RFL_WITR_TYP_TYR;
 Rdci_SEA_WITR_TYP_TYR_Type                              SEA_WITR_TYP_TYR;
 Rdci_WID_WITR_TYP_TYR_Type                              WID_WITR_TYP_TYR;
 Rdci_WITR_TYP_TYR_ID2_Type                              WITR_TYP_TYR_ID2;
-
 Rdci_CNTR_FBD_TPMS_1_ID2_Type                           CNTR_FBD_TPMS_1_ID2;
 Rdci_CTR_FIL_ACTV_1_Type                                CTR_FIL_ACTV_1;
 Rdci_CTR_SUPP_ID_1_Type                                 CTR_SUPP_ID_1;
 Rdci_CTR_TYR_ID_1_Type                                  CTR_TYR_ID_1;
-
 Rdci_CNTR_FBD_TPMS_2_ID2_Type                           CNTR_FBD_TPMS_2_ID2;
 Rdci_CTR_FIL_ACTV_2_Type                                CTR_FIL_ACTV_2;
 Rdci_CTR_SUPP_ID_2_Type                                 CTR_SUPP_ID_2;
 Rdci_CTR_TYR_ID_2_Type                                  CTR_TYR_ID_2;
-
 Rdci_CNTR_FBD_TPMS_3_ID2_Type                           CNTR_FBD_TPMS_3_ID2;
 Rdci_CTR_FIL_ACTV_3_Type                                CTR_FIL_ACTV_3;
 Rdci_CTR_SUPP_ID_3_Type                                 CTR_SUPP_ID_3;
 Rdci_CTR_TYR_ID_3_Type                                  CTR_TYR_ID_3;
-
 Rdci_CNTR_FBD_TPMS_4_ID2_Type                           CNTR_FBD_TPMS_4_ID2;
 Rdci_CTR_FIL_ACTV_4_Type                                CTR_FIL_ACTV_4;
 Rdci_CTR_SUPP_ID_4_Type                                 CTR_SUPP_ID_4;
 Rdci_CTR_TYR_ID_4_Type                                  CTR_TYR_ID_4;
-
 Rdci_ACTVN_PM_Type                                      ACTVN_PM;
 Rdci_PM_ID2_Type                                        PM_ID2;
 Rdci_RQ_PM_DT_Type                                      RQ_PM_DT;
-
 Rdci_StatusWheelTypeChangeDetection_Type                StatusWheelTypeChangeDetection;
 Rdci_StatusWheelTypeChangePosition_Type                 StatusWheelTypeChangePosition;
-
 Rdci_LastReceivedAmbientPressure_Type                   LastReceivedAmbientPressure;
 Rdci_MobilityLossThresholdValue_Type                    MobilityLossThresholdValue;
 Rdci_NotificationThresholdValueC_Type                   NotificationThresholdValueC;
@@ -1669,396 +1642,87 @@ Rdci_ExtParkSupConfig_Type                              ExtParkSupConfig;
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-void GetRDCiOutputDataTAR_P_TYR_FLH( Rdci_TAR_P_TYR_FLH_Type *ptOutputData)
-{
-  *ptOutputData = TAR_P_TYR_FLH;
-}
-
-void GetRDCiOutputDataTAR_P_TYR_FRH( Rdci_TAR_P_TYR_FRH_Type *ptOutputData)
-{
-  *ptOutputData = TAR_P_TYR_FRH;
-}
-
-void GetRDCiOutputDataTAR_P_TYR_RLH( Rdci_TAR_P_TYR_RLH_Type *ptOutputData)
-{
-  *ptOutputData = TAR_P_TYR_RLH;
-}
-
-void GetRDCiOutputDataTAR_P_TYR_RRH( Rdci_TAR_P_TYR_RRH_Type *ptOutputData)
-{
-  *ptOutputData = TAR_P_TYR_RRH;
-}
-
-void GetRDCiOutputDataAVL_T_TYR_FLH( Rdci_AVL_TEMP_TYR_FLH_Type *ptOutputData)
-{
-  *ptOutputData = AVL_TEMP_TYR_FLH;
-}
-void GetRDCiOutputDataAVL_T_TYR_FRH( Rdci_AVL_TEMP_TYR_FRH_Type *ptOutputData)
-{
-  *ptOutputData = AVL_TEMP_TYR_FRH;
-}
-void GetRDCiOutputDataAVL_T_TYR_RLH( Rdci_AVL_TEMP_TYR_RLH_Type *ptOutputData)
-{
-  *ptOutputData = AVL_TEMP_TYR_RLH;
-}
-void GetRDCiOutputDataAVL_T_TYR_RRH( Rdci_AVL_TEMP_TYR_RRH_Type *ptOutputData)
-{
-  *ptOutputData = AVL_TEMP_TYR_RRH;
-}
-
-void GetRDCiOutputDataAVL_P_TYR_FLH( Rdci_AVL_P_TYR_FLH_Type *ptOutputData)
-{
-  *ptOutputData = AVL_P_TYR_FLH;
-}
-void GetRDCiOutputDataAVL_P_TYR_FRH( Rdci_AVL_P_TYR_FRH_Type *ptOutputData)
-{
-  *ptOutputData = AVL_P_TYR_FRH;
-}
-void GetRDCiOutputDataAVL_P_TYR_RLH( Rdci_AVL_P_TYR_RLH_Type *ptOutputData)
-{
-  *ptOutputData = AVL_P_TYR_RLH;
-}
-void GetRDCiOutputDataAVL_P_TYR_RRH( Rdci_AVL_P_TYR_RRH_Type *ptOutputData)
-{
-  *ptOutputData = AVL_P_TYR_RRH;
-}
-
-void GetRDCiOutputDataST_TYR( Rdci_ST_TYR_Type *ptOutputData)
-{
-  *ptOutputData = tST_TYR;
-}
-
-void GetRDCiOutputDataLOL_TYP_TYR( Rdci_L_OL_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = LengthOfObjectList;
-}
-
-void GetRDCiOutputDataQU_RDC_INIT_DISP( Rdci_QU_RDC_INIT_DISP_Type *ptOutputData)
-{
-  *ptOutputData = QU_RDC_INIT_DISP;
-}
-
-void GetRDCiOutputDataST_SLCTN_SUTR_AVLB( Rdci_ST_SLCTN_SUTR_AVLB_Type *ptOutputData)
-{
-  *ptOutputData = ST_SLCTN_SUTR_AVLB;
-}
-
-void GetRDCiOutputDataST_SLCTN_WITR_AVLB( Rdci_ST_SLCTN_WITR_AVLB_Type *ptOutputData)
-{
-  *ptOutputData = ST_SLCTN_WITR_AVLB;
-}
-
-void GetRDCiOutputDataST_SLCTN_TYR( Rdci_ST_SLCTN_TYR_Type *ptOutputData)
-{
-  *ptOutputData = ST_SLCTN_TYR;
-}
-
-void GetRDCiOutputDataST_TAR_P_LOCO_TPCT( Rdci_ST_TAR_P_LOCO_TPCT_Type *ptOutputData)
-{
-  *ptOutputData = ST_TAR_P_LOCO_TPCT;
-}
-
-void GetRDCiOutputDataST_TYR_SEA_TPCT( Rdci_ST_TYR_SEA_TPCT_Type *ptOutputData)
-{
-  *ptOutputData = ST_TYR_SEA_TPCT;
-}
-
-void GetRDCiOutputDataOP_IDR_MSGC( Rdci_OP_IDR_MSGC_Type *ptOutputData)
-{
-  *ptOutputData = OP_IDR_MSGC;
-}
-
-void GetRDCiOutputDataST_MAN_SLCTN( Rdci_ST_MAN_SLCTN_Type *ptOutputData)
-{
-  *ptOutputData = ST_MAN_SLCTN;
-}
-
-void GetRDCiOutputDataCAC_SUTR( Rdci_CAC_SUTR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = CAC_SUTR_TYP_TYR;
-}
-
-void GetRDCiOutputDataIDX_LCC_SUTR( Rdci_IDX_LCC_SUTR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = IDX_LCC_SUTR_TYP_TYR;
-}
-
-void GetRDCiOutputDataIDX_V_SUTR( Rdci_IDX_V_SUTR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = IDX_V_SUTR_TYP_TYR;
-}
-
-void GetRDCiOutputDataRAD_SUTR( Rdci_RAD_SUTR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RAD_SUTR_TYP_TYR;
-}
-
-void GetRDCiOutputDataRELA_SIDE_SUTR( Rdci_RELA_SIDE_SUTR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RELA_SIDE_SUTR_TYP_TYR;
-}
-
-void GetRDCiOutputDataRFL_SUTR( Rdci_RFL_SUTR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RFL_SUTR_TYP_TYR;
-}
-
-void GetRDCiOutputDataSEA_SUTR( Rdci_SEA_SUTR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = SEA_SUTR_TYP_TYR;
-}
-
-void GetRDCiOutputDataWID_SUTR( Rdci_WID_SUTR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = WID_SUTR_TYP_TYR;
-}
-
-void GetRDCiOutputDataCAC_WITR( Rdci_CAC_WITR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = CAC_WITR_TYP_TYR;
-}
-
-void GetRDCiOutputDataIDX_LCC_WITR( Rdci_IDX_LCC_WITR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = IDX_LCC_WITR_TYP_TYR;
-}
-
-void GetRDCiOutputDataIDX_V_WITR( Rdci_IDX_V_WITR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = IDX_V_WITR_TYP_TYR;
-}
-
-void GetRDCiOutputDataRAD_WITR( Rdci_RAD_WITR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RAD_WITR_TYP_TYR;
-}
-
-void GetRDCiOutputDataRELA_SIDE_WITR( Rdci_RELA_SIDE_WITR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RELA_SIDE_WITR_TYP_TYR;
-}
-
-void GetRDCiOutputDataRFL_WITR( Rdci_RFL_WITR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RFL_WITR_TYP_TYR;
-}
-
-void GetRDCiOutputDataSEA_WITR( Rdci_SEA_WITR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = SEA_WITR_TYP_TYR;
-}
-
-void GetRDCiOutputDataWID_WITR( Rdci_WID_WITR_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = WID_WITR_TYP_TYR;
-}
-
-void GetRDCiOutputDataCAC_BAX( Rdci_CAC_BAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = CAC_BAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataIDX_LCC_BAX( Rdci_IDX_LCC_BAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = IDX_LCC_BAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataIDX_V_BAX( Rdci_IDX_V_BAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = IDX_V_BAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataRAD_BAX( Rdci_RAD_BAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RAD_BAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataRELA_SIDE_BAX( Rdci_RELA_SIDE_BAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RELA_SIDE_BAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataRFL_BAX( Rdci_RFL_BAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RFL_BAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataSEA_BAX( Rdci_SEA_BAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = SEA_BAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataWID_BAX( Rdci_WID_BAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = WID_BAX_TYP_TYR;
-}
-void GetRDCiOutputDataST_SLCTN_BAX_TYP_TYR( Rdci_ST_SLCTN_BAX_TYP_TYR_Type  *ptOutputData)
-{
-	*ptOutputData = ST_SLCTN_BAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataCAC_FTAX( Rdci_CAC_FTAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = CAC_FTAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataIDX_LCC_FTAX( Rdci_IDX_LCC_FTAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = IDX_LCC_FTAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataIDX_V_FTAX( Rdci_IDX_V_FTAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = IDX_V_FTAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataRAD_FTAX( Rdci_RAD_FTAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RAD_FTAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataRELA_SIDE_FTAX( Rdci_RELA_SIDE_FTAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RELA_SIDE_FTAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataRFL_FTAX( Rdci_RFL_FTAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RFL_FTAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataSEA_FTAX( Rdci_SEA_FTAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = SEA_FTAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataWID_FTAX( Rdci_WID_FTAX_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = WID_FTAX_TYP_TYR;
-}
-
-void GetRDCiOutputDataCAC_TYTR( Rdci_CAC_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = CAC_TYP_TYR;
-}
-
-void GetRDCiOutputDataIDX_LCC_TYTR( Rdci_IDX_LCC_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = IDX_LCC_TYP_TYR;
-}
-
-void GetRDCiOutputDataIDX_V_TYTR( Rdci_IDX_V_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = IDX_V_TYP_TYR;
-}
-
-void GetRDCiOutputDataRAD_TYTR( Rdci_RAD_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RAD_TYP_TYR;
-}
-
-void GetRDCiOutputDataRELA_SIDE_TYTR( Rdci_RELA_SIDE_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RELA_SIDE_TYP_TYR;
-}
-
-void GetRDCiOutputDataRFL_TYTR( Rdci_RFL_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = RFL_TYP_TYR;
-}
-
-void GetRDCiOutputDataSEA_TYTR( Rdci_SEA_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = SEA_TYP_TYR;
-}
-
-void GetRDCiOutputDataWID_TYTR( Rdci_WID_TYP_TYR_Type *ptOutputData)
-{
-  *ptOutputData = WID_TYP_TYR;
-}
-
-void GetRDCiOutputDataOL_ID_TYTR( Rdci_ST_TYR_OL_ID_Type *ptOutputData)
-{
-  *ptOutputData = ST_TYR_OL_ID;
-}
-
-void GetRDCiOutputDataStatusWheelTypeChangeDetection(Rdci_StatusWheelTypeChangeDetection_Type *ptOutputData)
-{
-  *ptOutputData = StatusWheelTypeChangeDetection;
-}
-
-void GetRDCiOutputDataStatusWheelTypeChangePosition(Rdci_StatusWheelTypeChangePosition_Type *ptOutputData)
-{
-  *ptOutputData = StatusWheelTypeChangePosition;
-}
-
-void GetRDCiOutputDataLastReceivedAmbientPressure( Rdci_LastReceivedAmbientPressure_Type *ptOutputData)
-{
-  *ptOutputData = LastReceivedAmbientPressure;
-}
-
-void GetRDCiOutputDataMobilityLossThresholdValue( Rdci_MobilityLossThresholdValue_Type *ptOutputData)
-{
-  *ptOutputData =  MobilityLossThresholdValue;
-}
-
-void GetRDCiOutputDataNotificationThresholdValueC( Rdci_NotificationThresholdValueC_Type *ptOutputData)
-{
-  *ptOutputData = NotificationThresholdValueC;
-}
-
-void GetRDCiOutputDataNotificationThresholdValueNc( Rdci_NotificationThresholdValueNc_Type *ptOutputData)
-{
-  *ptOutputData = NotificationThresholdValueNc;
-}
-
-void GetRDCiOutputDataRDCSystemReferenceTemp( Rdci_RDCSystemReferenceTemp_Type *ptOutputData)
-{
-  *ptOutputData = RDCSystemReferenceTemp;
-}
-
-void GetRDCiOutputDataPwfChange( Rdci_PwfChange_Type *ptOutputData)
-{
-  *ptOutputData = PwfChange;
-}
-
-void GetRDCiOutputDataRelRecommendedColdInflationPressureFrontAxle( Rdci_RelRecommendedColdInflationPressureFrontAxle_Type *ptOutputData)
-{
-  *ptOutputData = RelRecommendedColdInflationPressureFrontAxle;
-}
-
-void GetRDCiOutputDataRelRecommendedColdInflationPressureRearAxle( Rdci_RelRecommendedColdInflationPressureRearAxle_Type *ptOutputData)
-{
-  *ptOutputData = RelRecommendedColdInflationPressureRearAxle;
-}
-
-void GetRDCiOutputDataTolNoTempComp( Rdci_TolNoTempComp_Type *ptOutputData)
-{
-  *ptOutputData = TolNoTempComp;
-}
-
-void GetRDCiOutputDataTolTempComp( Rdci_TolTempComp_Type *ptOutputData)
-{
-  *ptOutputData = TolTempComp;
-}
-
-void GetRDCiOutputDataWarningThresholdValueC( Rdci_WarningThresholdValueC_Type *ptOutputData)
-{
-  *ptOutputData = WarningThresholdValueC;
-}
-
-void GetRDCiOutputDataWarningThresholdValueNc( Rdci_WarningThresholdValueNc_Type *ptOutputData)
-{
-  *ptOutputData = WarningThresholdValueNc;
-}
-
-void GetRDCiOutputDataExtParkSupConfig( Rdci_ExtParkSupConfig_Type *ptOutputData)
-{
-  *ptOutputData = ExtParkSupConfig;
-}
-
-FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Send_ST_TYR( P2CONST(Rdci_ST_TYR_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_DATA) data)
-{
+void GetRDCiOutputDataTAR_P_TYR_FLH(                                Rdci_TAR_P_TYR_FLH_Type*                                ptOutputData){*ptOutputData = TAR_P_TYR_FLH;}
+void GetRDCiOutputDataTAR_P_TYR_FRH(                                Rdci_TAR_P_TYR_FRH_Type*                                ptOutputData){*ptOutputData = TAR_P_TYR_FRH;}
+void GetRDCiOutputDataTAR_P_TYR_RLH(                                Rdci_TAR_P_TYR_RLH_Type*                                ptOutputData){*ptOutputData = TAR_P_TYR_RLH;}
+void GetRDCiOutputDataTAR_P_TYR_RRH(                                Rdci_TAR_P_TYR_RRH_Type*                                ptOutputData){*ptOutputData = TAR_P_TYR_RRH;}
+void GetRDCiOutputDataAVL_T_TYR_FLH(                                Rdci_AVL_TEMP_TYR_FLH_Type*                             ptOutputData){*ptOutputData = AVL_TEMP_TYR_FLH;}
+void GetRDCiOutputDataAVL_T_TYR_FRH(                                Rdci_AVL_TEMP_TYR_FRH_Type*                             ptOutputData){*ptOutputData = AVL_TEMP_TYR_FRH;}
+void GetRDCiOutputDataAVL_T_TYR_RLH(                                Rdci_AVL_TEMP_TYR_RLH_Type*                             ptOutputData){*ptOutputData = AVL_TEMP_TYR_RLH;}
+void GetRDCiOutputDataAVL_T_TYR_RRH(                                Rdci_AVL_TEMP_TYR_RRH_Type*                             ptOutputData){*ptOutputData = AVL_TEMP_TYR_RRH;}
+void GetRDCiOutputDataAVL_P_TYR_FLH(                                Rdci_AVL_P_TYR_FLH_Type*                                ptOutputData){*ptOutputData = AVL_P_TYR_FLH;}
+void GetRDCiOutputDataAVL_P_TYR_FRH(                                Rdci_AVL_P_TYR_FRH_Type*                                ptOutputData){*ptOutputData = AVL_P_TYR_FRH;}
+void GetRDCiOutputDataAVL_P_TYR_RLH(                                Rdci_AVL_P_TYR_RLH_Type*                                ptOutputData){*ptOutputData = AVL_P_TYR_RLH;}
+void GetRDCiOutputDataAVL_P_TYR_RRH(                                Rdci_AVL_P_TYR_RRH_Type*                                ptOutputData){*ptOutputData = AVL_P_TYR_RRH;}
+void GetRDCiOutputDataST_TYR(                                       Rdci_ST_TYR_Type*                                       ptOutputData){*ptOutputData = tST_TYR;}
+void GetRDCiOutputDataLOL_TYP_TYR(                                  Rdci_L_OL_TYP_TYR_Type*                                 ptOutputData){*ptOutputData = LengthOfObjectList;}
+void GetRDCiOutputDataQU_RDC_INIT_DISP(                             Rdci_QU_RDC_INIT_DISP_Type*                             ptOutputData){*ptOutputData = QU_RDC_INIT_DISP;}
+void GetRDCiOutputDataST_SLCTN_SUTR_AVLB(                           Rdci_ST_SLCTN_SUTR_AVLB_Type*                           ptOutputData){*ptOutputData = ST_SLCTN_SUTR_AVLB;}
+void GetRDCiOutputDataST_SLCTN_WITR_AVLB(                           Rdci_ST_SLCTN_WITR_AVLB_Type*                           ptOutputData){*ptOutputData = ST_SLCTN_WITR_AVLB;}
+void GetRDCiOutputDataST_SLCTN_TYR(                                 Rdci_ST_SLCTN_TYR_Type*                                 ptOutputData){*ptOutputData = ST_SLCTN_TYR;}
+void GetRDCiOutputDataST_TAR_P_LOCO_TPCT(                           Rdci_ST_TAR_P_LOCO_TPCT_Type*                           ptOutputData){*ptOutputData = ST_TAR_P_LOCO_TPCT;}
+void GetRDCiOutputDataST_TYR_SEA_TPCT(                              Rdci_ST_TYR_SEA_TPCT_Type*                              ptOutputData){*ptOutputData = ST_TYR_SEA_TPCT;}
+void GetRDCiOutputDataOP_IDR_MSGC(                                  Rdci_OP_IDR_MSGC_Type*                                  ptOutputData){*ptOutputData = OP_IDR_MSGC;}
+void GetRDCiOutputDataST_MAN_SLCTN(                                 Rdci_ST_MAN_SLCTN_Type*                                 ptOutputData){*ptOutputData = ST_MAN_SLCTN;}
+void GetRDCiOutputDataCAC_SUTR(                                     Rdci_CAC_SUTR_TYP_TYR_Type*                             ptOutputData){*ptOutputData = CAC_SUTR_TYP_TYR;}
+void GetRDCiOutputDataIDX_LCC_SUTR(                                 Rdci_IDX_LCC_SUTR_TYP_TYR_Type*                         ptOutputData){*ptOutputData = IDX_LCC_SUTR_TYP_TYR;}
+void GetRDCiOutputDataIDX_V_SUTR(                                   Rdci_IDX_V_SUTR_TYP_TYR_Type*                           ptOutputData){*ptOutputData = IDX_V_SUTR_TYP_TYR;}
+void GetRDCiOutputDataRAD_SUTR(                                     Rdci_RAD_SUTR_TYP_TYR_Type*                             ptOutputData){*ptOutputData = RAD_SUTR_TYP_TYR;}
+void GetRDCiOutputDataRELA_SIDE_SUTR(                               Rdci_RELA_SIDE_SUTR_TYP_TYR_Type*                       ptOutputData){*ptOutputData = RELA_SIDE_SUTR_TYP_TYR;}
+void GetRDCiOutputDataRFL_SUTR(                                     Rdci_RFL_SUTR_TYP_TYR_Type*                             ptOutputData){*ptOutputData = RFL_SUTR_TYP_TYR;}
+void GetRDCiOutputDataSEA_SUTR(                                     Rdci_SEA_SUTR_TYP_TYR_Type*                             ptOutputData){*ptOutputData = SEA_SUTR_TYP_TYR;}
+void GetRDCiOutputDataWID_SUTR(                                     Rdci_WID_SUTR_TYP_TYR_Type*                             ptOutputData){*ptOutputData = WID_SUTR_TYP_TYR;}
+void GetRDCiOutputDataCAC_WITR(                                     Rdci_CAC_WITR_TYP_TYR_Type*                             ptOutputData){*ptOutputData = CAC_WITR_TYP_TYR;}
+void GetRDCiOutputDataIDX_LCC_WITR(                                 Rdci_IDX_LCC_WITR_TYP_TYR_Type*                         ptOutputData){*ptOutputData = IDX_LCC_WITR_TYP_TYR;}
+void GetRDCiOutputDataIDX_V_WITR(                                   Rdci_IDX_V_WITR_TYP_TYR_Type*                           ptOutputData){*ptOutputData = IDX_V_WITR_TYP_TYR;}
+void GetRDCiOutputDataRAD_WITR(                                     Rdci_RAD_WITR_TYP_TYR_Type*                             ptOutputData){*ptOutputData = RAD_WITR_TYP_TYR;}
+void GetRDCiOutputDataRELA_SIDE_WITR(                               Rdci_RELA_SIDE_WITR_TYP_TYR_Type*                       ptOutputData){*ptOutputData = RELA_SIDE_WITR_TYP_TYR;}
+void GetRDCiOutputDataRFL_WITR(                                     Rdci_RFL_WITR_TYP_TYR_Type*                             ptOutputData){*ptOutputData = RFL_WITR_TYP_TYR;}
+void GetRDCiOutputDataSEA_WITR(                                     Rdci_SEA_WITR_TYP_TYR_Type*                             ptOutputData){*ptOutputData = SEA_WITR_TYP_TYR;}
+void GetRDCiOutputDataWID_WITR(                                     Rdci_WID_WITR_TYP_TYR_Type*                             ptOutputData){*ptOutputData = WID_WITR_TYP_TYR;}
+void GetRDCiOutputDataCAC_BAX(                                      Rdci_CAC_BAX_TYP_TYR_Type*                              ptOutputData){*ptOutputData = CAC_BAX_TYP_TYR;}
+void GetRDCiOutputDataIDX_LCC_BAX(                                  Rdci_IDX_LCC_BAX_TYP_TYR_Type*                          ptOutputData){*ptOutputData = IDX_LCC_BAX_TYP_TYR;}
+void GetRDCiOutputDataIDX_V_BAX(                                    Rdci_IDX_V_BAX_TYP_TYR_Type*                            ptOutputData){*ptOutputData = IDX_V_BAX_TYP_TYR;}
+void GetRDCiOutputDataRAD_BAX(                                      Rdci_RAD_BAX_TYP_TYR_Type*                              ptOutputData){*ptOutputData = RAD_BAX_TYP_TYR;}
+void GetRDCiOutputDataRELA_SIDE_BAX(                                Rdci_RELA_SIDE_BAX_TYP_TYR_Type*                        ptOutputData){*ptOutputData = RELA_SIDE_BAX_TYP_TYR;}
+void GetRDCiOutputDataRFL_BAX(                                      Rdci_RFL_BAX_TYP_TYR_Type*                              ptOutputData){*ptOutputData = RFL_BAX_TYP_TYR;}
+void GetRDCiOutputDataSEA_BAX(                                      Rdci_SEA_BAX_TYP_TYR_Type*                              ptOutputData){*ptOutputData = SEA_BAX_TYP_TYR;}
+void GetRDCiOutputDataWID_BAX(                                      Rdci_WID_BAX_TYP_TYR_Type*                              ptOutputData){*ptOutputData = WID_BAX_TYP_TYR;}
+void GetRDCiOutputDataST_SLCTN_BAX_TYP_TYR(                         Rdci_ST_SLCTN_BAX_TYP_TYR_Type*                         ptOutputData){*ptOutputData = ST_SLCTN_BAX_TYP_TYR;}
+void GetRDCiOutputDataCAC_FTAX(                                     Rdci_CAC_FTAX_TYP_TYR_Type*                             ptOutputData){*ptOutputData = CAC_FTAX_TYP_TYR;}
+void GetRDCiOutputDataIDX_LCC_FTAX(                                 Rdci_IDX_LCC_FTAX_TYP_TYR_Type*                         ptOutputData){*ptOutputData = IDX_LCC_FTAX_TYP_TYR;}
+void GetRDCiOutputDataIDX_V_FTAX(                                   Rdci_IDX_V_FTAX_TYP_TYR_Type*                           ptOutputData){*ptOutputData = IDX_V_FTAX_TYP_TYR;}
+void GetRDCiOutputDataRAD_FTAX(                                     Rdci_RAD_FTAX_TYP_TYR_Type*                             ptOutputData){*ptOutputData = RAD_FTAX_TYP_TYR;}
+void GetRDCiOutputDataRELA_SIDE_FTAX(                               Rdci_RELA_SIDE_FTAX_TYP_TYR_Type*                       ptOutputData){*ptOutputData = RELA_SIDE_FTAX_TYP_TYR;}
+void GetRDCiOutputDataRFL_FTAX(                                     Rdci_RFL_FTAX_TYP_TYR_Type*                             ptOutputData){*ptOutputData = RFL_FTAX_TYP_TYR;}
+void GetRDCiOutputDataSEA_FTAX(                                     Rdci_SEA_FTAX_TYP_TYR_Type*                             ptOutputData){*ptOutputData = SEA_FTAX_TYP_TYR;}
+void GetRDCiOutputDataWID_FTAX(                                     Rdci_WID_FTAX_TYP_TYR_Type*                             ptOutputData){*ptOutputData = WID_FTAX_TYP_TYR;}
+void GetRDCiOutputDataCAC_TYTR(                                     Rdci_CAC_TYP_TYR_Type*                                  ptOutputData){*ptOutputData = CAC_TYP_TYR;}
+void GetRDCiOutputDataIDX_LCC_TYTR(                                 Rdci_IDX_LCC_TYP_TYR_Type*                              ptOutputData){*ptOutputData = IDX_LCC_TYP_TYR;}
+void GetRDCiOutputDataIDX_V_TYTR(                                   Rdci_IDX_V_TYP_TYR_Type*                                ptOutputData){*ptOutputData = IDX_V_TYP_TYR;}
+void GetRDCiOutputDataRAD_TYTR(                                     Rdci_RAD_TYP_TYR_Type*                                  ptOutputData){*ptOutputData = RAD_TYP_TYR;}
+void GetRDCiOutputDataRELA_SIDE_TYTR(                               Rdci_RELA_SIDE_TYP_TYR_Type*                            ptOutputData){*ptOutputData = RELA_SIDE_TYP_TYR;}
+void GetRDCiOutputDataRFL_TYTR(                                     Rdci_RFL_TYP_TYR_Type*                                  ptOutputData){*ptOutputData = RFL_TYP_TYR;}
+void GetRDCiOutputDataSEA_TYTR(                                     Rdci_SEA_TYP_TYR_Type*                                  ptOutputData){*ptOutputData = SEA_TYP_TYR;}
+void GetRDCiOutputDataWID_TYTR(                                     Rdci_WID_TYP_TYR_Type*                                  ptOutputData){*ptOutputData = WID_TYP_TYR;}
+void GetRDCiOutputDataOL_ID_TYTR(                                   Rdci_ST_TYR_OL_ID_Type*                                 ptOutputData){*ptOutputData = ST_TYR_OL_ID;}
+void GetRDCiOutputDataStatusWheelTypeChangeDetection(               Rdci_StatusWheelTypeChangeDetection_Type*               ptOutputData){*ptOutputData = StatusWheelTypeChangeDetection;}
+void GetRDCiOutputDataStatusWheelTypeChangePosition(                Rdci_StatusWheelTypeChangePosition_Type*                ptOutputData){*ptOutputData = StatusWheelTypeChangePosition;}
+void GetRDCiOutputDataLastReceivedAmbientPressure(                  Rdci_LastReceivedAmbientPressure_Type*                  ptOutputData){*ptOutputData = LastReceivedAmbientPressure;}
+void GetRDCiOutputDataMobilityLossThresholdValue(                   Rdci_MobilityLossThresholdValue_Type*                   ptOutputData){*ptOutputData = MobilityLossThresholdValue;}
+void GetRDCiOutputDataNotificationThresholdValueC(                  Rdci_NotificationThresholdValueC_Type*                  ptOutputData){*ptOutputData = NotificationThresholdValueC;}
+void GetRDCiOutputDataNotificationThresholdValueNc(                 Rdci_NotificationThresholdValueNc_Type*                 ptOutputData){*ptOutputData = NotificationThresholdValueNc;}
+void GetRDCiOutputDataRDCSystemReferenceTemp(                       Rdci_RDCSystemReferenceTemp_Type*                       ptOutputData){*ptOutputData = RDCSystemReferenceTemp;}
+void GetRDCiOutputDataPwfChange(                                    Rdci_PwfChange_Type*                                    ptOutputData){*ptOutputData = PwfChange;}
+void GetRDCiOutputDataRelRecommendedColdInflationPressureFrontAxle( Rdci_RelRecommendedColdInflationPressureFrontAxle_Type* ptOutputData){*ptOutputData = RelRecommendedColdInflationPressureFrontAxle;}
+void GetRDCiOutputDataRelRecommendedColdInflationPressureRearAxle(  Rdci_RelRecommendedColdInflationPressureRearAxle_Type*  ptOutputData){*ptOutputData = RelRecommendedColdInflationPressureRearAxle;}
+void GetRDCiOutputDataTolNoTempComp(                                Rdci_TolNoTempComp_Type*                                ptOutputData){*ptOutputData = TolNoTempComp;}
+void GetRDCiOutputDataTolTempComp(                                  Rdci_TolTempComp_Type*                                  ptOutputData){*ptOutputData = TolTempComp;}
+void GetRDCiOutputDataWarningThresholdValueC(                       Rdci_WarningThresholdValueC_Type*                       ptOutputData){*ptOutputData = WarningThresholdValueC;}
+void GetRDCiOutputDataWarningThresholdValueNc(                      Rdci_WarningThresholdValueNc_Type*                      ptOutputData){*ptOutputData = WarningThresholdValueNc;}
+void GetRDCiOutputDataExtParkSupConfig(                             Rdci_ExtParkSupConfig_Type*                             ptOutputData){*ptOutputData = ExtParkSupConfig;}
+
+FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Send_ST_TYR( P2CONST(Rdci_ST_TYR_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_DATA) data){
   tST_TYR.ALIV_ST_TYR = data->ALIV_ST_TYR;
   tST_TYR.CRC_ST_TYR = data->CRC_ST_TYR;
   tST_TYR.QU_FN_TYR_INFO = data->QU_FN_TYR_INFO;
@@ -2069,134 +1733,115 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Send_ST_TYR( P2CONST(Rdci_ST_TYR_Type, A
   return 0;
 }
 
-void RTE_Stub_CyclicOutputFunction(void)
-{
-
-  AVL_P_TYR_FLH                     = *(Rdci_AVL_P_TYR_FLH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_AVL_P_TYR_AVL_P_TYR_FLH( Rte_Inst_CtApHufTpmsSWC);
-  AVL_P_TYR_FRH                     = *(Rdci_AVL_P_TYR_FRH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_AVL_P_TYR_AVL_P_TYR_FRH( Rte_Inst_CtApHufTpmsSWC);
-  AVL_P_TYR_RLH                     = *(Rdci_AVL_P_TYR_RLH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_AVL_P_TYR_AVL_P_TYR_RLH( Rte_Inst_CtApHufTpmsSWC);
-  AVL_P_TYR_RRH                     = *(Rdci_AVL_P_TYR_RRH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_AVL_P_TYR_AVL_P_TYR_RRH( Rte_Inst_CtApHufTpmsSWC);
-
-  LengthOfObjectList = *(Rdci_L_OL_TYP_TYR_Type *)Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_ST_TYR_2_L_OL_TYP_TYR(Rte_Inst_CtApHufTpmsSWC);
-  QU_RDC_INIT_DISP                  = *(Rdci_QU_RDC_INIT_DISP_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_ST_TYR_2_QU_RDC_INIT_DISP( Rte_Inst_CtApHufTpmsSWC);
-  ST_SLCTN_SUTR_AVLB                = *(Rdci_ST_SLCTN_SUTR_AVLB_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_SLCTN_SUTR_AVLB( Rte_Inst_CtApHufTpmsSWC);
-  ST_SLCTN_TYR                      = *(Rdci_ST_SLCTN_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_SLCTN_TYR( Rte_Inst_CtApHufTpmsSWC);
-  ST_SLCTN_WITR_AVLB                = *(Rdci_ST_SLCTN_WITR_AVLB_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_SLCTN_WITR_AVLB( Rte_Inst_CtApHufTpmsSWC);
-  ST_TAR_P_LOCO_TPCT                = *(Rdci_ST_TAR_P_LOCO_TPCT_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_TAR_P_LOCO_TPCT( Rte_Inst_CtApHufTpmsSWC);
-  ST_TYR_SEA_TPCT                   = *(Rdci_ST_TYR_SEA_TPCT_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_TYR_SEA_TPCT( Rte_Inst_CtApHufTpmsSWC);
-
-  OP_IDR_MSGC                       = *(Rdci_OP_IDR_MSGC_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_ST_TYR_2_OP_IDR_MSGC( Rte_Inst_CtApHufTpmsSWC);
-
-  ST_MAN_SLCTN                      = *(Rdci_ST_MAN_SLCTN_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_MAN_SLCTN( Rte_Inst_CtApHufTpmsSWC);
-
-  AVL_TEMP_TYR_FLH                  = *(Rdci_AVL_TEMP_TYR_FLH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_AVL_TEMP_TYR_AVL_TEMP_TYR_FLH( Rte_Inst_CtApHufTpmsSWC);
-  AVL_TEMP_TYR_FRH                  = *(Rdci_AVL_TEMP_TYR_FRH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_AVL_TEMP_TYR_AVL_TEMP_TYR_FRH( Rte_Inst_CtApHufTpmsSWC);
-  AVL_TEMP_TYR_RLH                  = *(Rdci_AVL_TEMP_TYR_RLH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_AVL_TEMP_TYR_AVL_TEMP_TYR_RLH( Rte_Inst_CtApHufTpmsSWC);
-  AVL_TEMP_TYR_RRH                  = *(Rdci_AVL_TEMP_TYR_RRH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_AVL_TEMP_TYR_AVL_TEMP_TYR_RRH( Rte_Inst_CtApHufTpmsSWC);
-
-  TAR_P_TYR_FLH                     = *(Rdci_TAR_P_TYR_FLH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_TAR_P_TYR_TAR_P_TYR_FLH( Rte_Inst_CtApHufTpmsSWC);
-  TAR_P_TYR_FRH                     = *(Rdci_TAR_P_TYR_FRH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_TAR_P_TYR_TAR_P_TYR_FRH( Rte_Inst_CtApHufTpmsSWC);
-  TAR_P_TYR_RLH                     = *(Rdci_TAR_P_TYR_RLH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_TAR_P_TYR_TAR_P_TYR_RLH( Rte_Inst_CtApHufTpmsSWC);
-  TAR_P_TYR_RRH                     = *(Rdci_TAR_P_TYR_RRH_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_TAR_P_TYR_TAR_P_TYR_RRH( Rte_Inst_CtApHufTpmsSWC);
-
-  AA_BAX_TYP_TYR                    = *(Rdci_AA_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_AA_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  AG_BAX_TYP_TYR                    = *(Rdci_AG_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_AG_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  BAX_TYP_TYR_ID2                   = *(Rdci_BAX_TYP_TYR_ID2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_BAX_TYP_TYR_ID2( Rte_Inst_CtApHufTpmsSWC);
-  CAC_BAX_TYP_TYR                   = *(Rdci_CAC_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_CAC_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  IDX_LCC_BAX_TYP_TYR               = *(Rdci_IDX_LCC_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_IDX_LCC_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  IDX_V_BAX_TYP_TYR                 = *(Rdci_IDX_V_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_IDX_V_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  LOR_BAX_TYP_TYR                   = *(Rdci_LOR_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_LOR_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RAD_BAX_TYP_TYR                   = *(Rdci_RAD_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_RAD_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RELA_SIDE_BAX_TYP_TYR             = *(Rdci_RELA_SIDE_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_RELA_SIDE_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RFL_BAX_TYP_TYR                   = *(Rdci_RFL_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_RFL_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  SEA_BAX_TYP_TYR                   = *(Rdci_SEA_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_SEA_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  ST_SLCTN_BAX_TYP_TYR              = *(Rdci_ST_SLCTN_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_ST_SLCTN_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  WID_BAX_TYP_TYR                   = *(Rdci_WID_BAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_WID_BAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-
-  AA_FTAX_TYP_TYR                   = *(Rdci_AA_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_AA_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  AG_FTAX_TYP_TYR                   = *(Rdci_AG_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_AG_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  CAC_FTAX_TYP_TYR                  = *(Rdci_CAC_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_CAC_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  FTAX_TYP_TYR_ID2                  = *(Rdci_FTAX_TYP_TYR_ID2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_FTAX_TYP_TYR_ID2( Rte_Inst_CtApHufTpmsSWC);
-  IDX_LCC_FTAX_TYP_TYR              = *(Rdci_IDX_LCC_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_IDX_LCC_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  IDX_V_FTAX_TYP_TYR                = *(Rdci_IDX_V_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_IDX_V_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  LOR_FTAX_TYP_TYR                  = *(Rdci_LOR_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_LOR_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RAD_FTAX_TYP_TYR                  = *(Rdci_RAD_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_RAD_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RELA_SIDE_FTAX_TYP_TYR            = *(Rdci_RELA_SIDE_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_RELA_SIDE_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RFL_FTAX_TYP_TYR                  = *(Rdci_RFL_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_RFL_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  SEA_FTAX_TYP_TYR                  = *(Rdci_SEA_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_SEA_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  WID_FTAX_TYP_TYR                  = *(Rdci_WID_FTAX_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_WID_FTAX_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-
-  WITR_TYP_TYR_ID2                  = *(Rdci_WITR_TYP_TYR_ID2_Type *) Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_WITR_TYP_TYR_WITR_TYP_TYR_ID2( Rte_Inst_CtApHufTpmsSWC);
-  CAC_WITR_TYP_TYR                  = *(Rdci_CAC_WITR_TYP_TYR_Type *)Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_WITR_TYP_TYR_CAC_WITR_TYP_TYR(Rte_Inst_CtApHufTpmsSWC);
-  IDX_LCC_WITR_TYP_TYR              = *(Rdci_IDX_LCC_WITR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_IDX_LCC_WITR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  IDX_V_WITR_TYP_TYR                = *(Rdci_IDX_V_WITR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_IDX_V_WITR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RAD_WITR_TYP_TYR                  = *(Rdci_RAD_WITR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_RAD_WITR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RELA_SIDE_WITR_TYP_TYR            = *(Rdci_RELA_SIDE_WITR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_RELA_SIDE_WITR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RFL_WITR_TYP_TYR                  = *(Rdci_RFL_WITR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_RFL_WITR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  SEA_WITR_TYP_TYR                  = *(Rdci_SEA_WITR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_SEA_WITR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  WID_WITR_TYP_TYR                  = *(Rdci_WID_WITR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_WID_WITR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-
-  CAC_SUTR_TYP_TYR                  = *(Rdci_CAC_SUTR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_CAC_SUTR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  IDX_LCC_SUTR_TYP_TYR              = *(Rdci_IDX_LCC_SUTR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_IDX_LCC_SUTR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  IDX_V_SUTR_TYP_TYR                = *(Rdci_IDX_V_SUTR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_IDX_V_SUTR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RAD_SUTR_TYP_TYR                  = *(Rdci_RAD_SUTR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_RAD_SUTR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RELA_SIDE_SUTR_TYP_TYR            = *(Rdci_RELA_SIDE_SUTR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_RELA_SIDE_SUTR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RFL_SUTR_TYP_TYR                  = *(Rdci_RFL_SUTR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_RFL_SUTR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  SEA_SUTR_TYP_TYR                  = *(Rdci_SEA_SUTR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_SEA_SUTR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  SOTR_TYP_TYR_ID2                  = *(Rdci_SOTR_TYP_TYR_ID2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_SOTR_TYP_TYR_ID2( Rte_Inst_CtApHufTpmsSWC);
-  WID_SUTR_TYP_TYR                  = *(Rdci_WID_SUTR_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_WID_SUTR_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-
-  CAC_TYP_TYR                       = *(Rdci_CAC_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_CAC_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  IDX_LCC_TYP_TYR                   = *(Rdci_IDX_LCC_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_IDX_LCC_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  IDX_V_TYP_TYR                     = *(Rdci_IDX_V_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_IDX_V_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  OL_AVLB_TYP_TYR_ID2               = *(Rdci_OL_AVLB_TYP_TYR_ID2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_OL_AVLB_TYP_TYR_ID2( Rte_Inst_CtApHufTpmsSWC);
-  RAD_TYP_TYR                       = *(Rdci_RAD_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_RAD_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RELA_SIDE_TYP_TYR                 = *(Rdci_RELA_SIDE_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_RELA_SIDE_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  RFL_TYP_TYR                       = *(Rdci_RFL_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_RFL_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  SEA_TYP_TYR                       = *(Rdci_SEA_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_SEA_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-  ST_TYR_OL_ID                      = *(Rdci_ST_TYR_OL_ID_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_ST_TYR_OL_ID( Rte_Inst_CtApHufTpmsSWC);
-  WID_TYP_TYR                       = *(Rdci_WID_TYP_TYR_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_WID_TYP_TYR( Rte_Inst_CtApHufTpmsSWC);
-
-  CNTR_FBD_TPMS_1_ID2               = *(Rdci_CNTR_FBD_TPMS_1_ID2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_1_CNTR_FBD_TPMS_1_ID2( Rte_Inst_CtApHufTpmsSWC);
-  CTR_FIL_ACTV_1                    = *(Rdci_CTR_FIL_ACTV_1_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_1_CTR_FIL_ACTV_1( Rte_Inst_CtApHufTpmsSWC);
-  CTR_SUPP_ID_1                     = *(Rdci_CTR_SUPP_ID_1_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_1_CTR_SUPP_ID_1( Rte_Inst_CtApHufTpmsSWC);
-  CTR_TYR_ID_1                      = *(Rdci_CTR_TYR_ID_1_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_1_CTR_TYR_ID_1( Rte_Inst_CtApHufTpmsSWC);
-
-  CNTR_FBD_TPMS_2_ID2               = *(Rdci_CNTR_FBD_TPMS_2_ID2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_2_CNTR_FBD_TPMS_2_ID2( Rte_Inst_CtApHufTpmsSWC);
-  CTR_FIL_ACTV_2                    = *(Rdci_CTR_FIL_ACTV_2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_2_CTR_FIL_ACTV_2( Rte_Inst_CtApHufTpmsSWC);
-  CTR_SUPP_ID_2                     = *(Rdci_CTR_SUPP_ID_2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_2_CTR_SUPP_ID_2( Rte_Inst_CtApHufTpmsSWC);
-  CTR_TYR_ID_2                      = *(Rdci_CTR_TYR_ID_2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_2_CTR_TYR_ID_2( Rte_Inst_CtApHufTpmsSWC);
-
-  CNTR_FBD_TPMS_3_ID2               = *(Rdci_CNTR_FBD_TPMS_3_ID2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_3_CNTR_FBD_TPMS_3_ID2( Rte_Inst_CtApHufTpmsSWC);
-  CTR_FIL_ACTV_3                    = *(Rdci_CTR_FIL_ACTV_3_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_3_CTR_FIL_ACTV_3( Rte_Inst_CtApHufTpmsSWC);
-  CTR_SUPP_ID_3                     = *(Rdci_CTR_SUPP_ID_3_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_3_CTR_SUPP_ID_3( Rte_Inst_CtApHufTpmsSWC);
-  CTR_TYR_ID_3                      = *(Rdci_CTR_TYR_ID_3_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_3_CTR_TYR_ID_3( Rte_Inst_CtApHufTpmsSWC);
-
-  CNTR_FBD_TPMS_4_ID2               = *(Rdci_CNTR_FBD_TPMS_4_ID2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_4_CNTR_FBD_TPMS_4_ID2( Rte_Inst_CtApHufTpmsSWC);
-  CTR_FIL_ACTV_4                    = *(Rdci_CTR_FIL_ACTV_4_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_4_CTR_FIL_ACTV_4( Rte_Inst_CtApHufTpmsSWC);
-  CTR_SUPP_ID_4                     = *(Rdci_CTR_SUPP_ID_4_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_4_CTR_SUPP_ID_4( Rte_Inst_CtApHufTpmsSWC);
-  CTR_TYR_ID_4                      = *(Rdci_CTR_TYR_ID_4_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_4_CTR_TYR_ID_4( Rte_Inst_CtApHufTpmsSWC);
-
-  ACTVN_PM                          = *(Rdci_ACTVN_PM_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_PM_ACTVN_PM( Rte_Inst_CtApHufTpmsSWC);
-  PM_ID2                            = *(Rdci_PM_ID2_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_PM_PM_ID2( Rte_Inst_CtApHufTpmsSWC);
-  RQ_PM_DT                          = *(Rdci_RQ_PM_DT_Type *) Rte_IWriteRef_RInitRDCiStartup_PpFrPdu_PM_RQ_PM_DT( Rte_Inst_CtApHufTpmsSWC);
-
-  StatusWheelTypeChangeDetection    = *(Rdci_StatusWheelTypeChangeDetection_Type *) Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_StatusWheelTypeChange_StatusWheelTypeChangeDetection( Rte_Inst_CtApHufTpmsSWC);
-  StatusWheelTypeChangePosition     = *(Rdci_StatusWheelTypeChangePosition_Type *)  Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_StatusWheelTypeChange_StatusWheelTypeChangePosition( Rte_Inst_CtApHufTpmsSWC);
-
-  LastReceivedAmbientPressure                   = *(Rdci_LastReceivedAmbientPressure_Type *)                  Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_LastReceivedAmbientPressure( Rte_Inst_CtApHufTpmsSWC);
-  MobilityLossThresholdValue                    = *(Rdci_MobilityLossThresholdValue_Type *)                   Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_MobilityLossThresholdValue( Rte_Inst_CtApHufTpmsSWC);
-  NotificationThresholdValueC                   = *(Rdci_NotificationThresholdValueC_Type *)                  Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_NotificationThresholdValueC( Rte_Inst_CtApHufTpmsSWC);
-  NotificationThresholdValueNc                  = *(Rdci_NotificationThresholdValueNc_Type *)                 Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_NotificationThresholdValueNc( Rte_Inst_CtApHufTpmsSWC);
-  RDCSystemReferenceTemp                        = *(Rdci_RDCSystemReferenceTemp_Type *)                       Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_RDCSystemReferenceTemp( Rte_Inst_CtApHufTpmsSWC);
-  PwfChange                                     = *(Rdci_PwfChange_Type *)                                    Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_PwfChange( Rte_Inst_CtApHufTpmsSWC);
-  RelRecommendedColdInflationPressureFrontAxle  = *(Rdci_RelRecommendedColdInflationPressureFrontAxle_Type *) Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_RelRecommendedColdInflationPressureFrontAxle( Rte_Inst_CtApHufTpmsSWC);
-  RelRecommendedColdInflationPressureRearAxle   = *(Rdci_RelRecommendedColdInflationPressureRearAxle_Type *)  Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_RelRecommendedColdInflationPressureRearAxle( Rte_Inst_CtApHufTpmsSWC);
-  TolNoTempComp                                 = *(Rdci_TolNoTempComp_Type *)                                Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_TolNoTempComp( Rte_Inst_CtApHufTpmsSWC);
-  TolTempComp                                   = *(Rdci_TolTempComp_Type *)                                  Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_TolTempComp( Rte_Inst_CtApHufTpmsSWC);
-  WarningThresholdValueC                        = *(Rdci_WarningThresholdValueC_Type *)                       Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_WarningThresholdValueC( Rte_Inst_CtApHufTpmsSWC);
-  WarningThresholdValueNc                       = *(Rdci_WarningThresholdValueNc_Type *)                      Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_WarningThresholdValueNc( Rte_Inst_CtApHufTpmsSWC);
-  ExtParkSupConfig                              = *(Rdci_ExtParkSupConfig_Type *)                             Rte_IWriteRef_RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_ExtParkSupConfig( Rte_Inst_CtApHufTpmsSWC);
+void RTE_Stub_CyclicOutputFunction(void){
+   AVL_P_TYR_FLH                                 = *(Rdci_AVL_P_TYR_FLH_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_AVL_P_TYR_AVL_P_TYR_FLH->value;
+   AVL_P_TYR_FRH                                 = *(Rdci_AVL_P_TYR_FRH_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_AVL_P_TYR_AVL_P_TYR_FRH->value;
+   AVL_P_TYR_RLH                                 = *(Rdci_AVL_P_TYR_RLH_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_AVL_P_TYR_AVL_P_TYR_RLH->value;
+   AVL_P_TYR_RRH                                 = *(Rdci_AVL_P_TYR_RRH_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_AVL_P_TYR_AVL_P_TYR_RRH->value;
+   LengthOfObjectList                            = *(Rdci_L_OL_TYP_TYR_Type*)                                 &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_ST_TYR_2_L_OL_TYP_TYR->value;
+   QU_RDC_INIT_DISP                              = *(Rdci_QU_RDC_INIT_DISP_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_ST_TYR_2_QU_RDC_INIT_DISP->value;
+   ST_SLCTN_SUTR_AVLB                            = *(Rdci_ST_SLCTN_SUTR_AVLB_Type*)                           &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_SLCTN_SUTR_AVLB->value;
+   ST_SLCTN_TYR                                  = *(Rdci_ST_SLCTN_TYR_Type*)                                 &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_SLCTN_TYR->value;
+   ST_SLCTN_WITR_AVLB                            = *(Rdci_ST_SLCTN_WITR_AVLB_Type*)                           &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_SLCTN_WITR_AVLB->value;
+   ST_TAR_P_LOCO_TPCT                            = *(Rdci_ST_TAR_P_LOCO_TPCT_Type*)                           &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_TAR_P_LOCO_TPCT->value;
+   ST_TYR_SEA_TPCT                               = *(Rdci_ST_TYR_SEA_TPCT_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_TYR_SEA_TPCT->value;
+   OP_IDR_MSGC                                   = *(Rdci_OP_IDR_MSGC_Type*)                                  &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_ST_TYR_2_OP_IDR_MSGC->value;
+   ST_MAN_SLCTN                                  = *(Rdci_ST_MAN_SLCTN_Type*)                                 &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_ST_TYR_2_ST_MAN_SLCTN->value;
+   AVL_TEMP_TYR_FLH                              = *(Rdci_AVL_TEMP_TYR_FLH_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_AVL_TEMP_TYR_AVL_TEMP_TYR_FLH->value;
+   AVL_TEMP_TYR_FRH                              = *(Rdci_AVL_TEMP_TYR_FRH_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_AVL_TEMP_TYR_AVL_TEMP_TYR_FRH->value;
+   AVL_TEMP_TYR_RLH                              = *(Rdci_AVL_TEMP_TYR_RLH_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_AVL_TEMP_TYR_AVL_TEMP_TYR_RLH->value;
+   AVL_TEMP_TYR_RRH                              = *(Rdci_AVL_TEMP_TYR_RRH_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_AVL_TEMP_TYR_AVL_TEMP_TYR_RRH->value;
+   TAR_P_TYR_FLH                                 = *(Rdci_TAR_P_TYR_FLH_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_TAR_P_TYR_TAR_P_TYR_FLH->value;
+   TAR_P_TYR_FRH                                 = *(Rdci_TAR_P_TYR_FRH_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_TAR_P_TYR_TAR_P_TYR_FRH->value;
+   TAR_P_TYR_RLH                                 = *(Rdci_TAR_P_TYR_RLH_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_TAR_P_TYR_TAR_P_TYR_RLH->value;
+   TAR_P_TYR_RRH                                 = *(Rdci_TAR_P_TYR_RRH_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_TAR_P_TYR_TAR_P_TYR_RRH->value;
+   AA_BAX_TYP_TYR                                = *(Rdci_AA_BAX_TYP_TYR_Type*)                               &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_AA_BAX_TYP_TYR->value;
+   AG_BAX_TYP_TYR                                = *(Rdci_AG_BAX_TYP_TYR_Type*)                               &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_AG_BAX_TYP_TYR->value;
+   BAX_TYP_TYR_ID2                               = *(Rdci_BAX_TYP_TYR_ID2_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_BAX_TYP_TYR_ID2->value;
+   CAC_BAX_TYP_TYR                               = *(Rdci_CAC_BAX_TYP_TYR_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_CAC_BAX_TYP_TYR->value;
+   IDX_LCC_BAX_TYP_TYR                           = *(Rdci_IDX_LCC_BAX_TYP_TYR_Type*)                          &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_IDX_LCC_BAX_TYP_TYR->value;
+   IDX_V_BAX_TYP_TYR                             = *(Rdci_IDX_V_BAX_TYP_TYR_Type*)                            &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_IDX_V_BAX_TYP_TYR->value;
+   LOR_BAX_TYP_TYR                               = *(Rdci_LOR_BAX_TYP_TYR_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_LOR_BAX_TYP_TYR->value;
+   RAD_BAX_TYP_TYR                               = *(Rdci_RAD_BAX_TYP_TYR_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_RAD_BAX_TYP_TYR->value;
+   RELA_SIDE_BAX_TYP_TYR                         = *(Rdci_RELA_SIDE_BAX_TYP_TYR_Type*)                        &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_RELA_SIDE_BAX_TYP_TYR->value;
+   RFL_BAX_TYP_TYR                               = *(Rdci_RFL_BAX_TYP_TYR_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_RFL_BAX_TYP_TYR->value;
+   SEA_BAX_TYP_TYR                               = *(Rdci_SEA_BAX_TYP_TYR_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_SEA_BAX_TYP_TYR->value;
+   ST_SLCTN_BAX_TYP_TYR                          = *(Rdci_ST_SLCTN_BAX_TYP_TYR_Type*)                         &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_ST_SLCTN_BAX_TYP_TYR->value;
+   WID_BAX_TYP_TYR                               = *(Rdci_WID_BAX_TYP_TYR_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_BAX_TYP_TYR_WID_BAX_TYP_TYR->value;
+   AA_FTAX_TYP_TYR                               = *(Rdci_AA_FTAX_TYP_TYR_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_AA_FTAX_TYP_TYR->value;
+   AG_FTAX_TYP_TYR                               = *(Rdci_AG_FTAX_TYP_TYR_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_AG_FTAX_TYP_TYR->value;
+   CAC_FTAX_TYP_TYR                              = *(Rdci_CAC_FTAX_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_CAC_FTAX_TYP_TYR->value;
+   FTAX_TYP_TYR_ID2                              = *(Rdci_FTAX_TYP_TYR_ID2_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_FTAX_TYP_TYR_ID2->value;
+   IDX_LCC_FTAX_TYP_TYR                          = *(Rdci_IDX_LCC_FTAX_TYP_TYR_Type*)                         &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_IDX_LCC_FTAX_TYP_TYR->value;
+   IDX_V_FTAX_TYP_TYR                            = *(Rdci_IDX_V_FTAX_TYP_TYR_Type*)                           &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_IDX_V_FTAX_TYP_TYR->value;
+   LOR_FTAX_TYP_TYR                              = *(Rdci_LOR_FTAX_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_LOR_FTAX_TYP_TYR->value;
+   RAD_FTAX_TYP_TYR                              = *(Rdci_RAD_FTAX_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_RAD_FTAX_TYP_TYR->value;
+   RELA_SIDE_FTAX_TYP_TYR                        = *(Rdci_RELA_SIDE_FTAX_TYP_TYR_Type*)                       &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_RELA_SIDE_FTAX_TYP_TYR->value;
+   RFL_FTAX_TYP_TYR                              = *(Rdci_RFL_FTAX_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_RFL_FTAX_TYP_TYR->value;
+   SEA_FTAX_TYP_TYR                              = *(Rdci_SEA_FTAX_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_SEA_FTAX_TYP_TYR->value;
+   WID_FTAX_TYP_TYR                              = *(Rdci_WID_FTAX_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_FTAX_TYP_TYR_WID_FTAX_TYP_TYR->value;
+   WITR_TYP_TYR_ID2                              = *(Rdci_WITR_TYP_TYR_ID2_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_WITR_TYP_TYR_WITR_TYP_TYR_ID2->value;
+   CAC_WITR_TYP_TYR                              = *(Rdci_CAC_WITR_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_WITR_TYP_TYR_CAC_WITR_TYP_TYR->value;
+   IDX_LCC_WITR_TYP_TYR                          = *(Rdci_IDX_LCC_WITR_TYP_TYR_Type*)                         &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_IDX_LCC_WITR_TYP_TYR->value;
+   IDX_V_WITR_TYP_TYR                            = *(Rdci_IDX_V_WITR_TYP_TYR_Type*)                           &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_IDX_V_WITR_TYP_TYR->value;
+   RAD_WITR_TYP_TYR                              = *(Rdci_RAD_WITR_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_RAD_WITR_TYP_TYR->value;
+   RELA_SIDE_WITR_TYP_TYR                        = *(Rdci_RELA_SIDE_WITR_TYP_TYR_Type*)                       &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_RELA_SIDE_WITR_TYP_TYR->value;
+   RFL_WITR_TYP_TYR                              = *(Rdci_RFL_WITR_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_RFL_WITR_TYP_TYR->value;
+   SEA_WITR_TYP_TYR                              = *(Rdci_SEA_WITR_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_SEA_WITR_TYP_TYR->value;
+   WID_WITR_TYP_TYR                              = *(Rdci_WID_WITR_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_WITR_TYP_TYR_WID_WITR_TYP_TYR->value;
+   CAC_SUTR_TYP_TYR                              = *(Rdci_CAC_SUTR_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_CAC_SUTR_TYP_TYR->value;
+   IDX_LCC_SUTR_TYP_TYR                          = *(Rdci_IDX_LCC_SUTR_TYP_TYR_Type*)                         &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_IDX_LCC_SUTR_TYP_TYR->value;
+   IDX_V_SUTR_TYP_TYR                            = *(Rdci_IDX_V_SUTR_TYP_TYR_Type*)                           &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_IDX_V_SUTR_TYP_TYR->value;
+   RAD_SUTR_TYP_TYR                              = *(Rdci_RAD_SUTR_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_RAD_SUTR_TYP_TYR->value;
+   RELA_SIDE_SUTR_TYP_TYR                        = *(Rdci_RELA_SIDE_SUTR_TYP_TYR_Type*)                       &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_RELA_SIDE_SUTR_TYP_TYR->value;
+   RFL_SUTR_TYP_TYR                              = *(Rdci_RFL_SUTR_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_RFL_SUTR_TYP_TYR->value;
+   SEA_SUTR_TYP_TYR                              = *(Rdci_SEA_SUTR_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_SEA_SUTR_TYP_TYR->value;
+   SOTR_TYP_TYR_ID2                              = *(Rdci_SOTR_TYP_TYR_ID2_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_SOTR_TYP_TYR_ID2->value;
+   WID_SUTR_TYP_TYR                              = *(Rdci_WID_SUTR_TYP_TYR_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_SOTR_TYP_TYR_WID_SUTR_TYP_TYR->value;
+   CAC_TYP_TYR                                   = *(Rdci_CAC_TYP_TYR_Type*)                                  &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_CAC_TYP_TYR->value;
+   IDX_LCC_TYP_TYR                               = *(Rdci_IDX_LCC_TYP_TYR_Type*)                              &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_IDX_LCC_TYP_TYR->value;
+   IDX_V_TYP_TYR                                 = *(Rdci_IDX_V_TYP_TYR_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_IDX_V_TYP_TYR->value;
+   OL_AVLB_TYP_TYR_ID2                           = *(Rdci_OL_AVLB_TYP_TYR_ID2_Type*)                          &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_OL_AVLB_TYP_TYR_ID2->value;
+   RAD_TYP_TYR                                   = *(Rdci_RAD_TYP_TYR_Type*)                                  &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_RAD_TYP_TYR->value;
+   RELA_SIDE_TYP_TYR                             = *(Rdci_RELA_SIDE_TYP_TYR_Type*)                            &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_RELA_SIDE_TYP_TYR->value;
+   RFL_TYP_TYR                                   = *(Rdci_RFL_TYP_TYR_Type*)                                  &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_RFL_TYP_TYR->value;
+   SEA_TYP_TYR                                   = *(Rdci_SEA_TYP_TYR_Type*)                                  &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_SEA_TYP_TYR->value;
+   ST_TYR_OL_ID                                  = *(Rdci_ST_TYR_OL_ID_Type*)                                 &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_ST_TYR_OL_ID->value;
+   WID_TYP_TYR                                   = *(Rdci_WID_TYP_TYR_Type*)                                  &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_OL_AVLB_TYP_TYR_WID_TYP_TYR->value;
+   CNTR_FBD_TPMS_1_ID2                           = *(Rdci_CNTR_FBD_TPMS_1_ID2_Type*)                          &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_1_CNTR_FBD_TPMS_1_ID2->value;
+   CTR_FIL_ACTV_1                                = *(Rdci_CTR_FIL_ACTV_1_Type*)                               &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_1_CTR_FIL_ACTV_1->value;
+   CTR_SUPP_ID_1                                 = *(Rdci_CTR_SUPP_ID_1_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_1_CTR_SUPP_ID_1->value;
+   CTR_TYR_ID_1                                  = *(Rdci_CTR_TYR_ID_1_Type*)                                 &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_1_CTR_TYR_ID_1->value;
+   CNTR_FBD_TPMS_2_ID2                           = *(Rdci_CNTR_FBD_TPMS_2_ID2_Type*)                          &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_2_CNTR_FBD_TPMS_2_ID2->value;
+   CTR_FIL_ACTV_2                                = *(Rdci_CTR_FIL_ACTV_2_Type*)                               &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_2_CTR_FIL_ACTV_2->value;
+   CTR_SUPP_ID_2                                 = *(Rdci_CTR_SUPP_ID_2_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_2_CTR_SUPP_ID_2->value;
+   CTR_TYR_ID_2                                  = *(Rdci_CTR_TYR_ID_2_Type*)                                 &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_2_CTR_TYR_ID_2->value;
+   CNTR_FBD_TPMS_3_ID2                           = *(Rdci_CNTR_FBD_TPMS_3_ID2_Type*)                          &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_3_CNTR_FBD_TPMS_3_ID2->value;
+   CTR_FIL_ACTV_3                                = *(Rdci_CTR_FIL_ACTV_3_Type*)                               &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_3_CTR_FIL_ACTV_3->value;
+   CTR_SUPP_ID_3                                 = *(Rdci_CTR_SUPP_ID_3_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_3_CTR_SUPP_ID_3->value;
+   CTR_TYR_ID_3                                  = *(Rdci_CTR_TYR_ID_3_Type*)                                 &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_3_CTR_TYR_ID_3->value;
+   CNTR_FBD_TPMS_4_ID2                           = *(Rdci_CNTR_FBD_TPMS_4_ID2_Type*)                          &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_4_CNTR_FBD_TPMS_4_ID2->value;
+   CTR_FIL_ACTV_4                                = *(Rdci_CTR_FIL_ACTV_4_Type*)                               &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_4_CTR_FIL_ACTV_4->value;
+   CTR_SUPP_ID_4                                 = *(Rdci_CTR_SUPP_ID_4_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_4_CTR_SUPP_ID_4->value;
+   CTR_TYR_ID_4                                  = *(Rdci_CTR_TYR_ID_4_Type*)                                 &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_CNTR_FBD_TPMS_4_CTR_TYR_ID_4->value;
+   ACTVN_PM                                      = *(Rdci_ACTVN_PM_Type*)                                     &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_PM_ACTVN_PM->value;
+   PM_ID2                                        = *(Rdci_PM_ID2_Type*)                                       &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_PM_PM_ID2->value;
+   RQ_PM_DT                                      = *(Rdci_RQ_PM_DT_Type*)                                     &Rte_Inst_CtApHufTpmsSWC->RInitRDCiStartup_PpFrPdu_PM_RQ_PM_DT->value;
+   StatusWheelTypeChangeDetection                = *(Rdci_StatusWheelTypeChangeDetection_Type*)               &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_StatusWheelTypeChange_StatusWheelTypeChangeDetection->value;
+   StatusWheelTypeChangePosition                 = *(Rdci_StatusWheelTypeChangePosition_Type*)                &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_StatusWheelTypeChange_StatusWheelTypeChangePosition->value;
+   LastReceivedAmbientPressure                   = *(Rdci_LastReceivedAmbientPressure_Type*)                  &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_LastReceivedAmbientPressure->value;
+   MobilityLossThresholdValue                    = *(Rdci_MobilityLossThresholdValue_Type*)                   &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_MobilityLossThresholdValue->value;
+   NotificationThresholdValueC                   = *(Rdci_NotificationThresholdValueC_Type*)                  &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_NotificationThresholdValueC->value;
+   NotificationThresholdValueNc                  = *(Rdci_NotificationThresholdValueNc_Type*)                 &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_NotificationThresholdValueNc->value;
+   RDCSystemReferenceTemp                        = *(Rdci_RDCSystemReferenceTemp_Type*)                       &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_RDCSystemReferenceTemp->value;
+   PwfChange                                     = *(Rdci_PwfChange_Type*)                                    &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_PwfChange->value;
+   RelRecommendedColdInflationPressureFrontAxle  = *(Rdci_RelRecommendedColdInflationPressureFrontAxle_Type*) &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_RelRecommendedColdInflationPressureFrontAxle->value;
+   RelRecommendedColdInflationPressureRearAxle   = *(Rdci_RelRecommendedColdInflationPressureRearAxle_Type*)  &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_RelRecommendedColdInflationPressureRearAxle->value;
+   TolNoTempComp                                 = *(Rdci_TolNoTempComp_Type*)                                &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_TolNoTempComp->value;
+   TolTempComp                                   = *(Rdci_TolTempComp_Type*)                                  &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_TolTempComp->value;
+   WarningThresholdValueC                        = *(Rdci_WarningThresholdValueC_Type*)                       &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_WarningThresholdValueC->value;
+   WarningThresholdValueNc                       = *(Rdci_WarningThresholdValueNc_Type*)                      &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_WarningThresholdValueNc->value;
+   ExtParkSupConfig                              = *(Rdci_ExtParkSupConfig_Type*)                             &Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_TyreParkSupervision_ExtParkSupConfig->value;
 }
 
 /******************************************************************************/
