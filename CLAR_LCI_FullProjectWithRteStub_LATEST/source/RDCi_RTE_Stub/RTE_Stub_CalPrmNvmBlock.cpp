@@ -214,10 +214,10 @@ static Std_ReturnType NvmDscCodierdatenAllgemein_WriteBlock(void);
 static Std_ReturnType NvmDscCodierdatenRDCi_ReadBlock(void);
 static Std_ReturnType NvmDscCodierdatenRDCi_WriteBlock(void);
 
-# ifdef __cplusplus
+#ifdef __cplusplus
   extern "C"
   {
-# endif
+#endif
 
 #ifdef __cplusplus
   }

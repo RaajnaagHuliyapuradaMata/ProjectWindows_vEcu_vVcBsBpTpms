@@ -1,6 +1,6 @@
 #include "RTE_Stub_DcmServices.h"
 #include "Rte_CtApHufTpmsSWC.h"
-#include "JumpTableX.h"
+#include "JumpTable.h"
 
 static ImpTypeArrayDcm_RdcAnlernenLokalisierungLesenReadDataType aucPalData;
 static ImpTypeRefDcm_NegativeResponseCodeType  ucPalError = RTE_E_INVALID;

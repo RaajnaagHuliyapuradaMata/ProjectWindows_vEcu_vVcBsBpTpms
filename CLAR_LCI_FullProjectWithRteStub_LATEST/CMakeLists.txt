@@ -106,7 +106,6 @@ add_executable(
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_RDCiSystem.cpp
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_SettingsNvmBlock.cpp
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_StbMB.cpp
-   ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp
    ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub.cpp
    ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CalPrm.cpp
    ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CalPrmNvmBlock.cpp

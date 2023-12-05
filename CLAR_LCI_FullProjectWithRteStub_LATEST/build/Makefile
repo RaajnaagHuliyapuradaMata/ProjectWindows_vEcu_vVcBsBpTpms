@@ -2337,30 +2337,6 @@ source/Wrapper_HBG/Wrapper_HBG_FlexRayData.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SwcApplTpms_EcuResim_CLAR_LCI_FullProjectWithRteStub_LATEST.dir/build.make CMakeFiles/SwcApplTpms_EcuResim_CLAR_LCI_FullProjectWithRteStub_LATEST.dir/source/Wrapper_HBG/Wrapper_HBG_FlexRayData.cpp.s
 .PHONY : source/Wrapper_HBG/Wrapper_HBG_FlexRayData.cpp.s
 
-source/Wrapper_HBG/Wrapper_HBG_JumpTable.o: source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.o
-.PHONY : source/Wrapper_HBG/Wrapper_HBG_JumpTable.o
-
-# target to build an object file
-source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SwcApplTpms_EcuResim_CLAR_LCI_FullProjectWithRteStub_LATEST.dir/build.make CMakeFiles/SwcApplTpms_EcuResim_CLAR_LCI_FullProjectWithRteStub_LATEST.dir/source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.o
-.PHONY : source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.o
-
-source/Wrapper_HBG/Wrapper_HBG_JumpTable.i: source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.i
-.PHONY : source/Wrapper_HBG/Wrapper_HBG_JumpTable.i
-
-# target to preprocess a source file
-source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SwcApplTpms_EcuResim_CLAR_LCI_FullProjectWithRteStub_LATEST.dir/build.make CMakeFiles/SwcApplTpms_EcuResim_CLAR_LCI_FullProjectWithRteStub_LATEST.dir/source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.i
-.PHONY : source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.i
-
-source/Wrapper_HBG/Wrapper_HBG_JumpTable.s: source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.s
-.PHONY : source/Wrapper_HBG/Wrapper_HBG_JumpTable.s
-
-# target to generate assembly for a file
-source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SwcApplTpms_EcuResim_CLAR_LCI_FullProjectWithRteStub_LATEST.dir/build.make CMakeFiles/SwcApplTpms_EcuResim_CLAR_LCI_FullProjectWithRteStub_LATEST.dir/source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.s
-.PHONY : source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp.s
-
 source/Wrapper_HBG/Wrapper_HBG_NvmServices.o: source/Wrapper_HBG/Wrapper_HBG_NvmServices.cpp.o
 .PHONY : source/Wrapper_HBG/Wrapper_HBG_NvmServices.o
 
@@ -2790,9 +2766,6 @@ help:
 	@echo "... source/Wrapper_HBG/Wrapper_HBG_FlexRayData.o"
 	@echo "... source/Wrapper_HBG/Wrapper_HBG_FlexRayData.i"
 	@echo "... source/Wrapper_HBG/Wrapper_HBG_FlexRayData.s"
-	@echo "... source/Wrapper_HBG/Wrapper_HBG_JumpTable.o"
-	@echo "... source/Wrapper_HBG/Wrapper_HBG_JumpTable.i"
-	@echo "... source/Wrapper_HBG/Wrapper_HBG_JumpTable.s"
 	@echo "... source/Wrapper_HBG/Wrapper_HBG_NvmServices.o"
 	@echo "... source/Wrapper_HBG/Wrapper_HBG_NvmServices.i"
 	@echo "... source/Wrapper_HBG/Wrapper_HBG_NvmServices.s"

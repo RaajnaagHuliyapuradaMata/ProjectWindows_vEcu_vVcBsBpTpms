@@ -3,7 +3,7 @@
 #define USE_CAN_MESSAGE_FILE
 
 #ifndef USE_CAN_MESSAGE_FILE
-  #define USE_DATA_TIMERS
+#define USE_DATA_TIMERS
 #endif
 
 #include <stdio.h>
@@ -70,14 +70,14 @@
 #include "HS_KalibrierereignisX.h"
 #include "DataManagerX.h"
 #include "SpeedCcmX.h"
-#include "JumpTableX.h"
+#include "JumpTable.h"
 #include "RTE_Stub_SettingsNvmBlock.h"
 #include  "StatusRdcExtParkSupervisionLesenX.h"
 
-# ifdef __cplusplus
+#ifdef __cplusplus
   extern "C"
   {
-# endif
+#endif
 
 extern void ReInitRdciSWC(void);
 extern void GetNvmWriteAttemptCounters( uint8*);
@@ -88,8 +88,7 @@ extern void GetNvmWriteAttemptCounters( uint8*);
 
 #ifdef _EcuVirtual
 #else
-namespace RDCi {
-
+namespace RDCi{
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;

@@ -1,7 +1,7 @@
-# ifdef __cplusplus
+#ifdef __cplusplus
   extern "C"
   {
-# endif
+#endif
 
 #ifdef __cplusplus
   }

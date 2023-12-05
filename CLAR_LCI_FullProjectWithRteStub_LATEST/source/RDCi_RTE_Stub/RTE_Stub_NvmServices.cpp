@@ -29,7 +29,7 @@
 #include <string.h>
 
 #include "crc16X.h"
-#include "JumpTableX.h"
+#include "JumpTable.h"
 
 #ifdef _EcuVirtual
 #include "EcuVirtual_stdio.h"
