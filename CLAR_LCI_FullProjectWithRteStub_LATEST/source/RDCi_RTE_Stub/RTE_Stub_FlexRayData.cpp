@@ -53,104 +53,104 @@ bool bNewFrBusState;
 void PutSpeedData(Rdci_V_VEH_Type* data)
 {
 
-  speedData = *data;
-  bNewSpeedData = true;
+   speedData = *data;
+   bNewSpeedData = true;
 }
 
 void PutUnitDataMile(uint8* data)
 {
-  unitMileData = *data;
-  bNewUnitMileData = true;
+   unitMileData = *data;
+   bNewUnitMileData = true;
 }
 
 void PutUnitDataAip(uint8* data)
 {
-  unitAipData = *data;
-  bNewUnitAipData = true;
+   unitAipData = *data;
+   bNewUnitAipData = true;
 }
 
 void PutUnitDataTemp(uint8* data)
 {
-  unitTempData = *data;
-  bNewUnitTempData = true;
+   unitTempData = *data;
+   bNewUnitTempData = true;
 }
 
 void PutTemperatureData(uint8* data)
 {
-  temperatureData = *data;
-  bNewTemperatureData = true;
+   temperatureData = *data;
+   bNewTemperatureData = true;
 }
 
 void PutDirectionData( Rdci_WMOM_DRV_4_Type* data)
 {
   directionData = *data;
-  bNewDirectionData = true;
+   bNewDirectionData = true;
 }
 
 void PutOpSlctnTyr(uint8* data)
 {
   OpSlctnTyr = *data;
-  bNewOpSlctnTyr = true;
+   bNewOpSlctnTyr = true;
 }
 
 void PutOpTarPLoco(uint8* data)
 {
   OpTarPLoco = *data;
-  bNewOpTarPLoco = true;
+   bNewOpTarPLoco = true;
 }
 
 void PutOpTpct(uint8* data)
 {
   OpTpct = *data;
-  bNewOpTpct = true;
+   bNewOpTpct = true;
 }
 
 void PutOpTyrSeason(uint8* data)
 {
   OpTyrSeason = *data;
-  bNewOpTyrSeason = true;
+   bNewOpTyrSeason = true;
 }
 
 void PutRqOl(uint8* data)
 {
   RqOl = *data;
-  bNewRqOl = true;
+   bNewRqOl = true;
 }
 
 void PutOpIdrSlctn(uint8* data)
 {
   OpIdrSlctn = *data;
-  bNewOpIdrSlctn = true;
+   bNewOpIdrSlctn = true;
 }
 
 void PutStIdrMsgc(uint8* data)
 {
-  StIdrMsgc = *data;
-  bNewStIdrMsgc = true;
+   StIdrMsgc = *data;
+   bNewStIdrMsgc = true;
 }
 
 void PutRelTime( Rdci_T_SEC_COU_REL_Type* data)
 {
-  timeRel = *data;
-  bNewTimeRel = true;
+   timeRel = *data;
+   bNewTimeRel = true;
 }
 
 void PutAmbientPressure( Rdci_AIP_ENG_DRV_Type * data)
 {
   ambientPressure = *data;
-  bNewAmbientPressure = true;
+   bNewAmbientPressure = true;
 }
 
 void PutPositionAltitude( Rdci_GNSSPositionAltitude_Type * data)
 {
   posAltitude = *data;
-  bNewPositionAltitude = true;
+   bNewPositionAltitude = true;
 }
 
 void PutErrorAltitudeMeters( Rdci_GNSSPositionAltitude_Type * data)
 {
-  errorAltitudeMeters = *data;
-  bNewErrorAltitudeMeters = true;
+   errorAltitudeMeters = *data;
+   bNewErrorAltitudeMeters = true;
 }
 
  void PutTimeDate( Rdci_UHRZEIT_DATUM_Type* data)
@@ -193,55 +193,55 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Read_V_VEH( P2VAR(Rdci_V_VEH_Type, AUTOM
 {
 
   *data = speedData;
-  bNewSpeedData = false;
-  return 0;
+   bNewSpeedData = false;
+   return 0;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Read_WMOM_DRV_4( P2VAR(Rdci_WMOM_DRV_4_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) data)
 {
 
   *data = directionData;
-  bNewDirectionData = false;
-  return 0;
+   bNewDirectionData = false;
+   return 0;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Read_TEMP_EX( P2VAR(Rdci_TEMP_EX_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) data)
 {
 
   *data = temperatureData;
-  bNewTemperatureData = false;
-  return 0;
+   bNewTemperatureData = false;
+   return 0;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Read_UN_AIP( P2VAR(Rdci_UN_AIP_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) data)
 {
 
   *data = unitAipData;
-  bNewUnitAipData = false;
-  return 0;
+   bNewUnitAipData = false;
+   return 0;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Read_UN_MILE( P2VAR(Rdci_UN_MILE_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) data)
 {
 
   *data = unitMileData;
-  bNewUnitMileData = false;
-  return 0;
+   bNewUnitMileData = false;
+   return 0;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Read_UN_TEMP( P2VAR(Rdci_UN_TEMP_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) data)
 {
 
   *data = unitTempData;
-  bNewUnitTempData = false;
-  return 0;
+   bNewUnitTempData = false;
+   return 0;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Read_CON_VEH( P2VAR(Rdci_CON_VEH_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) data)
 {
   *data = vehicleCondition;
-  bNewVehicleCondition = false;
-  return 0;
+   bNewVehicleCondition = false;
+   return 0;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Read_OP_SLCTN_TYR_AVLB( P2VAR(Rdci_OP_SLCTN_TYR_AVLB_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) data)
@@ -350,43 +350,43 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Read_ST_ENERG_FZM( P2VAR(Rdci_ST_ENERG_F
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Read_FrBusState( P2VAR(ImpTypeValFrBusState, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) pucState)
 {
   *pucState = FlexrayBusState;
-  bNewFrBusState = false;
-  return 0;
+   bNewFrBusState = false;
+   return 0;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_TEMP_EX(void)
 {
-  return bNewTemperatureData;
+   return bNewTemperatureData;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_UN_AIP(void)
 {
-  return bNewUnitAipData;
+   return bNewUnitAipData;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_UN_MILE(void)
 {
-  return bNewUnitMileData;
+   return bNewUnitMileData;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_UN_TEMP(void)
 {
-  return bNewUnitTempData;
+   return bNewUnitTempData;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_CON_VEH(void)
 {
-  return bNewVehicleCondition;
+   return bNewVehicleCondition;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_V_VEH(void)
 {
-  return bNewSpeedData;
+   return bNewSpeedData;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_WMOM_DRV_4(void)
 {
-  return bNewDirectionData;
+   return bNewDirectionData;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_OP_SLCTN_TYR_AVLB(void)
@@ -416,7 +416,7 @@ FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_RQ_OL_TPCT(void)
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_ST_IDR_MSGC(void)
 {
-  return bNewStIdrMsgc;
+   return bNewStIdrMsgc;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_OP_IDR_SLCTN(void)
@@ -426,46 +426,46 @@ FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_OP_IDR_SLCTN(void)
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_UHRZEIT_DATUM(void)
 {
-  return bNewTimeDate;
+   return bNewTimeDate;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_AIP_ENG_DRV(void)
 {
-  return bNewAmbientPressure;
+   return bNewAmbientPressure;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_GNSSPositionAltitude(void)
 {
-  return bNewPositionAltitude;
+   return bNewPositionAltitude;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_GNSSErrorAltitudeMeters(void)
 {
-  return bNewErrorAltitudeMeters;
+   return bNewErrorAltitudeMeters;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_T_SEC_COU_REL(void)
 {
-  return bNewTimeRel;
+   return bNewTimeRel;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_MILE_KM(void)
 {
-  return bNewMileKm;
+   return bNewMileKm;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_ST_ILK_ERRM_FZM(void)
 {
-  return bNewStIlkErrmFzm;
+   return bNewStIlkErrmFzm;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_ST_ENERG_FZM(void)
 {
-  return bNewStEnergFzm;
+   return bNewStEnergFzm;
 }
 
 FUNC(boolean, RTE_CODE) Stub_Rte_IsUpdated_FrBusState(void)
 {
-  return bNewFrBusState;
+   return bNewFrBusState;
 }
 

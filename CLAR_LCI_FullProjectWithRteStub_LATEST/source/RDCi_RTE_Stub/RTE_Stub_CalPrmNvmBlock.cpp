@@ -50,16 +50,16 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 struct{
-  boolean bValidData;
-  uint16  Chksum;
-  uint16  Version;
-  uint8   Data[50];
+   boolean bValidData;
+   uint16  Chksum;
+   uint16  Version;
+   uint8   Data[50];
 }NvmBlockDscCodierdatenRDCi[2];
 
 struct{
-  uint16 Chksum;
-  uint16 Version;
-  uint8 Data[61];
+   uint16 Chksum;
+   uint16 Version;
+   uint8 Data[61];
 }NvmBlockDscCodierdatenAllgemein;
 
 /******************************************************************************/
@@ -215,25 +215,25 @@ static Std_ReturnType NvmDscCodierdatenRDCi_ReadBlock(void);
 static Std_ReturnType NvmDscCodierdatenRDCi_WriteBlock(void);
 
 #ifdef __cplusplus
-  extern "C"
+   extern "C"
   {
 #endif
 
 #ifdef __cplusplus
-  }
+   }
 #endif
 
 void NVM_ReadAllCalPrmBlocks(void)
 {
-  (void) NvmDscCodierdatenAllgemein_ReadBlock();
-  (void) NvmDscCodierdatenRDCi_ReadBlock();
+   (void) NvmDscCodierdatenAllgemein_ReadBlock();
+   (void) NvmDscCodierdatenRDCi_ReadBlock();
 }
 
 void NVM_WriteAllCalPrmBlocks(void)
 {
   NvmBlockDscCodierdatenAllgemein.Version = 0x0100;
   NvmBlockDscCodierdatenAllgemein.Chksum = ushCalcCrc16( (uint8*) &NvmBlockDscCodierdatenAllgemein.Data, (uint16) sizeof(NvmBlockDscCodierdatenAllgemein.Data));
-  (void) NvmDscCodierdatenAllgemein_WriteBlock();
+   (void) NvmDscCodierdatenAllgemein_WriteBlock();
 
   NvmBlockDscCodierdatenRDCi[EU].Version = 0x0200;
   NvmBlockDscCodierdatenRDCi[EU].Chksum = ushCalcCrc16( (uint8*) &NvmBlockDscCodierdatenRDCi[EU].Data, (uint16) sizeof(NvmBlockDscCodierdatenRDCi[EU].Data));
@@ -241,7 +241,7 @@ void NVM_WriteAllCalPrmBlocks(void)
   NvmBlockDscCodierdatenRDCi[US].Version = 0x0200;
   NvmBlockDscCodierdatenRDCi[US].Chksum = ushCalcCrc16( (uint8*) &NvmBlockDscCodierdatenRDCi[US].Data, (uint16) sizeof(NvmBlockDscCodierdatenRDCi[US].Data));
 
-  (void) NvmDscCodierdatenRDCi_WriteBlock();
+   (void) NvmDscCodierdatenRDCi_WriteBlock();
 }
 
 static Std_ReturnType NvmDscCodierdatenAllgemein_ReadBlock(void)
@@ -251,17 +251,17 @@ static Std_ReturnType NvmDscCodierdatenAllgemein_ReadBlock(void)
   const char filename[] = "3000_DSC_CODIERDATEN_ALLGEMEIN.txt";
   const char mode[] = "rb";
 
-  if( fopen_s(&fStream, filename, mode) == 0)
-  {
+   if(fopen_s(&fStream, filename, mode) == 0){
     fread( &NvmBlockDscCodierdatenAllgemein, sizeof(uint8), sizeof(NvmBlockDscCodierdatenAllgemein), fStream);
     fclose( fStream);
-  }else{
+   }
+   else{
     NvmDscCodierdatenAllgemein_WriteByte( C_FUNKTION_REIFENPANNENERKENNUNG_AKTIV_BYTE, C_FUNKTION_REIFENPANNENERKENNUNG_AKTIV_MASK, (uint8) AKTIV_RDC);
-  }
+   }
 #else
 #endif
 
-  return E_OK;
+   return E_OK;
 }
 
 static Std_ReturnType NvmDscCodierdatenAllgemein_WriteBlock(void)
@@ -271,15 +271,14 @@ static Std_ReturnType NvmDscCodierdatenAllgemein_WriteBlock(void)
   const char filename[] = "3000_DSC_CODIERDATEN_ALLGEMEIN.txt";
   const char mode[] = "wb";
 
-  if( fopen_s(&fStream, filename, mode) == 0)
-  {
+   if(fopen_s(&fStream, filename, mode) == 0){
     fwrite( (uint8*) &NvmBlockDscCodierdatenAllgemein, sizeof(uint8), sizeof(NvmBlockDscCodierdatenAllgemein), fStream);
     fclose( fStream);
-  }
+   }
 #else
 #endif
 
-  return E_OK;
+   return E_OK;
 }
 
 uint8 NvmDscCodierdatenAllgemein_ReadByte(uint8 ucIx, uint8 ucMask){
@@ -290,62 +289,60 @@ uint8 NvmDscCodierdatenAllgemein_ReadByte(uint8 ucIx, uint8 ucMask){
 #endif
 }
 
-void NvmDscCodierdatenAllgemein_WriteByte( uint8 ucIx, uint8 ucMask, uint8 ucValue)
+void NvmDscCodierdatenAllgemein_WriteByte(uint8 ucIx, uint8 ucMask, uint8 ucValue)
 {
-  if(ucIx < sizeof(NvmBlockDscCodierdatenAllgemein.Data))
-  {
-    if( ucMask == 0xff)
-    {
+   if(ucIx < sizeof(NvmBlockDscCodierdatenAllgemein.Data)){
+      if(ucMask == 0xff){
       NvmBlockDscCodierdatenAllgemein.Data[ucIx] = ucValue;
-    }else{
-      if( ucValue == 0)
-      {
+      }
+      else{
+      if(ucValue == 0){
         NvmBlockDscCodierdatenAllgemein.Data[ucIx] &= ~ucMask;
-      }else{
+      }
+      else{
         NvmBlockDscCodierdatenAllgemein.Data[ucIx] &= ~ucMask;
         NvmBlockDscCodierdatenAllgemein.Data[ucIx] |= ucValue;
       }
-    }
-  }
+      }
+   }
 }
 
 Std_ReturnType NvmDscCodierdatenRDCi_ReadBlock(void)
 {
 #ifdef _EcuVirtual
-  uint8 i;
+   uint8 i;
 
   FILE* fStream;
   const char filename[] = "3008_DSC_CODIERDATEN_RDCI.txt";
   const char mode[] = "rb";
 
-  if( fopen_s(&fStream, filename, mode) == 0)
-  {
+   if(fopen_s(&fStream, filename, mode) == 0){
     fread( &NvmBlockDscCodierdatenRDCi, sizeof(uint8), sizeof(NvmBlockDscCodierdatenRDCi), fStream);
     fclose( fStream);
-  }else{
+   }
+   else{
     NvmBlockDscCodierdatenRDCi[EU].bValidData = FALSE;
     NvmBlockDscCodierdatenRDCi[US].bValidData = FALSE;
 
-    for( i = 0; i < 2; i++)
-    {
+      for(i = 0; i < 2; i++){
       NvmBlockDscCodierdatenRDCi[i].bValidData = TRUE;
 
-      if( tCodingDataRomCD[i].bCRdciTPrewarnNc             == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_T_PREWARN_NC_BYTE,                    C_RDCI_T_PREWARN_NC_MASK,                    C_RDCI_T_PREWARN_NC_MASK                    ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_T_PREWARN_NC_BYTE,                    C_RDCI_T_PREWARN_NC_MASK,                    (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciMaxThreshold           == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_MAX_THRESHOLD_BYTE,                   C_RDCI_MAX_THRESHOLD_MASK,                   C_RDCI_MAX_THRESHOLD_MASK                   ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_MAX_THRESHOLD_BYTE,                   C_RDCI_MAX_THRESHOLD_MASK,                   (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciPrewarnEnable          == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PREWARN_ENABLE_BYTE,                  C_RDCI_PREWARN_ENABLE_MASK,                  C_RDCI_PREWARN_ENABLE_MASK                  ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PREWARN_ENABLE_BYTE,                  C_RDCI_PREWARN_ENABLE_MASK,                  (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciStatInit               == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_STAT_INIT_BYTE,                       C_RDCI_STAT_INIT_MASK,                       C_RDCI_STAT_INIT_MASK                       ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_STAT_INIT_BYTE,                       C_RDCI_STAT_INIT_MASK,                       (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciNumPrewarnDetect       == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_NUM_PREWARN_DETECT_BYTE,              C_RDCI_NUM_PREWARN_DETECT_MASK,              C_RDCI_NUM_PREWARN_DETECT_MASK              ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_NUM_PREWARN_DETECT_BYTE,              C_RDCI_NUM_PREWARN_DETECT_MASK,              (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciPrewarnIgnition        == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PREWARN_IGNITION_BYTE,                C_RDCI_PREWARN_IGNITION_MASK,                C_RDCI_PREWARN_IGNITION_MASK                ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PREWARN_IGNITION_BYTE,                C_RDCI_PREWARN_IGNITION_MASK,                (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciPanneBefPos            == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PANNE_BEF_POS_BYTE,                   C_RDCI_PANNE_BEF_POS_MASK,                   C_RDCI_PANNE_BEF_POS_MASK                   ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PANNE_BEF_POS_BYTE,                   C_RDCI_PANNE_BEF_POS_MASK,                   (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciFastDeflateEnable      == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_FAST_DEFLATE_ENABLE_BYTE,             C_RDCI_FAST_DEFLATE_ENABLE_MASK,             C_RDCI_FAST_DEFLATE_ENABLE_MASK             ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_FAST_DEFLATE_ENABLE_BYTE,             C_RDCI_FAST_DEFLATE_ENABLE_MASK,             (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciTyrIdFiltGw            == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TYR_ID_FILT_GW_BYTE,                  C_RDCI_TYR_ID_FILT_GW_MASK,                  C_RDCI_TYR_ID_FILT_GW_MASK                  ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TYR_ID_FILT_GW_BYTE,                  C_RDCI_TYR_ID_FILT_GW_MASK,                  (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciResetPlausi            == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_RESET_PLAUSI_BYTE,                    C_RDCI_RESET_PLAUSI_MASK,                    C_RDCI_RESET_PLAUSI_MASK                    ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_RESET_PLAUSI_BYTE,                    C_RDCI_RESET_PLAUSI_MASK,                    (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciTPrewarnNc             == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_T_PREWARN_NC_BYTE,                    C_RDCI_T_PREWARN_NC_MASK,                    C_RDCI_T_PREWARN_NC_MASK                    ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_T_PREWARN_NC_BYTE,                    C_RDCI_T_PREWARN_NC_MASK,                    (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciMaxThreshold           == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_MAX_THRESHOLD_BYTE,                   C_RDCI_MAX_THRESHOLD_MASK,                   C_RDCI_MAX_THRESHOLD_MASK                   ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_MAX_THRESHOLD_BYTE,                   C_RDCI_MAX_THRESHOLD_MASK,                   (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciPrewarnEnable          == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PREWARN_ENABLE_BYTE,                  C_RDCI_PREWARN_ENABLE_MASK,                  C_RDCI_PREWARN_ENABLE_MASK                  ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PREWARN_ENABLE_BYTE,                  C_RDCI_PREWARN_ENABLE_MASK,                  (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciStatInit               == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_STAT_INIT_BYTE,                       C_RDCI_STAT_INIT_MASK,                       C_RDCI_STAT_INIT_MASK                       ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_STAT_INIT_BYTE,                       C_RDCI_STAT_INIT_MASK,                       (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciNumPrewarnDetect       == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_NUM_PREWARN_DETECT_BYTE,              C_RDCI_NUM_PREWARN_DETECT_MASK,              C_RDCI_NUM_PREWARN_DETECT_MASK              ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_NUM_PREWARN_DETECT_BYTE,              C_RDCI_NUM_PREWARN_DETECT_MASK,              (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciPrewarnIgnition        == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PREWARN_IGNITION_BYTE,                C_RDCI_PREWARN_IGNITION_MASK,                C_RDCI_PREWARN_IGNITION_MASK                ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PREWARN_IGNITION_BYTE,                C_RDCI_PREWARN_IGNITION_MASK,                (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciPanneBefPos            == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PANNE_BEF_POS_BYTE,                   C_RDCI_PANNE_BEF_POS_MASK,                   C_RDCI_PANNE_BEF_POS_MASK                   ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PANNE_BEF_POS_BYTE,                   C_RDCI_PANNE_BEF_POS_MASK,                   (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciFastDeflateEnable      == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_FAST_DEFLATE_ENABLE_BYTE,             C_RDCI_FAST_DEFLATE_ENABLE_MASK,             C_RDCI_FAST_DEFLATE_ENABLE_MASK             ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_FAST_DEFLATE_ENABLE_BYTE,             C_RDCI_FAST_DEFLATE_ENABLE_MASK,             (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciTyrIdFiltGw            == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TYR_ID_FILT_GW_BYTE,                  C_RDCI_TYR_ID_FILT_GW_MASK,                  C_RDCI_TYR_ID_FILT_GW_MASK                  ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TYR_ID_FILT_GW_BYTE,                  C_RDCI_TYR_ID_FILT_GW_MASK,                  (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciResetPlausi            == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_RESET_PLAUSI_BYTE,                    C_RDCI_RESET_PLAUSI_MASK,                    C_RDCI_RESET_PLAUSI_MASK                    ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_RESET_PLAUSI_BYTE,                    C_RDCI_RESET_PLAUSI_MASK,                    (uint8) FALSE ); }
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TPMS_MARKET_BYTE, C_RDCI_TPMS_MARKET_MASK, (uint8) (tCodingDataRomCD[i].ucCRdciTpmsMarket << 2) );
-      if( tCodingDataRomCD[i].bCRdciSensorForeignAkRdk     == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SENSOR_FOREIGN_AK_RDK_BYTE,           C_RDCI_SENSOR_FOREIGN_AK_RDK_MASK,           C_RDCI_SENSOR_FOREIGN_AK_RDK_MASK           ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SENSOR_FOREIGN_AK_RDK_BYTE,           C_RDCI_SENSOR_FOREIGN_AK_RDK_MASK,           (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciSensorLocSync          == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SENSOR_LOC_SYNC_BYTE,                 C_RDCI_SENSOR_LOC_SYNC_MASK,                 C_RDCI_SENSOR_LOC_SYNC_MASK                 ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SENSOR_LOC_SYNC_BYTE,                 C_RDCI_SENSOR_LOC_SYNC_MASK,                 (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciErfsEnable             == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ERFS_ENABLE_BYTE,                     C_RDCI_ERFS_ENABLE_MASK,                     C_RDCI_ERFS_ENABLE_MASK                     ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ERFS_ENABLE_BYTE,                     C_RDCI_ERFS_ENABLE_MASK,                     (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciTrefSeasonalAdjustment == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_BYTE, C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_MASK, C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_MASK ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_BYTE, C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_MASK, (uint8) FALSE ); }
-      if( tCodingDataRomCD[i].bCRdciDispReset              == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DISP_RESET_BYTE,                      C_RDCI_DISP_RESET_MASK,                      C_RDCI_DISP_RESET_MASK                      ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DISP_RESET_BYTE,                      C_RDCI_DISP_RESET_MASK,                      (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciSensorForeignAkRdk     == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SENSOR_FOREIGN_AK_RDK_BYTE,           C_RDCI_SENSOR_FOREIGN_AK_RDK_MASK,           C_RDCI_SENSOR_FOREIGN_AK_RDK_MASK           ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SENSOR_FOREIGN_AK_RDK_BYTE,           C_RDCI_SENSOR_FOREIGN_AK_RDK_MASK,           (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciSensorLocSync          == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SENSOR_LOC_SYNC_BYTE,                 C_RDCI_SENSOR_LOC_SYNC_MASK,                 C_RDCI_SENSOR_LOC_SYNC_MASK                 ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SENSOR_LOC_SYNC_BYTE,                 C_RDCI_SENSOR_LOC_SYNC_MASK,                 (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciErfsEnable             == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ERFS_ENABLE_BYTE,                     C_RDCI_ERFS_ENABLE_MASK,                     C_RDCI_ERFS_ENABLE_MASK                     ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ERFS_ENABLE_BYTE,                     C_RDCI_ERFS_ENABLE_MASK,                     (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciTrefSeasonalAdjustment == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_BYTE, C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_MASK, C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_MASK ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_BYTE, C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_MASK, (uint8) FALSE ); }
+      if(tCodingDataRomCD[i].bCRdciDispReset              == TRUE ) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DISP_RESET_BYTE,                      C_RDCI_DISP_RESET_MASK,                      C_RDCI_DISP_RESET_MASK                      ); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DISP_RESET_BYTE,                      C_RDCI_DISP_RESET_MASK,                      (uint8) FALSE ); }
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_COR_HOLD_OFF_TIME_BYTE, C_RDCI_COR_HOLD_OFF_TIME_MASK, (uint8) (tCodingDataRomCD[i].ucCRdciCorHoldOffTime << 5));
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_T_REF_SHIFT_BYTE, C_RDCI_T_REF_SHIFT_MASK, (uint8) tCodingDataRomCD[i].ucCRdciTRefShift);
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_UIA_TH_C_BYTE, C_RDCI_UIA_TH_C_MASK, (uint8) tCodingDataRomCD[i].ucCRdciUiaThC);
@@ -369,12 +366,12 @@ Std_ReturnType NvmDscCodierdatenRDCi_ReadBlock(void)
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TH_NC_TOL_BYTE, C_RDCI_TH_NC_TOL_MASK, (uint8) (tCodingDataRomCD[i].ucCRdciThNCTol << 4));
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_LONG_HOLD_TIME_BYTE, C_RDCI_LONG_HOLD_TIME_MASK, (uint8) tCodingDataRomCD[i].ucCRdciLongHoldTime);
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SHORT_HOLD_TIME_BYTE, C_RDCI_SHORT_HOLD_TIME_MASK, (uint8) (tCodingDataRomCD[i].ucCRdciShortHoldTime << 4));
-      if( tCodingDataRomCD[i].bCRdciEcoRcpEnable           == TRUE) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ECO_RCP_ENABLE_BYTE,                  C_RDCI_ECO_RCP_ENABLE_MASK,                  C_RDCI_ECO_RCP_ENABLE_MASK); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ECO_RCP_ENABLE_BYTE,                  C_RDCI_ECO_RCP_ENABLE_MASK,                  (uint8) FALSE); }
-      if( tCodingDataRomCD[i].bCRdciDefaultLoadCond        == TRUE) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_LOAD_COND_BYTE,               C_RDCI_DEFAULT_LOAD_COND_MASK,               C_RDCI_DEFAULT_LOAD_COND_MASK); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_LOAD_COND_BYTE,               C_RDCI_DEFAULT_LOAD_COND_MASK,               (uint8) FALSE); }
+      if(tCodingDataRomCD[i].bCRdciEcoRcpEnable           == TRUE) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ECO_RCP_ENABLE_BYTE,                  C_RDCI_ECO_RCP_ENABLE_MASK,                  C_RDCI_ECO_RCP_ENABLE_MASK); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ECO_RCP_ENABLE_BYTE,                  C_RDCI_ECO_RCP_ENABLE_MASK,                  (uint8) FALSE); }
+      if(tCodingDataRomCD[i].bCRdciDefaultLoadCond        == TRUE) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_LOAD_COND_BYTE,               C_RDCI_DEFAULT_LOAD_COND_MASK,               C_RDCI_DEFAULT_LOAD_COND_MASK); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_LOAD_COND_BYTE,               C_RDCI_DEFAULT_LOAD_COND_MASK,               (uint8) FALSE); }
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ERFS_PLACARD_SOURCE_BYTE, C_RDCI_ERFS_PLACARD_SOURCE_MASK, (uint8) (tCodingDataRomCD[i].ucCRdciErfsPlacardSource << 1));
-      if( tCodingDataRomCD[i].bCRdciDefaultMenuSel         == TRUE) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_MENU_SEL_BYTE,                C_RDCI_DEFAULT_MENU_SEL_MASK,                C_RDCI_DEFAULT_MENU_SEL_MASK); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_MENU_SEL_BYTE,                C_RDCI_DEFAULT_MENU_SEL_MASK,                (uint8) FALSE); }
+      if(tCodingDataRomCD[i].bCRdciDefaultMenuSel         == TRUE) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_MENU_SEL_BYTE,                C_RDCI_DEFAULT_MENU_SEL_MASK,                C_RDCI_DEFAULT_MENU_SEL_MASK); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_MENU_SEL_BYTE,                C_RDCI_DEFAULT_MENU_SEL_MASK,                (uint8) FALSE); }
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DISP_CONF_TIMEOUT_BYTE, C_RDCI_DISP_CONF_TIMEOUT_MASK, (uint8) (tCodingDataRomCD[i].ucCRdciDispConfTimeout << 4));
-      if( tCodingDataRomCD[i].bCRdciRidEnable              == TRUE) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_RID_ENABLE_BYTE,                      C_RDCI_RID_ENABLE_MASK,                      C_RDCI_RID_ENABLE_MASK); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_RID_ENABLE_BYTE,                      C_RDCI_RID_ENABLE_MASK,                      (uint8) FALSE); }
+      if(tCodingDataRomCD[i].bCRdciRidEnable              == TRUE) { NvmDscCodierdatenRDCi_WriteByte( C_RDCI_RID_ENABLE_BYTE,                      C_RDCI_RID_ENABLE_MASK,                      C_RDCI_RID_ENABLE_MASK); }else{ NvmDscCodierdatenRDCi_WriteByte( C_RDCI_RID_ENABLE_BYTE,                      C_RDCI_RID_ENABLE_MASK,                      (uint8) FALSE); }
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TREF_SEAS_ADJ_CONFIG_BYTE_0, C_RDCI_TREF_SEAS_ADJ_CONFIG_MASK_0, (uint8) tCodingDataRomCD[i].aucCRdciTrefSeasAdjConfig[0]);
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TREF_SEAS_ADJ_CONFIG_BYTE_1, C_RDCI_TREF_SEAS_ADJ_CONFIG_MASK_1, (uint8) tCodingDataRomCD[i].aucCRdciTrefSeasAdjConfig[1]);
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TREF_SEAS_ADJ_CONFIG_BYTE_2, C_RDCI_TREF_SEAS_ADJ_CONFIG_MASK_2, (uint8) tCodingDataRomCD[i].aucCRdciTrefSeasAdjConfig[2]);
@@ -400,15 +397,15 @@ Std_ReturnType NvmDscCodierdatenRDCi_ReadBlock(void)
       NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PARK_SUP_WARNING_THRESHOLD_VALUE_NC_BYTE, C_RDCI_PARK_SUP_WARNING_THRESHOLD_VALUE_NC_MASK, (uint8) tCodingDataRomCD[i].ucCRdciParkSupWarningThNcValue);
 
       NvmBlockDscCodierdatenRDCi[i].bValidData = FALSE;
-    }
+      }
 
     NvmBlockDscCodierdatenRDCi[EU].bValidData = TRUE;
     NvmBlockDscCodierdatenRDCi[US].bValidData = FALSE;
-  }
+   }
 #else
 #endif
 
-  return E_OK;
+   return E_OK;
 }
 
 Std_ReturnType NvmDscCodierdatenRDCi_WriteBlock(void)
@@ -418,78 +415,75 @@ Std_ReturnType NvmDscCodierdatenRDCi_WriteBlock(void)
   const char filename[] = "3008_DSC_CODIERDATEN_RDCI.txt";
   const char mode[] = "wb";
 
-  if( fopen_s(&fStream, filename, mode) == 0)
-  {
+   if(fopen_s(&fStream, filename, mode) == 0){
     fwrite( (uint8*) &NvmBlockDscCodierdatenRDCi, sizeof(uint8), sizeof(NvmBlockDscCodierdatenRDCi), fStream);
     fclose( fStream);
-  }
+   }
 #else
 #endif
 
-  return E_OK;
+   return E_OK;
 }
 
-uint8 NvmDscCodierdatenRDCi_ReadByte( uint8 ucIx, uint8 ucMask)
+uint8 NvmDscCodierdatenRDCi_ReadByte(uint8 ucIx, uint8 ucMask)
 {
-  uint8 ucRet;
-  if( NvmBlockDscCodierdatenRDCi[US].bValidData == TRUE)
-  {
-    ucRet = NvmBlockDscCodierdatenRDCi[US].Data[ucIx] & ucMask;
-  }else{
-    ucRet = NvmBlockDscCodierdatenRDCi[EU].Data[ucIx] & ucMask;
-  }
+   uint8 ucRet;
+   if(NvmBlockDscCodierdatenRDCi[US].bValidData == TRUE){
+      ucRet = NvmBlockDscCodierdatenRDCi[US].Data[ucIx] & ucMask;
+   }
+   else{
+      ucRet = NvmBlockDscCodierdatenRDCi[EU].Data[ucIx] & ucMask;
+   }
 
-  return ucRet;
+   return ucRet;
 }
 
-void NvmDscCodierdatenRDCi_WriteByte( uint8 ucIx, uint8 ucMask, uint8 ucValue)
+void NvmDscCodierdatenRDCi_WriteByte(uint8 ucIx, uint8 ucMask, uint8 ucValue)
 {
-  if( NvmBlockDscCodierdatenRDCi[US].bValidData == TRUE)
-  {
-    if(ucIx < sizeof(NvmBlockDscCodierdatenRDCi[US].Data))
-    {
-      if( ucMask == 0xff)
-      {
+   if(NvmBlockDscCodierdatenRDCi[US].bValidData == TRUE){
+      if(ucIx < sizeof(NvmBlockDscCodierdatenRDCi[US].Data)){
+      if(ucMask == 0xff){
         NvmBlockDscCodierdatenRDCi[US].Data[ucIx] = ucValue;
-      }else{
-        if( ucValue == 0)
-        {
+      }
+      else{
+          if(ucValue == 0){
           NvmBlockDscCodierdatenRDCi[US].Data[ucIx] &= ~ucMask;
-        }else{
+         }
+         else{
           NvmBlockDscCodierdatenRDCi[US].Data[ucIx] &= ~ucMask;
           NvmBlockDscCodierdatenRDCi[US].Data[ucIx] |= ucValue;
         }
       }
-    }
-  }else{
-    if(ucIx < sizeof(NvmBlockDscCodierdatenRDCi[EU].Data))
-    {
-      if( ucMask == 0xff)
-      {
+      }
+   }
+   else{
+      if(ucIx < sizeof(NvmBlockDscCodierdatenRDCi[EU].Data)){
+      if(ucMask == 0xff){
         NvmBlockDscCodierdatenRDCi[EU].Data[ucIx] = ucValue;
-      }else{
-        if( ucValue == 0)
-        {
+      }
+      else{
+          if(ucValue == 0){
           NvmBlockDscCodierdatenRDCi[EU].Data[ucIx] &= ~ucMask;
-        }else{
+         }
+         else{
           NvmBlockDscCodierdatenRDCi[EU].Data[ucIx] &= ~ucMask;
           NvmBlockDscCodierdatenRDCi[EU].Data[ucIx] |= ucValue;
         }
       }
-    }
-  }
+      }
+   }
 }
 
-void NvmDscCodierdatenRDCi_Activate( uint8 ucMarket)
+void NvmDscCodierdatenRDCi_Activate(uint8 ucMarket)
 {
-  if( ucMarket == US)
-  {
+   if(ucMarket == US){
     NvmBlockDscCodierdatenRDCi[US].bValidData = TRUE;
     NvmBlockDscCodierdatenRDCi[EU].bValidData = FALSE;
-  }else{
+   }
+   else{
     NvmBlockDscCodierdatenRDCi[EU].bValidData = TRUE;
     NvmBlockDscCodierdatenRDCi[US].bValidData = FALSE;
-  }
+   }
 }
 
 /******************************************************************************/

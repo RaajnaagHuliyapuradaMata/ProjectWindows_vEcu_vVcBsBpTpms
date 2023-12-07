@@ -261,7 +261,7 @@ private: System::Void buttonRID_Daten2_Click(System::Object^  sender, System::Ev
 }
 private: System::Void buttonRID_Daten3_Click(System::Object^  sender, System::EventArgs^  e)
 {
-  uint16 ushTempBuf;
+   uint16 ushTempBuf;
    uint8 uc100er,uc10er,uc1er,ucData;
 
 	 ushTempBuf = System::Decimal::ToUInt16 (RID_Reifenbreite->Value);
@@ -390,7 +390,7 @@ private: System::Void buttonRID_Daten3_Click(System::Object^  sender, System::Ev
 }
 private: System::Void buttonRID_Daten4_Click(System::Object^  sender, System::EventArgs^  e)
 {
-  uint16 ushTempBuf;
+   uint16 ushTempBuf;
    uint8 uc100er,uc10er,uc1er,ucData;
 
 	 ushTempBuf = System::Decimal::ToUInt16 (RID_Reifenbreite->Value);

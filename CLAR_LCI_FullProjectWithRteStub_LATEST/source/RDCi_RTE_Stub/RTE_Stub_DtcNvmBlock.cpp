@@ -49,9 +49,9 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 struct{
-  uint16 Chksum;
-  uint16 Version;
-  uint8 Data[cMaxErrorCount * sizeof(tRDCiDtcListDef)];
+   uint16 Chksum;
+   uint16 Version;
+   uint8 Data[cMaxErrorCount * sizeof(tRDCiDtcListDef)];
 }NvmBlockDtc;
 
 /******************************************************************************/
@@ -75,21 +75,20 @@ void NVM_ReadAllDTC(void)
   FILE* fStream;
   const char filename[] = "NvmRdciDTC.txt";
   const char mode[] = "rb";
-  uint32 ulLoop;
+   uint32 ulLoop;
 
-  if( fopen_s(&fStream, filename, mode) == 0)
-  {
+   if(fopen_s(&fStream, filename, mode) == 0){
     fread( &NvmBlockDtc, sizeof(uint8), sizeof(NvmBlockDtc), fStream);
     fclose( fStream);
-  }else{
+   }
+   else{
     NvmBlockDtc.Chksum  = 0xFFFFu;
     NvmBlockDtc.Version = 0xFFFFu;
 
-    for( ulLoop = 0; ulLoop < (cMaxErrorCount * sizeof(tRDCiDtcListDef)); ulLoop++)
-    {
+      for(ulLoop = 0; ulLoop < (cMaxErrorCount * sizeof(tRDCiDtcListDef)); ulLoop++){
       NvmBlockDtc.Data[ulLoop] = 0xFFu;
-    }
-  }
+      }
+   }
 #else
 #endif
 }
@@ -100,35 +99,32 @@ void NVM_WriteAllDTC(void)
   FILE* fStream;
   const char filename[] = "NvmRdciDTC.txt";
   const char mode[] = "wb";
-  static uint16 ushLastCrc;
+   static uint16 ushLastCrc;
 
   NvmBlockDtc.Version = 0x0100;
   NvmBlockDtc.Chksum = ushCalcCrc16( (uint8*) &NvmBlockDtc.Data, (uint16) sizeof(NvmBlockDtc.Data));
 
-  if(NvmBlockDtc.Chksum != ushLastCrc)
-  {
-    if( fopen_s(&fStream, filename, mode) == 0)
-    {
+   if(NvmBlockDtc.Chksum != ushLastCrc){
+      if(fopen_s(&fStream, filename, mode) == 0){
       fwrite( (uint8*) &NvmBlockDtc, sizeof(uint8), sizeof(NvmBlockDtc), fStream);
       fclose( fStream);
-    }
-    ushLastCrc = NvmBlockDtc.Chksum;
-  }
+      }
+      ushLastCrc = NvmBlockDtc.Chksum;
+   }
 #else
 #endif
 }
 
-uint8 ucNvmDTC_ReadByte( uint32 ulIx)
+uint8 ucNvmDTC_ReadByte(uint32 ulIx)
 {
-  return NvmBlockDtc.Data[ulIx];
+   return NvmBlockDtc.Data[ulIx];
 }
 
-void NvmDTC_WriteByte( uint32 ulIx, uint8 ucNvmByte)
+void NvmDTC_WriteByte(uint32 ulIx, uint8 ucNvmByte)
 {
-  if(ulIx < sizeof(NvmBlockDtc.Data))
-  {
+   if(ulIx < sizeof(NvmBlockDtc.Data)){
     NvmBlockDtc.Data[ulIx] = ucNvmByte;
-  }
+   }
 }
 
 /******************************************************************************/

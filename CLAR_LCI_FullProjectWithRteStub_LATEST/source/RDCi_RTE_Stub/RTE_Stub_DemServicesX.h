@@ -63,13 +63,13 @@ extern "C"
 
 typedef struct{
 
-  uint8                                                      auc0x1702_SAE_CODE[3];
-  uint32                                                     ul0x1768_KM_STAND_SUPREME;
-  uint8                                                      auc0x1769_SYSTEMZEIT_SUPREME[6];
+   uint8                                                      auc0x1702_SAE_CODE[3];
+   uint32                                                     ul0x1768_KM_STAND_SUPREME;
+   uint8                                                      auc0x1769_SYSTEMZEIT_SUPREME[6];
   ImpTypeValDcm_FunktionenReifendruckkontrolleReadDataType   uc0x190D_FUNKTIONEN_REIFENDRUCKKONTROLLE;
   ImpTypeValDcm_RdcAktuelleAussentemperaturReadDataType      uc0x2805_AUSSENTEMPERATUR;
-  uint8                                                      uc0x2866_BETRIEBSSPANNUNG;
-  uint8                                                      uc0x2867_FAHRZEUGGESCHWINDIGKEIT;
+   uint8                                                      uc0x2866_BETRIEBSSPANNUNG;
+   uint8                                                      uc0x2867_FAHRZEUGGESCHWINDIGKEIT;
   ImpTypeValDcm_RdcSensorHerstellerReadDataType              uc0x4100_RDC_SENSOR_HERSTELLER;
   ImpTypeValDcm_RdcReferenzAussentemperaturReadDataType      uc0x4101_RDC_REFERENZ_AUSSENTEMPERATUR;
   ImpTypeArrayDcm_RdcAussendruckReadDataType                 auc0x4102_RDC_AUSSENDRUCK;
@@ -81,7 +81,7 @@ typedef struct{
   ImpTypeValDcm_RdcReifentemperaturVrReadDataType            uc0x4108_RDC_REIFENTEMPERATUR_VR;
   ImpTypeValDcm_RdcReifentemperaturHlReadDataType            uc0x4109_RDC_REIFENTEMPERATUR_HL;
   ImpTypeValDcm_RdcReifentemperaturHrReadDataType            uc0x410A_RDC_REIFENTEMPERATUR_HR;
-  sint8                                                      sc0x410B_RDC_AKTUELLE_AUSSENTEMPERATUR;
+   sint8                                                      sc0x410B_RDC_AKTUELLE_AUSSENTEMPERATUR;
   ImpTypeValDcm_RdcInaktivStatusReadDataType                 uc0x410C_RDC_INAKTIV_STATUS;
   ImpTypeValDcm_RdcKalibrierungStatusReadDataType            uc0x410D_RDC_KALIBRIERUNG_STATUS;
   ImpTypeValDcm_RdcStatusReadDataType                        uc0x410E_RDC_STATUS;
@@ -89,22 +89,22 @@ typedef struct{
   ImpTypeArrayDcm_RdcSolldruckVornReadDataType               auc0x4110_RDC_SOLLDRUCK_VORN;
   ImpTypeArrayDcm_RdcSolldruckHintenReadDataType             auc0x4111_RDC_SOLLDRUCK_HINTEN;
   ImpTypeValDcm_RdcPositionReadDataType                      uc0x4112_RDC_POSITION;
-  uint8                                                      uc0x5008_SPANNUNGSMASTER_VERFUEGBAR;
-  uint8                                                      uc0x500A_GESCHWINDIGKEIT;
-  uint16                                                     ush0x500B_FUNKTIONSZUSTAND;
-  uint8                                                      uc0x500C_INTERNER_FUNKTIONSZUSTAND;
-  uint16                                                     ush0x500E_INTERNE_FEHLERNUMMER;
+   uint8                                                      uc0x5008_SPANNUNGSMASTER_VERFUEGBAR;
+   uint8                                                      uc0x500A_GESCHWINDIGKEIT;
+   uint16                                                     ush0x500B_FUNKTIONSZUSTAND;
+   uint8                                                      uc0x500C_INTERNER_FUNKTIONSZUSTAND;
+   uint16                                                     ush0x500E_INTERNE_FEHLERNUMMER;
 }tRDCiDtcUwbListDef;
 
 typedef struct{
-  uint32                          ulDtc;
+   uint32                          ulDtc;
   ImpTypeRefDem_EventStatusType   ucStatus;
 
-  uint8                           ucType;
+   uint8                           ucType;
 
-  uint8                           ucUwbUpdateState;
-  uint32                          ulUwbMask;
-  tRDCiDtcUwbListDef              tUwb;
+   uint8                           ucUwbUpdateState;
+   uint32                          ulUwbMask;
+   tRDCiDtcUwbListDef              tUwb;
 }tRDCiDtcListDef;
 
 extern tRDCiDtcListDef tRDCiDtclist[cMaxErrorCount];
@@ -307,8 +307,8 @@ FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteRr_SetEventStatus( ImpTyp
 
 extern void WriteDtcListToNvmBlock(void);
 extern void ReadDtcListFromNvmBlock(void);
-extern void InitDtcUwbData( uint8 ucDtcNo);
-extern void ReadDtcUwbData( uint8 ucDtcNo);
+extern void InitDtcUwbData(uint8 ucDtcNo);
+extern void ReadDtcUwbData(uint8 ucDtcNo);
 
 #ifdef __cplusplus
 }

@@ -1,6 +1,9 @@
 cd ./source/SwcApplTpms
 ./b_git_push.sh
 
+cd ./source/Wrapper_HBG
+./b_git_push.sh
+
 cd ../..
 git add .
 git status

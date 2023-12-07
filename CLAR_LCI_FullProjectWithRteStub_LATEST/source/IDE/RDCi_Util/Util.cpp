@@ -19,20 +19,17 @@
 
 unsigned char SetTeleFilter(unsigned char ucFilter)
 {
-  static unsigned char ucTeleFilter;
-  if(ucFilter != TELE_FILTER_READ_ONLY)
-  {
-    if(ucFilter == TELE_FILTER_OFF)
-    {
+   static unsigned char ucTeleFilter;
+   if(ucFilter != TELE_FILTER_READ_ONLY){
+      if(ucFilter == TELE_FILTER_OFF){
       ucTeleFilter = TELE_FILTER_OFF;
-    }
+      }
 
-    else
-    {
+      else{
       ucTeleFilter |= ucFilter;
-    }
-  }
-  return ucTeleFilter;
+      }
+   }
+   return ucTeleFilter;
 }
 
 #ifdef _EcuVirtual
@@ -41,37 +38,37 @@ void ReadStringFromStream(void)
 #else
 void ReadStringFromStream(unsigned char myString[], System::IO::Stream^ myStream, uint8 mySize)
 {
-  int ucChar, i = 0;
-  boolean bReady = FALSE;
+   int ucChar, i = 0;
+   boolean bReady = FALSE;
 
   myString[i] = 0;
 
   do
   {
-    ucChar = myStream->ReadByte();
+      ucChar = myStream->ReadByte();
 
-    if( (ucChar != '\n') && (ucChar != '\r') && (ucChar != '\t') && (ucChar != ' '))
-    {
-      if( (ucChar == ';') || (ucChar == ','))
-      {
+      if((ucChar != '\n') && (ucChar != '\r') && (ucChar != '\t') && (ucChar != ' ')){
+      if((ucChar == ';') || (ucChar == ',')){
         myString[i] = 0;
         bReady = TRUE;
-      }else{
+      }
+      else{
         myString[i] = ucChar;
 
-        if( i < (mySize - 1))
-        {
+          if(i < (mySize - 1)){
           i++;
-        }else{
+         }
+         else{
           myString[0] = 0;
           i = 0;
         }
       }
-    }else{
+      }
+      else{
       myString[0] = 0;
       i = 0;
-    }
-  }
+      }
+   }
   while( bReady == FALSE);
 #endif
 }
@@ -84,10 +81,10 @@ long ReadLongIntFromStream(void)
 #else
 long ReadLongIntFromStream(System::IO::Stream^ myStream)
 {
-  unsigned char myString[255];
+   unsigned char myString[255];
 
   ReadStringFromStream(myString, myStream, sizeof(myString));
-  return (atol((const char*)myString));
+   return (atol((const char*)myString));
 }
 #endif
 
@@ -99,7 +96,7 @@ long long ReadLongLongIntFromStream(void)
 #else
 long long ReadLongLongIntFromStream(System::IO::Stream^ myStream)
 {
-  unsigned char myString[40];
+   unsigned char myString[40];
 
   ReadStringFromStream(myString, myStream, sizeof(myString));
 
@@ -120,10 +117,10 @@ double ReadDoubleFromStream(void)
 #else
 double ReadDoubleFromStream(System::IO::Stream^ myStream)
 {
-  unsigned char myString[40];
+   unsigned char myString[40];
 
   ReadStringFromStream(myString, myStream, sizeof(myString));
-  return (atof((const char*)myString));
+   return (atof((const char*)myString));
 }
 #endif
 
@@ -133,9 +130,8 @@ void ReadCompleteLineFromStream(void)
 #else
 void ReadCompleteLineFromStream( System::IO::Stream^ myStream)
 {
-  while( myStream->ReadByte() != '\n')
-  {
-  }
+  while( myStream->ReadByte() != '\n'){
+   }
 #endif
 }
 
@@ -147,13 +143,12 @@ long ReadMessageFromFile(void)
 #else
 long ReadMessageFromFile(System::IO::Stream^ myStream, uint32 dataType, unsigned long long * pullTimestamp, void * FileData)
 {
-    uint32 ulRet = 0;
-    uint8 direction = 0x03;
-    uint32 ulTemp = 0;
+      uint32 ulRet = 0;
+      uint8 direction = 0x03;
+      uint32 ulTemp = 0;
     long long llTimestamp = 0;
 
-    switch (dataType)
-    {
+      switch(dataType){
 
       case 0:
 
@@ -244,19 +239,19 @@ long ReadMessageFromFile(System::IO::Stream^ myStream, uint32 dataType, unsigned
 
         *pullTimestamp = (llTimestamp / 1000);
 
-        if( ((tCddRdcData *) FileData)->PCKG_ID == cTelTypeAlive)
-        {
+          if(((tCddRdcData *) FileData)->PCKG_ID == cTelTypeAlive){
 
           ulRet = 0;
-        }else{
+         }
+         else{
 
           if((SetTeleFilter(TELE_FILTER_READ_ONLY) == TELE_FILTER_OFF)
            || ((((tCddRdcData *) FileData)->SUPP_ID == cSupplCodeHuf) && ((SetTeleFilter(TELE_FILTER_READ_ONLY) & TELE_FILTER_HUF) == TELE_FILTER_HUF))
            || ((((tCddRdcData *) FileData)->SUPP_ID == cSupplCodeSchrader) && ((SetTeleFilter(TELE_FILTER_READ_ONLY) & TELE_FILTER_SCHRADER) == TELE_FILTER_SCHRADER))
-           || ((((tCddRdcData *) FileData)->SUPP_ID == cSupplCodeConti) && ((SetTeleFilter(TELE_FILTER_READ_ONLY) & TELE_FILTER_CONTI) == TELE_FILTER_CONTI)))
-          {
+           || ((((tCddRdcData *) FileData)->SUPP_ID == cSupplCodeConti) && ((SetTeleFilter(TELE_FILTER_READ_ONLY) & TELE_FILTER_CONTI) == TELE_FILTER_CONTI))){
             ulRet = 0;
-          }else{
+            }
+            else{
             ulRet = 1;
           }
         }
@@ -377,7 +372,7 @@ long ReadMessageFromFile(System::IO::Stream^ myStream, uint32 dataType, unsigned
         ReadCompleteLineFromStream( myStream);
         ulRet = 0;
       break;
-    }
+      }
 
     return ulRet;
 }
@@ -385,61 +380,55 @@ long ReadMessageFromFile(System::IO::Stream^ myStream, uint32 dataType, unsigned
 
 short SearchIDInList(long id)
 {
-  static long idList[16];
-  short i = 0;
-  short retVal = 16;
+   static long idList[16];
+   short i = 0;
+   short retVal = 16;
 
-  if( id == 0xFFFFFFFFu)
-  {
-    for( i = 0; i < 16; i++)
-    {
+   if(id == 0xFFFFFFFFu){
+      for(i = 0; i < 16; i++){
       idList[i] = 0;
-    }
-  }else{
-    while (i < 16)
-    {
-      if(id == idList[i])
-      {
+      }
+   }
+   else{
+    while (i < 16){
+      if(id == idList[i]){
         retVal = i;
         i = 16;
       }
-      else
-      {
-        if(idList[i] == 0)
-        {
+      else{
+          if(idList[i] == 0){
           idList[i] = id;
           retVal = i | 0x100;
           i = 16;
         }
-        else
-        {
+        else{
           i++;
         }
       }
-    }
-  }
+      }
+   }
 
-  return retVal;
+   return retVal;
 }
 
 void convertTemperatureRawToPhysical(unsigned char ucRawTemp, signed char *pscPhyTemp)
 {
-  if( ucRawTemp == cReAkTempError)
-  {
+   if(ucRawTemp == cReAkTempError){
 
     *pscPhyTemp = cInvalidREtemperature;
-  }else if( ucRawTemp < cReHufAkTempUnderflow)
-  {
+   }
+   else if(ucRawTemp < cReHufAkTempUnderflow){
 
     *pscPhyTemp = (sint8) (cReHufAkTempUnderflow - 52);
-  }else if( ucRawTemp > cReHufAkTempOverflow)
-  {
+   }
+   else if(ucRawTemp > cReHufAkTempOverflow){
 
     *pscPhyTemp = (sint8) (cReHufAkTempOverflow - 52);
-  }else{
+   }
+   else{
 
     *pscPhyTemp = (sint8) (ucRawTemp - 52);
-  }
+   }
 }
 
 #ifdef _EcuVirtual
@@ -448,29 +437,29 @@ void convertTemperatureRawToPhysical(unsigned char ucRawTemp, signed char *pscPh
 #endif
 void SynchronizeSystemTimes( Rdci_UHRZEIT_DATUM_Type* timeDate, Rdci_T_SEC_COU_REL_Type* relTime, StbMB_SyncStatusType* syncState, StbMB_SystemTimeType* sysTime)
 {
-  time_t t;
-  tm now;
+   time_t t;
+   tm now;
 
   *syncState = STBM_STATE_NOT_SYNC;
 
-  t = time(0);
+   t = time(0);
   localtime_s(&now, &t);
-  timeDate->DISP_DATE_DAY = now.tm_mday;
-  timeDate->DISP_DATE_MON = now.tm_mon + 1;
-  timeDate->DISP_DATE_WDAY = now.tm_wday;
-  timeDate->DISP_DATE_YR = now.tm_year + 1900;
-  timeDate->DISP_HR = now.tm_hour;
-  timeDate->DISP_MN = now.tm_min;
-  timeDate->DISP_SEC = now.tm_sec;
-  timeDate->ST_DISP_CTI_DATE = 0x03;
+   timeDate->DISP_DATE_DAY = now.tm_mday;
+   timeDate->DISP_DATE_MON = now.tm_mon + 1;
+   timeDate->DISP_DATE_WDAY = now.tm_wday;
+   timeDate->DISP_DATE_YR = now.tm_year + 1900;
+   timeDate->DISP_HR = now.tm_hour;
+   timeDate->DISP_MN = now.tm_min;
+   timeDate->DISP_SEC = now.tm_sec;
+   timeDate->ST_DISP_CTI_DATE = 0x03;
 
   *relTime = (uint32)t;
 
-  sysTime->systemTicks = (uint32)t;
-  sysTime->tickDuration = 1;
-  sysTime->systemTicksHi = 0;
-  sysTime->ticks = 0;
-  syncState = STBM_STATE_SYNC;
+   sysTime->systemTicks = (uint32)t;
+   sysTime->tickDuration = 1;
+   sysTime->systemTicksHi = 0;
+   sysTime->ticks = 0;
+   syncState = STBM_STATE_SYNC;
 
 }
 

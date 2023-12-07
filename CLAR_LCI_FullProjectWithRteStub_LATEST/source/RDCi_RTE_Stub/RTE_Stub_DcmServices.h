@@ -30,8 +30,8 @@ extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_RdcRidAktReifenLaufstreck
 extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_RdcRidAlteReifenLaufstreckeLesen (ImpTypeArrayDcm_RdcRidAlteReifenLaufstreckeLesenReadDataType* Data);
 extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_StatusRdcExtParkSupervisionLesen (ImpTypeArrayDcm_StatusRdcExtParkSupervisionLesenType * Data);
 
-extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_SteuernDigitalRdc( uint8 , uint8);
-extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_SteuernRadelektronikVorgeben( uint32 , uint8);
+extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_SteuernDigitalRdc(uint8 , uint8);
+extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_SteuernRadelektronikVorgeben(uint32 , uint8);
 extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_SteuernRdcErfsEcoReifentabelleVorgeben(void);
 extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_SteuernRdcErfsEcoNeueReifenVorgeben(void);
 extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_SteuernRdcErfsEcoAktReifenPosVorgeben(void);
@@ -59,7 +59,7 @@ extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_UWB_RdcSolldruckHinten_Re
 extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_UWB_RdcSolldruckVorn_ReadData( ImpTypeArrayDcm_RdcSolldruckVornReadDataType * Data);
 extern ImpTypeRefDcm_NegativeResponseCodeType RTE_Stub_UWB_RdcStatus_ReadData( ImpTypeValDcm_RdcStatusReadDataType * Data);
 
-extern uint8 *Stub_RdcAnlernenLokalisierungLesen_Output( uint8);
+extern uint8 *Stub_RdcAnlernenLokalisierungLesen_Output(uint8);
 
 #endif
 

@@ -13,7 +13,7 @@
 /* certain responsibilities, if you distribute copies of the software, or if  */
 /* you modify it: responsibilities to respect the freedom of others.          */
 /*                                                                            */
-/* All rights reserved. Copyright © 1982 Raajnaag HULIYAPURADA MATA           */
+/* All rights reserved. Copyright ï¿½ 1982 Raajnaag HULIYAPURADA MATA           */
 /*                                                                            */
 /* Always refer latest software version from:                                 */
 /* https://github.com/RaajnaagHuliyapuradaMata?tab=repositories               */
@@ -49,11 +49,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-#ifdef _EcuVirtual
-ImpTypeRecCRdciErfsReifenEco ErfsReifenEcoTyreList = {{0}, 0};
-#else
-ImpTypeRecCRdciErfsReifenEco ErfsReifenEcoTyreList = {0};
-#endif
+ImpTypeRecCRdciErfsReifenEco       ErfsReifenEcoTyreList = {{0}, 0};
 ImpTypeArrayCRdciLearnLocateConfig LearnLocateConfig;
 ImpTypeArrayCRdciTrefSeasAdjConfig TrefSeasAdjConfig;
 
@@ -131,33 +127,33 @@ Rte_CtApHufTpmsSWC_PiCalPrmRDCi_R_Calprm_CRdciTrefSeasAdjConfig_FncRetPtrType St
 }
 
 FUNC(ImpTypeValCRdciSpeedCcmPressOffsetFa, RTE_CODE) Stub_Rte_Prm_CRdciSpeedCcmPressOffsetFa(void){
-  union{
+   union{
     ImpTypeValCRdciSpeedCcmPressOffsetFa SpeedCcmPressOffsetFa;
-    uint8                                aucSpeedCcmPressOffsetFa[sizeof(ImpTypeValCRdciSpeedCcmPressOffsetFa)];
-  }tSpeedCcmPressOffsetFa;
-  tSpeedCcmPressOffsetFa.aucSpeedCcmPressOffsetFa[0] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_0);
-  tSpeedCcmPressOffsetFa.aucSpeedCcmPressOffsetFa[1] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_1);
-  return tSpeedCcmPressOffsetFa.SpeedCcmPressOffsetFa;
+      uint8                                aucSpeedCcmPressOffsetFa[sizeof(ImpTypeValCRdciSpeedCcmPressOffsetFa)];
+   }tSpeedCcmPressOffsetFa;
+   tSpeedCcmPressOffsetFa.aucSpeedCcmPressOffsetFa[0] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_0);
+   tSpeedCcmPressOffsetFa.aucSpeedCcmPressOffsetFa[1] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_1);
+   return tSpeedCcmPressOffsetFa.SpeedCcmPressOffsetFa;
 }
 
 FUNC(ImpTypeValCRdciSpeedCcmPressOffsetRa, RTE_CODE) Stub_Rte_Prm_CRdciSpeedCcmPressOffsetRa(void){
-  union{
+   union{
     ImpTypeValCRdciSpeedCcmPressOffsetRa SpeedCcmPressOffsetRa;
-    uint8                                aucSpeedCcmPressOffsetRa[sizeof(ImpTypeValCRdciSpeedCcmPressOffsetRa)];
-  }tSpeedCcmPressOffsetRa;
-  tSpeedCcmPressOffsetRa.aucSpeedCcmPressOffsetRa[0] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_0);
-  tSpeedCcmPressOffsetRa.aucSpeedCcmPressOffsetRa[1] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_1);
-  return tSpeedCcmPressOffsetRa.SpeedCcmPressOffsetRa;
+      uint8                                aucSpeedCcmPressOffsetRa[sizeof(ImpTypeValCRdciSpeedCcmPressOffsetRa)];
+   }tSpeedCcmPressOffsetRa;
+   tSpeedCcmPressOffsetRa.aucSpeedCcmPressOffsetRa[0] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_0);
+   tSpeedCcmPressOffsetRa.aucSpeedCcmPressOffsetRa[1] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_1);
+   return tSpeedCcmPressOffsetRa.SpeedCcmPressOffsetRa;
 }
 
 FUNC(ImpTypeValCRdciSpeedCcmTh, RTE_CODE) Stub_Rte_Prm_CRdciSpeedCcmTh(void){
-  union{
+   union{
     ImpTypeValCRdciSpeedCcmTh SpeedCcmTh;
-    uint8                     aucSpeedCcmTh[sizeof(ImpTypeValCRdciSpeedCcmTh)];
-  }tSpeedCcmTh;
-  tSpeedCcmTh.aucSpeedCcmTh[0] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_TH_BYTE_0, C_RDCI_SPEED_CCM_TH_MASK_0);
-  tSpeedCcmTh.aucSpeedCcmTh[1] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_TH_BYTE_1, C_RDCI_SPEED_CCM_TH_MASK_1);
-  return tSpeedCcmTh.SpeedCcmTh;
+      uint8                     aucSpeedCcmTh[sizeof(ImpTypeValCRdciSpeedCcmTh)];
+   }tSpeedCcmTh;
+   tSpeedCcmTh.aucSpeedCcmTh[0] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_TH_BYTE_0, C_RDCI_SPEED_CCM_TH_MASK_0);
+   tSpeedCcmTh.aucSpeedCcmTh[1] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_TH_BYTE_1, C_RDCI_SPEED_CCM_TH_MASK_1);
+   return tSpeedCcmTh.SpeedCcmTh;
 }
 
 Rte_CtApHufTpmsSWC_PiCalPrmRDCi_R_Calprm_CRdciErfsReifenEco_FncRetPtrType Stub_Rte_Prm_CRdciErfsReifenEco(void){

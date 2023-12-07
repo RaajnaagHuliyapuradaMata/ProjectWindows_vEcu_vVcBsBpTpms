@@ -7,9 +7,9 @@
 #define TELE_FILTER_SCHRADER 4
 #define TELE_FILTER_READ_ONLY 0xff
 
-void SetReDataFromFileFlag( uint8 ucHistSlot, boolean bFlag);
+void SetReDataFromFileFlag(uint8 ucHistSlot, boolean bFlag);
 
-void SetReMuteFlag( uint8 ucHistSlot, boolean bFlag);
+void SetReMuteFlag(uint8 ucHistSlot, boolean bFlag);
 
 unsigned char SetTeleFilter(unsigned char ucFilter);
 

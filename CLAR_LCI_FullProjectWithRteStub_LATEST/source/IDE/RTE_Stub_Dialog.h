@@ -75,15 +75,15 @@
 #include  "StatusRdcExtParkSupervisionLesenX.h"
 
 #ifdef __cplusplus
-  extern "C"
+   extern "C"
   {
 #endif
 
 extern void ReInitRdciSWC(void);
-extern void GetNvmWriteAttemptCounters( uint8*);
+extern void GetNvmWriteAttemptCounters(uint8*);
 
 #ifdef __cplusplus
-  }
+   }
 #endif
 
 #ifdef _EcuVirtual
@@ -100,8 +100,7 @@ namespace RDCi{
 	public ref class RTE_Stub_Dialog : public System::Windows::Forms::Form
 	{
 	public:
-		RTE_Stub_Dialog(void)
-		{
+		RTE_Stub_Dialog(void){
 			InitializeComponent();
 
       NVM_ReadAll();
@@ -111,8 +110,7 @@ namespace RDCi{
 
 	protected:
 
-		~RTE_Stub_Dialog()
-		{
+		~RTE_Stub_Dialog(){
       NVM_WriteAll();
       NVM_WriteAllCalPrmBlocks();
       NVM_WriteAllDTC();
@@ -122,7 +120,7 @@ namespace RDCi{
 			{
 				delete components;
 			}
-    }
+      }
 
   private: System::Windows::Forms::Label^  labelPutDataToRte;
   protected:
@@ -2591,8 +2589,7 @@ private:
 #pragma region Windows Form Designer generated code
 #endif
 
-		void InitializeComponent(void)
-		{
+		void InitializeComponent(void){
       this->components = (gcnew System::ComponentModel::Container());
       System::Windows::Forms::Label^  labelWheelUnitErrorBits;
       System::Windows::Forms::Label^  labelNetworkErrorBits;
@@ -24754,35 +24751,32 @@ private:
       this->ResumeLayout(false);
       this->PerformLayout();
 
-    }
+      }
 #ifdef _EcuVirtual
 #else
 #pragma endregion
 #endif
 
     public: System::IO::Stream^ myStream;
-    static uint8 fileStreamIsOpen = 0;
+      static uint8 fileStreamIsOpen = 0;
     System::Int64 fileLineSize;
     System::Int64 lastStreamPosition;
 
-    static uint8 ucLogging = 0;
-    uint8 *pszLogFilename;
+      static uint8 ucLogging = 0;
+      uint8 *pszLogFilename;
 
-    static uint8 ucEnabled = 0;
+      static uint8 ucEnabled = 0;
 
-    private: System::Void StartButton_Click(System::Object^  sender, System::EventArgs^  e)
-    {
+    private: System::Void StartButton_Click(System::Object^  sender, System::EventArgs^  e){
       sint8 scTemp;
       uint16 ushTemp;
-      if( (ucEnabled == 0) || (ucEnabled == 1))
-      {
+      if((ucEnabled == 0) || (ucEnabled == 1)){
         fileToolStripMenuItem->Enabled = false;
         toolStripMenuItemSettings->Enabled = false;
 
         ReadDtcListFromNvmBlock();
 
-        if( true == checkBoxDataSelection->Checked)
-        {
+          if(true == checkBoxDataSelection->Checked){
 
           CanMessageTimer->Interval = System::Decimal::ToInt32(CanMsgTimerInterval->Value);
           CanMessageTimer->Start();
@@ -24810,8 +24804,7 @@ private:
           checkBoxSetPWFSource->Checked = true;
           checkBoxSetUnitsSource->Checked = true;
 
-          if( (radioButtonParken->Checked == false) && (radioButtonStandfunktionen->Checked == false))
-          {
+          if((radioButtonParken->Checked == false) && (radioButtonStandfunktionen->Checked == false)){
 
             timerRDCiCyclicTask->Interval = System::Decimal::ToInt32(numericUpDownRDCiCyclicTask->Value);
             timerRDCiCyclicTask->Start();
@@ -24821,8 +24814,7 @@ private:
           }
         }
 
-        else
-        {
+        else{
           PutAbsDataTimer->Interval = System::Decimal::ToInt32(ABSRecEvSimInterval->Value);
           PutAbsDataTimer->Start();
           PutRdcDataTimer->Interval = System::Decimal::ToInt32(RDCRecEvSimInterval->Value) * 1000;
@@ -24882,7 +24874,7 @@ private:
         groupBoxRDCiTaskTimer->Enabled = false;
         groupBoxDataSelection->Enabled = false;
 
-        if(ucEnabled == 0){
+          if(ucEnabled == 0){
           RDCi_FunctiontablePtr->RDCi_RInitRDCiStartup_002( Rte_Inst_CtApHufTpmsSWC);
           ValueV_VEH_COG->Value = SliderV_VEH_COG->Value;
           scTemp = GETscTAmbValEE( Rte_Inst_CtApHufTpmsSWC);
@@ -24908,14 +24900,14 @@ private:
             default:                            radioUnitCelsius->Checked = true;     break;
           }
 
-          switch (GETucUnAipEE( Rte_Inst_CtApHufTpmsSWC)){
+          switch(GETucUnAipEE( Rte_Inst_CtApHufTpmsSWC)){
             case ePRESSURE_UNIT_KPA: radioUnitKpa->Checked = true; break;
             case ePRESSURE_UNIT_PSI: radioUnitPsi->Checked = true; break;
             case ePRESSURE_UNIT_BAR:
             default:                 radioUnitBar->Checked = true; break;
           }
 
-          switch (GETucUnMileEE( Rte_Inst_CtApHufTpmsSWC)){
+          switch(GETucUnMileEE( Rte_Inst_CtApHufTpmsSWC)){
             case eMILEAGE_UNIT_MEILEN:    radioUnitMile->Checked = true; break;
             case eMILEAGE_UNIT_KILOMETER:
             default:                      radioUnitkmh->Checked = true; break;
@@ -24955,7 +24947,7 @@ private:
         ucEnabled = 1;
         CanMessageTimer->Stop();
       }
-    }
+      }
 
 #include "RTE_Stub_FlexRayDialog.h"
 #include "RTE_Stub_OutputDialog.h"
@@ -24968,15 +24960,13 @@ private:
 #include "RTE_Stub_CddAbsDialog.h"
 #include "RTE_Stub_RIDDialog.h"
 
-    private: System::Void exitToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
-    {
-      if(fileStreamIsOpen == 1)
-      {
+    private: System::Void exitToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e){
+      if(fileStreamIsOpen == 1){
         myStream->Close();
       }
 
       Application::Exit();
-    }
+      }
 
     private: System::Void buttonLogging_Click(System::Object^  sender, System::EventArgs^  e)
              {
@@ -24985,8 +24975,7 @@ private:
                 uint8 ucLogSetBits = 0;
                 String^  filename;
 
-                if( ucLogging == 0)
-                {
+                if(ucLogging == 0){
                   OpenDataFile_log = gcnew OpenFileDialog;
 
                   OpenDataFile_log->InitialDirectory = "C:\\_ECU2\\BMW\\@Test\\@STUB";
@@ -24995,12 +24984,12 @@ private:
                   OpenDataFile_log->RestoreDirectory = false;
                   OpenDataFile_log->CheckFileExists = false;
 
-                  if( OpenDataFile_log->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+                  if(OpenDataFile_log->ShowDialog() == System::Windows::Forms::DialogResult::OK)
                   {
                     filename = OpenDataFile_log->FileName;
                     labelFilenameLog->Text = filename;
 
-                    for (i = 0; i < filename->Length; i++)
+                    for(i = 0; i < filename->Length; i++)
                     {
                       char_array[i] = (uint8)filename[i];
                     }
@@ -25037,7 +25026,7 @@ private:
 
                     buttonLogging->Text = "Stop Logging ...";
                     OutputTimerInterval->Value = 1000;
-                    if( checkBoxDataSelection->Checked == true)
+                    if(checkBoxDataSelection->Checked == true)
                     {
                       ucLogging = 1;
                     }
@@ -25078,16 +25067,14 @@ private:
                const uint8  cucHistWp[] = { cRadPosHL, cRadPosVR, cRadPosVL, cRadPosHR };
                uint8 ucLoop;
 
-               for( ucLoop = 0; ucLoop < cAnzRad; ucLoop++)
+               for(ucLoop = 0; ucLoop < cAnzRad; ucLoop++)
                {
                  ucPutSteuernRadelektronikVorgebenDS( Rte_Inst_CtApHufTpmsSWC, culHistId[ucLoop], cucHistWp[ucLoop]);
                }
              }
 
-    private: System::Void saveSettingsToFileToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
-    {
-      if( ucEnabled != 2)
-      {
+    private: System::Void saveSettingsToFileToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e){
+      if(ucEnabled != 2){
 
         tRteStubSettingsDataRAM.numericUpDownRDCiCyclicTask             = (uint16)  System::Decimal::ToUInt16( numericUpDownRDCiCyclicTask->Value);
         tRteStubSettingsDataRAM.checkBoxSendCyclicAliveTelegrams        = (boolean) System::Decimal::ToUInt32( checkBoxSendCyclicAliveTelegrams->Checked);
@@ -25133,12 +25120,10 @@ private:
 
         NVM_WriteRteStubSettings();
       }
-    }
+      }
 
-    private: System::Void loadDefaultSettingsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
-    {
-      if( ucEnabled != 2)
-      {
+    private: System::Void loadDefaultSettingsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e){
+      if(ucEnabled != 2){
 
         NVM_SetDefaultRteStubSettings();
 
@@ -25184,12 +25169,10 @@ private:
         checkBoxGNSSErrorAltitudeMetersInvalid->Checked   = tRteStubSettingsDataRAM.checkBoxGNSSErrorAltitudeMetersInvalid;
         checkBoxNMEARawData2Missing->Checked              = tRteStubSettingsDataRAM.checkBoxNMEARawData2Missing;
       }
-    }
+      }
 
-    private: System::Void restoreSettingsFromFileToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
-    {
-      if( ucEnabled != 2)
-      {
+    private: System::Void restoreSettingsFromFileToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e){
+      if(ucEnabled != 2){
 
         NVM_ReadRteStubSettings();
 
@@ -25234,7 +25217,7 @@ private:
         checkBoxGNSSErrorAltitudeMetersInvalid->Checked   = tRteStubSettingsDataRAM.checkBoxGNSSErrorAltitudeMetersInvalid;
         checkBoxNMEARawData2Missing->Checked              = tRteStubSettingsDataRAM.checkBoxNMEARawData2Missing;
       }
-    }
+      }
 };
 }
 #endif

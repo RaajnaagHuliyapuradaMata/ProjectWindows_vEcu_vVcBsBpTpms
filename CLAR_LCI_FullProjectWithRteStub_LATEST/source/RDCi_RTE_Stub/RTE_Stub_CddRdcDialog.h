@@ -1,10 +1,9 @@
 #ifndef __RTE_STUB_CDD_RDC_DIALOG_H
 #define __RTE_STUB_CDD_RDC_DIALOG_H
 
-  private: System::Void PutRdcDataTimer_Tick(System::Object^  sender, System::EventArgs^  e)
-  {
+  private: System::Void PutRdcDataTimer_Tick(System::Object^  sender, System::EventArgs^  e){
 
-  }
+   }
 
 private: System::Void buttonWheelUnitDataAcceptance_Click(System::Object^  sender, System::EventArgs^  e)
          {
@@ -12,29 +11,23 @@ private: System::Void buttonWheelUnitDataAcceptance_Click(System::Object^  sende
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
 
             PutRdcDataTimer->Stop();
 
@@ -42,8 +35,7 @@ private: System::Void buttonWheelUnitDataAcceptance_Click(System::Object^  sende
 
             ptData->ALIV_RDC_DT_PCK_1 = ucGetNextValidAliveCounter( ptData->ALIV_RDC_DT_PCK_1);
 
-            if( checkBoxAliveError->Checked == true)
-            {
+            if(checkBoxAliveError->Checked == true){
               ptData->ALIV_RDC_DT_PCK_2 = ucGetNextValidAliveCounter( ptData->ALIV_RDC_DT_PCK_1);
             }else{
               ptData->ALIV_RDC_DT_PCK_2 = ptData->ALIV_RDC_DT_PCK_1;
@@ -53,43 +45,41 @@ private: System::Void buttonWheelUnitDataAcceptance_Click(System::Object^  sende
             numericUpDownAlive2->Value   = (unsigned char) ptData->ALIV_RDC_DT_PCK_2;
 
             ptData->RDC_DT_8 = 0;
-            PutRecCddRdcData( ucTabIx);
+            PutRecCddRdcData(ucTabIx);
             numericUpDownDt8Crc->Value = ptData->RDC_DT_8;
 
-            switch( ucTabIx)
-            {
+            switch(ucTabIx){
               case cRecEleIx_Slot0:
-                textBoxCountRE0->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucTabIx));
+                textBoxCountRE0->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucTabIx));
               break;
 
               case cRecEleIx_Slot1:
-                textBoxCountRE1->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucTabIx));
+                textBoxCountRE1->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucTabIx));
               break;
 
               case cRecEleIx_Slot2:
-                textBoxCountRE2->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucTabIx));
+                textBoxCountRE2->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucTabIx));
               break;
 
               case cRecEleIx_Slot3:
-                textBoxCountRE3->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucTabIx));
+                textBoxCountRE3->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucTabIx));
               break;
 
               case cRecEleIx_FR:
-                textBoxCountREx->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucTabIx));
+                textBoxCountREx->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucTabIx));
               break;
 
               case cRecEleIx_RID:
-                textBoxCountRID->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucTabIx));
+                textBoxCountRID->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucTabIx));
               break;
 
               default:
-                textBoxCountFBD4Alive->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucTabIx));
+                textBoxCountFBD4Alive->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucTabIx));
 
                 numericUpDownDt4PalStatusHi->Value  = ptData->RDC_DT_4;
 
                 ptData->RDC_DT_6++;
-                if(ptData->RDC_DT_6 >= 0xfe)
-                {
+                if(ptData->RDC_DT_6 >= 0xfe){
                   ptData->RDC_DT_6 = 0x00;
                 }
 
@@ -108,29 +98,23 @@ private: System::Void numericUpDownAlive1_ValueChanged(System::Object^  sender, 
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
             ptData->ALIV_RDC_DT_PCK_1 = (unsigned char) numericUpDownAlive1->Value;
          }
 
@@ -140,29 +124,23 @@ private: System::Void numericUpDownAlive2_ValueChanged(System::Object^  sender, 
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
             ptData->ALIV_RDC_DT_PCK_2 = (unsigned char) numericUpDownAlive2->Value;
          }
 
@@ -170,35 +148,28 @@ private: System::Void checkBoxAliveError_CheckedChanged(System::Object^  sender,
          {
             RdcDataType * ptData;
 
-            if( checkBoxAliveError->Enabled == true)
-            {
-              if( radioButtonRE0->Checked == true)
-              {
+            if(checkBoxAliveError->Enabled == true){
+              if(radioButtonRE0->Checked == true){
                 ptData = ptGetRdcDataPtr(cRecEleIx_Slot0);
 
                 ptData->bAliveError = checkBoxAliveError->Checked;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ptData = ptGetRdcDataPtr(cRecEleIx_Slot1);
 
                 ptData->bAliveError = checkBoxAliveError->Checked;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ptData = ptGetRdcDataPtr(cRecEleIx_Slot2);
 
                 ptData->bAliveError = checkBoxAliveError->Checked;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ptData = ptGetRdcDataPtr(cRecEleIx_Slot3);
 
                 ptData->bAliveError = checkBoxAliveError->Checked;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ptData = ptGetRdcDataPtr(cRecEleIx_FR);
 
                 ptData->bAliveError = checkBoxAliveError->Checked;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ptData = ptGetRdcDataPtr(cRecEleIx_RID);
 
                 ptData->bAliveError = checkBoxAliveError->Checked;
@@ -218,29 +189,23 @@ private: System::Void numericUpDownTyrId_ValueChanged(System::Object^  sender, S
 
             uint32 ulTyrId = (uint32) (System::Decimal::ToUInt32( numericUpDownTyrId->Value) & 0x0fffffff);
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
 
             ptData->TYR_ID = ulTyrId;
 
@@ -255,28 +220,22 @@ private: System::Void checkBoxTyrIdFromFile_CheckedChanged(System::Object^  send
             uint8         ucTabIx;
             RdcDataType * ptData;
 
-            if(radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
             }
-            else if(radioButtonRE1->Checked == true)
-            {
+            else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
             }
-            else if(radioButtonRE2->Checked == true)
-            {
+            else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
             }
-            else if(radioButtonRE3->Checked == true)
-            {
+            else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
             }
-            else if(radioButtonREx->Checked == true)
-            {
+            else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
             }
-            else if(radioButtonRID->Checked == true)
-            {
+            else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }
             else
@@ -287,8 +246,7 @@ private: System::Void checkBoxTyrIdFromFile_CheckedChanged(System::Object^  send
             ptData = ptGetRdcDataPtr(ucTabIx);
             ptData->bTyrIdFromFile = checkBoxTyrIdFromFile->Checked;
 
-            if( checkBoxTyrIdFromFile->Checked == true)
-            {
+            if(checkBoxTyrIdFromFile->Checked == true){
               numericUpDownTyrId->Enabled = false;
               numericUpDownAlive1->Enabled = false;
 
@@ -298,11 +256,9 @@ private: System::Void checkBoxTyrIdFromFile_CheckedChanged(System::Object^  send
               numericUpDownTyrId->Enabled = true;
               numericUpDownAlive1->Enabled = true;
 
-              if( ptData->bSuppIdFromFile == FALSE)
-              {
+              if(ptData->bSuppIdFromFile == FALSE){
 
-                if( ucTabIx == cRecEleIx_Alive)
-                {
+                if(ucTabIx == cRecEleIx_Alive){
                   checkBoxAliveError->Enabled = false;
                   checkBoxAliveError->Checked = false;
                 }
@@ -325,52 +281,40 @@ private: System::Void listBoxSuppId_SelectedIndexChanged(System::Object^  sender
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
 
-            if( listBoxSuppId->Text == "Autonet")
-            {
+            if(listBoxSuppId->Text == "Autonet"){
               ptData->SUPP_ID = cSupplCodeAutonet;
               numericUpDownSuppId->Enabled = false;
-            }else if( listBoxSuppId->Text == "Huf")
-            {
+            }else if(listBoxSuppId->Text == "Huf"){
               ptData->SUPP_ID = cSupplCodeHuf;
               numericUpDownSuppId->Enabled = false;
-            }else if( listBoxSuppId->Text == "Conti")
-            {
+            }else if(listBoxSuppId->Text == "Conti"){
               ptData->SUPP_ID = cSupplCodeConti;
               numericUpDownSuppId->Enabled = false;
-            }else if( listBoxSuppId->Text == "Schrader")
-            {
+            }else if(listBoxSuppId->Text == "Schrader"){
               ptData->SUPP_ID = cSupplCodeSchrader;
               numericUpDownSuppId->Enabled = false;
-            }else if( listBoxSuppId->Text == "unbekannt")
-            {
+            }else if(listBoxSuppId->Text == "unbekannt"){
               ptData->SUPP_ID = cSupplCodeUnknown;
               numericUpDownSuppId->Enabled = false;
-            }else if( listBoxSuppId->Text == "unused")
-            {
+            }else if(listBoxSuppId->Text == "unused"){
               ptData->SUPP_ID = cSupplCodeUnused;
               numericUpDownSuppId->Enabled = false;
             }else{
@@ -386,29 +330,23 @@ private: System::Void numericUpDownSuppId_ValueChanged(System::Object^  sender, 
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
 
             ptData->SUPP_ID = (uint8) numericUpDownSuppId->Value;
 
@@ -421,28 +359,22 @@ private: System::Void checkBoxSuppIdFromFile_CheckedChanged(System::Object^  sen
             uint8         ucTabIx;
             RdcDataType * ptData;
 
-            if(radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
             }
-            else if(radioButtonRE1->Checked == true)
-            {
+            else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
             }
-            else if(radioButtonRE2->Checked == true)
-            {
+            else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
             }
-            else if(radioButtonRE3->Checked == true)
-            {
+            else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
             }
-            else if(radioButtonREx->Checked == true)
-            {
+            else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
             }
-            else if(radioButtonRID->Checked == true)
-            {
+            else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }
             else
@@ -453,8 +385,7 @@ private: System::Void checkBoxSuppIdFromFile_CheckedChanged(System::Object^  sen
             ptData = ptGetRdcDataPtr(ucTabIx);
             ptData->bSuppIdFromFile = checkBoxSuppIdFromFile->Checked;
 
-            if( checkBoxSuppIdFromFile->Checked == true)
-            {
+            if(checkBoxSuppIdFromFile->Checked == true){
               numericUpDownSuppId->Enabled = false;
               listBoxSuppId->Enabled = false;
               numericUpDownAlive2->Enabled = false;
@@ -462,8 +393,7 @@ private: System::Void checkBoxSuppIdFromFile_CheckedChanged(System::Object^  sen
               checkBoxAliveError->Enabled = false;
               checkBoxAliveError->Checked = false;
             }else{
-              if( listBoxSuppId->Text == "generic")
-              {
+              if(listBoxSuppId->Text == "generic"){
                 numericUpDownSuppId->Enabled = true;
               }else{
                 numericUpDownSuppId->Enabled = false;
@@ -472,11 +402,9 @@ private: System::Void checkBoxSuppIdFromFile_CheckedChanged(System::Object^  sen
               listBoxSuppId->Enabled = true;
               numericUpDownAlive2->Enabled = true;
 
-              if( ptData->bTyrIdFromFile == FALSE)
-              {
+              if(ptData->bTyrIdFromFile == FALSE){
 
-                if( ucTabIx == cRecEleIx_Alive)
-                {
+                if(ucTabIx == cRecEleIx_Alive){
                   checkBoxAliveError->Enabled = false;
                   checkBoxAliveError->Checked = false;
                 }
@@ -500,34 +428,26 @@ private: System::Void listBoxPckgId_SelectedIndexChanged(System::Object^  sender
 
             numericUpDownPckgId->Enabled = false;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRdcDataPtr( ucTabIx);
+            ptData = ptGetRdcDataPtr(ucTabIx);
 
-            if( (ptData->bWuDataFromFile == FALSE))
-            {
-              if( listBoxPckgId->Text == "AK STD")
-              {
+            if((ptData->bWuDataFromFile == FALSE)){
+              if(listBoxPckgId->Text == "AK STD"){
                 numericUpDownDt3PalLbt->Value = 0x00;
                 numericUpDownDt4PalStatusHi->Value = 0x00;
                 numericUpDownDt5PalStatusLo->Value = 0x00;
@@ -536,19 +456,16 @@ private: System::Void listBoxPckgId_SelectedIndexChanged(System::Object^  sender
                 numericUpDownDt8Crc->Value = 0x00;
 
                 ptData->tRecCddRdcData.PCKG_ID = cTelTypeAK35def;
-              }else if( listBoxPckgId->Text == "PAL")
-              {
+              }else if(listBoxPckgId->Text == "PAL"){
                 numericUpDownDt3PalLbt->Value = 0x00;
 
-                if( numericUpDownDt3PalLbt->Value == 0)
-                {
+                if(numericUpDownDt3PalLbt->Value == 0){
                   numericUpDownDt4PalStatusHi->Value = 0xA0;
                 }else{
                   numericUpDownDt4PalStatusHi->Value = 0x60;
                 }
 
-                if( ptData->bBatteryEmpty == TRUE)
-                {
+                if(ptData->bBatteryEmpty == TRUE){
                   numericUpDownDt5PalStatusLo->Value = (0x01 << 2);
                 }else{
                   numericUpDownDt5PalStatusLo->Value = (0x0B << 2);
@@ -559,19 +476,16 @@ private: System::Void listBoxPckgId_SelectedIndexChanged(System::Object^  sender
                 numericUpDownDt8Crc->Value = 0x00;
 
                 ptData->tRecCddRdcData.PCKG_ID = cTelTypeSELPAL;
-              }else if( listBoxPckgId->Text == "PAL LB")
-              {
+              }else if(listBoxPckgId->Text == "PAL LB"){
                 numericUpDownDt3PalLbt->Value = 0x00;
 
-                if( numericUpDownDt3PalLbt->Value == 0)
-                {
+                if(numericUpDownDt3PalLbt->Value == 0){
                   numericUpDownDt4PalStatusHi->Value = 0xA0;
                 }else{
                   numericUpDownDt4PalStatusHi->Value = 0x60;
                 }
 
-                if( ptData->bBatteryEmpty == TRUE)
-                {
+                if(ptData->bBatteryEmpty == TRUE){
                   numericUpDownDt5PalStatusLo->Value = (0x01 << 2);
                 }else{
                   numericUpDownDt5PalStatusLo->Value = (0x0B << 2);
@@ -582,10 +496,8 @@ private: System::Void listBoxPckgId_SelectedIndexChanged(System::Object^  sender
                 numericUpDownDt8Crc->Value = 0x00;
 
                 ptData->tRecCddRdcData.PCKG_ID = cTelTypeSELPAL1;
-              }else if( listBoxPckgId->Text == "LOC SYNC")
-              {
-                if( ptData->bBatteryEmpty == TRUE)
-                {
+              }else if(listBoxPckgId->Text == "LOC SYNC"){
+                if(ptData->bBatteryEmpty == TRUE){
                   numericUpDownDt3PalLbt->Value = 12;
                 }else{
                   numericUpDownDt3PalLbt->Value = 0x7f;
@@ -598,8 +510,7 @@ private: System::Void listBoxPckgId_SelectedIndexChanged(System::Object^  sender
                 numericUpDownDt8Crc->Value = 0x00;
 
                 ptData->tRecCddRdcData.PCKG_ID = cTelTypeContiFP;
-              }else if( listBoxPckgId->Text == "BERU long")
-              {
+              }else if(listBoxPckgId->Text == "BERU long"){
                 numericUpDownDt3PalLbt->Value = 0x00;
                 numericUpDownDt4PalStatusHi->Value = 0x00;
                 numericUpDownDt5PalStatusLo->Value = 0x00;
@@ -608,8 +519,7 @@ private: System::Void listBoxPckgId_SelectedIndexChanged(System::Object^  sender
                 numericUpDownDt8Crc->Value = 0x00;
 
                 ptData->tRecCddRdcData.PCKG_ID = cTelTypeBeruLong;
-              }else if( listBoxPckgId->Text == "BERU med")
-              {
+              }else if(listBoxPckgId->Text == "BERU med"){
                 numericUpDownDt3PalLbt->Value = 0x00;
                 numericUpDownDt4PalStatusHi->Value = 0x00;
                 numericUpDownDt5PalStatusLo->Value = 0x00;
@@ -635,28 +545,22 @@ private: System::Void checkBoxPckgIdFromFile_CheckedChanged(System::Object^  sen
             uint8         ucTabIx;
             RdcDataType * ptData;
 
-            if(radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
             }
-            else if(radioButtonRE1->Checked == true)
-            {
+            else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
             }
-            else if(radioButtonRE2->Checked == true)
-            {
+            else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
             }
-            else if(radioButtonRE3->Checked == true)
-            {
+            else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
             }
-            else if(radioButtonREx->Checked == true)
-            {
+            else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
             }
-            else if(radioButtonRID->Checked == true)
-            {
+            else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }
             else
@@ -676,28 +580,22 @@ private: System::Void checkBoxInputIsochor_CheckedChanged(System::Object^  sende
             Decimal dIsochorenSteigung;
             RdcDataType * ptData;
 
-            if(radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
             }
-            else if(radioButtonRE1->Checked == true)
-            {
+            else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
             }
-            else if(radioButtonRE2->Checked == true)
-            {
+            else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
             }
-            else if(radioButtonRE3->Checked == true)
-            {
+            else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
             }
-            else if(radioButtonREx->Checked == true)
-            {
+            else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
             }
-            else if(radioButtonRID->Checked == true)
-            {
+            else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }
             else {
@@ -708,10 +606,8 @@ private: System::Void checkBoxInputIsochor_CheckedChanged(System::Object^  sende
 
             ptData->bInputIsochor = checkBoxInputIsochor->Checked;
 
-            if( checkBoxInputIsochor->Enabled == true)
-            {
-              switch (ucTabIx)
-              {
+            if(checkBoxInputIsochor->Enabled == true){
+              switch(ucTabIx){
                 case cRecEleIx_Slot0:
                 case cRecEleIx_Slot1:
                 case cRecEleIx_Slot2:
@@ -780,40 +676,32 @@ private: System::Void numericUpDownDt1Pressure_ValueChanged(System::Object^  sen
             Decimal dIsochorenSteigung;
             RdcDataType * ptData;
 
-            if( bSuppressValueChangedEvent == FALSE)
-            {
+            if(bSuppressValueChangedEvent == FALSE){
               bSuppressValueChangedEvent = TRUE;
 
-              if( (numericUpDownDt1Pressure->Value % 25) != 0)
-              {
+              if((numericUpDownDt1Pressure->Value % 25) != 0){
 
                 ushPress_rel_hPa = (uint16) ((numericUpDownDt1Pressure->Value * 10 + 125) / 250) * 25;
                 numericUpDownDt1Pressure->Value = ushPress_rel_hPa;
               }
 
-              if( radioButtonRE0->Checked == true)
-              {
+              if(radioButtonRE0->Checked == true){
                 ucTabIx = cRecEleIx_Slot0;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ucTabIx = cRecEleIx_Slot1;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ucTabIx = cRecEleIx_Slot2;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ucTabIx = cRecEleIx_Slot3;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ucTabIx = cRecEleIx_FR;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ucTabIx = cRecEleIx_RID;
               }else{
                 ucTabIx = cRecEleIx_Alive;
               }
 
-              ptData = ptGetRdcDataPtr( ucTabIx);
+              ptData = ptGetRdcDataPtr(ucTabIx);
 
               ushPamb_hPa      = (uint16) System::Decimal::ToUInt16(numericUpDownAIP_ENG_DRV->Value);
               ushPress_rel_hPa = (uint16) System::Decimal::ToUInt16(numericUpDownDt1Pressure->Value);
@@ -821,11 +709,9 @@ private: System::Void numericUpDownDt1Pressure_ValueChanged(System::Object^  sen
               sshTemp_abs_K = (sint16) (System::Decimal::ToInt16(numericUpDownDt2Temperature->Value) + 273);
               fIsochorensteigung = ((float) ptData->ushPabs_iso_hPa / ptData->sshTabs_iso_K);
 
-              if( (radioButtonDt1PressureSensorOk->Checked == true) && (radioButtonDt2TemperatureSensorOk->Checked == true))
-              {
+              if((radioButtonDt1PressureSensorOk->Checked == true) && (radioButtonDt2TemperatureSensorOk->Checked == true)){
 
-                if( checkBoxInputIsochor->Checked == true)
-                {
+                if(checkBoxInputIsochor->Checked == true){
 
                   sshTisoShift_celsius = (sint16) ((((float) ushPress_abs_hPa * 10 + 5) / (fIsochorensteigung * 10)) - 273);
 
@@ -870,20 +756,17 @@ private: System::Void numericUpDownDt1Pressure_ValueChanged(System::Object^  sen
                 }
               }
 
-              if( ushPress_abs_hPa < 1000)
-              {
+              if(ushPress_abs_hPa < 1000){
 
                 numericUpDownDt1Pressure->Value = numericUpDownDt1Pressure->Minimum;
                 radioButtonDt1PressureSensorUnderflow->Checked = true;
-              }else if( ushPress_abs_hPa > 7300)
-              {
+              }else if(ushPress_abs_hPa > 7300){
 
                 numericUpDownDt1Pressure->Value = numericUpDownDt1Pressure->Maximum;
                 radioButtonDt1PressureSensorOverflow->Checked = true;
               }else{
-                if( ((numericUpDownDt1Pressure->Value == numericUpDownDt1Pressure->Minimum) && (ptData->tRecCddRdcData.RDC_DT_1 == cReAkPresUnderflow)) ||
-                    ((numericUpDownDt1Pressure->Value == numericUpDownDt1Pressure->Maximum) && (ptData->tRecCddRdcData.RDC_DT_1 == cReAkPresOverflow)))
-                {
+                if(((numericUpDownDt1Pressure->Value == numericUpDownDt1Pressure->Minimum) && (ptData->tRecCddRdcData.RDC_DT_1 == cReAkPresUnderflow)) ||
+                    ((numericUpDownDt1Pressure->Value == numericUpDownDt1Pressure->Maximum) && (ptData->tRecCddRdcData.RDC_DT_1 == cReAkPresOverflow))){
 
                 }else{
 
@@ -913,44 +796,35 @@ private: System::Void radioButtonDt1PressureSensorOk_CheckedChanged(System::Obje
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonDt1PressureSensorOk->Checked == true)
-            {
+            if(radioButtonDt1PressureSensorOk->Checked == true){
 
-              if( radioButtonRE0->Checked == true)
-              {
+              if(radioButtonRE0->Checked == true){
                 ucTabIx = cRecEleIx_Slot0;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ucTabIx = cRecEleIx_Slot1;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ucTabIx = cRecEleIx_Slot2;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ucTabIx = cRecEleIx_Slot3;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ucTabIx = cRecEleIx_FR;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ucTabIx = cRecEleIx_RID;
               }else{
                 ucTabIx = cRecEleIx_Alive;
               }
 
-              ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+              ptData = ptGetRecCddRdcDataPtr(ucTabIx);
 
               ushPamb_hPa      = (uint16) System::Decimal::ToUInt16(numericUpDownAIP_ENG_DRV->Value);
               ushPress_rel_hPa = (uint16) System::Decimal::ToUInt16(numericUpDownDt1Pressure->Value);
               ushPress_abs_hPa = ((((ushPress_rel_hPa + ushPamb_hPa) * 10 + 125) / 250) * 25);
 
-              if( ushPress_abs_hPa < 1000)
-              {
+              if(ushPress_abs_hPa < 1000){
 
                 numericUpDownDt1Pressure->Value = numericUpDownDt1Pressure->Minimum;
                 radioButtonDt1PressureSensorUnderflow->Checked = true;
-              }else if( ushPress_abs_hPa > 7300)
-              {
+              }else if(ushPress_abs_hPa > 7300){
 
                 numericUpDownDt1Pressure->Value = numericUpDownDt1Pressure->Maximum;
                 radioButtonDt1PressureSensorOverflow->Checked = true;
@@ -970,32 +844,25 @@ private: System::Void radioButtonDt1PressureSensorDefect_CheckedChanged(System::
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonDt1PressureSensorDefect->Checked == true)
-            {
+            if(radioButtonDt1PressureSensorDefect->Checked == true){
 
-              if( radioButtonRE0->Checked == true)
-              {
+              if(radioButtonRE0->Checked == true){
                 ucTabIx = cRecEleIx_Slot0;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ucTabIx = cRecEleIx_Slot1;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ucTabIx = cRecEleIx_Slot2;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ucTabIx = cRecEleIx_Slot3;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ucTabIx = cRecEleIx_FR;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ucTabIx = cRecEleIx_RID;
               }else{
                 ucTabIx = cRecEleIx_Alive;
               }
 
-              ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+              ptData = ptGetRecCddRdcDataPtr(ucTabIx);
               ptData->RDC_DT_1 = cReAkPresError;
 
               numericUpDownDt1Pressure->Enabled = false;
@@ -1017,32 +884,25 @@ private: System::Void radioButtonDt1PressureSensorUnderflow_CheckedChanged(Syste
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonDt1PressureSensorUnderflow->Checked == true)
-            {
+            if(radioButtonDt1PressureSensorUnderflow->Checked == true){
 
-              if( radioButtonRE0->Checked == true)
-              {
+              if(radioButtonRE0->Checked == true){
                 ucTabIx = cRecEleIx_Slot0;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ucTabIx = cRecEleIx_Slot1;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ucTabIx = cRecEleIx_Slot2;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ucTabIx = cRecEleIx_Slot3;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ucTabIx = cRecEleIx_FR;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ucTabIx = cRecEleIx_RID;
               }else{
                 ucTabIx = cRecEleIx_Alive;
               }
 
-              ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+              ptData = ptGetRecCddRdcDataPtr(ucTabIx);
               ptData->RDC_DT_1 = cReAkPresUnderflow;
 
               numericUpDownDt1Pressure->Value = numericUpDownDt1Pressure->Minimum;
@@ -1060,32 +920,25 @@ private: System::Void radioButtonDt1PressureSensorOverflow_CheckedChanged(System
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonDt1PressureSensorOverflow->Checked == true)
-            {
+            if(radioButtonDt1PressureSensorOverflow->Checked == true){
 
-              if( radioButtonRE0->Checked == true)
-              {
+              if(radioButtonRE0->Checked == true){
                 ucTabIx = cRecEleIx_Slot0;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ucTabIx = cRecEleIx_Slot1;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ucTabIx = cRecEleIx_Slot2;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ucTabIx = cRecEleIx_Slot3;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ucTabIx = cRecEleIx_FR;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ucTabIx = cRecEleIx_RID;
               }else{
                 ucTabIx = cRecEleIx_Alive;
               }
 
-              ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+              ptData = ptGetRecCddRdcDataPtr(ucTabIx);
               ptData->RDC_DT_1 = cReAkPresOverflow;
 
               numericUpDownDt1Pressure->Value = numericUpDownDt1Pressure->Maximum;
@@ -1101,28 +954,22 @@ private: System::Void checkBoxDt1PressureFromFile_CheckedChanged(System::Object^
             uint8         ucTabIx;
             RdcDataType * ptData;
 
-            if(radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
             }
-            else if(radioButtonRE1->Checked == true)
-            {
+            else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
             }
-            else if(radioButtonRE2->Checked == true)
-            {
+            else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
             }
-            else if(radioButtonRE3->Checked == true)
-            {
+            else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
             }
-            else if(radioButtonREx->Checked == true)
-            {
+            else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
             }
-            else if(radioButtonRID->Checked == true)
-            {
+            else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }
             else
@@ -1133,8 +980,7 @@ private: System::Void checkBoxDt1PressureFromFile_CheckedChanged(System::Object^
             ptData = ptGetRdcDataPtr(ucTabIx);
             ptData->bDt1PressureFromFile = checkBoxDt1PressureFromFile->Checked;
 
-            if( checkBoxDt1PressureFromFile->Checked == true)
-            {
+            if(checkBoxDt1PressureFromFile->Checked == true){
               numericUpDownDt1Pressure->Enabled = false;
               trackBarDt1Pressure->Enabled = false;
               panelDt1PressureSensorState->Enabled = false;
@@ -1146,11 +992,9 @@ private: System::Void checkBoxDt1PressureFromFile_CheckedChanged(System::Object^
               trackBarDt1Pressure->Enabled = true;
               panelDt1PressureSensorState->Enabled = true;
 
-              if( ptData->bDt2TemperatureFromFile == FALSE)
-              {
+              if(ptData->bDt2TemperatureFromFile == FALSE){
 
-                if( ucTabIx == cRecEleIx_Alive)
-                {
+                if(ucTabIx == cRecEleIx_Alive){
                   checkBoxInputIsochor->Enabled = false;
                   checkBoxInputIsochor->Checked = false;
                 }
@@ -1182,38 +1026,29 @@ private: System::Void numericUpDownDt2Temperature_ValueChanged(System::Object^  
             Decimal       dIsochorenSteigung;
             RdcDataType * ptData;
 
-            if( bSuppressValueChangedEvent == FALSE)
-            {
+            if(bSuppressValueChangedEvent == FALSE){
               bSuppressValueChangedEvent = TRUE;
 
-              if( radioButtonRE0->Checked == true)
-              {
+              if(radioButtonRE0->Checked == true){
                 ucTabIx = cRecEleIx_Slot0;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ucTabIx = cRecEleIx_Slot1;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ucTabIx = cRecEleIx_Slot2;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ucTabIx = cRecEleIx_Slot3;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ucTabIx = cRecEleIx_FR;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ucTabIx = cRecEleIx_RID;
               }else{
                 ucTabIx = cRecEleIx_Alive;
               }
 
-              if( ucTabIx != cRecEleIx_Alive)
-              {
-                ptData = ptGetRdcDataPtr( ucTabIx);
+              if(ucTabIx != cRecEleIx_Alive){
+                ptData = ptGetRdcDataPtr(ucTabIx);
 
-                if( (radioButtonDt1PressureSensorOk->Checked == true) && (radioButtonDt2TemperatureSensorOk->Checked == true))
-                {
+                if((radioButtonDt1PressureSensorOk->Checked == true) && (radioButtonDt2TemperatureSensorOk->Checked == true)){
 
                   ushPamb_hPa = (uint16) System::Decimal::ToUInt16(numericUpDownAIP_ENG_DRV->Value);
                   ushPress_rel_hPa = (uint16) System::Decimal::ToUInt16(numericUpDownDt1Pressure->Value);
@@ -1221,21 +1056,21 @@ private: System::Void numericUpDownDt2Temperature_ValueChanged(System::Object^  
                   sshTemp_abs_K = (sint16) (System::Decimal::ToInt16(numericUpDownDt2Temperature->Value) + 273);
                   fIsochorensteigung = ((float) ptData->ushPabs_iso_hPa / ptData->sshTabs_iso_K);
 
-                  if( checkBoxInputIsochor->Checked == true)
+                  if(checkBoxInputIsochor->Checked == true)
                   {
 
                     ushPisoShift_rel_hPa = ((uint16) ((((((float) sshTemp_abs_K * fIsochorensteigung) - ushPamb_hPa) * 10) + 125) / 250) * 25);
 
-                    if( ushPisoShift_rel_hPa < numericUpDownDt1Pressure->Minimum)
+                    if(ushPisoShift_rel_hPa < numericUpDownDt1Pressure->Minimum)
                     {
                       ushPisoShift_rel_hPa = (uint16) numericUpDownDt1Pressure->Minimum;
-                    }else if( ushPisoShift_rel_hPa > numericUpDownDt1Pressure->Maximum)
+                    }else if(ushPisoShift_rel_hPa > numericUpDownDt1Pressure->Maximum)
                     {
                       ushPisoShift_rel_hPa = (uint16) numericUpDownDt1Pressure->Maximum;
                     }else{
                     }
 
-                    if( ushPisoShift_rel_hPa != numericUpDownDt1Pressure->Value)
+                    if(ushPisoShift_rel_hPa != numericUpDownDt1Pressure->Value)
                     {
                       numericUpDownDt1Pressure->Value = ushPisoShift_rel_hPa;
                     }
@@ -1272,32 +1107,25 @@ private: System::Void radioButtonDt2TemperatureSensorOk_CheckedChanged(System::O
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonDt2TemperatureSensorOk->Checked == true)
-            {
+            if(radioButtonDt2TemperatureSensorOk->Checked == true){
 
-              if( radioButtonRE0->Checked == true)
-              {
+              if(radioButtonRE0->Checked == true){
                 ucTabIx = cRecEleIx_Slot0;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ucTabIx = cRecEleIx_Slot1;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ucTabIx = cRecEleIx_Slot2;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ucTabIx = cRecEleIx_Slot3;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ucTabIx = cRecEleIx_FR;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ucTabIx = cRecEleIx_RID;
               }else{
                 ucTabIx = cRecEleIx_Alive;
               }
 
-              ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+              ptData = ptGetRecCddRdcDataPtr(ucTabIx);
               ptData->RDC_DT_2 = (uint8) ((signed char) numericUpDownDt2Temperature->Value + 52);
 
               numericUpDownDt2Temperature->Enabled = true;
@@ -1314,32 +1142,25 @@ private: System::Void radioButtonDt2TemperatureSensorDefect_CheckedChanged(Syste
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonDt2TemperatureSensorDefect->Checked == true)
-            {
+            if(radioButtonDt2TemperatureSensorDefect->Checked == true){
 
-              if( radioButtonRE0->Checked == true)
-              {
+              if(radioButtonRE0->Checked == true){
                 ucTabIx = cRecEleIx_Slot0;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ucTabIx = cRecEleIx_Slot1;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ucTabIx = cRecEleIx_Slot2;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ucTabIx = cRecEleIx_Slot3;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ucTabIx = cRecEleIx_FR;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ucTabIx = cRecEleIx_RID;
               }else{
                 ucTabIx = cRecEleIx_Alive;
               }
 
-              ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+              ptData = ptGetRecCddRdcDataPtr(ucTabIx);
               ptData->RDC_DT_2 = cReAkTempError;
 
               numericUpDownDt2Temperature->Enabled = false;
@@ -1363,32 +1184,25 @@ private: System::Void radioButtonDt2TemperatureSensorUnderflow_CheckedChanged(Sy
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonDt2TemperatureSensorUnderflow->Checked == true)
-            {
+            if(radioButtonDt2TemperatureSensorUnderflow->Checked == true){
 
-              if( radioButtonRE0->Checked == true)
-              {
+              if(radioButtonRE0->Checked == true){
                 ucTabIx = cRecEleIx_Slot0;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ucTabIx = cRecEleIx_Slot1;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ucTabIx = cRecEleIx_Slot2;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ucTabIx = cRecEleIx_Slot3;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ucTabIx = cRecEleIx_FR;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ucTabIx = cRecEleIx_RID;
               }else{
                 ucTabIx = cRecEleIx_Alive;
               }
 
-              ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+              ptData = ptGetRecCddRdcDataPtr(ucTabIx);
               ptData->RDC_DT_2 = cReHufAkTempUnderflow;
 
               numericUpDownDt2Temperature->Enabled = false;
@@ -1401,8 +1215,7 @@ private: System::Void radioButtonDt2TemperatureSensorUnderflow_CheckedChanged(Sy
             }else{
               scTemp = GETscLastWuTemperatureEE( Rte_Inst_CtApHufTpmsSWC, 0);
 
-              if( scTemp == cInvalidREtemperature)
-              {
+              if(scTemp == cInvalidREtemperature){
 
               }else{
                 numericUpDownDt2Temperature->Value = scTemp;
@@ -1423,32 +1236,25 @@ private: System::Void radioButtonDt2TemperatureSensorOverflow_CheckedChanged(Sys
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonDt2TemperatureSensorOverflow->Checked == true)
-            {
+            if(radioButtonDt2TemperatureSensorOverflow->Checked == true){
 
-              if( radioButtonRE0->Checked == true)
-              {
+              if(radioButtonRE0->Checked == true){
                 ucTabIx = cRecEleIx_Slot0;
-              }else if( radioButtonRE1->Checked == true)
-              {
+              }else if(radioButtonRE1->Checked == true){
                 ucTabIx = cRecEleIx_Slot1;
-              }else if( radioButtonRE2->Checked == true)
-              {
+              }else if(radioButtonRE2->Checked == true){
                 ucTabIx = cRecEleIx_Slot2;
-              }else if( radioButtonRE3->Checked == true)
-              {
+              }else if(radioButtonRE3->Checked == true){
                 ucTabIx = cRecEleIx_Slot3;
-              }else if( radioButtonREx->Checked == true)
-              {
+              }else if(radioButtonREx->Checked == true){
                 ucTabIx = cRecEleIx_FR;
-              }else if( radioButtonRID->Checked == true)
-              {
+              }else if(radioButtonRID->Checked == true){
                 ucTabIx = cRecEleIx_RID;
               }else{
                 ucTabIx = cRecEleIx_Alive;
               }
 
-              ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+              ptData = ptGetRecCddRdcDataPtr(ucTabIx);
               ptData->RDC_DT_2 = cReHufAkTempOverflow;
 
               numericUpDownDt2Temperature->Enabled = false;
@@ -1461,8 +1267,7 @@ private: System::Void radioButtonDt2TemperatureSensorOverflow_CheckedChanged(Sys
             }else{
               scTemp = GETscLastWuTemperatureEE( Rte_Inst_CtApHufTpmsSWC, 0);
 
-              if( scTemp == cInvalidREtemperature)
-              {
+              if(scTemp == cInvalidREtemperature){
 
               }else{
                 numericUpDownDt2Temperature->Value = scTemp;
@@ -1481,28 +1286,22 @@ private: System::Void checkBoxDt2TemperatureFromFile_CheckedChanged(System::Obje
             uint8         ucTabIx;
             RdcDataType * ptData;
 
-            if(radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
             }
-            else if(radioButtonRE1->Checked == true)
-            {
+            else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
             }
-            else if(radioButtonRE2->Checked == true)
-            {
+            else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
             }
-            else if(radioButtonRE3->Checked == true)
-            {
+            else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
             }
-            else if(radioButtonREx->Checked == true)
-            {
+            else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
             }
-            else if(radioButtonRID->Checked == true)
-            {
+            else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }
             else
@@ -1513,8 +1312,7 @@ private: System::Void checkBoxDt2TemperatureFromFile_CheckedChanged(System::Obje
             ptData = ptGetRdcDataPtr(ucTabIx);
             ptData->bDt2TemperatureFromFile = checkBoxDt2TemperatureFromFile->Checked;
 
-            if( checkBoxDt2TemperatureFromFile->Checked == true)
-            {
+            if(checkBoxDt2TemperatureFromFile->Checked == true){
               numericUpDownDt2Temperature->Enabled = false;
               trackBarDt2Temperature->Enabled = false;
               panelDt2TemperatureSensorState->Enabled = false;
@@ -1527,11 +1325,9 @@ private: System::Void checkBoxDt2TemperatureFromFile_CheckedChanged(System::Obje
               trackBarDt2Temperature->Enabled = true;
               panelDt2TemperatureSensorState->Enabled = true;
 
-              if( ptData->bDt1PressureFromFile == FALSE)
-              {
+              if(ptData->bDt1PressureFromFile == FALSE){
 
-                if( ucTabIx == cRecEleIx_Alive)
-                {
+                if(ucTabIx == cRecEleIx_Alive){
                   checkBoxInputIsochor->Enabled = false;
                   checkBoxInputIsochor->Checked = false;
                 }
@@ -1554,29 +1350,23 @@ private: System::Void numericUpDownDt3PalLbt_ValueChanged(System::Object^  sende
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
             ptData->RDC_DT_3 = (unsigned char) numericUpDownDt3PalLbt->Value;
          }
 
@@ -1586,29 +1376,23 @@ private: System::Void numericUpDownDt4PalStatusHi_ValueChanged(System::Object^  
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
             ptData->RDC_DT_4 = (unsigned char) numericUpDownDt4PalStatusHi->Value;
          }
 
@@ -1618,29 +1402,23 @@ private: System::Void numericUpDownDt5PalStatusLo_ValueChanged(System::Object^  
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
             ptData->RDC_DT_5 = (unsigned char) numericUpDownDt5PalStatusLo->Value;
          }
 
@@ -1650,29 +1428,23 @@ private: System::Void numericUpDownDt6_ValueChanged(System::Object^  sender, Sys
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
             ptData->RDC_DT_6 = (unsigned char) numericUpDownDt6->Value;
          }
 
@@ -1682,29 +1454,23 @@ private: System::Void numericUpDownDt7Rssi_ValueChanged(System::Object^  sender,
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
             ptData->RDC_DT_7 = (unsigned char) numericUpDownDt7Rssi->Value;
          }
 
@@ -1714,29 +1480,23 @@ private: System::Void numericUpDownDt8Crc_ValueChanged(System::Object^  sender, 
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
             ptData->RDC_DT_8 = (unsigned char) numericUpDownDt8Crc->Value;
          }
 
@@ -1746,29 +1506,23 @@ private: System::Void numericUpDownRdcMesTstmp_ValueChanged(System::Object^  sen
 
             ImpTypeRecCddRdcData * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRecCddRdcDataPtr( ucTabIx);
+            ptData = ptGetRecCddRdcDataPtr(ucTabIx);
             ptData->RDC_MES_TSTMP = (uint16) numericUpDownRdcMesTstmp->Value;
          }
 
@@ -1777,44 +1531,34 @@ private: System::Void checkBoxSetBatteryEmpty_CheckedChanged(System::Object^  se
             uint8         ucTabIx;
             RdcDataType * ptData;
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData = ptGetRdcDataPtr( ucTabIx);
+            ptData = ptGetRdcDataPtr(ucTabIx);
             ptData->bBatteryEmpty = checkBoxSetBatteryEmpty->Checked;
 
-            if( ucTabIx <= cRecEleIx_FR)
-            {
-              if( (numericUpDownPckgId->Value == cTelTypeSELPAL) || (numericUpDownPckgId->Value == cTelTypeSELPAL1))
-              {
-                if( checkBoxSetBatteryEmpty->Checked == true)
-                {
+            if(ucTabIx <= cRecEleIx_FR){
+              if((numericUpDownPckgId->Value == cTelTypeSELPAL) || (numericUpDownPckgId->Value == cTelTypeSELPAL1)){
+                if(checkBoxSetBatteryEmpty->Checked == true){
                   numericUpDownDt5PalStatusLo->Value = (0x01 << 2);
                 }else{
                   numericUpDownDt5PalStatusLo->Value = (0x0B << 2);
                 }
 
-                if( numericUpDownDt3PalLbt->Value == 0)
-                {
+                if(numericUpDownDt3PalLbt->Value == 0){
                   numericUpDownDt4PalStatusHi->Value = 0xA0;
                 }else{
                   numericUpDownDt4PalStatusHi->Value = 0x60;
@@ -1822,10 +1566,8 @@ private: System::Void checkBoxSetBatteryEmpty_CheckedChanged(System::Object^  se
 
                 ptData->tRecCddRdcData.RDC_DT_4 = (uint8) numericUpDownDt4PalStatusHi->Value;
                 ptData->tRecCddRdcData.RDC_DT_5 = (uint8) numericUpDownDt5PalStatusLo->Value;
-              }else if( numericUpDownPckgId->Value == cTelTypeContiFP)
-              {
-                if( checkBoxSetBatteryEmpty->Checked == true)
-                {
+              }else if(numericUpDownPckgId->Value == cTelTypeContiFP){
+                if(checkBoxSetBatteryEmpty->Checked == true){
                   numericUpDownDt3PalLbt->Value = 12;
                 }else{
                   numericUpDownDt3PalLbt->Value = 0x7f;
@@ -1841,28 +1583,22 @@ private: System::Void checkBoxWuDataFromFile_CheckedChanged(System::Object^  sen
             uint8         ucTabIx;
             RdcDataType * ptData;
 
-            if(radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
             }
-            else if(radioButtonRE1->Checked == true)
-            {
+            else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
             }
-            else if(radioButtonRE2->Checked == true)
-            {
+            else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
             }
-            else if(radioButtonRE3->Checked == true)
-            {
+            else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
             }
-            else if(radioButtonREx->Checked == true)
-            {
+            else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
             }
-            else if(radioButtonRID->Checked == true)
-            {
+            else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }
             else
@@ -1900,8 +1636,7 @@ private: System::Void checkBoxMuteRE3_CheckedChanged(System::Object^  sender, Sy
 
 private: System::Void radioButtonRE0_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
 
               panelREInputDataFrame->Visible = false;
               panelREInputDataFrame->Visible = true;
@@ -1910,8 +1645,7 @@ private: System::Void radioButtonRE0_CheckedChanged(System::Object^  sender, Sys
 
 private: System::Void radioButtonRE1_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-            if( radioButtonRE1->Checked == true)
-            {
+            if(radioButtonRE1->Checked == true){
 
               panelREInputDataFrame->Visible = false;
               panelREInputDataFrame->Visible = true;
@@ -1920,8 +1654,7 @@ private: System::Void radioButtonRE1_CheckedChanged(System::Object^  sender, Sys
 
 private: System::Void radioButtonRE2_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-            if( radioButtonRE2->Checked == true)
-            {
+            if(radioButtonRE2->Checked == true){
 
               panelREInputDataFrame->Visible = false;
               panelREInputDataFrame->Visible = true;
@@ -1930,8 +1663,7 @@ private: System::Void radioButtonRE2_CheckedChanged(System::Object^  sender, Sys
 
 private: System::Void radioButtonRE3_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-            if( radioButtonRE3->Checked == true)
-            {
+            if(radioButtonRE3->Checked == true){
 
               panelREInputDataFrame->Visible = false;
               panelREInputDataFrame->Visible = true;
@@ -1940,8 +1672,7 @@ private: System::Void radioButtonRE3_CheckedChanged(System::Object^  sender, Sys
 
 private: System::Void radioButtonREx_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-            if( radioButtonREx->Checked == true)
-            {
+            if(radioButtonREx->Checked == true){
 
               panelREInputDataFrame->Visible = false;
               panelREInputDataFrame->Visible = true;
@@ -1950,8 +1681,7 @@ private: System::Void radioButtonREx_CheckedChanged(System::Object^  sender, Sys
 
 private: System::Void radioButtonRID_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-            if( radioButtonRID->Checked == true)
-            {
+            if(radioButtonRID->Checked == true){
 
               panelREInputDataFrame->Visible = false;
               panelREInputDataFrame->Visible = true;
@@ -1961,8 +1691,7 @@ private: System::Void radioButtonRID_CheckedChanged(System::Object^  sender, Sys
 private: System::Void radioButtonFBD4Alive_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
 
-            if( radioButtonFBD4Alive->Checked == true)
-            {
+            if(radioButtonFBD4Alive->Checked == true){
 
               panelREInputDataFrame->Visible = false;
               panelREInputDataFrame->Visible = true;
@@ -1981,79 +1710,66 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
             Decimal       dIsochorenSteigung;
             RdcDataType * ptData;
 
-            for( ucLoop = 0; ucLoop < cMaxReElements; ucLoop++)
-            {
-              if( ucLoop == cRecEleIx_Slot0) textBoxCountRE0->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucLoop));
-              if( ucLoop == cRecEleIx_Slot1) textBoxCountRE1->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucLoop));
-              if( ucLoop == cRecEleIx_Slot2) textBoxCountRE2->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucLoop));
-              if( ucLoop == cRecEleIx_Slot3) textBoxCountRE3->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucLoop));
-              if( ucLoop == cRecEleIx_FR)    textBoxCountREx->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucLoop));
-              if( ucLoop == cRecEleIx_RID)   textBoxCountRID->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucLoop));
-              if( ucLoop == cRecEleIx_Alive) textBoxCountFBD4Alive->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr( ucLoop));
+            for(ucLoop = 0; ucLoop < cMaxReElements; ucLoop++){
+              if(ucLoop == cRecEleIx_Slot0) textBoxCountRE0->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucLoop));
+              if(ucLoop == cRecEleIx_Slot1) textBoxCountRE1->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucLoop));
+              if(ucLoop == cRecEleIx_Slot2) textBoxCountRE2->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucLoop));
+              if(ucLoop == cRecEleIx_Slot3) textBoxCountRE3->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucLoop));
+              if(ucLoop == cRecEleIx_FR)    textBoxCountREx->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucLoop));
+              if(ucLoop == cRecEleIx_RID)   textBoxCountRID->Text       = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucLoop));
+              if(ucLoop == cRecEleIx_Alive) textBoxCountFBD4Alive->Text = System::String::Format( "{0}", ushGetTelCountCddRdcDataPtr(ucLoop));
             }
 
-            for( ucLoop = 0; ucLoop < cAnzRad; ucLoop++)
-            {
-              ucWheelPos  = ucGetWPOfColWAL( ucLoop);
+            for(ucLoop = 0; ucLoop < cAnzRad; ucLoop++){
+              ucWheelPos  = ucGetWPOfColWAL(ucLoop);
 
-              if( ucWheelPos == cRadPosVL)
-              {
-                if( ucLoop == cRecEleIx_Slot0) radioButtonRE0->Text = System::String::Format( "RE{0} (VL)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot1) radioButtonRE1->Text = System::String::Format( "RE{0} (VL)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot2) radioButtonRE2->Text = System::String::Format( "RE{0} (VL)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot3) radioButtonRE3->Text = System::String::Format( "RE{0} (VL)", ucLoop);
-              }else if( ucWheelPos == cRadPosVR)
-              {
-                if( ucLoop == cRecEleIx_Slot0) radioButtonRE0->Text = System::String::Format( "RE{0} (VR)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot1) radioButtonRE1->Text = System::String::Format( "RE{0} (VR)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot2) radioButtonRE2->Text = System::String::Format( "RE{0} (VR)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot3) radioButtonRE3->Text = System::String::Format( "RE{0} (VR)", ucLoop);
-              }else if( ucWheelPos == cRadPosHL)
-              {
-                if( ucLoop == cRecEleIx_Slot0) radioButtonRE0->Text = System::String::Format( "RE{0} (HL)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot1) radioButtonRE1->Text = System::String::Format( "RE{0} (HL)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot2) radioButtonRE2->Text = System::String::Format( "RE{0} (HL)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot3) radioButtonRE3->Text = System::String::Format( "RE{0} (HL)", ucLoop);
-              }else if( ucWheelPos == cRadPosHR)
-              {
-                if( ucLoop == cRecEleIx_Slot0) radioButtonRE0->Text = System::String::Format( "RE{0} (HR)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot1) radioButtonRE1->Text = System::String::Format( "RE{0} (HR)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot2) radioButtonRE2->Text = System::String::Format( "RE{0} (HR)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot3) radioButtonRE3->Text = System::String::Format( "RE{0} (HR)", ucLoop);
+              if(ucWheelPos == cRadPosVL){
+                if(ucLoop == cRecEleIx_Slot0) radioButtonRE0->Text = System::String::Format( "RE{0} (VL)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot1) radioButtonRE1->Text = System::String::Format( "RE{0} (VL)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot2) radioButtonRE2->Text = System::String::Format( "RE{0} (VL)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot3) radioButtonRE3->Text = System::String::Format( "RE{0} (VL)", ucLoop);
+              }else if(ucWheelPos == cRadPosVR){
+                if(ucLoop == cRecEleIx_Slot0) radioButtonRE0->Text = System::String::Format( "RE{0} (VR)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot1) radioButtonRE1->Text = System::String::Format( "RE{0} (VR)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot2) radioButtonRE2->Text = System::String::Format( "RE{0} (VR)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot3) radioButtonRE3->Text = System::String::Format( "RE{0} (VR)", ucLoop);
+              }else if(ucWheelPos == cRadPosHL){
+                if(ucLoop == cRecEleIx_Slot0) radioButtonRE0->Text = System::String::Format( "RE{0} (HL)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot1) radioButtonRE1->Text = System::String::Format( "RE{0} (HL)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot2) radioButtonRE2->Text = System::String::Format( "RE{0} (HL)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot3) radioButtonRE3->Text = System::String::Format( "RE{0} (HL)", ucLoop);
+              }else if(ucWheelPos == cRadPosHR){
+                if(ucLoop == cRecEleIx_Slot0) radioButtonRE0->Text = System::String::Format( "RE{0} (HR)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot1) radioButtonRE1->Text = System::String::Format( "RE{0} (HR)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot2) radioButtonRE2->Text = System::String::Format( "RE{0} (HR)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot3) radioButtonRE3->Text = System::String::Format( "RE{0} (HR)", ucLoop);
               }else{
-                if( ucLoop == cRecEleIx_Slot0) radioButtonRE0->Text = System::String::Format( "RE{0} (no pos)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot1) radioButtonRE1->Text = System::String::Format( "RE{0} (no pos)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot2) radioButtonRE2->Text = System::String::Format( "RE{0} (no pos)", ucLoop);
-                if( ucLoop == cRecEleIx_Slot3) radioButtonRE3->Text = System::String::Format( "RE{0} (no pos)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot0) radioButtonRE0->Text = System::String::Format( "RE{0} (no pos)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot1) radioButtonRE1->Text = System::String::Format( "RE{0} (no pos)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot2) radioButtonRE2->Text = System::String::Format( "RE{0} (no pos)", ucLoop);
+                if(ucLoop == cRecEleIx_Slot3) radioButtonRE3->Text = System::String::Format( "RE{0} (no pos)", ucLoop);
               }
             }
 
-            if( radioButtonRE0->Checked == true)
-            {
+            if(radioButtonRE0->Checked == true){
               ucTabIx = cRecEleIx_Slot0;
-            }else if( radioButtonRE1->Checked == true)
-            {
+            }else if(radioButtonRE1->Checked == true){
               ucTabIx = cRecEleIx_Slot1;
-            }else if( radioButtonRE2->Checked == true)
-            {
+            }else if(radioButtonRE2->Checked == true){
               ucTabIx = cRecEleIx_Slot2;
-            }else if( radioButtonRE3->Checked == true)
-            {
+            }else if(radioButtonRE3->Checked == true){
               ucTabIx = cRecEleIx_Slot3;
-            }else if( radioButtonREx->Checked == true)
-            {
+            }else if(radioButtonREx->Checked == true){
               ucTabIx = cRecEleIx_FR;
-            }else if( radioButtonRID->Checked == true)
-            {
+            }else if(radioButtonRID->Checked == true){
               ucTabIx = cRecEleIx_RID;
             }else{
               ucTabIx = cRecEleIx_Alive;
             }
 
-            ptData  = ptGetRdcDataPtr( ucTabIx);
+            ptData  = ptGetRdcDataPtr(ucTabIx);
 
-            if( ptData != NULL)
-            {
+            if(ptData != NULL){
               checkBoxTyrIdFromFile->Checked          = ptData->bTyrIdFromFile;
               checkBoxSuppIdFromFile->Checked         = ptData->bSuppIdFromFile;
               checkBoxPckgIdFromFile->Checked         = ptData->bPckgIdFromFile;
@@ -2061,8 +1777,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
               checkBoxDt2TemperatureFromFile->Checked = ptData->bDt2TemperatureFromFile;
               checkBoxWuDataFromFile->Checked         = ptData->bWuDataFromFile;
 
-              if( ucTabIx == cRecEleIx_Alive)
-              {
+              if(ucTabIx == cRecEleIx_Alive){
 
                 numericUpDownTyrId->Value   = (long) ptData->tRecCddRdcData.TYR_ID;
                 numericUpDownTyrId->Enabled = false;
@@ -2120,8 +1835,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
                 numericUpDownDt8Crc->Enabled = false;
 
                 checkBoxSetBatteryEmpty->Enabled = false;
-              }else if( ucTabIx == cRecEleIx_RID)
-              {
+              }else if(ucTabIx == cRecEleIx_RID){
                 listBoxPckgId->Enabled = true;
 
                 checkBoxInputIsochor->Enabled = false;
@@ -2129,8 +1843,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
 
               }else{
 
-                if( checkBoxTyrIdFromFile->Checked == true)
-                {
+                if(checkBoxTyrIdFromFile->Checked == true){
                   numericUpDownTyrId->Enabled = false;
                   numericUpDownAlive1->Enabled = false;
                 }else{
@@ -2141,8 +1854,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
                 numericUpDownTyrId->Value  = (long) ptData->tRecCddRdcData.TYR_ID;
                 numericUpDownAlive1->Value = (unsigned char) ptData->tRecCddRdcData.ALIV_RDC_DT_PCK_1;
 
-                if( checkBoxSuppIdFromFile->Checked == true)
-                {
+                if(checkBoxSuppIdFromFile->Checked == true){
                   listBoxSuppId->Enabled = false;
                   numericUpDownSuppId->Enabled = false;
                   numericUpDownAlive2->Enabled = false;
@@ -2158,8 +1870,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
 
                 numericUpDownSuppId->Value = (uint8) ptData->tRecCddRdcData.SUPP_ID;
 
-                switch( (uint8) ptData->tRecCddRdcData.SUPP_ID)
-                {
+                switch( (uint8) ptData->tRecCddRdcData.SUPP_ID){
                   case cSupplCodeUnused:
                     listBoxSuppId->SetSelected( 0, TRUE);
                   break;
@@ -2187,7 +1898,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
                   default:
                     listBoxSuppId->SetSelected( 6, TRUE);
 
-                    if( checkBoxSuppIdFromFile->Checked == false)
+                    if(checkBoxSuppIdFromFile->Checked == false)
                     {
                       numericUpDownSuppId->Enabled = true;
                     }
@@ -2195,8 +1906,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
                 }
                 numericUpDownAlive2->Value   = (unsigned char) ptData->tRecCddRdcData.ALIV_RDC_DT_PCK_2;
 
-                if( checkBoxPckgIdFromFile->Checked == true)
-                {
+                if(checkBoxPckgIdFromFile->Checked == true){
                   listBoxPckgId->Enabled = false;
                   numericUpDownPckgId->Enabled = false;
                   numericUpDownPckgId->Enabled = false;
@@ -2208,8 +1918,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
 
                 numericUpDownPckgId->Value = (uint8) ptData->tRecCddRdcData.PCKG_ID;
 
-                switch( (uint8) ptData->tRecCddRdcData.PCKG_ID)
-                {
+                switch( (uint8) ptData->tRecCddRdcData.PCKG_ID){
                   case cTelTypeAK35def:
                     listBoxPckgId->SetSelected( 0, TRUE);
                   break;
@@ -2237,15 +1946,14 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
                   default:
                     listBoxPckgId->SetSelected( 6, TRUE);
 
-                    if( checkBoxPckgIdFromFile->Checked == false)
+                    if(checkBoxPckgIdFromFile->Checked == false)
                     {
                       numericUpDownPckgId->Enabled = true;
                     }
                   break;
                 }
 
-                if( (checkBoxDt1PressureFromFile->Checked == false) && (checkBoxDt2TemperatureFromFile->Checked == false))
-                {
+                if((checkBoxDt1PressureFromFile->Checked == false) && (checkBoxDt2TemperatureFromFile->Checked == false)){
                   checkBoxInputIsochor->Enabled = true;
                   checkBoxInputIsochor->Checked = ptData->bInputIsochor;
                 }else{
@@ -2253,8 +1961,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
                   checkBoxInputIsochor->Checked = false;
                 }
 
-                if( checkBoxWuDataFromFile->Checked == true)
-                {
+                if(checkBoxWuDataFromFile->Checked == true){
                   numericUpDownRdcMesTstmp->Enabled  = false;
                   numericUpDownDt3PalLbt->Enabled = false;
                   numericUpDownDt4PalStatusHi->Enabled = false;
@@ -2274,8 +1981,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
                   checkBoxSetBatteryEmpty->Enabled = true;
                 }
 
-                if( checkBoxDt1PressureFromFile->Checked == true)
-                {
+                if(checkBoxDt1PressureFromFile->Checked == true){
                   numericUpDownDt1Pressure->Enabled = false;
                   trackBarDt1Pressure->Enabled = false;
                   panelDt1PressureSensorState->Enabled = false;
@@ -2285,30 +1991,27 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
                   panelDt1PressureSensorState->Enabled = true;
                 }
 
-                if( ptData->tRecCddRdcData.RDC_DT_1 == cReAkPresError)
-                {
+                if(ptData->tRecCddRdcData.RDC_DT_1 == cReAkPresError){
                   radioButtonDt1PressureSensorDefect->Checked = true;
-                }else if( ptData->tRecCddRdcData.RDC_DT_1 == cReAkPresUnderflow)
-                {
+                }else if(ptData->tRecCddRdcData.RDC_DT_1 == cReAkPresUnderflow){
                   radioButtonDt1PressureSensorUnderflow->Checked = true;
-                }else if( ptData->tRecCddRdcData.RDC_DT_1 == cReAkPresOverflow)
-                {
+                }else if(ptData->tRecCddRdcData.RDC_DT_1 == cReAkPresOverflow){
                   radioButtonDt1PressureSensorOverflow->Checked = true;
                 }else{
                   ushPamb_hPa      = (uint16) System::Decimal::ToUInt16(numericUpDownAIP_ENG_DRV->Value);
                   ushPress_abs_hPa = ((((uint16) ptData->tRecCddRdcData.RDC_DT_1 + 40) - 2) * 25);
 
-                  if( ushPress_abs_hPa < 1000)
+                  if(ushPress_abs_hPa < 1000)
                   {
 
                     numericUpDownDt1Pressure->Value = numericUpDownDt1Pressure->Minimum;
                     radioButtonDt1PressureSensorUnderflow->Checked = true;
-                  }else if( ushPress_abs_hPa > 7300)
+                  }else if(ushPress_abs_hPa > 7300)
                   {
 
                     numericUpDownDt1Pressure->Value = numericUpDownDt1Pressure->Maximum;
                     radioButtonDt1PressureSensorOverflow->Checked = true;
-                  }else if( ushPress_abs_hPa < ushPamb_hPa)
+                  }else if(ushPress_abs_hPa < ushPamb_hPa)
                   {
                     ptData->tRecCddRdcData.RDC_DT_1 = 0;
                     numericUpDownDt1Pressure->Value = 0;
@@ -2321,8 +2024,7 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
                   }
                 }
 
-                if( checkBoxDt1PressureFromFile->Checked == true)
-                {
+                if(checkBoxDt1PressureFromFile->Checked == true){
                   numericUpDownDt2Temperature->Enabled = false;
                   trackBarDt2Temperature->Enabled = false;
                   panelDt2TemperatureSensorState->Enabled = false;
@@ -2332,28 +2034,24 @@ private: System::Void panelREInputDataFrame_VisibleChanged(System::Object^  send
                   panelDt2TemperatureSensorState->Enabled = true;
                 }
 
-                if( ptData->tRecCddRdcData.RDC_DT_2 == cReAkTempError)
-                {
+                if(ptData->tRecCddRdcData.RDC_DT_2 == cReAkTempError){
                   radioButtonDt2TemperatureSensorDefect->Checked = true;
-                }else if( ptData->tRecCddRdcData.RDC_DT_2 == cReAkTempUnderflow)
-                {
+                }else if(ptData->tRecCddRdcData.RDC_DT_2 == cReAkTempUnderflow){
                   radioButtonDt2TemperatureSensorUnderflow->Checked = true;
-                }else if( ptData->tRecCddRdcData.RDC_DT_2 >= cReAkTempOverflow)
-                {
+                }else if(ptData->tRecCddRdcData.RDC_DT_2 >= cReAkTempOverflow){
                   radioButtonDt2TemperatureSensorOverflow->Checked = true;
                 }else{
                   radioButtonDt2TemperatureSensorOk->Checked = true;
                   numericUpDownDt2Temperature->Value = (signed int) (ptData->tRecCddRdcData.RDC_DT_2 - 52);
                 }
 
-                if( checkBoxInputIsochor->Checked == false)
-                {
-                  if( (ptData->tRecCddRdcData.RDC_DT_1 > cReAkPresUnderflow) && (ptData->tRecCddRdcData.RDC_DT_1 < cReAkPresOverflow))
+                if(checkBoxInputIsochor->Checked == false){
+                  if((ptData->tRecCddRdcData.RDC_DT_1 > cReAkPresUnderflow) && (ptData->tRecCddRdcData.RDC_DT_1 < cReAkPresOverflow))
                   {
                     ptData->ushPabs_iso_hPa = (uint16) ((((System::Decimal::ToUInt16(numericUpDownDt1Pressure->Value) + System::Decimal::ToUInt16(numericUpDownAIP_ENG_DRV->Value)) * 10 + 125) / 250) * 25);
                   }
 
-                  if( (ptData->tRecCddRdcData.RDC_DT_2 > cReAkTempUnderflow) && (ptData->tRecCddRdcData.RDC_DT_1 < cReAkTempOverflow))
+                  if((ptData->tRecCddRdcData.RDC_DT_2 > cReAkTempUnderflow) && (ptData->tRecCddRdcData.RDC_DT_1 < cReAkTempOverflow))
                   {
                     ptData->sshTabs_iso_K   = (sint16) (System::Decimal::ToInt16(numericUpDownDt2Temperature->Value) + 273);
                   }

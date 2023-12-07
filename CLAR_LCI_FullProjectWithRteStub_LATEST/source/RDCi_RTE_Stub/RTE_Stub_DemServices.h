@@ -11,9 +11,9 @@ extern "C"
 
 #ifdef _EcuVirtual
 #else
-static void ClearDtcUwbData( uint8 ucDtcNo);
+static void ClearDtcUwbData(uint8 ucDtcNo);
 static uint8 ucGetRdcSensorHersteller(void);
-static void SaveDTC( uint8 ucDtcNo, ImpTypeRefDem_EventStatusType EventStatus);
+static void SaveDTC(uint8 ucDtcNo, ImpTypeRefDem_EventStatusType EventStatus);
 #endif
 
 #ifdef __cplusplus

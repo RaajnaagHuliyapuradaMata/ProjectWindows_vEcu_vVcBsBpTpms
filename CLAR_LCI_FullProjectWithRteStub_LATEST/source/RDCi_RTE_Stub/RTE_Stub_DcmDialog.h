@@ -10,22 +10,22 @@ private: System::Void buttonStatusRdcLesen_Click(System::Object^  sender, System
            Error = RTE_Stub_StatusRdcLesen( &Data);
            textBoxDiagnosticNRC->AppendText(System::String::Format("StatusRdcLesen () - NRC = 0x{0:X2}\n", Error));
 
-           if( Data[cucIxStatEigenraederBekannt]             == TRUE) { labelStatEigenraederBekanntValue->Text = "1";             }else{ labelStatEigenraederBekanntValue->Text = "0"; }
-           if( Data[cucIxStatRadposErBekannt]                == TRUE) { labelStatRadposErBekanntValue->Text = "1";                }else{ labelStatRadposErBekanntValue->Text = "0"; }
-           if( Data[cucIxStatKalAnforderungAktiv]            == TRUE) { labelStatKalAnforderungAktivValue->Text = "1";            }else{ labelStatKalAnforderungAktivValue->Text = "0"; }
-           if( Data[cucIxStatRadZuordnungTimeout]            == TRUE) { labelStatRadZuordnungTimeoutValue->Text = "1";            }else{ labelStatRadZuordnungTimeoutValue->Text = "0"; }
-           if( Data[cucIxStatBandmodeAktiv]                  == TRUE) { labelStatBandmodeAktivValue->Text = "1";                  }else{ labelStatBandmodeAktivValue->Text = "0"; }
-           if( Data[cucIxStatTestEigenradFahrt]              == TRUE) { labelStatTestEigenradFahrtValue->Text = "1";              }else{ labelStatTestEigenradFahrtValue->Text = "0"; }
-           if( Data[cucIxStatErFahrtVthresAkiv]              == TRUE) { labelStatErFahrtVthresAkivValue->Text = "1";              }else{ labelStatErFahrtVthresAkivValue->Text = "0"; }
-           if( Data[cucIxStatBmTimeoutActive]                == TRUE) { labelStatBmTimeoutActiveValue->Text = "1";                }else{ labelStatBmTimeoutActiveValue->Text = "0"; }
-           if( Data[cucIxStatHarteWarnungUnspezifischAktiv]  == TRUE) { labelStatHarteWarnungUnspezifischAktivValue->Text = "1";  }else{ labelStatHarteWarnungUnspezifischAktivValue->Text = "0"; }
-           if( Data[cucIxStatHarteWarnungVlAktiv]            == TRUE) { labelStatHarteWarnungVlAktivValue->Text = "1";            }else{ labelStatHarteWarnungVlAktivValue->Text = "0"; }
-           if( Data[cucIxStatHarteWarnungVrAktiv]            == TRUE) { labelStatHarteWarnungVrAktivValue->Text = "1";            }else{ labelStatHarteWarnungVrAktivValue->Text = "0"; }
-           if( Data[cucIxStatHarteWarnungHlAktiv]            == TRUE) { labelStatHarteWarnungHlAktivValue->Text = "1";            }else{ labelStatHarteWarnungHlAktivValue->Text = "0"; }
-           if( Data[cucIxStatHarteWarnungHrAktiv]            == TRUE) { labelStatHarteWarnungHrAktivValue->Text = "1";            }else{ labelStatHarteWarnungHrAktivValue->Text = "0"; }
-           if( Data[cucIxStatKl15Ein]                        == TRUE) { labelStatKl15EinValue->Text = "1";                        }else{ labelStatKl15EinValue->Text = "0"; }
-           if( Data[cucIxStatFzgFaehrt]                      == TRUE) { labelStatFzgFaehrtValue->Text = "1";                      }else{ labelStatFzgFaehrtValue->Text = "0"; }
-           if( Data[cucIxStatErkennungAlleRe]                == TRUE) { labelStatErkennungAlleReValue->Text = "1";                }else{ labelStatErkennungAlleReValue->Text = "0"; }
+           if(Data[cucIxStatEigenraederBekannt]             == TRUE) { labelStatEigenraederBekanntValue->Text = "1";             }else{ labelStatEigenraederBekanntValue->Text = "0"; }
+           if(Data[cucIxStatRadposErBekannt]                == TRUE) { labelStatRadposErBekanntValue->Text = "1";                }else{ labelStatRadposErBekanntValue->Text = "0"; }
+           if(Data[cucIxStatKalAnforderungAktiv]            == TRUE) { labelStatKalAnforderungAktivValue->Text = "1";            }else{ labelStatKalAnforderungAktivValue->Text = "0"; }
+           if(Data[cucIxStatRadZuordnungTimeout]            == TRUE) { labelStatRadZuordnungTimeoutValue->Text = "1";            }else{ labelStatRadZuordnungTimeoutValue->Text = "0"; }
+           if(Data[cucIxStatBandmodeAktiv]                  == TRUE) { labelStatBandmodeAktivValue->Text = "1";                  }else{ labelStatBandmodeAktivValue->Text = "0"; }
+           if(Data[cucIxStatTestEigenradFahrt]              == TRUE) { labelStatTestEigenradFahrtValue->Text = "1";              }else{ labelStatTestEigenradFahrtValue->Text = "0"; }
+           if(Data[cucIxStatErFahrtVthresAkiv]              == TRUE) { labelStatErFahrtVthresAkivValue->Text = "1";              }else{ labelStatErFahrtVthresAkivValue->Text = "0"; }
+           if(Data[cucIxStatBmTimeoutActive]                == TRUE) { labelStatBmTimeoutActiveValue->Text = "1";                }else{ labelStatBmTimeoutActiveValue->Text = "0"; }
+           if(Data[cucIxStatHarteWarnungUnspezifischAktiv]  == TRUE) { labelStatHarteWarnungUnspezifischAktivValue->Text = "1";  }else{ labelStatHarteWarnungUnspezifischAktivValue->Text = "0"; }
+           if(Data[cucIxStatHarteWarnungVlAktiv]            == TRUE) { labelStatHarteWarnungVlAktivValue->Text = "1";            }else{ labelStatHarteWarnungVlAktivValue->Text = "0"; }
+           if(Data[cucIxStatHarteWarnungVrAktiv]            == TRUE) { labelStatHarteWarnungVrAktivValue->Text = "1";            }else{ labelStatHarteWarnungVrAktivValue->Text = "0"; }
+           if(Data[cucIxStatHarteWarnungHlAktiv]            == TRUE) { labelStatHarteWarnungHlAktivValue->Text = "1";            }else{ labelStatHarteWarnungHlAktivValue->Text = "0"; }
+           if(Data[cucIxStatHarteWarnungHrAktiv]            == TRUE) { labelStatHarteWarnungHrAktivValue->Text = "1";            }else{ labelStatHarteWarnungHrAktivValue->Text = "0"; }
+           if(Data[cucIxStatKl15Ein]                        == TRUE) { labelStatKl15EinValue->Text = "1";                        }else{ labelStatKl15EinValue->Text = "0"; }
+           if(Data[cucIxStatFzgFaehrt]                      == TRUE) { labelStatFzgFaehrtValue->Text = "1";                      }else{ labelStatFzgFaehrtValue->Text = "0"; }
+           if(Data[cucIxStatErkennungAlleRe]                == TRUE) { labelStatErkennungAlleReValue->Text = "1";                }else{ labelStatErkennungAlleReValue->Text = "0"; }
 
            labelStatDtcInactiveValue->Text = System::String::Format("0x{0:X2}", Data[cucIxStatDtcInactive]);
          }
@@ -50,59 +50,59 @@ private: System::Void buttonStatusRdcMessdatenblock1_Click(System::Object^  send
              labelConditionDiagJob->BackColor = System::Drawing::Color::FromArgb(0,255,0);
 
              ulDataDWORD = ((uint32) (Data[cucIxStatReIdentifierWert + 0] << 24) + (uint32) (Data[cucIxStatReIdentifierWert + 1] << 16) + (uint32) (Data[cucIxStatReIdentifierWert + 2] << 8) + (uint32) Data[cucIxStatReIdentifierWert + 3]);
-             if( (ulDataDWORD == 0x00000000u) || (ulDataDWORD == 0xFFFFFFFFu)) { labelStatReIdentifierValue->Text = "unknown"; }else{ labelStatReIdentifierValue->Text = System::String::Format( "{0}", ulDataDWORD); }
+             if((ulDataDWORD == 0x00000000u) || (ulDataDWORD == 0xFFFFFFFFu)) { labelStatReIdentifierValue->Text = "unknown"; }else{ labelStatReIdentifierValue->Text = System::String::Format( "{0}", ulDataDWORD); }
 
              ucDataBYTE = Data[cucIxStatRadPositionNr] & 0x0fu;
-             if( ucDataBYTE > cRadPosHR) { labelStatRadPositionValue->Text = "unknown"; }else{ labelStatRadPositionValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE > cRadPosHR) { labelStatRadPositionValue->Text = "unknown"; }else{ labelStatRadPositionValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = (Data[cucIxStatRadPositionNr] & 0xf0u) >> 4;
-             if( ucDataBYTE >= cMaxQRCodeSets) { labelStatQrTabIndexValue->Text = "unknown"; }else{ labelStatQrTabIndexValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE >= cMaxQRCodeSets) { labelStatQrTabIndexValue->Text = "unknown"; }else{ labelStatQrTabIndexValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatLetzterReifendruckwertWert + 0] << 8) + (uint16) Data[cucIxStatLetzterReifendruckwertWert + 1]);
-             if( ushDataWORD == (uint16) -9999) { labelStatReReifendruckValue->Text = "unknown"; }else{ labelStatReReifendruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -9999) { labelStatReReifendruckValue->Text = "unknown"; }else{ labelStatReReifendruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatLetzterReifentemperaturwertWert];
-             if( ucDataBYTE == 0xff) { labelStatReReifentemperaturValue->Text = "unknown"; }else{ labelStatReReifentemperaturValue->Text = System::String::Format( "{0}", (sint8) ucDataBYTE - 50); }
+             if(ucDataBYTE == 0xff) { labelStatReReifentemperaturValue->Text = "unknown"; }else{ labelStatReReifentemperaturValue->Text = System::String::Format( "{0}", (sint8) ucDataBYTE - 50); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatSolldruckWert + 0] << 8) + (uint16) Data[cucIxStatSolldruckWert + 1]);
-             if( ushDataWORD == (uint16) -9999) { labelStatSolldruckValue->Text = "unknown"; }else{ labelStatSolldruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -9999) { labelStatSolldruckValue->Text = "unknown"; }else{ labelStatSolldruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatGutempfaengeWert + 0] << 8) + (uint16) Data[cucIxStatGutempfaengeWert + 1]);
-             if( ushDataWORD == 0x0000u) { labelStatGutempfaengeValue->Text = "unknown"; }else{ labelStatGutempfaengeValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == 0x0000u) { labelStatGutempfaengeValue->Text = "unknown"; }else{ labelStatGutempfaengeValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatAusbeuteWert];
-             if( ucDataBYTE == 0x00u) { labelStatAusbeuteValue->Text = "unknown"; }else{ labelStatAusbeuteValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0x00u) { labelStatAusbeuteValue->Text = "unknown"; }else{ labelStatAusbeuteValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatRssiPegelWert + 0] << 8) + (uint16) Data[cucIxStatRssiPegelWert + 1]);
-             if( ushDataWORD == 0x00u) { labelStatRssiPegelValue->Text = "unknown"; }else{ labelStatRssiPegelValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == 0x00u) { labelStatRssiPegelValue->Text = "unknown"; }else{ labelStatRssiPegelValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatRestlebensdauerWert + 0] << 8) + (uint16) Data[cucIxStatRestlebensdauerWert + 1]);
-             if( ushDataWORD == (uint16) -999) { labelStatReRestlebensdauerValue->Text = "unknown"; }else{ labelStatReRestlebensdauerValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -999) { labelStatReRestlebensdauerValue->Text = "unknown"; }else{ labelStatReRestlebensdauerValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatRadelektronikStatus];
-             if( ucDataBYTE == 0xFFu)   { labelStatReStatusValue->Text = "unknown"; }
+             if(ucDataBYTE == 0xFFu)   { labelStatReStatusValue->Text = "unknown"; }
              else if(ucDataBYTE == 0x00) { labelStatReStatusValue->Text = "OK";    }
              else if(ucDataBYTE == 0x01) { labelStatReStatusValue->Text = "Mute";    }
              else if(ucDataBYTE == 0x02) { labelStatReStatusValue->Text = "Defect";  }
              else if(ucDataBYTE == 0x03) { labelStatReStatusValue->Text = "Not rec"; }
 
              ucDataBYTE = Data[cucIxStatHarteWarnungAktiv];
-             if( ucDataBYTE == 0xFFu) { labelStatHarteWarnungAktivValue->Text = "unknown"; }else{ labelStatHarteWarnungAktivValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatHarteWarnungAktivValue->Text = "unknown"; }else{ labelStatHarteWarnungAktivValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatPosChanged];
-             if( ucDataBYTE == 0xFFu) { labelStatPosChangedValue->Text = "unknown"; }else{ labelStatPosChangedValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatPosChangedValue->Text = "unknown"; }else{ labelStatPosChangedValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatFolgeausfallWert];
-             if( ucDataBYTE == 0x00u) { labelStatFolgeausfallValue->Text = "unknown"; }else{ labelStatFolgeausfallValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0x00u) { labelStatFolgeausfallValue->Text = "unknown"; }else{ labelStatFolgeausfallValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatReHersteller];
-             if( ucDataBYTE == 0xFFu) { labelStatReHerstellerValue->Text = "unknown"; }else{ labelStatReHerstellerValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReHerstellerValue->Text = "unknown"; }else{ labelStatReHerstellerValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatRadelektronikSendemode];
-             if( ucDataBYTE == 0xFFu) { labelStatReSendemodeValue->Text = "unknown"; }else{ labelStatReSendemodeValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReSendemodeValue->Text = "unknown"; }else{ labelStatReSendemodeValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatTelegrammtyp];
-             if( ucDataBYTE == 0xFFu) { labelStatReTelegrammtypValue->Text = "unknown"; }else{ labelStatReTelegrammtypValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReTelegrammtypValue->Text = "unknown"; }else{ labelStatReTelegrammtypValue->Text = System::String::Format( "{0}", ucDataBYTE); }
            }
            else
            {
@@ -132,59 +132,59 @@ private: System::Void buttonStatusRdcMessdatenblock2_Click(System::Object^  send
              labelConditionDiagJob->BackColor = System::Drawing::Color::FromArgb(0,255,0);
 
              ulDataDWORD = ((uint32) (Data[cucIxStatReIdentifierWert + 0] << 24) + (uint32) (Data[cucIxStatReIdentifierWert + 1] << 16) + (uint32) (Data[cucIxStatReIdentifierWert + 2] << 8) + (uint32) Data[cucIxStatReIdentifierWert + 3]);
-             if( (ulDataDWORD == 0x00000000u) || (ulDataDWORD == 0xFFFFFFFFu)) { labelStatReIdentifierValue->Text = "unknown"; }else{ labelStatReIdentifierValue->Text = System::String::Format( "{0}", ulDataDWORD); }
+             if((ulDataDWORD == 0x00000000u) || (ulDataDWORD == 0xFFFFFFFFu)) { labelStatReIdentifierValue->Text = "unknown"; }else{ labelStatReIdentifierValue->Text = System::String::Format( "{0}", ulDataDWORD); }
 
              ucDataBYTE = Data[cucIxStatRadPositionNr] & 0x0fu;
-             if( ucDataBYTE > cRadPosHR) { labelStatRadPositionValue->Text = "unknown"; }else{ labelStatRadPositionValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE > cRadPosHR) { labelStatRadPositionValue->Text = "unknown"; }else{ labelStatRadPositionValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = (Data[cucIxStatRadPositionNr] & 0xf0u) >> 4;
-             if( ucDataBYTE >= cMaxQRCodeSets) { labelStatQrTabIndexValue->Text = "unknown"; }else{ labelStatQrTabIndexValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE >= cMaxQRCodeSets) { labelStatQrTabIndexValue->Text = "unknown"; }else{ labelStatQrTabIndexValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatLetzterReifendruckwertWert + 0] << 8) + (uint16) Data[cucIxStatLetzterReifendruckwertWert + 1]);
-             if( ushDataWORD == (uint16) -9999) { labelStatReReifendruckValue->Text = "unknown"; }else{ labelStatReReifendruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -9999) { labelStatReReifendruckValue->Text = "unknown"; }else{ labelStatReReifendruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatLetzterReifentemperaturwertWert];
-             if( ucDataBYTE == 0xff) { labelStatReReifentemperaturValue->Text = "unknown"; }else{ labelStatReReifentemperaturValue->Text = System::String::Format( "{0}", (sint8) ucDataBYTE - 50); }
+             if(ucDataBYTE == 0xff) { labelStatReReifentemperaturValue->Text = "unknown"; }else{ labelStatReReifentemperaturValue->Text = System::String::Format( "{0}", (sint8) ucDataBYTE - 50); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatSolldruckWert + 0] << 8) + (uint16) Data[cucIxStatSolldruckWert + 1]);
-             if( ushDataWORD == (uint16) -9999) { labelStatSolldruckValue->Text = "unknown"; }else{ labelStatSolldruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -9999) { labelStatSolldruckValue->Text = "unknown"; }else{ labelStatSolldruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatGutempfaengeWert + 0] << 8) + (uint16) Data[cucIxStatGutempfaengeWert + 1]);
-             if( ushDataWORD == 0x0000u) { labelStatGutempfaengeValue->Text = "unknown"; }else{ labelStatGutempfaengeValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == 0x0000u) { labelStatGutempfaengeValue->Text = "unknown"; }else{ labelStatGutempfaengeValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatAusbeuteWert];
-             if( ucDataBYTE == 0x00u) { labelStatAusbeuteValue->Text = "unknown"; }else{ labelStatAusbeuteValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0x00u) { labelStatAusbeuteValue->Text = "unknown"; }else{ labelStatAusbeuteValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatRssiPegelWert + 0] << 8) + (uint16) Data[cucIxStatRssiPegelWert + 1]);
-             if( ushDataWORD == 0x00u) { labelStatRssiPegelValue->Text = "unknown"; }else{ labelStatRssiPegelValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == 0x00u) { labelStatRssiPegelValue->Text = "unknown"; }else{ labelStatRssiPegelValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatRestlebensdauerWert + 0] << 8) + (uint16) Data[cucIxStatRestlebensdauerWert + 1]);
-             if( ushDataWORD == (uint16) -999) { labelStatReRestlebensdauerValue->Text = "unknown"; }else{ labelStatReRestlebensdauerValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -999) { labelStatReRestlebensdauerValue->Text = "unknown"; }else{ labelStatReRestlebensdauerValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatRadelektronikStatus];
-             if( ucDataBYTE == 0xFFu)   { labelStatReStatusValue->Text = "unknown"; }
+             if(ucDataBYTE == 0xFFu)   { labelStatReStatusValue->Text = "unknown"; }
              else if(ucDataBYTE == 0x00) { labelStatReStatusValue->Text = "OK";    }
              else if(ucDataBYTE == 0x01) { labelStatReStatusValue->Text = "Mute";    }
              else if(ucDataBYTE == 0x02) { labelStatReStatusValue->Text = "Defect";  }
              else if(ucDataBYTE == 0x03) { labelStatReStatusValue->Text = "Not rec"; }
 
              ucDataBYTE = Data[cucIxStatHarteWarnungAktiv];
-             if( ucDataBYTE == 0xFFu) { labelStatHarteWarnungAktivValue->Text = "unknown"; }else{ labelStatHarteWarnungAktivValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatHarteWarnungAktivValue->Text = "unknown"; }else{ labelStatHarteWarnungAktivValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatPosChanged];
-             if( ucDataBYTE == 0xFFu) { labelStatPosChangedValue->Text = "unknown"; }else{ labelStatPosChangedValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatPosChangedValue->Text = "unknown"; }else{ labelStatPosChangedValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatFolgeausfallWert];
-             if( ucDataBYTE == 0x00u) { labelStatFolgeausfallValue->Text = "unknown"; }else{ labelStatFolgeausfallValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0x00u) { labelStatFolgeausfallValue->Text = "unknown"; }else{ labelStatFolgeausfallValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatReHersteller];
-             if( ucDataBYTE == 0xFFu) { labelStatReHerstellerValue->Text = "unknown"; }else{ labelStatReHerstellerValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReHerstellerValue->Text = "unknown"; }else{ labelStatReHerstellerValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatRadelektronikSendemode];
-             if( ucDataBYTE == 0xFFu) { labelStatReSendemodeValue->Text = "unknown"; }else{ labelStatReSendemodeValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReSendemodeValue->Text = "unknown"; }else{ labelStatReSendemodeValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatTelegrammtyp];
-             if( ucDataBYTE == 0xFFu) { labelStatReTelegrammtypValue->Text = "unknown"; }else{ labelStatReTelegrammtypValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReTelegrammtypValue->Text = "unknown"; }else{ labelStatReTelegrammtypValue->Text = System::String::Format( "{0}", ucDataBYTE); }
            }
            else
            {
@@ -213,59 +213,59 @@ private: System::Void buttonStatusRdcMessdatenblock3_Click(System::Object^  send
              labelConditionDiagJob->BackColor = System::Drawing::Color::FromArgb(0,255,0);
 
              ulDataDWORD = ((uint32) (Data[cucIxStatReIdentifierWert + 0] << 24) + (uint32) (Data[cucIxStatReIdentifierWert + 1] << 16) + (uint32) (Data[cucIxStatReIdentifierWert + 2] << 8) + (uint32) Data[cucIxStatReIdentifierWert + 3]);
-             if( (ulDataDWORD == 0x00000000u) || (ulDataDWORD == 0xFFFFFFFFu)) { labelStatReIdentifierValue->Text = "unknown"; }else{ labelStatReIdentifierValue->Text = System::String::Format( "{0}", ulDataDWORD); }
+             if((ulDataDWORD == 0x00000000u) || (ulDataDWORD == 0xFFFFFFFFu)) { labelStatReIdentifierValue->Text = "unknown"; }else{ labelStatReIdentifierValue->Text = System::String::Format( "{0}", ulDataDWORD); }
 
              ucDataBYTE = Data[cucIxStatRadPositionNr] & 0x0fu;
-             if( ucDataBYTE > cRadPosHR) { labelStatRadPositionValue->Text = "unknown"; }else{ labelStatRadPositionValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE > cRadPosHR) { labelStatRadPositionValue->Text = "unknown"; }else{ labelStatRadPositionValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = (Data[cucIxStatRadPositionNr] & 0xf0u) >> 4;
-             if( ucDataBYTE >= cMaxQRCodeSets) { labelStatQrTabIndexValue->Text = "unknown"; }else{ labelStatQrTabIndexValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE >= cMaxQRCodeSets) { labelStatQrTabIndexValue->Text = "unknown"; }else{ labelStatQrTabIndexValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatLetzterReifendruckwertWert + 0] << 8) + (uint16) Data[cucIxStatLetzterReifendruckwertWert + 1]);
-             if( ushDataWORD == (uint16) -9999) { labelStatReReifendruckValue->Text = "unknown"; }else{ labelStatReReifendruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -9999) { labelStatReReifendruckValue->Text = "unknown"; }else{ labelStatReReifendruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatLetzterReifentemperaturwertWert];
-             if( ucDataBYTE == 0xff) { labelStatReReifentemperaturValue->Text = "unknown"; }else{ labelStatReReifentemperaturValue->Text = System::String::Format( "{0}", (sint8) ucDataBYTE - 50); }
+             if(ucDataBYTE == 0xff) { labelStatReReifentemperaturValue->Text = "unknown"; }else{ labelStatReReifentemperaturValue->Text = System::String::Format( "{0}", (sint8) ucDataBYTE - 50); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatSolldruckWert + 0] << 8) + (uint16) Data[cucIxStatSolldruckWert + 1]);
-             if( ushDataWORD == (uint16) -9999) { labelStatSolldruckValue->Text = "unknown"; }else{ labelStatSolldruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -9999) { labelStatSolldruckValue->Text = "unknown"; }else{ labelStatSolldruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatGutempfaengeWert + 0] << 8) + (uint16) Data[cucIxStatGutempfaengeWert + 1]);
-             if( ushDataWORD == 0x0000u) { labelStatGutempfaengeValue->Text = "unknown"; }else{ labelStatGutempfaengeValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == 0x0000u) { labelStatGutempfaengeValue->Text = "unknown"; }else{ labelStatGutempfaengeValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatAusbeuteWert];
-             if( ucDataBYTE == 0x00u) { labelStatAusbeuteValue->Text = "unknown"; }else{ labelStatAusbeuteValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0x00u) { labelStatAusbeuteValue->Text = "unknown"; }else{ labelStatAusbeuteValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatRssiPegelWert + 0] << 8) + (uint16) Data[cucIxStatRssiPegelWert + 1]);
-             if( ushDataWORD == 0x00u) { labelStatRssiPegelValue->Text = "unknown"; }else{ labelStatRssiPegelValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == 0x00u) { labelStatRssiPegelValue->Text = "unknown"; }else{ labelStatRssiPegelValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatRestlebensdauerWert + 0] << 8) + (uint16) Data[cucIxStatRestlebensdauerWert + 1]);
-             if( ushDataWORD == (uint16) -999) { labelStatReRestlebensdauerValue->Text = "unknown"; }else{ labelStatReRestlebensdauerValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -999) { labelStatReRestlebensdauerValue->Text = "unknown"; }else{ labelStatReRestlebensdauerValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatRadelektronikStatus];
-             if( ucDataBYTE == 0xFFu)   { labelStatReStatusValue->Text = "unknown"; }
+             if(ucDataBYTE == 0xFFu)   { labelStatReStatusValue->Text = "unknown"; }
              else if(ucDataBYTE == 0x00) { labelStatReStatusValue->Text = "OK";    }
              else if(ucDataBYTE == 0x01) { labelStatReStatusValue->Text = "Mute";    }
              else if(ucDataBYTE == 0x02) { labelStatReStatusValue->Text = "Defect";  }
              else if(ucDataBYTE == 0x03) { labelStatReStatusValue->Text = "Not rec"; }
 
              ucDataBYTE = Data[cucIxStatHarteWarnungAktiv];
-             if( ucDataBYTE == 0xFFu) { labelStatHarteWarnungAktivValue->Text = "unknown"; }else{ labelStatHarteWarnungAktivValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatHarteWarnungAktivValue->Text = "unknown"; }else{ labelStatHarteWarnungAktivValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatPosChanged];
-             if( ucDataBYTE == 0xFFu) { labelStatPosChangedValue->Text = "unknown"; }else{ labelStatPosChangedValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatPosChangedValue->Text = "unknown"; }else{ labelStatPosChangedValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatFolgeausfallWert];
-             if( ucDataBYTE == 0x00u) { labelStatFolgeausfallValue->Text = "unknown"; }else{ labelStatFolgeausfallValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0x00u) { labelStatFolgeausfallValue->Text = "unknown"; }else{ labelStatFolgeausfallValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatReHersteller];
-             if( ucDataBYTE == 0xFFu) { labelStatReHerstellerValue->Text = "unknown"; }else{ labelStatReHerstellerValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReHerstellerValue->Text = "unknown"; }else{ labelStatReHerstellerValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatRadelektronikSendemode];
-             if( ucDataBYTE == 0xFFu) { labelStatReSendemodeValue->Text = "unknown"; }else{ labelStatReSendemodeValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReSendemodeValue->Text = "unknown"; }else{ labelStatReSendemodeValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatTelegrammtyp];
-             if( ucDataBYTE == 0xFFu) { labelStatReTelegrammtypValue->Text = "unknown"; }else{ labelStatReTelegrammtypValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReTelegrammtypValue->Text = "unknown"; }else{ labelStatReTelegrammtypValue->Text = System::String::Format( "{0}", ucDataBYTE); }
            }
            else
            {
@@ -294,59 +294,59 @@ private: System::Void buttonStatusRdcMessdatenblock4_Click(System::Object^  send
              labelConditionDiagJob->BackColor = System::Drawing::Color::FromArgb(0,255,0);
 
              ulDataDWORD = ((uint32) (Data[cucIxStatReIdentifierWert + 0] << 24) + (uint32) (Data[cucIxStatReIdentifierWert + 1] << 16) + (uint32) (Data[cucIxStatReIdentifierWert + 2] << 8) + (uint32) Data[cucIxStatReIdentifierWert + 3]);
-             if( (ulDataDWORD == 0x00000000u) || (ulDataDWORD == 0xFFFFFFFFu)) { labelStatReIdentifierValue->Text = "unknown"; }else{ labelStatReIdentifierValue->Text = System::String::Format( "{0}", ulDataDWORD); }
+             if((ulDataDWORD == 0x00000000u) || (ulDataDWORD == 0xFFFFFFFFu)) { labelStatReIdentifierValue->Text = "unknown"; }else{ labelStatReIdentifierValue->Text = System::String::Format( "{0}", ulDataDWORD); }
 
              ucDataBYTE = Data[cucIxStatRadPositionNr] & 0x0fu;
-             if( ucDataBYTE > cRadPosHR) { labelStatRadPositionValue->Text = "unknown"; }else{ labelStatRadPositionValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE > cRadPosHR) { labelStatRadPositionValue->Text = "unknown"; }else{ labelStatRadPositionValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = (Data[cucIxStatRadPositionNr] & 0xf0u) >> 4;
-             if( ucDataBYTE >= cMaxQRCodeSets) { labelStatQrTabIndexValue->Text = "unknown"; }else{ labelStatQrTabIndexValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE >= cMaxQRCodeSets) { labelStatQrTabIndexValue->Text = "unknown"; }else{ labelStatQrTabIndexValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatLetzterReifendruckwertWert + 0] << 8) + (uint16) Data[cucIxStatLetzterReifendruckwertWert + 1]);
-             if( ushDataWORD == (uint16) -9999) { labelStatReReifendruckValue->Text = "unknown"; }else{ labelStatReReifendruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -9999) { labelStatReReifendruckValue->Text = "unknown"; }else{ labelStatReReifendruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatLetzterReifentemperaturwertWert];
-             if( ucDataBYTE == 0xffu) { labelStatReReifentemperaturValue->Text = "unknown"; }else{ labelStatReReifentemperaturValue->Text = System::String::Format( "{0}", ucDataBYTE - 50); }
+             if(ucDataBYTE == 0xffu) { labelStatReReifentemperaturValue->Text = "unknown"; }else{ labelStatReReifentemperaturValue->Text = System::String::Format( "{0}", ucDataBYTE - 50); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatSolldruckWert + 0] << 8) + (uint16) Data[cucIxStatSolldruckWert + 1]);
-             if( ushDataWORD == (uint16) -9999) { labelStatSolldruckValue->Text = "unknown"; }else{ labelStatSolldruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -9999) { labelStatSolldruckValue->Text = "unknown"; }else{ labelStatSolldruckValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatGutempfaengeWert + 0] << 8) + (uint16) Data[cucIxStatGutempfaengeWert + 1]);
-             if( ushDataWORD == 0x0000u) { labelStatGutempfaengeValue->Text = "unknown"; }else{ labelStatGutempfaengeValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == 0x0000u) { labelStatGutempfaengeValue->Text = "unknown"; }else{ labelStatGutempfaengeValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatAusbeuteWert];
-             if( ucDataBYTE == 0x00u) { labelStatAusbeuteValue->Text = "unknown"; }else{ labelStatAusbeuteValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0x00u) { labelStatAusbeuteValue->Text = "unknown"; }else{ labelStatAusbeuteValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatRssiPegelWert + 0] << 8) + (uint16) Data[cucIxStatRssiPegelWert + 1]);
-             if( ushDataWORD == 0x00u) { labelStatRssiPegelValue->Text = "unknown"; }else{ labelStatRssiPegelValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == 0x00u) { labelStatRssiPegelValue->Text = "unknown"; }else{ labelStatRssiPegelValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ushDataWORD = ((uint16) (Data[cucIxStatRestlebensdauerWert + 0] << 8) + (uint16) Data[cucIxStatRestlebensdauerWert + 1]);
-             if( ushDataWORD == (uint16) -999) { labelStatReRestlebensdauerValue->Text = "unknown"; }else{ labelStatReRestlebensdauerValue->Text = System::String::Format( "{0}", ushDataWORD); }
+             if(ushDataWORD == (uint16) -999) { labelStatReRestlebensdauerValue->Text = "unknown"; }else{ labelStatReRestlebensdauerValue->Text = System::String::Format( "{0}", ushDataWORD); }
 
              ucDataBYTE = Data[cucIxStatRadelektronikStatus];
-             if( ucDataBYTE == 0xFFu)   { labelStatReStatusValue->Text = "unknown"; }
+             if(ucDataBYTE == 0xFFu)   { labelStatReStatusValue->Text = "unknown"; }
              else if(ucDataBYTE == 0x00) { labelStatReStatusValue->Text = "OK";    }
              else if(ucDataBYTE == 0x01) { labelStatReStatusValue->Text = "Mute";    }
              else if(ucDataBYTE == 0x02) { labelStatReStatusValue->Text = "Defect";  }
              else if(ucDataBYTE == 0x03) { labelStatReStatusValue->Text = "Not rec"; }
 
              ucDataBYTE = Data[cucIxStatHarteWarnungAktiv];
-             if( ucDataBYTE == 0xFFu) { labelStatHarteWarnungAktivValue->Text = "unknown"; }else{ labelStatHarteWarnungAktivValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatHarteWarnungAktivValue->Text = "unknown"; }else{ labelStatHarteWarnungAktivValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatPosChanged];
-             if( ucDataBYTE == 0xFFu) { labelStatPosChangedValue->Text = "unknown"; }else{ labelStatPosChangedValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatPosChangedValue->Text = "unknown"; }else{ labelStatPosChangedValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatFolgeausfallWert];
-             if( ucDataBYTE == 0x00u) { labelStatFolgeausfallValue->Text = "unknown"; }else{ labelStatFolgeausfallValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0x00u) { labelStatFolgeausfallValue->Text = "unknown"; }else{ labelStatFolgeausfallValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatReHersteller];
-             if( ucDataBYTE == 0xFFu) { labelStatReHerstellerValue->Text = "unknown"; }else{ labelStatReHerstellerValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReHerstellerValue->Text = "unknown"; }else{ labelStatReHerstellerValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatRadelektronikSendemode];
-             if( ucDataBYTE == 0xFFu) { labelStatReSendemodeValue->Text = "unknown"; }else{ labelStatReSendemodeValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReSendemodeValue->Text = "unknown"; }else{ labelStatReSendemodeValue->Text = System::String::Format( "{0}", ucDataBYTE); }
 
              ucDataBYTE = Data[cucIxStatTelegrammtyp];
-             if( ucDataBYTE == 0xFFu) { labelStatReTelegrammtypValue->Text = "unknown"; }else{ labelStatReTelegrammtypValue->Text = System::String::Format( "{0}", ucDataBYTE); }
+             if(ucDataBYTE == 0xFFu) { labelStatReTelegrammtypValue->Text = "unknown"; }else{ labelStatReTelegrammtypValue->Text = System::String::Format( "{0}", ucDataBYTE); }
            }
            else
            {
@@ -391,8 +391,7 @@ private: System::Void numericUpDownPalStatusZOMSlot_ValueChanged(System::Object^
 
             pucPalData = Stub_RdcAnlernenLokalisierungLesen_Output( (uint8) System::Decimal::ToByte( numericUpDownPalStatusZOMSlot->Value));
 
-            if( pucPalData != NULL_PTR)
-            {
+            if(pucPalData != NULL_PTR){
               textBoxPalStatusByte0->Text  = System::String::Format( "{0}", pucPalData[0]);
               textBoxPalStatusByte1->Text  = System::String::Format( "{0}", pucPalData[1]);
               textBoxPalStatusByte2->Text  = System::String::Format( "{0}", pucPalData[2]);
@@ -419,7 +418,7 @@ private: System::Void buttonStatusRdcHsInaktivereignis_Click(System::Object^  se
 
            Error = RTE_Stub_StatusRdcHsInaktivereignis( &Data);
 
-           for ( i = 0; i < 8; i++)
+           for(i = 0; i < 8; i++)
            {
              aucDatUhr_1[i] = Data[i];
              aucDatUhr_2[i] = Data[cSizeInaktivereignis + i];
@@ -430,7 +429,7 @@ private: System::Void buttonStatusRdcHsInaktivereignis_Click(System::Object^  se
            aucDatUhr_2[8] = 0x20;
            aucDatUhr_3[8] = 0x20;
 
-           for ( i = 9; i < 17; i++)
+           for(i = 9; i < 17; i++)
            {
              aucDatUhr_1[i] = Data[i - 1];
              aucDatUhr_2[i] = Data[cSizeInaktivereignis + i - 1];
@@ -471,7 +470,7 @@ private: System::Void buttonStatusRdcHsKalibrierereignis_Click(System::Object^  
 
            Error = RTE_Stub_StatusRdcHsKalibrierereignis( &Data);
 
-           for ( i = 0; i < 8; i++)
+           for(i = 0; i < 8; i++)
            {
              aucDatUhr_1[i] = Data[i + 2];
              aucDatUhr_2[i] = Data[cSizeKalibrierereignis + i + 2];
@@ -482,7 +481,7 @@ private: System::Void buttonStatusRdcHsKalibrierereignis_Click(System::Object^  
            aucDatUhr_2[8] = 0x20;
            aucDatUhr_3[8] = 0x20;
 
-           for ( i = 9; i < 17; i++)
+           for(i = 9; i < 17; i++)
            {
              aucDatUhr_1[i] = Data[i + 1];
              aucDatUhr_2[i] = Data[cSizeKalibrierereignis + i + 1];
@@ -522,12 +521,12 @@ private: System::Void buttonStatusRdcHsWarnereignisRuecknahme_Click(System::Obje
 
            Error = RTE_Stub_StatusRdcHsWarnereignisRuecknahme( &Data);
 
-           for (i=0; i<8; i++)
+           for(i=0; i<8; i++)
            {
              aucDatUhr_1[i] = Data[i];
            }
            aucDatUhr_1[8] = 0x20;
-           for (i=9; i<17; i++)
+           for(i=9; i<17; i++)
            {
              aucDatUhr_1[i] = Data[i-1];
            }
@@ -552,12 +551,12 @@ private: System::Void buttonStatusRdcHsWarnereignis1_Click(System::Object^  send
 
            Error = RTE_Stub_StatusRdcHsWarnereignis1( &Data);
 
-           for (i=0; i<8; i++)
+           for(i=0; i<8; i++)
            {
              aucDatUhr_1[i] = Data[i];
            }
            aucDatUhr_1[8] = 0x20;
-           for (i=9; i<17; i++)
+           for(i=9; i<17; i++)
            {
              aucDatUhr_1[i] = Data[i-1];
            }
@@ -581,12 +580,12 @@ private: System::Void buttonStatusRdcHsWarnereignis2_Click(System::Object^  send
 
            Error = RTE_Stub_StatusRdcHsWarnereignis2( &Data);
 
-           for (i=0; i<8; i++)
+           for(i=0; i<8; i++)
            {
              aucDatUhr_1[i] = Data[i];
            }
            aucDatUhr_1[8] = 0x20;
-           for (i=9; i<17; i++)
+           for(i=9; i<17; i++)
            {
              aucDatUhr_1[i] = Data[i-1];
            }
@@ -610,12 +609,12 @@ private: System::Void buttonStatusRdcHsWarnereignis3_Click(System::Object^  send
 
            Error = RTE_Stub_StatusRdcHsWarnereignis3( &Data);
 
-           for (i=0; i<8; i++)
+           for(i=0; i<8; i++)
            {
              aucDatUhr_1[i] = Data[i];
            }
            aucDatUhr_1[8] = 0x20;
-           for (i=9; i<17; i++)
+           for(i=9; i<17; i++)
            {
              aucDatUhr_1[i] = Data[i-1];
            }
@@ -639,12 +638,12 @@ private: System::Void buttonStatusRdcHsWarnereignisWeich1_Click(System::Object^ 
 
            Error = RTE_Stub_StatusRdcHsWarnereignisWeich1( &Data);
 
-           for (i=0; i<8; i++)
+           for(i=0; i<8; i++)
            {
              aucDatUhr_1[i] = Data[i];
            }
            aucDatUhr_1[8] = 0x20;
-           for (i=9; i<17; i++)
+           for(i=9; i<17; i++)
            {
              aucDatUhr_1[i] = Data[i-1];
            }
@@ -668,12 +667,12 @@ private: System::Void buttonStatusRdcHsWarnereignisWeich2_Click(System::Object^ 
 
            Error = RTE_Stub_StatusRdcHsWarnereignisWeich2( &Data);
 
-           for (i=0; i<8; i++)
+           for(i=0; i<8; i++)
            {
              aucDatUhr_1[i] = Data[i];
            }
            aucDatUhr_1[8] = 0x20;
-           for (i=9; i<17; i++)
+           for(i=9; i<17; i++)
            {
              aucDatUhr_1[i] = Data[i-1];
            }
@@ -697,12 +696,12 @@ private: System::Void buttonStatusRdcHsWarnereignisWeich3_Click(System::Object^ 
 
            Error = RTE_Stub_StatusRdcHsWarnereignisWeich3( &Data);
 
-           for (i=0; i<8; i++)
+           for(i=0; i<8; i++)
            {
              aucDatUhr_1[i] = Data[i];
            }
            aucDatUhr_1[8] = 0x20;
-           for (i=9; i<17; i++)
+           for(i=9; i<17; i++)
            {
              aucDatUhr_1[i] = Data[i-1];
            }
@@ -731,69 +730,69 @@ private: System::Void buttonStatusReLesenDruckcodierung_Click(System::Object^  s
            Error = RTE_Stub_StatusReLesenDruckcodierung( &Data);
            textBoxDiagnosticNRC->AppendText(System::String::Format("StatusReLesenDruckcodierung () - NRC = 0x{0:X2}\n", Error));
 
-           for( ucLoop = 0; ucLoop < cStatusReLesenDruckcodierungDataArraySize; ucLoop++)
+           for(ucLoop = 0; ucLoop < cStatusReLesenDruckcodierungDataArraySize; ucLoop++)
            {
              ulDataID    = ((uint32) (Data[ucLoop * 9 + 0] << 24) + (uint32) (Data[ucLoop * 9 + 1] << 16) + (uint32) (Data[ucLoop * 9 + 2] << 8) + (uint32) Data[ucLoop * 9 + 3]);
              ushDataPres = ((uint16) (Data[ucLoop * 9 + 4] <<  8) + (uint16) (Data[ucLoop * 9 + 5] <<  0));
              ushDataBatt = ((uint16) (Data[ucLoop * 9 + 6] <<  8) + (uint16) (Data[ucLoop * 9 + 7] <<  0));
              ucDataCount = Data[ucLoop * 9 + 8];
 
-             switch( ucLoop)
+             switch(ucLoop)
              {
              case 0:
-               if( (ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe0->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe0->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
-               if( (ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe0->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe0->Text  = System::String::Format( "{0}", ushDataPres); }
-               if( (ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe0->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe0->Text  = System::String::Format( "{0}", ushDataBatt); }
-               if( (ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe0->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe0->Text = System::String::Format( "{0}", ucDataCount); }
+               if((ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe0->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe0->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
+               if((ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe0->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe0->Text  = System::String::Format( "{0}", ushDataPres); }
+               if((ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe0->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe0->Text  = System::String::Format( "{0}", ushDataBatt); }
+               if((ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe0->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe0->Text = System::String::Format( "{0}", ucDataCount); }
              break;
 
              case 1:
-               if( (ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe1->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe1->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
-               if( (ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe1->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe1->Text  = System::String::Format( "{0}", ushDataPres); }
-               if( (ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe1->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe1->Text  = System::String::Format( "{0}", ushDataBatt); }
-               if( (ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe1->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe1->Text = System::String::Format( "{0}", ucDataCount); }
+               if((ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe1->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe1->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
+               if((ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe1->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe1->Text  = System::String::Format( "{0}", ushDataPres); }
+               if((ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe1->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe1->Text  = System::String::Format( "{0}", ushDataBatt); }
+               if((ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe1->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe1->Text = System::String::Format( "{0}", ucDataCount); }
              break;
 
              case 2:
-               if( (ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe2->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe2->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
-               if( (ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe2->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe2->Text  = System::String::Format( "{0}", ushDataPres); }
-               if( (ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe2->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe2->Text  = System::String::Format( "{0}", ushDataBatt); }
-               if( (ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe2->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe2->Text = System::String::Format( "{0}", ucDataCount); }
+               if((ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe2->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe2->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
+               if((ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe2->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe2->Text  = System::String::Format( "{0}", ushDataPres); }
+               if((ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe2->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe2->Text  = System::String::Format( "{0}", ushDataBatt); }
+               if((ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe2->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe2->Text = System::String::Format( "{0}", ucDataCount); }
              break;
 
              case 3:
-               if( (ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe3->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe3->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
-               if( (ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe3->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe3->Text  = System::String::Format( "{0}", ushDataPres); }
-               if( (ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe3->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe3->Text  = System::String::Format( "{0}", ushDataBatt); }
-               if( (ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe3->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe3->Text = System::String::Format( "{0}", ucDataCount); }
+               if((ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe3->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe3->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
+               if((ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe3->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe3->Text  = System::String::Format( "{0}", ushDataPres); }
+               if((ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe3->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe3->Text  = System::String::Format( "{0}", ushDataBatt); }
+               if((ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe3->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe3->Text = System::String::Format( "{0}", ucDataCount); }
              break;
 
              case 4:
-               if( (ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe4->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe4->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
-               if( (ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe4->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe4->Text  = System::String::Format( "{0}", ushDataPres); }
-               if( (ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe4->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe4->Text  = System::String::Format( "{0}", ushDataBatt); }
-               if( (ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe4->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe4->Text = System::String::Format( "{0}", ucDataCount); }
+               if((ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe4->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe4->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
+               if((ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe4->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe4->Text  = System::String::Format( "{0}", ushDataPres); }
+               if((ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe4->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe4->Text  = System::String::Format( "{0}", ushDataBatt); }
+               if((ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe4->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe4->Text = System::String::Format( "{0}", ucDataCount); }
              break;
 
              case 5:
-               if( (ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe5->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe5->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
-               if( (ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe5->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe5->Text  = System::String::Format( "{0}", ushDataPres); }
-               if( (ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe5->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe5->Text  = System::String::Format( "{0}", ushDataBatt); }
-               if( (ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe5->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe5->Text = System::String::Format( "{0}", ucDataCount); }
+               if((ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe5->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe5->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
+               if((ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe5->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe5->Text  = System::String::Format( "{0}", ushDataPres); }
+               if((ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe5->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe5->Text  = System::String::Format( "{0}", ushDataBatt); }
+               if((ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe5->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe5->Text = System::String::Format( "{0}", ucDataCount); }
              break;
 
              case 6:
-               if( (ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe6->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe6->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
-               if( (ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe6->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe6->Text  = System::String::Format( "{0}", ushDataPres); }
-               if( (ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe6->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe6->Text  = System::String::Format( "{0}", ushDataBatt); }
-               if( (ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe6->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe6->Text = System::String::Format( "{0}", ucDataCount); }
+               if((ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe6->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe6->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
+               if((ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe6->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe6->Text  = System::String::Format( "{0}", ushDataPres); }
+               if((ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe6->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe6->Text  = System::String::Format( "{0}", ushDataBatt); }
+               if((ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe6->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe6->Text = System::String::Format( "{0}", ucDataCount); }
              break;
 
              case 7:
-               if( (ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe7->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe7->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
-               if( (ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe7->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe7->Text  = System::String::Format( "{0}", ushDataPres); }
-               if( (ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe7->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe7->Text  = System::String::Format( "{0}", ushDataBatt); }
-               if( (ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe7->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe7->Text = System::String::Format( "{0}", ucDataCount); }
+               if((ulDataID    == 0x00000000u) || (ulDataID    == 0xFFFFFFFFu)) { textBoxDruckcodierungIdRe7->Text    = "unknown"; }else{ textBoxDruckcodierungIdRe7->Text    = System::String::Format( "0x{0:X8}", ulDataID); }
+               if((ushDataPres == 0x0000u)     || (ushDataPres == 0xFFFFu)) { textBoxDruckcodierungPresRe7->Text  = "unknown"; }else{ textBoxDruckcodierungPresRe7->Text  = System::String::Format( "{0}", ushDataPres); }
+               if((ushDataBatt == 0x0000u)     || (ushDataBatt == 0xFFFFu)) { textBoxDruckcodierungBattRe7->Text  = "unknown"; }else{ textBoxDruckcodierungBattRe7->Text  = System::String::Format( "{0}", ushDataBatt); }
+               if((ucDataCount == 0x00u)       || (ucDataCount == 0xFFu)) { textBoxDruckcodierungRecCtRe7->Text = "unknown"; }else{ textBoxDruckcodierungRecCtRe7->Text = System::String::Format( "{0}", ucDataCount); }
              break;
              }
            }
@@ -910,7 +909,7 @@ private: System::Void buttonStatusRdcExtParkSupervisionLesen_Click(System::Objec
            Error = RTE_Stub_StatusRdcExtParkSupervisionLesen( &Data);
            textBoxDiagnosticNRC->AppendText(System::String::Format("StatusRdcExtParkSupervisionLesen () - NRC = 0x{0:X2}\n", Error));
 
-           switch ( Data[cucIxStatRdcExtParkSupConfigWert])
+           switch( Data[cucIxStatRdcExtParkSupConfigWert])
            {
              case 0:
                checkBoxDiagExtParkSupNotification->Checked = false;
@@ -1035,13 +1034,13 @@ private: System::Void listBoxFunktionsnummer_SelectedIndexChanged(System::Object
            listBoxAktionsnummerSetReset->Enabled = false;
            listBoxAktionsnummerStartEnde->Enabled = false;
 
-           if( listBoxFunktionsnummer->Text == "1: BANDMODE")
+           if(listBoxFunktionsnummer->Text == "1: BANDMODE")
            {
              listBoxAktionsnummerEinAus->Enabled = true;
-           }else if( listBoxFunktionsnummer->Text == "4: TEST_ER_FAHRT")
+           }else if(listBoxFunktionsnummer->Text == "4: TEST_ER_FAHRT")
 		       {
              listBoxAktionsnummerSetReset->Enabled = true;
-           }else if( listBoxFunktionsnummer->Text == "8: CAL_REQUEST")
+           }else if(listBoxFunktionsnummer->Text == "8: CAL_REQUEST")
 		       {
              listBoxAktionsnummerStartEnde->Enabled = true;
            }else{
@@ -1054,47 +1053,47 @@ private: System::Void buttonSteuernDigitalRdc_Click(System::Object^  sender, Sys
            uint8 ucFunktionsnummer = 0;
            uint8 ucAktionsnummer = 0;
 
-           if( listBoxFunktionsnummer->Text == "1: BANDMODE")
+           if(listBoxFunktionsnummer->Text == "1: BANDMODE")
 		       {
-             if( listBoxAktionsnummerEinAus->Text == "0: AUS")
+             if(listBoxAktionsnummerEinAus->Text == "0: AUS")
              {
 
                ucFunktionsnummer = cFunctionNo_BandmodeDS;
                ucAktionsnummer = cActionNo_BandmodeAusDS;
-             }else if( listBoxAktionsnummerEinAus->Text == "1: EIN")
+             }else if(listBoxAktionsnummerEinAus->Text == "1: EIN")
              {
 
                ucFunktionsnummer = cFunctionNo_BandmodeDS;
                ucAktionsnummer = cActionNo_BandmodeEinDS;
              }else{
              }
-           }else if( listBoxFunktionsnummer->Text == "4: TEST_ER_FAHRT")
+           }else if(listBoxFunktionsnummer->Text == "4: TEST_ER_FAHRT")
 	         {
-             if( listBoxAktionsnummerSetReset->Text == "0: RESET")
+             if(listBoxAktionsnummerSetReset->Text == "0: RESET")
              {
 
                ucFunktionsnummer = cFunctionNo_TestErFahrtDS;
                ucAktionsnummer = cActionNo_TestErFahrtResetDS;
-             }else if( listBoxAktionsnummerSetReset->Text == "1: SET")
+             }else if(listBoxAktionsnummerSetReset->Text == "1: SET")
              {
 
                ucFunktionsnummer = cFunctionNo_TestErFahrtDS;
                ucAktionsnummer = cActionNo_TestErFahrtSetDS;
-             }else if( listBoxAktionsnummerSetReset->Text == "2: SET_NO_SPEED")
+             }else if(listBoxAktionsnummerSetReset->Text == "2: SET_NO_SPEED")
              {
 
                ucFunktionsnummer = cFunctionNo_TestErFahrtDS;
                ucAktionsnummer = cActionNo_TestErFahrtSetNoSpeedDS;
              }else{
              }
-           }else if( listBoxFunktionsnummer->Text == "8: CAL_REQUEST")
+           }else if(listBoxFunktionsnummer->Text == "8: CAL_REQUEST")
 	         {
-             if( listBoxAktionsnummerStartEnde->Text == "0: END")
+             if(listBoxAktionsnummerStartEnde->Text == "0: END")
              {
 
                ucFunktionsnummer = cFunctionNo_CalRequestDS;
                ucAktionsnummer = cActionNo_CalRequestResetDS;
-             }else if( listBoxAktionsnummerStartEnde->Text == "1: START")
+             }else if(listBoxAktionsnummerStartEnde->Text == "1: START")
              {
 
                ucFunktionsnummer = cFunctionNo_CalRequestDS;
@@ -1104,12 +1103,12 @@ private: System::Void buttonSteuernDigitalRdc_Click(System::Object^  sender, Sys
            }else{
            }
 
-           Error = RTE_Stub_SteuernDigitalRdc( ucFunktionsnummer, ucAktionsnummer);
-           if( Error == DCM_E_REQUESTOUTOFRANGE)
+           Error = RTE_Stub_SteuernDigitalRdc(ucFunktionsnummer, ucAktionsnummer);
+           if(Error == DCM_E_REQUESTOUTOFRANGE)
            {
              labelConditionDiagJobBM->Text = "DCM_E_REQUESTOUTOFRANGE (0x31)";
              labelConditionDiagJobBM->BackColor = System::Drawing::Color::FromArgb(255,0,0);
-           }else if( Error == DCM_E_CONDITIONSNOTCORRECT)
+           }else if(Error == DCM_E_CONDITIONSNOTCORRECT)
            {
              labelConditionDiagJobBM->Text = "DCM_E_CONDITIONSNOTCORRECT (0x22)";
              labelConditionDiagJobBM->BackColor = System::Drawing::Color::FromArgb(255,0,0);
@@ -1127,16 +1126,16 @@ private: System::Void buttonSteuernRadelektronikVorgeben_Click(System::Object^  
            uint32 ulReID = 0;
            uint8 ucRadPos = cAnzRad;
 
-           if( listBoxVorgabeRadposition->Text == "0: vorne links")
+           if(listBoxVorgabeRadposition->Text == "0: vorne links")
 		       {
              ucRadPos = cRadPosVL;
-           }else if( listBoxVorgabeRadposition->Text == "1: vorne rechts")
+           }else if(listBoxVorgabeRadposition->Text == "1: vorne rechts")
            {
              ucRadPos = cRadPosVR;
-           }else if( listBoxVorgabeRadposition->Text == "2: hinten links")
+           }else if(listBoxVorgabeRadposition->Text == "2: hinten links")
            {
              ucRadPos = cRadPosHL;
-           }else if( listBoxVorgabeRadposition->Text == "3: hinten rechts")
+           }else if(listBoxVorgabeRadposition->Text == "3: hinten rechts")
            {
              ucRadPos = cRadPosHR;
            }else{
@@ -1145,7 +1144,7 @@ private: System::Void buttonSteuernRadelektronikVorgeben_Click(System::Object^  
 
            ulReID = (uint32) System::Decimal::ToUInt32(numericUpDownVorgabeID->Value);
 
-           Error = RTE_Stub_SteuernRadelektronikVorgeben( ulReID, ucRadPos);
+           Error = RTE_Stub_SteuernRadelektronikVorgeben(ulReID, ucRadPos);
            textBoxDiagnosticNRC->AppendText(System::String::Format("SteuernRadelektronikVorgeben ({0} ; {1}) - NRC = 0x{2:X2}\n", ulReID, ucRadPos, Error));
          }
 
@@ -1188,7 +1187,7 @@ private: System::Void buttonSteuernRdcDeveloperConfig_Click(System::Object^  sen
 
            uint8 ucLoop;
 
-           for( ucLoop = 0; ucLoop < sizeof(aucRdcTestData); ucLoop++)
+           for(ucLoop = 0; ucLoop < sizeof(aucRdcTestData); ucLoop++)
            {
              aucRdcTestData[ucLoop] = 0;
            }
@@ -1204,13 +1203,13 @@ private: System::Void buttonFsLoeschen_Click(System::Object^  sender, System::Ev
          {
            uint8 ucLoop;
 
-           for( ucLoop = 0; ucLoop < cMaxErrorCount; ucLoop++)
+           for(ucLoop = 0; ucLoop < cMaxErrorCount; ucLoop++)
            {
-             if( tRDCiDtclist[ucLoop].ucType == cDemPrimaryType)
+             if(tRDCiDtclist[ucLoop].ucType == cDemPrimaryType)
              {
                tRDCiDtclist[ucLoop].ucStatus = DEM_EVENT_STATUS_PASSED;
 
-               InitDtcUwbData( ucLoop);
+               InitDtcUwbData(ucLoop);
              }
            }
            WriteDtcListToNvmBlock();
@@ -1262,13 +1261,13 @@ private: System::Void buttonIsLoeschen_Click(System::Object^  sender, System::Ev
          {
            uint8 ucLoop;
 
-           for( ucLoop = 0; ucLoop < cMaxErrorCount; ucLoop++)
+           for(ucLoop = 0; ucLoop < cMaxErrorCount; ucLoop++)
            {
-             if( tRDCiDtclist[ucLoop].ucType == cDemSecondaryType)
+             if(tRDCiDtclist[ucLoop].ucType == cDemSecondaryType)
              {
                tRDCiDtclist[ucLoop].ucStatus = DEM_EVENT_STATUS_PASSED;
 
-               InitDtcUwbData( ucLoop);
+               InitDtcUwbData(ucLoop);
              }
            }
            WriteDtcListToNvmBlock();

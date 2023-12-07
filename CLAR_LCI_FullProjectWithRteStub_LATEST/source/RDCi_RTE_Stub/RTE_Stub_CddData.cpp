@@ -35,92 +35,78 @@ static uint16 ushRecEvent[cMaxReElements] = { 0, 0, 0, 0, 0, 0 };
 
 uint16 PutCddAbsData( tCddAbsData* data)
 {
-  static bool bLockPosition = false;
-  uint16 queueFillStatus = 0;
+   static bool bLockPosition = false;
+   uint16 queueFillStatus = 0;
 
-  if(0xffff == u16AbsQueueWritePos)
-  {
-    u16AbsQueueWritePos = 0;
+   if(0xffff == u16AbsQueueWritePos){
+      u16AbsQueueWritePos = 0;
     bLockPosition = false;
     queueFillStatus = 1;
-    u16AbsQueueReadPos = ABS_DATA_QUEUE_LENGTH - 1;
-  }
-  else
-  {
-    if( ((u16AbsQueueWritePos + 1) % ABS_DATA_QUEUE_LENGTH) == u16AbsQueueReadPos)
-    {
+      u16AbsQueueReadPos = ABS_DATA_QUEUE_LENGTH - 1;
+   }
+   else{
+      if(((u16AbsQueueWritePos + 1) % ABS_DATA_QUEUE_LENGTH) == u16AbsQueueReadPos){
       bLockPosition = true;
       queueFillStatus = ABS_DATA_QUEUE_LENGTH;
-    }
-    else
-    {
+      }
+      else{
       u16AbsQueueWritePos++;
       u16AbsQueueWritePos %= ABS_DATA_QUEUE_LENGTH;
       bLockPosition = false;
 
-      if(u16AbsQueueWritePos > u16AbsQueueReadPos)
-      {
+      if(u16AbsQueueWritePos > u16AbsQueueReadPos){
         queueFillStatus = u16AbsQueueWritePos - u16AbsQueueReadPos;
       }
-      else
-      {
+      else{
         queueFillStatus = ABS_DATA_QUEUE_LENGTH - (u16AbsQueueReadPos - u16AbsQueueWritePos);
       }
-    }
-  }
+      }
+   }
 
-  if(false == bLockPosition)
-  {
+   if(false == bLockPosition){
     CddAbsData[u16AbsQueueWritePos] = *data;
-  }
+   }
 
-  return (uint16) queueFillStatus;
+   return (uint16) queueFillStatus;
 }
 
 uint16 PutCddRdcData( tCddRdcData * data)
 {
-  static bool bLockPosition = false;
-  uint16 queueFillStatus = 0;
+   static bool bLockPosition = false;
+   uint16 queueFillStatus = 0;
 
-  if( u16RdcQueueWritePos == 0xFFFF)
-  {
-    u16RdcQueueWritePos = 0;
+   if(u16RdcQueueWritePos == 0xFFFF){
+      u16RdcQueueWritePos = 0;
     bLockPosition = false;
     queueFillStatus = 1;
-    u16RdcQueueReadPos = RDC_DATA_QUEUE_LENGTH - 1;
-  }
-  else
-  {
-    if(((u16RdcQueueWritePos + 1) % RDC_DATA_QUEUE_LENGTH) == u16RdcQueueReadPos)
-    {
+      u16RdcQueueReadPos = RDC_DATA_QUEUE_LENGTH - 1;
+   }
+   else{
+      if(((u16RdcQueueWritePos + 1) % RDC_DATA_QUEUE_LENGTH) == u16RdcQueueReadPos){
       bLockPosition = true;
       queueFillStatus = RDC_DATA_QUEUE_LENGTH;
-    }
-    else
-    {
+      }
+      else{
       u16RdcQueueWritePos++;
       u16RdcQueueWritePos %= RDC_DATA_QUEUE_LENGTH;
       bLockPosition = false;
-      if( u16RdcQueueReadPos == 0xFFFF)
-      {
+      if(u16RdcQueueReadPos == 0xFFFF){
         queueFillStatus = u16RdcQueueWritePos;
-      }else{
-        if(u16RdcQueueWritePos > u16RdcQueueReadPos)
-        {
+      }
+      else{
+          if(u16RdcQueueWritePos > u16RdcQueueReadPos){
           queueFillStatus = u16RdcQueueWritePos - u16RdcQueueReadPos;
         }
-        else
-        {
+        else{
           queueFillStatus = RDC_DATA_QUEUE_LENGTH - (u16RdcQueueReadPos - u16RdcQueueWritePos);
         }
       }
-    }
-  }
+      }
+   }
 
-  if( bLockPosition == false)
-  {
-    uint8 aucBuffer[15];
-    uint8 ucLength;
+   if(bLockPosition == false){
+      uint8 aucBuffer[15];
+      uint8 ucLength;
     aucBuffer[0] = data->PCKG_ID;
     aucBuffer[1] = (data->SUPP_ID << 4) | (uint8)(((data->TYR_ID & 0x0f000000) >> 24));
     aucBuffer[2] = (uint8)((data->TYR_ID & 0x00ff0000) >> 16);
@@ -132,8 +118,7 @@ uint16 PutCddRdcData( tCddRdcData * data)
     aucBuffer[8] = data->RDC_DT_4;
     aucBuffer[9] = data->RDC_DT_5;
 
-    switch (data->PCKG_ID)
-    {
+      switch(data->PCKG_ID){
       case cTelTypeAK35def:
       case cTelTypeAK35defLMA:
         ucLength = 7;
@@ -165,11 +150,10 @@ uint16 PutCddRdcData( tCddRdcData * data)
       default:
         ucLength = 0;
       break;
-    }
-    if( ((data->RDC_DT_8 == 0) || (data->RDC_DT_8 == 0xff)) && (ucLength > 0))
-    {
+      }
+      if(((data->RDC_DT_8 == 0) || (data->RDC_DT_8 == 0xff)) && (ucLength > 0)){
       data->RDC_DT_8 = ucCalcCrc8(aucBuffer, ucLength);
-    }
+      }
 
     CddRdcData[u16RdcQueueWritePos] = *data;
 
@@ -178,145 +162,134 @@ uint16 PutCddRdcData( tCddRdcData * data)
     PutRfDataToBufferLOG( data);
 #endif
 
-    ulRdcRfWriteCounter++;
-  }
+      ulRdcRfWriteCounter++;
+   }
 
-  return (uint16) queueFillStatus;
+   return (uint16) queueFillStatus;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Receive_CddAbsData( P2VAR(ImpTypeRecCddAbsData, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) data)
 {
-  uint8 ucReturnValue = 0xFF;
-  bool bReadQueueData = true;
+   uint8 ucReturnValue = 0xFF;
+   bool bReadQueueData = true;
 
-  if( u16AbsQueueWritePos != 0xFFFF)
-  {
+   if(u16AbsQueueWritePos != 0xFFFF){
 
-    {
-      if( u16AbsQueueReadPos == u16AbsQueueWritePos)
       {
+      if(u16AbsQueueReadPos == u16AbsQueueWritePos){
 
         bReadQueueData = false;
       }
-      else
-      {
+      else{
 
         u16AbsQueueReadPos++;
         u16AbsQueueReadPos %= ABS_DATA_QUEUE_LENGTH;
       }
-    }
+      }
 
-    if( bReadQueueData == true)
-    {
+      if(bReadQueueData == true){
       *data = CddAbsData[u16AbsQueueReadPos];
       ucReturnValue = 0x00;
-    }
-  }
-  return ucReturnValue;
+      }
+   }
+   return ucReturnValue;
 
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Receive_CddRdcData( P2VAR(ImpTypeRecCddRdcData, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) data)
 {
-  uint8 ucReturnValue = 0xFF;
-  bool  bReadQueueData = true;
+   uint8 ucReturnValue = 0xFF;
+   bool  bReadQueueData = true;
 
-  if( u16RdcQueueWritePos != 0xFFFF)
-  {
+   if(u16RdcQueueWritePos != 0xFFFF){
 
-    {
-      if( u16RdcQueueReadPos == u16RdcQueueWritePos)
       {
+      if(u16RdcQueueReadPos == u16RdcQueueWritePos){
 
         bReadQueueData = false;
       }
-      else
-      {
+      else{
 
         u16RdcQueueReadPos++;
         u16RdcQueueReadPos %= RDC_DATA_QUEUE_LENGTH;
       }
-    }
+      }
 
-    if( bReadQueueData == true)
-    {
+      if(bReadQueueData == true){
       *data = CddRdcData[u16RdcQueueReadPos];
 
       ulRdcRfReadCounter++;
 
       ucReturnValue = 0x00;
-    }
-  }
+      }
+   }
 
-  return ucReturnValue;
+   return ucReturnValue;
 }
 
-void PutTimerTicks( uint32 ulTimerTicks)
+void PutTimerTicks(uint32 ulTimerTicks)
 {
-  ulRdcTimerTicks = ulTimerTicks;
+   ulRdcTimerTicks = ulTimerTicks;
 }
 
 uint32 ulGetTimerTicks(void)
 {
-  return ulRdcTimerTicks;
+   return ulRdcTimerTicks;
 }
 
 uint32 ulGetTRdcRfWriteCounter(void)
 {
-  return ulRdcRfWriteCounter;
+   return ulRdcRfWriteCounter;
 }
 
 uint32 ulGetTRdcRfReadCounter(void)
 {
-  return ulRdcRfReadCounter;
+   return ulRdcRfReadCounter;
 }
 
 void InitRecCddRdcData(void)
 {
-  uint8 ucLoop;
+   uint8 ucLoop;
 
-  for( ucLoop = 0; ucLoop < cMaxReElements; ucLoop++)
-  {
-    ushRecEvent[ucLoop] = 0;
+   for(ucLoop = 0; ucLoop < cMaxReElements; ucLoop++){
+      ushRecEvent[ucLoop] = 0;
 
-    switch( ucLoop)
-    {
+      switch(ucLoop){
       case cRecEleIx_Slot0:
       case cRecEleIx_Slot1:
       case cRecEleIx_Slot2:
       case cRecEleIx_Slot3:
         tRdcData[ucLoop].tRecCddRdcData.RDC_MES_TSTMP       = (0x00000000u * 1000) + (0x000F4240u / 1000000);
 
-        tRdcData[ucLoop].tRecCddRdcData.SUPP_ID             = (uint8) ((ulGetIDOfColWAL( ucLoop) & 0xf0000000u) >> 28);
+        tRdcData[ucLoop].tRecCddRdcData.SUPP_ID             = (uint8) ((ulGetIDOfColWAL(ucLoop) & 0xf0000000u) >> 28);
 
-        tRdcData[ucLoop].tRecCddRdcData.TYR_ID              = (long) (ulGetIDOfColWAL( ucLoop) & 0x0fffffffu);
+        tRdcData[ucLoop].tRecCddRdcData.TYR_ID              = (long) (ulGetIDOfColWAL(ucLoop) & 0x0fffffffu);
 
-        if( ucGetRePckgIdDM( ucLoop) == cInvalidTelType)
-        {
+          if(ucGetRePckgIdDM(ucLoop) == cInvalidTelType){
           tRdcData[ucLoop].tRecCddRdcData.PCKG_ID           = cTelTypeSELPAL;
-        }else{
-          tRdcData[ucLoop].tRecCddRdcData.PCKG_ID           = ucGetRePckgIdDM( ucLoop);
+         }
+         else{
+          tRdcData[ucLoop].tRecCddRdcData.PCKG_ID           = ucGetRePckgIdDM(ucLoop);
         }
 
-        if( GETucLastWuPressureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop) == cInvalidREpressure)
-        {
+          if(GETucLastWuPressureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop) == cInvalidREpressure){
           tRdcData[ucLoop].tRecCddRdcData.RDC_DT_1          = ((80 + GETucPAmbValEE( Rte_Inst_CtApHufTpmsSWC)) - 38);
-        }else{
-          if( ((uint16) GETucLastWuPressureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop) + (uint16) GETucPAmbValEE( Rte_Inst_CtApHufTpmsSWC)) < 40)
-          {
+         }
+         else{
+          if(((uint16) GETucLastWuPressureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop) + (uint16) GETucPAmbValEE( Rte_Inst_CtApHufTpmsSWC)) < 40){
             tRdcData[ucLoop].tRecCddRdcData.RDC_DT_1        = cReAkPresUnderflow;
-          }else if( (((uint16) GETucLastWuPressureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop) + (uint16) GETucPAmbValEE( Rte_Inst_CtApHufTpmsSWC)) - 40) > (uint16) 252)
-          {
+          }else if((((uint16) GETucLastWuPressureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop) + (uint16) GETucPAmbValEE( Rte_Inst_CtApHufTpmsSWC)) - 40) > (uint16) 252){
             tRdcData[ucLoop].tRecCddRdcData.RDC_DT_1        = cReAkPresOverflow;
-          }else{
+            }
+            else{
             tRdcData[ucLoop].tRecCddRdcData.RDC_DT_1        = (GETucLastWuPressureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop) + GETucPAmbValEE( Rte_Inst_CtApHufTpmsSWC)) - 38;
           }
         }
 
-        if( GETscLastWuTemperatureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop) == cInvalidREtemperature)
-        {
+          if(GETscLastWuTemperatureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop) == cInvalidREtemperature){
           tRdcData[ucLoop].tRecCddRdcData.RDC_DT_2          = 20 + 52;
-        }else{
+         }
+         else{
           tRdcData[ucLoop].tRecCddRdcData.RDC_DT_2          = (uint8) GETscLastWuTemperatureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop) + 52;
         }
 
@@ -373,70 +346,68 @@ void InitRecCddRdcData(void)
         tRdcData[ucLoop].tRecCddRdcData.RDC_SYNC_TSTMP_HI   = 0x00000000u;
         tRdcData[ucLoop].tRecCddRdcData.DP_NO               = 0x34;
       break;
-    }
-  }
+      }
+   }
 }
 
 RdcDataType * ptGetRdcDataPtr(uint8 ucRe)
 {
-  if(ucRe < cMaxReElements)
-  {
+   if(ucRe < cMaxReElements){
     return &tRdcData[ucRe];
-  }
-  else {
+   }
+   else {
 #ifdef _SwcApplTpms_CLAR_LCI
     return ((RdcDataType*)NULL_PTR);
 #else
     return NULL;
 #endif
-  }
+   }
 }
 
-ImpTypeRecCddRdcData * ptGetRecCddRdcDataPtr( uint8 ucRe)
+ImpTypeRecCddRdcData * ptGetRecCddRdcDataPtr(uint8 ucRe)
 {
-  if( ucRe < cMaxReElements)
-  {
+   if(ucRe < cMaxReElements){
     return &tRdcData[ucRe].tRecCddRdcData;
-  }else{
+   }
+   else{
 #ifdef _SwcApplTpms_CLAR_LCI
     return ((ImpTypeRecCddRdcData*)NULL_PTR);
 #else
     return NULL;
 #endif
-  }
+   }
 }
 
-void PutRecCddRdcData( uint8 ucRe)
+void PutRecCddRdcData(uint8 ucRe)
 {
 
   ImpTypeRecCddRdcData * ptData;
 
-  ptData = ptGetRecCddRdcDataPtr( ucRe);
+  ptData = ptGetRecCddRdcDataPtr(ucRe);
 
-  ushRecEvent[ucRe]++;
+   ushRecEvent[ucRe]++;
 
-  if( PutCddRdcData( ptData) == (uint16) false)
-  {
+   if(PutCddRdcData( ptData) == (uint16) false){
 
-  }
+   }
 }
 
-uint16 ushGetTelCountCddRdcDataPtr( uint8 ucRe)
+uint16 ushGetTelCountCddRdcDataPtr(uint8 ucRe)
 {
-  return ushRecEvent[ucRe];
+   return ushRecEvent[ucRe];
 }
 
-uint8 ucGetNextValidAliveCounter( uint8 ucAliveStartValue)
+uint8 ucGetNextValidAliveCounter(uint8 ucAliveStartValue)
 {
-  uint8 ucAliveCounter;
+   uint8 ucAliveCounter;
 
-  if( ucAliveStartValue < 0x0E)
-  {
-    ucAliveCounter = ucAliveStartValue + 1;
-  }else{
+   if(ucAliveStartValue < 0x0E){
+      ucAliveCounter = ucAliveStartValue + 1;
+   }
+   else{
 
-    ucAliveCounter = 0;
-  }
+      ucAliveCounter = 0;
+   }
 
-  return ucAliveCounter;
+   return ucAliveCounter;
 }

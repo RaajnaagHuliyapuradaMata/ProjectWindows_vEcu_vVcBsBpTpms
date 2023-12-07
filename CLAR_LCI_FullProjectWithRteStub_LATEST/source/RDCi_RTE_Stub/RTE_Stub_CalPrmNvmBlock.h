@@ -157,13 +157,13 @@
 extern void NVM_ReadAllCalPrmBlocks(void);
 extern void NVM_WriteAllCalPrmBlocks(void);
 
-extern uint8 NvmDscCodierdatenAllgemein_ReadByte( uint8 , uint8);
-extern void NvmDscCodierdatenAllgemein_WriteByte( uint8 , uint8 , uint8);
+extern uint8 NvmDscCodierdatenAllgemein_ReadByte(uint8 , uint8);
+extern void NvmDscCodierdatenAllgemein_WriteByte(uint8 , uint8 , uint8);
 
-extern uint8 NvmDscCodierdatenRDCi_ReadByte( uint8 , uint8);
-extern void NvmDscCodierdatenRDCi_WriteByte( uint8 , uint8 , uint8);
+extern uint8 NvmDscCodierdatenRDCi_ReadByte(uint8 , uint8);
+extern void NvmDscCodierdatenRDCi_WriteByte(uint8 , uint8 , uint8);
 
-extern void NvmDscCodierdatenRDCi_Activate( uint8);
+extern void NvmDscCodierdatenRDCi_Activate(uint8);
 
 #endif
 

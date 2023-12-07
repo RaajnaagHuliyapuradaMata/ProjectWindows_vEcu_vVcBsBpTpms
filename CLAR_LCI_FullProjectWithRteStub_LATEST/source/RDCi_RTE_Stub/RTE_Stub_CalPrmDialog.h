@@ -8,7 +8,7 @@ private: System::Void buttonPutCodingData2RdciAppl_Click(System::Object^  sender
 
 private: System::Void checkRDCi_aktiv_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkRDCi_aktiv->Checked == TRUE)
+           if(checkRDCi_aktiv->Checked == TRUE)
            {
              NvmDscCodierdatenAllgemein_WriteByte( C_FUNKTION_REIFENPANNENERKENNUNG_AKTIV_BYTE, C_FUNKTION_REIFENPANNENERKENNUNG_AKTIV_MASK, (uint8) AKTIV_RDC);
            }else{
@@ -18,7 +18,7 @@ private: System::Void checkRDCi_aktiv_CheckedChanged(System::Object^  sender, Sy
 
 private: System::Void checkBoxCRdciTPrewarnNc_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciTPrewarnNc->Checked == TRUE)
+           if(checkBoxCRdciTPrewarnNc->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_T_PREWARN_NC_BYTE, C_RDCI_T_PREWARN_NC_MASK, (uint8) C_RDCI_T_PREWARN_NC_MASK);
            }else{
@@ -28,7 +28,7 @@ private: System::Void checkBoxCRdciTPrewarnNc_CheckedChanged(System::Object^  se
 
 private: System::Void checkBoxCRdciMaxThreshold_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciMaxThreshold->Checked == TRUE)
+           if(checkBoxCRdciMaxThreshold->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_MAX_THRESHOLD_BYTE, C_RDCI_MAX_THRESHOLD_MASK, (uint8) C_RDCI_MAX_THRESHOLD_MASK);
            }else{
@@ -38,7 +38,7 @@ private: System::Void checkBoxCRdciMaxThreshold_CheckedChanged(System::Object^  
 
 private: System::Void checkBoxCRdciPrewarnEnable_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciPrewarnEnable->Checked == TRUE)
+           if(checkBoxCRdciPrewarnEnable->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PREWARN_ENABLE_BYTE, C_RDCI_PREWARN_ENABLE_MASK, (uint8) C_RDCI_PREWARN_ENABLE_MASK);
            }else{
@@ -48,7 +48,7 @@ private: System::Void checkBoxCRdciPrewarnEnable_CheckedChanged(System::Object^ 
 
 private: System::Void checkBoxCRdciStatInit_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciStatInit->Checked == TRUE)
+           if(checkBoxCRdciStatInit->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_STAT_INIT_BYTE, C_RDCI_STAT_INIT_MASK, (uint8) C_RDCI_STAT_INIT_MASK);
            }else{
@@ -58,7 +58,7 @@ private: System::Void checkBoxCRdciStatInit_CheckedChanged(System::Object^  send
 
 private: System::Void checkBoxCRdciNumPrewarnDetect_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciNumPrewarnDetect->Checked == TRUE)
+           if(checkBoxCRdciNumPrewarnDetect->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_NUM_PREWARN_DETECT_BYTE, C_RDCI_NUM_PREWARN_DETECT_MASK, (uint8) C_RDCI_NUM_PREWARN_DETECT_MASK);
            }else{
@@ -68,7 +68,7 @@ private: System::Void checkBoxCRdciNumPrewarnDetect_CheckedChanged(System::Objec
 
 private: System::Void checkBoxCRdciPrewarnIgnition_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciPrewarnIgnition->Checked == TRUE)
+           if(checkBoxCRdciPrewarnIgnition->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PREWARN_IGNITION_BYTE, C_RDCI_PREWARN_IGNITION_MASK, (uint8) C_RDCI_PREWARN_IGNITION_MASK);
            }else{
@@ -78,7 +78,7 @@ private: System::Void checkBoxCRdciPrewarnIgnition_CheckedChanged(System::Object
 
 private: System::Void checkBoxCRdciPanneBefPos_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciPanneBefPos->Checked == TRUE)
+           if(checkBoxCRdciPanneBefPos->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_PANNE_BEF_POS_BYTE, C_RDCI_PANNE_BEF_POS_MASK, (uint8) C_RDCI_PANNE_BEF_POS_MASK);
            }else{
@@ -88,7 +88,7 @@ private: System::Void checkBoxCRdciPanneBefPos_CheckedChanged(System::Object^  s
 
 private: System::Void checkBoxCRdciFastDeflateEnable_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciFastDeflateEnable->Checked == TRUE)
+           if(checkBoxCRdciFastDeflateEnable->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_FAST_DEFLATE_ENABLE_BYTE, C_RDCI_FAST_DEFLATE_ENABLE_MASK, (uint8) C_RDCI_FAST_DEFLATE_ENABLE_MASK);
            }else{
@@ -98,7 +98,7 @@ private: System::Void checkBoxCRdciFastDeflateEnable_CheckedChanged(System::Obje
 
 private: System::Void checkBoxCRdciTyrIdFiltGw_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciTyrIdFiltGw->Checked == TRUE)
+           if(checkBoxCRdciTyrIdFiltGw->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TYR_ID_FILT_GW_BYTE, C_RDCI_TYR_ID_FILT_GW_MASK, (uint8) C_RDCI_TYR_ID_FILT_GW_MASK);
            }else{
@@ -108,7 +108,7 @@ private: System::Void checkBoxCRdciTyrIdFiltGw_CheckedChanged(System::Object^  s
 
 private: System::Void checkBoxCRdciResetPlausi_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciResetPlausi->Checked == TRUE)
+           if(checkBoxCRdciResetPlausi->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_RESET_PLAUSI_BYTE, C_RDCI_RESET_PLAUSI_MASK, (uint8) C_RDCI_RESET_PLAUSI_MASK);
            }else{
@@ -120,29 +120,29 @@ private: System::Void listBoxCRdciTpmsMarket_SelectedIndexChanged(System::Object
          {
 		       uint8 ucMarket;
 
-           if( listBoxCRdciTpmsMarket->Text == "0: EU")
+           if(listBoxCRdciTpmsMarket->Text == "0: EU")
            {
              ucMarket = EU;
-           }else if( listBoxCRdciTpmsMarket->Text == "1: US")
+           }else if(listBoxCRdciTpmsMarket->Text == "1: US")
            {
              ucMarket = US;
-           }else if( listBoxCRdciTpmsMarket->Text == "2: China")
+           }else if(listBoxCRdciTpmsMarket->Text == "2: China")
            {
              ucMarket = CHINA;
-           }else if( listBoxCRdciTpmsMarket->Text == "3: Japan")
+           }else if(listBoxCRdciTpmsMarket->Text == "3: Japan")
            {
              ucMarket = JAPAN;
            }else{
              ucMarket = UNDEFINED;
            }
 
-           NvmDscCodierdatenRDCi_Activate( ucMarket);
+           NvmDscCodierdatenRDCi_Activate(ucMarket);
            NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TPMS_MARKET_BYTE, C_RDCI_TPMS_MARKET_MASK, (uint8) (ucMarket << 2));
 	       }
 
 private: System::Void checkBoxCRdciSensorForeignAkRdk_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciSensorForeignAkRdk->Checked == TRUE)
+           if(checkBoxCRdciSensorForeignAkRdk->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SENSOR_FOREIGN_AK_RDK_BYTE, C_RDCI_SENSOR_FOREIGN_AK_RDK_MASK, (uint8) C_RDCI_SENSOR_FOREIGN_AK_RDK_MASK);
            }else{
@@ -152,7 +152,7 @@ private: System::Void checkBoxCRdciSensorForeignAkRdk_CheckedChanged(System::Obj
 
 private: System::Void checkBoxCRdciSensorLocSync_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciSensorLocSync->Checked == TRUE)
+           if(checkBoxCRdciSensorLocSync->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SENSOR_LOC_SYNC_BYTE, C_RDCI_SENSOR_LOC_SYNC_MASK, (uint8) C_RDCI_SENSOR_LOC_SYNC_MASK);
            }else{
@@ -162,7 +162,7 @@ private: System::Void checkBoxCRdciSensorLocSync_CheckedChanged(System::Object^ 
 
 private: System::Void checkBoxCRdciErfsEnable_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciErfsEnable->Checked == TRUE)
+           if(checkBoxCRdciErfsEnable->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ERFS_ENABLE_BYTE, C_RDCI_ERFS_ENABLE_MASK, (uint8) C_RDCI_ERFS_ENABLE_MASK);
            }else{
@@ -172,7 +172,7 @@ private: System::Void checkBoxCRdciErfsEnable_CheckedChanged(System::Object^  se
 
 private: System::Void checkBoxCRdciTrefSeasonalAdjustment_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciTrefSeasonalAdjustment->Checked == TRUE)
+           if(checkBoxCRdciTrefSeasonalAdjustment->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_BYTE, C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_MASK, (uint8) C_RDCI_TREF_SEASONAL_ADJUSTMENT_ENABLE_MASK);
            }else{
@@ -182,7 +182,7 @@ private: System::Void checkBoxCRdciTrefSeasonalAdjustment_CheckedChanged(System:
 
 private: System::Void checkBoxCRdciDispReset_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciDispReset->Checked == TRUE)
+           if(checkBoxCRdciDispReset->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DISP_RESET_BYTE, C_RDCI_DISP_RESET_MASK, (uint8) C_RDCI_DISP_RESET_MASK);
            }else{
@@ -324,7 +324,7 @@ private: System::Void numericUpDownCRdciDispConfTimeout_ValueChanged(System::Obj
 
 private: System::Void checkBoxCRdciEcoRcpEnable_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciEcoRcpEnable->Checked == TRUE)
+           if(checkBoxCRdciEcoRcpEnable->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_ECO_RCP_ENABLE_BYTE, C_RDCI_ECO_RCP_ENABLE_MASK, (uint8) C_RDCI_ECO_RCP_ENABLE_MASK);
            }else{
@@ -335,7 +335,7 @@ private: System::Void checkBoxCRdciEcoRcpEnable_CheckedChanged(System::Object^  
 
 private: System::Void checkBoxCRdciRidEnable_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciRidEnable->Checked == TRUE)
+           if(checkBoxCRdciRidEnable->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_RID_ENABLE_BYTE, C_RDCI_RID_ENABLE_MASK, (uint8) C_RDCI_RID_ENABLE_MASK);
            }else{
@@ -345,7 +345,7 @@ private: System::Void checkBoxCRdciRidEnable_CheckedChanged(System::Object^  sen
 
 private: System::Void checkBoxCRdciDefaultLoadCond_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciDefaultLoadCond->Checked == TRUE)
+           if(checkBoxCRdciDefaultLoadCond->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_LOAD_COND_BYTE, C_RDCI_DEFAULT_LOAD_COND_MASK, (uint8) C_RDCI_DEFAULT_LOAD_COND_MASK);
            }else{
@@ -359,13 +359,13 @@ private: System::Void listBoxCRdciErfsPlacardSource_SelectedIndexChanged(System:
 
            ucPlacard = listBoxCRdciErfsPlacardSource->SelectedIndex;
 
-           if( listBoxCRdciErfsPlacardSource->Text == "1: CAF_ERFS2_ECO_Block")
+           if(listBoxCRdciErfsPlacardSource->Text == "1: CAF_ERFS2_ECO_Block")
            {
              ucPlacard = CAF_ERFS2_ECO_BLOCK;
-           }else if( listBoxCRdciErfsPlacardSource->Text == "2: BMW_Factory_HO")
+           }else if(listBoxCRdciErfsPlacardSource->Text == "2: BMW_Factory_HO")
            {
              ucPlacard = BMW_FACTORY_HO;
-           }else if( listBoxCRdciErfsPlacardSource->Text == "3: Remote_Update")
+           }else if(listBoxCRdciErfsPlacardSource->Text == "3: Remote_Update")
            {
              ucPlacard = REMOTE_UPDATE;
            }else{
@@ -378,7 +378,7 @@ private: System::Void listBoxCRdciErfsPlacardSource_SelectedIndexChanged(System:
 
 private: System::Void radioButtonManual_eRFS_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( radioButtonManual_eRFS->Checked == true)
+           if(radioButtonManual_eRFS->Checked == true)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_MENU_SEL_BYTE, C_RDCI_DEFAULT_MENU_SEL_MASK, (uint8) FALSE);
            }else{
@@ -387,7 +387,7 @@ private: System::Void radioButtonManual_eRFS_CheckedChanged(System::Object^  sen
 
 private: System::Void radioButtonAutomatic_RID_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( radioButtonAutomatic_RID->Checked == true)
+           if(radioButtonAutomatic_RID->Checked == true)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_DEFAULT_MENU_SEL_BYTE, C_RDCI_DEFAULT_MENU_SEL_MASK, C_RDCI_DEFAULT_MENU_SEL_MASK);
            }else{
@@ -396,7 +396,7 @@ private: System::Void radioButtonAutomatic_RID_CheckedChanged(System::Object^  s
 
 private: System::Void checkBoxCRdciSpeedCcmEnable_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
          {
-           if( checkBoxCRdciSpeedCcmEnable->Checked == TRUE)
+           if(checkBoxCRdciSpeedCcmEnable->Checked == TRUE)
            {
              NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_ENABLE_BYTE, C_RDCI_T_PREWARN_NC_MASK, (uint8) C_RDCI_SPEED_CCM_ENABLE_MASK);
            }else{

@@ -1,51 +1,50 @@
 #ifndef __RTE_STUB_OUTPUT_DIALOG_H
 #define __RTE_STUB_OUTPUT_DIALOG_H
 
-  private: System::Void GetOutputDataTimer_Tick(System::Object^  sender, System::EventArgs^  e)
-  {
-    uint8   ucLoop;
+  private: System::Void GetOutputDataTimer_Tick(System::Object^  sender, System::EventArgs^  e){
+      uint8   ucLoop;
 	  uint8   Index;
 
-    uint8   ucWarnVectorExt[cAnzRad], ucWarnBitOutInt[cAnzRad], ucWarnBitTonnageInt[cAnzRad], ucWarnBitAirmassInt[cAnzRad];
-    uint8   ucSetLevel, ucResetLevel;
-    uint8   ucPresVal;
-    sint8   scTempVal;
-    uint16  ushPalStatus;
-    uint8   ucBattStatus;
-    uint8   ucTransmTrigger;
-    uint8   ucTransmCounter;
-    uint8   ucPcold, ucPwarm, ucPist_t, ucPamb, ucPsollCold, ucPsollWarm, ucPsoll_t;
-    sint8   scTcold, scTwarm, scTsollCold, scTist_t;
-    uint16  ushMSoll;
-    uint16  ushElapsedCoolingTime, ushTimeTicks;
-    uint32  ulCoolingCaptTime;
+      uint8   ucWarnVectorExt[cAnzRad], ucWarnBitOutInt[cAnzRad], ucWarnBitTonnageInt[cAnzRad], ucWarnBitAirmassInt[cAnzRad];
+      uint8   ucSetLevel, ucResetLevel;
+      uint8   ucPresVal;
+      sint8   scTempVal;
+      uint16  ushPalStatus;
+      uint8   ucBattStatus;
+      uint8   ucTransmTrigger;
+      uint8   ucTransmCounter;
+      uint8   ucPcold, ucPwarm, ucPist_t, ucPamb, ucPsollCold, ucPsollWarm, ucPsoll_t;
+      sint8   scTcold, scTwarm, scTsollCold, scTist_t;
+      uint16  ushMSoll;
+      uint16  ushElapsedCoolingTime, ushTimeTicks;
+      uint32  ulCoolingCaptTime;
 
-    uint8   ucRefPres, ucLastPres;
-    uint16  ushTimCnt, ushTimCountLatch;
+      uint8   ucRefPres, ucLastPres;
+      uint16  ushTimCnt, ushTimCountLatch;
 
-    uint8   ucDbgByte;
-    uint32  ulDbgDword;
+      uint8   ucDbgByte;
+      uint32  ulDbgDword;
 
-    uint32 ulID;
-    uint8  ucHistoryIndex;
-    uint8  ucZomIndex;
+      uint32 ulID;
+      uint8  ucHistoryIndex;
+      uint8  ucZomIndex;
 
-    uint16 ushPTyreFL, ushPTyreFR, ushPTyreRL, ushPTyreRR;
-    uint16 ushTTyreFL, ushTTyreFR, ushTTyreRL, ushTTyreRR;
-    uint8  ucStTyreINFO, ucStTyreTPL, ucStTyreTFAI;
+      uint16 ushPTyreFL, ushPTyreFR, ushPTyreRL, ushPTyreRR;
+      uint16 ushTTyreFL, ushTTyreFR, ushTTyreRL, ushTTyreRR;
+      uint8  ucStTyreINFO, ucStTyreTPL, ucStTyreTFAI;
 
-    uint8  ucTimerState;
-    uint16 ushTimerCounter;
+      uint8  ucTimerState;
+      uint16 ushTimerCounter;
 
-    uint8  ucStateSCC;
-    uint16 ushSpeedVmaxTimeSCC, ushSpeedCcmThFaSCC, ushSpeedCcmThRaSCC;
+      uint8  ucStateSCC;
+      uint16 ushSpeedVmaxTimeSCC, ushSpeedCcmThFaSCC, ushSpeedCcmThRaSCC;
 
-    static uint8   ucDbgSync = 0;
+      static uint8   ucDbgSync = 0;
 
-    static uint8  ucFrDbgDscSuppMux = 255;
-    static boolean bLogWithoutDataSource = FALSE;
+      static uint8  ucFrDbgDscSuppMux = 255;
+      static boolean bLogWithoutDataSource = FALSE;
 
-    static uint16 ushCcClearLampTimer = 0;
+      static uint16 ushCcClearLampTimer = 0;
 
     tNwMonitoringData tNwMonData;
 
@@ -163,239 +162,210 @@
     String^ sLabelNO_CC_BYPA_00_Start;
     String^ sLabelNO_CC_BYPA_00_Blink;
 
-    if( GETucUnAipEE( Rte_Inst_CtApHufTpmsSWC) == ePRESSURE_UNIT_KPA)
-    {
+      if(GETucUnAipEE( Rte_Inst_CtApHufTpmsSWC) == ePRESSURE_UNIT_KPA){
       sLabelPressureUnit = "kPa";
-    }else if( GETucUnAipEE( Rte_Inst_CtApHufTpmsSWC) == ePRESSURE_UNIT_PSI)
-    {
+      }else if(GETucUnAipEE( Rte_Inst_CtApHufTpmsSWC) == ePRESSURE_UNIT_PSI){
       sLabelPressureUnit = "psi";
-    }else{
+      }
+      else{
       sLabelPressureUnit = "bar";
-    }
+      }
 
-    if( GETucUnTempEE( Rte_Inst_CtApHufTpmsSWC) == eTEMPERATURE_UNIT_FAHRENHEIT)
-    {
+      if(GETucUnTempEE( Rte_Inst_CtApHufTpmsSWC) == eTEMPERATURE_UNIT_FAHRENHEIT){
       sLabelTemperatureUnit = "°F";
-    }else{
+      }
+      else{
       sLabelTemperatureUnit = "°C";
-    }
+      }
 
     GetRDCiOutputDataTAR_P_TYR_FLH( &TAR_P_TYR_FLH);
     GetRDCiOutputDataTAR_P_TYR_FRH( &TAR_P_TYR_FRH);
     GetRDCiOutputDataTAR_P_TYR_RLH( &TAR_P_TYR_RLH);
     GetRDCiOutputDataTAR_P_TYR_RRH( &TAR_P_TYR_RRH);
 
-    if( TAR_P_TYR_FLH == cTyrePressureFuncIfaceNotAvailableValueITY)
-    {
+      if(TAR_P_TYR_FLH == cTyrePressureFuncIfaceNotAvailableValueITY){
       labelTarPTyreFL->Text = "     ";
-    }else if( TAR_P_TYR_FLH == cTyrePressureNotAvailableValueITY)
-    {
+      }else if(TAR_P_TYR_FLH == cTyrePressureNotAvailableValueITY){
       labelTarPTyreFL->Text = "-----";
-    }else if( TAR_P_TYR_FLH == cTyrePressureInvalidValueITY)
-    {
+      }else if(TAR_P_TYR_FLH == cTyrePressureInvalidValueITY){
       labelTarPTyreFL->Text = "invalid";
-    }else{
+      }
+      else{
       labelTarPTyreFL->Text = System::String::Format("{0}{1}", TAR_P_TYR_FLH * 0.1, sLabelPressureUnit);
-    }
+      }
 
-    if( TAR_P_TYR_FRH == cTyrePressureFuncIfaceNotAvailableValueITY)
-    {
+      if(TAR_P_TYR_FRH == cTyrePressureFuncIfaceNotAvailableValueITY){
       labelTarPTyreFR->Text = "     ";
-    }else if( TAR_P_TYR_FRH == cTyrePressureNotAvailableValueITY)
-    {
+      }else if(TAR_P_TYR_FRH == cTyrePressureNotAvailableValueITY){
       labelTarPTyreFR->Text = "-----";
-    }else if( TAR_P_TYR_FRH == cTyrePressureInvalidValueITY)
-    {
+      }else if(TAR_P_TYR_FRH == cTyrePressureInvalidValueITY){
       labelTarPTyreFR->Text = "invalid";
-    }else{
+      }
+      else{
       labelTarPTyreFR->Text = System::String::Format("{0}{1}", TAR_P_TYR_FRH * 0.1, sLabelPressureUnit);
-    }
+      }
 
-    if( TAR_P_TYR_RLH == cTyrePressureFuncIfaceNotAvailableValueITY)
-    {
+      if(TAR_P_TYR_RLH == cTyrePressureFuncIfaceNotAvailableValueITY){
       labelTarPTyreRL->Text = "     ";
-    }else if( TAR_P_TYR_RLH == cTyrePressureNotAvailableValueITY)
-    {
+      }else if(TAR_P_TYR_RLH == cTyrePressureNotAvailableValueITY){
       labelTarPTyreRL->Text = "-----";
-    }else if( TAR_P_TYR_RLH == cTyrePressureInvalidValueITY)
-    {
+      }else if(TAR_P_TYR_RLH == cTyrePressureInvalidValueITY){
       labelTarPTyreRL->Text = "invalid";
-    }else{
+      }
+      else{
       labelTarPTyreRL->Text = System::String::Format("{0}{1}", TAR_P_TYR_RLH * 0.1, sLabelPressureUnit);
-    }
+      }
 
-    if( TAR_P_TYR_RRH == cTyrePressureFuncIfaceNotAvailableValueITY)
-    {
+      if(TAR_P_TYR_RRH == cTyrePressureFuncIfaceNotAvailableValueITY){
       labelTarPTyreRR->Text = "     ";
-    }else if( TAR_P_TYR_RRH == cTyrePressureNotAvailableValueITY)
-    {
+      }else if(TAR_P_TYR_RRH == cTyrePressureNotAvailableValueITY){
       labelTarPTyreRR->Text = "-----";
-    }else if( TAR_P_TYR_RRH == cTyrePressureInvalidValueITY)
-    {
+      }else if(TAR_P_TYR_RRH == cTyrePressureInvalidValueITY){
       labelTarPTyreRR->Text = "invalid";
-    }else{
+      }
+      else{
       labelTarPTyreRR->Text = System::String::Format("{0}{1}", TAR_P_TYR_RRH * 0.1, sLabelPressureUnit);
-    }
+      }
 
     GetRDCiOutputDataAVL_T_TYR_FLH( &AVL_TEMP_TYR_FLH);
     GetRDCiOutputDataAVL_T_TYR_FRH( &AVL_TEMP_TYR_FRH);
     GetRDCiOutputDataAVL_T_TYR_RLH( &AVL_TEMP_TYR_RLH);
     GetRDCiOutputDataAVL_T_TYR_RRH( &AVL_TEMP_TYR_RRH);
 
-    if( AVL_TEMP_TYR_FLH == cTyreTemperatureNotAvailableValueITY)
-    {
+      if(AVL_TEMP_TYR_FLH == cTyreTemperatureNotAvailableValueITY){
       labelAvlTTyreFL->Text = "-----";
-    }else if( AVL_TEMP_TYR_FLH == cTyreTemperatureInvalidValueITY)
-    {
+      }else if(AVL_TEMP_TYR_FLH == cTyreTemperatureInvalidValueITY){
       labelAvlTTyreFL->Text = "invalid";
-    }else{
+      }
+      else{
       labelAvlTTyreFL->Text = System::String::Format("{0}{1}", AVL_TEMP_TYR_FLH - 40, sLabelTemperatureUnit);
-    }
+      }
 
-    if( AVL_TEMP_TYR_FRH == cTyreTemperatureNotAvailableValueITY)
-    {
+      if(AVL_TEMP_TYR_FRH == cTyreTemperatureNotAvailableValueITY){
       labelAvlTTyreFR->Text = "-----";
-    }else if( AVL_TEMP_TYR_FRH == cTyreTemperatureInvalidValueITY)
-    {
+      }else if(AVL_TEMP_TYR_FRH == cTyreTemperatureInvalidValueITY){
       labelAvlTTyreFR->Text = "invalid";
-    }else{
+      }
+      else{
       labelAvlTTyreFR->Text = System::String::Format("{0}{1}", AVL_TEMP_TYR_FRH - 40, sLabelTemperatureUnit);
-    }
+      }
 
-    if( AVL_TEMP_TYR_RLH == cTyreTemperatureNotAvailableValueITY)
-    {
+      if(AVL_TEMP_TYR_RLH == cTyreTemperatureNotAvailableValueITY){
       labelAvlTTyreRL->Text = "-----";
-    }else if( AVL_TEMP_TYR_RLH == cTyreTemperatureInvalidValueITY)
-    {
+      }else if(AVL_TEMP_TYR_RLH == cTyreTemperatureInvalidValueITY){
       labelAvlTTyreRL->Text = "invalid";
-    }else{
+      }
+      else{
       labelAvlTTyreRL->Text = System::String::Format("{0}{1}", AVL_TEMP_TYR_RLH - 40, sLabelTemperatureUnit);
-    }
+      }
 
-    if( AVL_TEMP_TYR_RRH == cTyreTemperatureNotAvailableValueITY)
-    {
+      if(AVL_TEMP_TYR_RRH == cTyreTemperatureNotAvailableValueITY){
       labelAvlTTyreRR->Text = "-----";
-    }else if( AVL_TEMP_TYR_RRH == cTyreTemperatureInvalidValueITY)
-    {
+      }else if(AVL_TEMP_TYR_RRH == cTyreTemperatureInvalidValueITY){
       labelAvlTTyreRR->Text = "invalid";
-    }else{
+      }
+      else{
       labelAvlTTyreRR->Text = System::String::Format("{0}{1}", AVL_TEMP_TYR_RRH - 40, sLabelTemperatureUnit);
-    }
+      }
 
     GetRDCiOutputDataAVL_P_TYR_FLH( &AVL_P_TYR_FLH);
     GetRDCiOutputDataAVL_P_TYR_FRH( &AVL_P_TYR_FRH);
     GetRDCiOutputDataAVL_P_TYR_RLH( &AVL_P_TYR_RLH);
     GetRDCiOutputDataAVL_P_TYR_RRH( &AVL_P_TYR_RRH);
 
-    if( AVL_P_TYR_FLH == cTyrePressureNotPresentValueITY)
-    {
+      if(AVL_P_TYR_FLH == cTyrePressureNotPresentValueITY){
       labelAvlPTyreFL->Text = "     ";
-    }else if( AVL_P_TYR_FLH == cTyrePressureNotAvailableValueITY)
-    {
+      }else if(AVL_P_TYR_FLH == cTyrePressureNotAvailableValueITY){
       labelAvlPTyreFL->Text = "-----";
-    }else if( AVL_P_TYR_FLH == cTyrePressureInvalidValueITY)
-    {
+      }else if(AVL_P_TYR_FLH == cTyrePressureInvalidValueITY){
       labelAvlPTyreFL->Text = "invalid";
-    }else{
+      }
+      else{
       labelAvlPTyreFL->Text = System::String::Format("{0}{1}", AVL_P_TYR_FLH * 0.1, sLabelPressureUnit);
-    }
+      }
 
-    if( AVL_P_TYR_FRH == cTyrePressureNotPresentValueITY)
-    {
+      if(AVL_P_TYR_FRH == cTyrePressureNotPresentValueITY){
       labelAvlPTyreFR->Text = "     ";
-    }else if( AVL_P_TYR_FRH == cTyrePressureNotAvailableValueITY)
-    {
+      }else if(AVL_P_TYR_FRH == cTyrePressureNotAvailableValueITY){
       labelAvlPTyreFR->Text = "-----";
-    }else if( AVL_P_TYR_FRH == cTyrePressureInvalidValueITY)
-    {
+      }else if(AVL_P_TYR_FRH == cTyrePressureInvalidValueITY){
       labelAvlPTyreFR->Text = "invalid";
-    }else{
+      }
+      else{
       labelAvlPTyreFR->Text = System::String::Format("{0}{1}", AVL_P_TYR_FRH * 0.1, sLabelPressureUnit);
-    }
+      }
 
-    if( AVL_P_TYR_RLH == cTyrePressureNotPresentValueITY)
-    {
+      if(AVL_P_TYR_RLH == cTyrePressureNotPresentValueITY){
       labelAvlPTyreRL->Text = "     ";
-    }else if( AVL_P_TYR_RLH == cTyrePressureNotAvailableValueITY)
-    {
+      }else if(AVL_P_TYR_RLH == cTyrePressureNotAvailableValueITY){
       labelAvlPTyreRL->Text = "-----";
-    }else if( AVL_P_TYR_RLH == cTyrePressureInvalidValueITY)
-    {
+      }else if(AVL_P_TYR_RLH == cTyrePressureInvalidValueITY){
       labelAvlPTyreRL->Text = "invalid";
-    }else{
+      }
+      else{
       labelAvlPTyreRL->Text = System::String::Format("{0}{1}", AVL_P_TYR_RLH * 0.1, sLabelPressureUnit);
-    }
+      }
 
-    if( AVL_P_TYR_RRH == cTyrePressureNotPresentValueITY)
-    {
+      if(AVL_P_TYR_RRH == cTyrePressureNotPresentValueITY){
       labelAvlPTyreRR->Text = "     ";
-    }else if( AVL_P_TYR_RRH == cTyrePressureNotAvailableValueITY)
-    {
+      }else if(AVL_P_TYR_RRH == cTyrePressureNotAvailableValueITY){
       labelAvlPTyreRR->Text = "-----";
-    }else if( AVL_P_TYR_RRH == cTyrePressureInvalidValueITY)
-    {
+      }else if(AVL_P_TYR_RRH == cTyrePressureInvalidValueITY){
       labelAvlPTyreRR->Text = "invalid";
-    }else{
+      }
+      else{
       labelAvlPTyreRR->Text = System::String::Format("{0}{1}", AVL_P_TYR_RRH * 0.1, sLabelPressureUnit);
-    }
+      }
 
     timeDate = GETtTimeDateEE( Rte_Inst_CtApHufTpmsSWC);
 
-    if( Stub_GetCcmData( &tCC_BYPA_00) != 0xff)
-    {
+      if(Stub_GetCcmData( &tCC_BYPA_00) != 0xff){
 
-      if( tCC_BYPA_00.NO_CC_BYPA_00 == 0x0150)
-      {
+      if(tCC_BYPA_00.NO_CC_BYPA_00 == 0x0150){
 
-        if( tCC_BYPA_00.ST_CC_BYPA_00     == cCcStartStopState_Start) { sLabelNO_CC_BYPA_00_Start = "Start";       }else if( tCC_BYPA_00.ST_CC_BYPA_00     == cCcStartStopState_Stop) { sLabelNO_CC_BYPA_00_Start = "Stop";               }else{ sLabelNO_CC_BYPA_00_Start = "Invalid"; }
-        if( tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Off)       { sLabelNO_CC_BYPA_00_Blink = "no blinking"; }else if( tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Slow) { sLabelNO_CC_BYPA_00_Blink = "blinking with 1 Hz"; }else if( tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Fast) { sLabelNO_CC_BYPA_00_Blink = "blinking with 3 Hz"; }else{ sLabelNO_CC_BYPA_00_Blink = "Invalid"; }
+          if(tCC_BYPA_00.ST_CC_BYPA_00     == cCcStartStopState_Start) { sLabelNO_CC_BYPA_00_Start = "Start";       }else if(tCC_BYPA_00.ST_CC_BYPA_00     == cCcStartStopState_Stop) { sLabelNO_CC_BYPA_00_Start = "Stop";               }else{ sLabelNO_CC_BYPA_00_Start = "Invalid"; }
+          if(tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Off)       { sLabelNO_CC_BYPA_00_Blink = "no blinking"; }else if(tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Slow) { sLabelNO_CC_BYPA_00_Blink = "blinking with 1 Hz"; }else if(tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Fast) { sLabelNO_CC_BYPA_00_Blink = "blinking with 3 Hz"; }else{ sLabelNO_CC_BYPA_00_Blink = "Invalid"; }
 
         textBoxNO_CC_BYPA_00->AppendText( System::String::Format( "fKL:\t{0:00}:{1:00}:{2:00} - 0x{3,4:X4} - {4} - {5}\n", timeDate.DISP_HR, timeDate.DISP_MN, timeDate.DISP_SEC, tCC_BYPA_00.NO_CC_BYPA_00, sLabelNO_CC_BYPA_00_Start, sLabelNO_CC_BYPA_00_Blink));
       }
 
-      else if( tCC_BYPA_00.NO_CC_BYPA_00 != cCcInvalid)
-      {
+      else if(tCC_BYPA_00.NO_CC_BYPA_00 != cCcInvalid){
 
-        if( tCC_BYPA_00.ST_CC_BYPA_00     == cCcStartStopState_Start) { sLabelNO_CC_BYPA_00_Start = "Start";       }else if( tCC_BYPA_00.ST_CC_BYPA_00     == cCcStartStopState_Stop) { sLabelNO_CC_BYPA_00_Start = "Stop";               }else{ sLabelNO_CC_BYPA_00_Start = "Invalid"; }
-        if( tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Off)       { sLabelNO_CC_BYPA_00_Blink = "no blinking"; }else if( tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Slow) { sLabelNO_CC_BYPA_00_Blink = "blinking with 1 Hz"; }else if( tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Fast) { sLabelNO_CC_BYPA_00_Blink = "blinking with 3 Hz"; }else{ sLabelNO_CC_BYPA_00_Blink = "Invalid"; }
+          if(tCC_BYPA_00.ST_CC_BYPA_00     == cCcStartStopState_Start) { sLabelNO_CC_BYPA_00_Start = "Start";       }else if(tCC_BYPA_00.ST_CC_BYPA_00     == cCcStartStopState_Stop) { sLabelNO_CC_BYPA_00_Start = "Stop";               }else{ sLabelNO_CC_BYPA_00_Start = "Invalid"; }
+          if(tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Off)       { sLabelNO_CC_BYPA_00_Blink = "no blinking"; }else if(tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Slow) { sLabelNO_CC_BYPA_00_Blink = "blinking with 1 Hz"; }else if(tCC_BYPA_00.ST_IDC_CC_BYPA_00 == cCcBlinkState_Fast) { sLabelNO_CC_BYPA_00_Blink = "blinking with 3 Hz"; }else{ sLabelNO_CC_BYPA_00_Blink = "Invalid"; }
 
         textBoxNO_CC_BYPA_00->AppendText( System::String::Format( "vKL:\t{0:00}:{1:00}:{2:00} - 0x{3,4:X4} - {4} - {5}\n", timeDate.DISP_HR, timeDate.DISP_MN, timeDate.DISP_SEC, tCC_BYPA_00.NO_CC_BYPA_00, sLabelNO_CC_BYPA_00_Start, sLabelNO_CC_BYPA_00_Blink));
       }
 
-      else
-      {
+      else{
 
       }
 
       ushCcClearLampTimer = 10000 / System::Decimal::ToInt32(OutputTimerInterval->Value);
-    }else{
+      }
+      else{
 
-    }
+      }
 
     GetRDCiOutputDataST_TYR( &tST_TYR);
     labelST_TYR_INFO->Text = System::String::Format("{0,2:X2}", tST_TYR.QU_FN_TYR_INFO);
     labelST_TYR_TPL->Text = System::String::Format("{0,2:X2}", tST_TYR.QU_TPL);
     labelST_TYR_TFAI->Text = System::String::Format("{0,2:X2}", tST_TYR.QU_TFAI);
 
-    if(GETTyreSelectionActiveEE( Rte_Inst_CtApHufTpmsSWC) == 1)
-    {
+      if(GETTyreSelectionActiveEE( Rte_Inst_CtApHufTpmsSWC) == 1){
       checkBoxFgrInit->Checked = TRUE;
-    }
-    else
-    {
+      }
+      else{
       checkBoxFgrInit->Checked = FALSE;
-    }
+      }
 
-    if(GETTyreSelectionBckgrdEE( Rte_Inst_CtApHufTpmsSWC) == 1)
-    {
+      if(GETTyreSelectionBckgrdEE( Rte_Inst_CtApHufTpmsSWC) == 1){
       checkBoxBgrInit->Checked = TRUE;
-    }
-    else
-    {
+      }
+      else{
       checkBoxBgrInit->Checked = FALSE;
-    }
-    switch (GETucCalibrationRootCauseEE( Rte_Inst_CtApHufTpmsSWC))
-    {
+      }
+      switch(GETucCalibrationRootCauseEE( Rte_Inst_CtApHufTpmsSWC)){
       case cCalError:           labelCalRootCause->Text = "Cal failed";     break;
       case cCalOtherTyre:       labelCalRootCause->Text = "Cal other Tyre"; break;
       case cCalByHMI:           labelCalRootCause->Text = "Cal by HMI";     break;
@@ -412,12 +382,11 @@
       case cCalRunning:         labelCalRootCause->Text = "Cal running";    break;
       case cCalInvalid:         labelCalRootCause->Text = "Cal Invalid";    break;
       default:                  labelCalRootCause->Text = "Error: not defined";    break;
-    }
+      }
 
     Index = GETSelectedSuTyreIndexEE( Rte_Inst_CtApHufTpmsSWC);
 
-	if(Index != CINIT_DISP_INVALID)
-	{
+	if(Index != CINIT_DISP_INVALID){
 		GetRDCiOutputDataCAC_SUTR(&CAC_SUTR_TYP_TYR);
 		SUTR_KarkasseVal -> Text = System::String::Format("{0}", CAC_SUTR_TYP_TYR);
 		GetRDCiOutputDataIDX_LCC_SUTR(&IDX_LCC_SUTR_TYP_TYR);
@@ -438,8 +407,7 @@
 
   Index = GETSelectedWiTyreIndexEE(Rte_Inst_CtApHufTpmsSWC);
 
-	if(Index != CINIT_DISP_INVALID)
-	{
+	if(Index != CINIT_DISP_INVALID){
 		GetRDCiOutputDataCAC_WITR(&CAC_WITR_TYP_TYR);
     WITR_KarkasseVal->Text = System::String::Format("{0}",  CAC_WITR_TYP_TYR);
 		GetRDCiOutputDataIDX_LCC_WITR(&IDX_LCC_WITR_TYP_TYR);
@@ -463,8 +431,7 @@
 
 	Index = GETSelectedTyreIndexEE( Rte_Inst_CtApHufTpmsSWC);
 
-	if(Index != CINIT_DISP_INVALID)
-	{
+	if(Index != CINIT_DISP_INVALID){
 		GetRDCiOutputDataCAC_BAX(&CAC_BAX_TYP_TYR);
 		RATR_KarkasseVal -> Text = System::String::Format("{0}", CAC_BAX_TYP_TYR);
 		GetRDCiOutputDataIDX_LCC_BAX(&IDX_LCC_BAX_TYP_TYR);
@@ -483,8 +450,7 @@
 		RATR_ReifenbreiteVal-> Text = System::String::Format("{0}", WID_BAX_TYP_TYR);
 	}
 
-  if(Index != CINIT_DISP_INVALID)
-	{
+   if(Index != CINIT_DISP_INVALID){
 		GetRDCiOutputDataCAC_FTAX(&CAC_FTAX_TYP_TYR);
 		FATR_KarkasseVal -> Text = System::String::Format("{0}", CAC_FTAX_TYP_TYR);
 		GetRDCiOutputDataIDX_LCC_FTAX(&IDX_LCC_FTAX_TYP_TYR);
@@ -528,47 +494,43 @@
   GetRDCiOutputDataQU_RDC_INIT_DISP(&QU_RDC_INIT_DISP);
 	STTR2_InitDisplayVal -> Text = System::String::Format("{0}", QU_RDC_INIT_DISP);
 
-  if(QU_RDC_INIT_DISP == QU_RDC_INIT_DISP_InitialisierungAbgeschlossen)
-  {
+   if(QU_RDC_INIT_DISP == QU_RDC_INIT_DISP_InitialisierungAbgeschlossen){
     ProgressBarLearnLocate->Value = ProgressBarLearnLocate->Maximum;
     labelInitialisierungsbalken->Text = "Init abgeschlossen";
-  }
-  else if(QU_RDC_INIT_DISP == QU_RDC_INIT_DISP_KeineAnzeigeDesInitialierungsbalkens)
-  {
+   }
+   else if(QU_RDC_INIT_DISP == QU_RDC_INIT_DISP_KeineAnzeigeDesInitialierungsbalkens){
     ProgressBarLearnLocate->Value = ProgressBarLearnLocate->Minimum;
     ProgressBarLearnLocate->Enabled = false;
     labelInitialisierungsbalken->Text = "Keine Anzeige des Init-Balkens";
-  }
-  else if(QU_RDC_INIT_DISP == QU_RDC_INIT_DISP_SignalUngueltig)
-  {
+   }
+   else if(QU_RDC_INIT_DISP == QU_RDC_INIT_DISP_SignalUngueltig){
     labelInitialisierungsbalken->Text = "UNGÜLTIG!";
-  }
-  else
-  {
+   }
+   else{
     ProgressBarLearnLocate->Enabled = true;
     ProgressBarLearnLocate->Value = QU_RDC_INIT_DISP;
     labelInitialisierungsbalken->Text = System::String::Format("{0}%", QU_RDC_INIT_DISP);
-  }
+   }
 
 	GetRDCiOutputDataST_SLCTN_SUTR_AVLB(&ST_SLCTN_SUTR_AVLB);
 	STTR2_SummerTyreIndexVal -> Text = System::String::Format("{0}", ST_SLCTN_SUTR_AVLB);
 	GetRDCiOutputDataST_SLCTN_WITR_AVLB(&ST_SLCTN_WITR_AVLB);
 	STTR2_WinterTyreIndexVal -> Text = System::String::Format("{0}", ST_SLCTN_WITR_AVLB);
 	GetRDCiOutputDataOP_IDR_MSGC(&OP_IDR_MSGC);
-  STTR2_IdrMessagec -> Text = System::String::Format("{0}", OP_IDR_MSGC);
+   STTR2_IdrMessagec -> Text = System::String::Format("{0}", OP_IDR_MSGC);
   GetRDCiOutputDataST_SLCTN_TYR(&ST_SLCTN_TYR);
   GetRDCiOutputDataST_MAN_SLCTN(&ST_MAN_SLCTN);
-  STTYR2_StManSlctn -> Text = System::String::Format("{0}", ST_MAN_SLCTN);
+   STTYR2_StManSlctn -> Text = System::String::Format("{0}", ST_MAN_SLCTN);
 
 	GetRDCiOutputDataST_TAR_P_LOCO_TPCT(&ST_TAR_P_LOCO_TPCT);
 	STTR2_SelLoadStateVal -> Text = System::String::Format("{0}", ST_TAR_P_LOCO_TPCT);
 	GetRDCiOutputDataST_TYR_SEA_TPCT(&ST_TYR_SEA_TPCT);
 	STTR2_SelSeasonVal -> Text = System::String::Format("{0}", ST_TYR_SEA_TPCT);
   GetRDCiOutputDataStatusWheelTypeChangeDetection(&ST_WT_CHG_DET);
-  STWTC_DetectionVal -> Text = System::String::Format("{0}", ST_WT_CHG_DET);
+   STWTC_DetectionVal -> Text = System::String::Format("{0}", ST_WT_CHG_DET);
 
   GetRDCiOutputDataStatusWheelTypeChangePosition(&ST_WT_CHG_POS);
-  STWTC_PositionVal -> Text = System::String::Format("{0}", ST_WT_CHG_POS);
+   STWTC_PositionVal -> Text = System::String::Format("{0}", ST_WT_CHG_POS);
 
   GetRDCiOutputDataLastReceivedAmbientPressure( &LastReceivedAmbientPressure);
   labelLastReceivedAmbientPressureValue->Text = System::String::Format("{0}", (LastReceivedAmbientPressure * 2 + 600));
@@ -599,15 +561,13 @@
 
   GetSpeedCcmValSCC_debug( &ucStateSCC, &ushSpeedVmaxTimeSCC, &ushSpeedCcmThFaSCC, &ushSpeedCcmThRaSCC);
   labelSpeedCcmStatusbyteWert->Text = System::String::Format("0x{0:X2}", ucStateSCC);
-  if( ushSpeedVmaxTimeSCC == 0xffffu) { labelVmaxTimerWert->Text    = "- -"; }else{ labelVmaxTimerWert->Text    = System::String::Format("{0}", (ushSpeedVmaxTimeSCC / 10)); }
-  if( ushSpeedCcmThFaSCC  == 0)       { labelPressureThFaWert->Text = "- -"; }else{ labelPressureThFaWert->Text = System::String::Format("{0}", ushSpeedCcmThFaSCC);         }
-  if( ushSpeedCcmThRaSCC  == 0)       { labelPressureThRaWert->Text = "- -"; }else{ labelPressureThRaWert->Text = System::String::Format("{0}", ushSpeedCcmThRaSCC);         }
+   if(ushSpeedVmaxTimeSCC == 0xffffu) { labelVmaxTimerWert->Text    = "- -"; }else{ labelVmaxTimerWert->Text    = System::String::Format("{0}", (ushSpeedVmaxTimeSCC / 10)); }
+   if(ushSpeedCcmThFaSCC  == 0)       { labelPressureThFaWert->Text = "- -"; }else{ labelPressureThFaWert->Text = System::String::Format("{0}", ushSpeedCcmThFaSCC);         }
+   if(ushSpeedCcmThRaSCC  == 0)       { labelPressureThRaWert->Text = "- -"; }else{ labelPressureThRaWert->Text = System::String::Format("{0}", ushSpeedCcmThRaSCC);         }
 
-    for ( ucLoop = 0; ucLoop < cAnzRad; ucLoop++)
-    {
+      for(ucLoop = 0; ucLoop < cAnzRad; ucLoop++){
 
-      switch ( ucGetWPOfColWAL( ucLoop))
-      {
+      switch(ucGetWPOfColWAL(ucLoop)){
         case cRadPosVL:
           sLabelWheelPosition = "front left";
         break;
@@ -633,8 +593,7 @@
         break;
       }
 
-      switch ( ucGetRePckgIdDM( ucLoop))
-      {
+      switch(ucGetRePckgIdDM(ucLoop)){
         case cTelTypeAK35def:
           sLabelPackageId = "AK";
         break;
@@ -676,8 +635,7 @@
         break;
       }
 
-      switch ( ucGetReSuppIdDM( ucLoop))
-      {
+      switch(ucGetReSuppIdDM(ucLoop)){
         case ( cSupplCodeHuf):
           sLabelSupplierId = "Huf";
         break;
@@ -699,49 +657,46 @@
         break;
       }
 
-      if( ulGetReIdDM( ucLoop) == cInvalidREid)
-      {
+      if(ulGetReIdDM(ucLoop) == cInvalidREid){
         sLabelTyreId = "invalid";
-      }else{
-        sLabelTyreId = System::String::Format("{0}", ulGetReIdDM( ucLoop));
+      }
+      else{
+        sLabelTyreId = System::String::Format("{0}", ulGetReIdDM(ucLoop));
       }
 
-      if( ucGetRePressureRelDM( ucLoop) == cInvalidREpressure)
-      {
+      if(ucGetRePressureRelDM(ucLoop) == cInvalidREpressure){
         sLabelTyrePressure = "invalid";
-      }else{
-        sLabelTyrePressure = System::String::Format("{0}bar", ucGetRePressureRelDM( ucLoop) * 0.025);
+      }
+      else{
+        sLabelTyrePressure = System::String::Format("{0}bar", ucGetRePressureRelDM(ucLoop) * 0.025);
       }
 
-      if( scGetReTemperatureCentDM( ucLoop) == cInvalidREtemperature)
-      {
+      if(scGetReTemperatureCentDM(ucLoop) == cInvalidREtemperature){
         sLabelTyreTemperature = "invalid";
-      }else{
-        sLabelTyreTemperature = System::String::Format("{0}°C", scGetReTemperatureCentDM( ucLoop));
+      }
+      else{
+        sLabelTyreTemperature = System::String::Format("{0}°C", scGetReTemperatureCentDM(ucLoop));
       }
 
-      if( ucGetRePalLookBackTimeDM( ucLoop) == cInvalidRePalLookBackTime)
-      {
+      if(ucGetRePalLookBackTimeDM(ucLoop) == cInvalidRePalLookBackTime){
         sLabelPALlookBackTime = "invalid";
-      }else{
-        sLabelPALlookBackTime = System::String::Format("{0}ms", ucGetRePalLookBackTimeDM( ucLoop));
+      }
+      else{
+        sLabelPALlookBackTime = System::String::Format("{0}ms", ucGetRePalLookBackTimeDM(ucLoop));
       }
 
-      if( ushGetRePalStatusDM( ucLoop) == cInvalidRePalStatus)
-      {
+      if(ushGetRePalStatusDM(ucLoop) == cInvalidRePalStatus){
         sLabelPALstatus = "invalid";
         sLabelBasicState = "";
         sLabelBatteryInfo = "";
         sLabelTransmissionTrigger = "";
         sLabelTransmissionCounter = "";
       }
-      else
-      {
-        sLabelPALstatus = System::String::Format("{0,4:X4}", ushGetRePalStatusDM( ucLoop));
+      else{
+        sLabelPALstatus = System::String::Format("{0,4:X4}", ushGetRePalStatusDM(ucLoop));
 
-        ushPalStatus = ushGetRePalStatusDM( ucLoop);
-        switch ((ushPalStatus >> 13) & 0x7u)
-        {
+        ushPalStatus = ushGetRePalStatusDM(ucLoop);
+        switch((ushPalStatus >> 13) & 0x7u){
           case cREOff:
           sLabelBasicState = "Off";
           break;
@@ -768,19 +723,16 @@
           break;
         }
 
-        ucBattStatus = ucGetReBatteryLevelDM( ucLoop);
-        if(ucBattStatus == 0xff)
-        {
+        ucBattStatus = ucGetReBatteryLevelDM(ucLoop);
+          if(ucBattStatus == 0xff){
           sLabelBatteryInfo = "??";
         }
-        else
-        {
+        else{
           sLabelBatteryInfo = System::String::Format("{0}%", ucBattStatus);
         }
 
         ucTransmTrigger = (ushPalStatus >> 6) & 0x3u;
-        switch (ucTransmTrigger)
-        {
+        switch(ucTransmTrigger){
           case 0:
           default:
           sLabelTransmissionTrigger = "??";
@@ -801,8 +753,7 @@
 
       ulID = ulGetReIdDM(ucLoop) + ((uint32)ucGetReSuppIdDM(ucLoop) << 28);
       ucHistoryIndex = ucGetColOfID(&ulID);
-      switch (ucHistoryIndex)
-      {
+      switch(ucHistoryIndex){
         case 0:
         labelWheelPositionSlot0->Text = sLabelWheelPosition;
         labelPackageIdSlot0->Text = sLabelPackageId;
@@ -864,55 +815,43 @@
         break;
 
       }
-    }
+      }
 
     labelTimeRemaining->Text = System::String::Format("ZO Timeout: {0}", ucGetWATOTimeWAL() * 5);
     labelLearnTime->Text = System::String::Format("Learn time: {0}", ucGetLEARNTimeWAL() * 5);
     labelMinDistance->Text = System::String::Format("Dist: {0}", ucGetAllocMinDeltaValueFPA());
 
-    if(bAllocationIsActive( Rte_Inst_CtApHufTpmsSWC) == true)
-    {
+      if(bAllocationIsActive( Rte_Inst_CtApHufTpmsSWC) == true){
       labelLearningNotActive->Text = "Lern/Loc aktiv";
       labelLearningNotActive->BackColor = System::Drawing::Color::FromArgb(0,255,0);
       labelLernLocActiveReason->Text = "";
-    }
-    else
-    {
+      }
+      else{
       labelLearningNotActive->Text = "Lern/Loc gestoppt";
       labelLearningNotActive->BackColor = System::Drawing::Color::FromArgb(255,0,0);
 
-      if(ucGetStatusConditionVehicleFZZ() != ST_CON_VEH_Fahren)
-      { labelLernLocActiveReason->Text = "Zustand ist nicht 'Fahren'.";         }
+      if(ucGetStatusConditionVehicleFZZ() != ST_CON_VEH_Fahren){ labelLernLocActiveReason->Text = "Zustand ist nicht 'Fahren'.";         }
 
-      else if(bGetBitFahrzeugzustandFZZ(cRUECKWAERTSFAHRT) == TRUE)
-      { labelLernLocActiveReason->Text = "Fahrzeug faehrt rueckwaerts.";           }
+      else if(bGetBitFahrzeugzustandFZZ(cRUECKWAERTSFAHRT) == TRUE){ labelLernLocActiveReason->Text = "Fahrzeug faehrt rueckwaerts.";           }
 
-      else if(bGetBandmodeBM() == TRUE)
-      { labelLernLocActiveReason->Text = "Bandmode aktiv.";                     }
+      else if(bGetBandmodeBM() == TRUE){ labelLernLocActiveReason->Text = "Bandmode aktiv.";                     }
 
-      else if(bGetBitBetriebszustandBZ(cZO_TIMEOUT) == TRUE)
-      { labelLernLocActiveReason->Text = "Zuordnungstimeout erreicht.";         }
+      else if(bGetBitBetriebszustandBZ(cZO_TIMEOUT) == TRUE){ labelLernLocActiveReason->Text = "Zuordnungstimeout erreicht.";         }
 
-      else if(bGetBitFahrzeugzustandFZZ(cFAHRZEUG_LERNT) == FALSE)
-      { labelLernLocActiveReason->Text = "Geschwindigkeit kleiner 20km/h.";     }
+      else if(bGetBitFahrzeugzustandFZZ(cFAHRZEUG_LERNT) == FALSE){ labelLernLocActiveReason->Text = "Geschwindigkeit kleiner 20km/h.";     }
 
-      else if(bGetBitBetriebszustandBZ(cZO_FINISH) == TRUE)
-      { labelLernLocActiveReason->Text = "Zuordnung abgeschlossen oder short park.";            }
+      else if(bGetBitBetriebszustandBZ(cZO_FINISH) == TRUE){ labelLernLocActiveReason->Text = "Zuordnung abgeschlossen oder short park.";            }
 
-      else if(bGetBitBetriebszustandBZ(cLOC_NOT_POSSIBLE) == TRUE)
-      { labelLernLocActiveReason->Text = "Mehr als 1 RE nicht lokalisierbar.";  }
+      else if(bGetBitBetriebszustandBZ(cLOC_NOT_POSSIBLE) == TRUE){ labelLernLocActiveReason->Text = "Mehr als 1 RE nicht lokalisierbar.";  }
 
-      else if(bGetBitBetriebszustandBZ(cLOC_INTERRUPTED) == TRUE)
-      { labelLernLocActiveReason->Text = "Radelektroniken sind im drive mode.";  }
+      else if(bGetBitBetriebszustandBZ(cLOC_INTERRUPTED) == TRUE){ labelLernLocActiveReason->Text = "Radelektroniken sind im drive mode.";  }
 
-    }
+      }
 
     labelFirstEmptySlotValue->Text = "";
 
-    for (ucLoop = 0; ucLoop < cSumWE; ucLoop++)
-    {
-      switch ( ucLoop)
-      {
+      for(ucLoop = 0; ucLoop < cSumWE; ucLoop++){
+      switch(ucLoop){
         case 0:
 
           textNoOfUsedPalTelegramsWL_0->Text = System::String::Format("{0}", ucGetZomToothTelCtCorrLearnBit(ucLoop));
@@ -924,12 +863,10 @@
           textNoOfFpaUsedTels_0->Text = System::String::Format("{0}", ucGetZomLocateProbeCt(ucLoop));
 
           textDistance0->Text = System::String::Format("{0}", ucGetZomDeltaMin(ucLoop));
-          if(ucGetZomDeltaMin(ucLoop) >= ucGetAllocMinDeltaValueFPA())
-          {
+          if(ucGetZomDeltaMin(ucLoop) >= ucGetAllocMinDeltaValueFPA()){
             textDistance0->BackColor = System::Drawing::Color::FromArgb(0,255,0);
           }
-          else
-          {
+          else{
             textDistance0->BackColor = textDistance0->DefaultBackColor;
           }
 
@@ -940,10 +877,8 @@
 
           if((System::Convert::ToInt16(labelMinValSlot0VL->Text) < System::Convert::ToInt16(labelMinValSlot0VR->Text))
             &&(System::Convert::ToInt16(labelMinValSlot0VL->Text) < System::Convert::ToInt16(labelMinValSlot0HL->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot0VL->Text) < System::Convert::ToInt16(labelMinValSlot0HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot0VL->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot0VL->Text) < System::Convert::ToInt16(labelMinValSlot0HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot0VL->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot0VL->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -952,17 +887,14 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot0VL->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot0VR->Text) < System::Convert::ToInt16(labelMinValSlot0VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot0VR->Text) < System::Convert::ToInt16(labelMinValSlot0HL->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot0VR->Text) < System::Convert::ToInt16(labelMinValSlot0HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot0VR->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot0VR->Text) < System::Convert::ToInt16(labelMinValSlot0HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot0VR->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot0VR->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -970,17 +902,14 @@
               labelMinValSlot0VR->BackColor = System::Drawing::Color::FromArgb(255,255,0);
             }
           }
-          else
-          {
+          else{
             labelMinValSlot0VR->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot0HL->Text) < System::Convert::ToInt16(labelMinValSlot0VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot0HL->Text) < System::Convert::ToInt16(labelMinValSlot0VR->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot0HL->Text) < System::Convert::ToInt16(labelMinValSlot0HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot0HL->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot0HL->Text) < System::Convert::ToInt16(labelMinValSlot0HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot0HL->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot0HL->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -988,17 +917,14 @@
               labelMinValSlot0HL->BackColor = System::Drawing::Color::FromArgb(255,255,0);
             }
           }
-          else
-          {
+          else{
             labelMinValSlot0HL->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot0HR->Text) < System::Convert::ToInt16(labelMinValSlot0VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot0HR->Text) < System::Convert::ToInt16(labelMinValSlot0VR->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot0HR->Text) < System::Convert::ToInt16(labelMinValSlot0HL->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot0HR->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot0HR->Text) < System::Convert::ToInt16(labelMinValSlot0HL->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot0HR->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot0HR->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1006,8 +932,7 @@
               labelMinValSlot0HR->BackColor = System::Drawing::Color::FromArgb(255,255,0);
             }
           }
-          else
-          {
+          else{
             labelMinValSlot0HR->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
         break;
@@ -1023,12 +948,10 @@
           textNoOfFpaUsedTels_1->Text = System::String::Format("{0}", ucGetZomLocateProbeCt(ucLoop));
 
           textDistance1->Text = System::String::Format("{0}", ucGetZomDeltaMin(ucLoop));
-          if(ucGetZomDeltaMin(ucLoop) >= ucGetAllocMinDeltaValueFPA())
-          {
+          if(ucGetZomDeltaMin(ucLoop) >= ucGetAllocMinDeltaValueFPA()){
             textDistance1->BackColor = System::Drawing::Color::FromArgb(0,255,0);
           }
-          else
-          {
+          else{
             textDistance1->BackColor = textDistance0->DefaultBackColor;
           }
 
@@ -1039,10 +962,8 @@
 
           if((System::Convert::ToInt16(labelMinValSlot1VL->Text) < System::Convert::ToInt16(labelMinValSlot1VR->Text))
             &&(System::Convert::ToInt16(labelMinValSlot1VL->Text) < System::Convert::ToInt16(labelMinValSlot1HL->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot1VL->Text) < System::Convert::ToInt16(labelMinValSlot1HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot1VL->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot1VL->Text) < System::Convert::ToInt16(labelMinValSlot1HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot1VL->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot1VL->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1051,17 +972,14 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot1VL->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot1VR->Text) < System::Convert::ToInt16(labelMinValSlot1VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot1VR->Text) < System::Convert::ToInt16(labelMinValSlot1HL->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot1VR->Text) < System::Convert::ToInt16(labelMinValSlot1HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot1VR->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot1VR->Text) < System::Convert::ToInt16(labelMinValSlot1HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot1VR->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot1VR->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1070,17 +988,14 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot1VR->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot1HL->Text) < System::Convert::ToInt16(labelMinValSlot1VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot1HL->Text) < System::Convert::ToInt16(labelMinValSlot1VR->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot1HL->Text) < System::Convert::ToInt16(labelMinValSlot1HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot1HL->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot1HL->Text) < System::Convert::ToInt16(labelMinValSlot1HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot1HL->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot1HL->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1089,17 +1004,14 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot1HL->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot1HR->Text) < System::Convert::ToInt16(labelMinValSlot1VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot1HR->Text) < System::Convert::ToInt16(labelMinValSlot1VR->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot1HR->Text) < System::Convert::ToInt16(labelMinValSlot1HL->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot1HR->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot1HR->Text) < System::Convert::ToInt16(labelMinValSlot1HL->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot1HR->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot1HR->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1108,8 +1020,7 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot1HR->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
         break;
@@ -1125,12 +1036,10 @@
           textNoOfFpaUsedTels_2->Text = System::String::Format("{0}", ucGetZomLocateProbeCt(ucLoop));
 
           textDistance2->Text = System::String::Format("{0}", ucGetZomDeltaMin(ucLoop));
-          if(ucGetZomDeltaMin(ucLoop) >= ucGetAllocMinDeltaValueFPA())
-          {
+          if(ucGetZomDeltaMin(ucLoop) >= ucGetAllocMinDeltaValueFPA()){
             textDistance2->BackColor = System::Drawing::Color::FromArgb(0,255,0);
           }
-          else
-          {
+          else{
             textDistance2->BackColor = textDistance0->DefaultBackColor;
           }
 
@@ -1141,10 +1050,8 @@
 
           if((System::Convert::ToInt16(labelMinValSlot2VL->Text) < System::Convert::ToInt16(labelMinValSlot2VR->Text))
             &&(System::Convert::ToInt16(labelMinValSlot2VL->Text) < System::Convert::ToInt16(labelMinValSlot2HL->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot2VL->Text) < System::Convert::ToInt16(labelMinValSlot2HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot2VL->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot2VL->Text) < System::Convert::ToInt16(labelMinValSlot2HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot2VL->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot2VL->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1152,17 +1059,14 @@
               labelMinValSlot2VL->BackColor = System::Drawing::Color::FromArgb(255,255,0);
             }
           }
-          else
-          {
+          else{
             labelMinValSlot2VL->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot2VR->Text) < System::Convert::ToInt16(labelMinValSlot2VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot2VR->Text) < System::Convert::ToInt16(labelMinValSlot2HL->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot2VR->Text) < System::Convert::ToInt16(labelMinValSlot2HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot2VR->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot2VR->Text) < System::Convert::ToInt16(labelMinValSlot2HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot2VR->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot2VR->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1170,17 +1074,14 @@
               labelMinValSlot2VR->BackColor = System::Drawing::Color::FromArgb(255,255,0);
             }
           }
-          else
-          {
+          else{
             labelMinValSlot2VR->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot2HL->Text) < System::Convert::ToInt16(labelMinValSlot2VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot2HL->Text) < System::Convert::ToInt16(labelMinValSlot2VR->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot2HL->Text) < System::Convert::ToInt16(labelMinValSlot2HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot2HL->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot2HL->Text) < System::Convert::ToInt16(labelMinValSlot2HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot2HL->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot2HL->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1189,17 +1090,14 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot2HL->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot2HR->Text) < System::Convert::ToInt16(labelMinValSlot2VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot2HR->Text) < System::Convert::ToInt16(labelMinValSlot2VR->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot2HR->Text) < System::Convert::ToInt16(labelMinValSlot2HL->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot2HR->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot2HR->Text) < System::Convert::ToInt16(labelMinValSlot2HL->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot2HR->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot2HR->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1208,8 +1106,7 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot2HR->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
         break;
@@ -1225,12 +1122,10 @@
           textNoOfFpaUsedTels_3->Text = System::String::Format("{0}", ucGetZomLocateProbeCt(ucLoop));
 
           textDistance3->Text = System::String::Format("{0}", ucGetZomDeltaMin(ucLoop));
-          if(ucGetZomDeltaMin(ucLoop) >= ucGetAllocMinDeltaValueFPA())
-          {
+          if(ucGetZomDeltaMin(ucLoop) >= ucGetAllocMinDeltaValueFPA()){
             textDistance3->BackColor = System::Drawing::Color::FromArgb(0,255,0);
           }
-          else
-          {
+          else{
             textDistance3->BackColor = textDistance0->DefaultBackColor;
           }
 
@@ -1241,10 +1136,8 @@
 
           if((System::Convert::ToInt16(labelMinValSlot3VL->Text) < System::Convert::ToInt16(labelMinValSlot3VR->Text))
             &&(System::Convert::ToInt16(labelMinValSlot3VL->Text) < System::Convert::ToInt16(labelMinValSlot3HL->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot3VL->Text) < System::Convert::ToInt16(labelMinValSlot3HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot3VL->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot3VL->Text) < System::Convert::ToInt16(labelMinValSlot3HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot3VL->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot3VL->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1253,17 +1146,14 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot3VL->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot3VR->Text) < System::Convert::ToInt16(labelMinValSlot3VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot3VR->Text) < System::Convert::ToInt16(labelMinValSlot3HL->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot3VR->Text) < System::Convert::ToInt16(labelMinValSlot3HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot3VR->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot3VR->Text) < System::Convert::ToInt16(labelMinValSlot3HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot3VR->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot3VR->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1272,17 +1162,14 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot3VR->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot3HL->Text) < System::Convert::ToInt16(labelMinValSlot3VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot3HL->Text) < System::Convert::ToInt16(labelMinValSlot3VR->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot3HL->Text) < System::Convert::ToInt16(labelMinValSlot3HR->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot3HL->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot3HL->Text) < System::Convert::ToInt16(labelMinValSlot3HR->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot3HL->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot3HL->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1291,17 +1178,14 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot3HL->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
 
           if((System::Convert::ToInt16(labelMinValSlot3HR->Text) < System::Convert::ToInt16(labelMinValSlot3VL->Text))
             &&(System::Convert::ToInt16(labelMinValSlot3HR->Text) < System::Convert::ToInt16(labelMinValSlot3VR->Text))
-            &&(System::Convert::ToInt16(labelMinValSlot3HR->Text) < System::Convert::ToInt16(labelMinValSlot3HL->Text)))
-          {
-            if(System::Convert::ToInt16(labelMinValSlot3HR->Text) <= ucGetAllocAbsoluteMinValueFPA())
-            {
+            &&(System::Convert::ToInt16(labelMinValSlot3HR->Text) < System::Convert::ToInt16(labelMinValSlot3HL->Text))){
+            if(System::Convert::ToInt16(labelMinValSlot3HR->Text) <= ucGetAllocAbsoluteMinValueFPA()){
               labelMinValSlot3HR->BackColor = System::Drawing::Color::FromArgb(0,255,0);
             }
             else
@@ -1310,8 +1194,7 @@
             }
 
           }
-          else
-          {
+          else{
             labelMinValSlot3HR->BackColor = System::Drawing::Color::FromArgb(255,192,128);
           }
         break;
@@ -1361,30 +1244,24 @@
         break;
       }
 
-      if( labelFirstEmptySlotValue->Text == "")
-      {
-        if( ulGetZOMID( ucLoop) == 0)
-        {
+      if(labelFirstEmptySlotValue->Text == ""){
+          if(ulGetZOMID(ucLoop) == 0){
           labelFirstEmptySlotValue->Text = System::String::Format("{0}", ucLoop);
         }
       }
-    }
+      }
 
-    if( ucLogging > 0)
-    {
-      if( checkBoxDataSelection->Checked == false)
-      {
+      if(ucLogging > 0){
+      if(checkBoxDataSelection->Checked == false){
 
         AddOffsetToTimeLOG( (unsigned long long) System::Decimal::ToInt64( GetOutputDataTimer->Interval));
       }
 
-      if( bLineBufferEmptyLOG() == TRUE)
-      {
+      if(bLineBufferEmptyLOG() == TRUE){
         PutRfDataToBufferLOG( NULL);
       }
 
-      if(checkBoxLogWHL->Checked == TRUE)
-      {
+      if(checkBoxLogWHL->Checked == TRUE){
          PutDwordToBufferLOG( GETulWarnOutTM());
 
          PutByteToBufferLOG( GETucWarningGroupTM( cucWT_GroupA));
@@ -1401,142 +1278,138 @@
         (void) ucGetWarnBitAirMassIdIntIFH( Rte_Inst_CtApHufTpmsSWC, ucWarnBitAirmassInt);
         (void) ucGetWarnVectorIdExtIFH( Rte_Inst_CtApHufTpmsSWC, ucWarnVectorExt);
 
-        for( ucLoop = 0; ucLoop < cAnzRad; ucLoop++)
-        {
-          ucHistoryIndex = ucGetColOfWP( ucLoop);
-          if( ucHistoryIndex >= cAnzRad)
-          {
+        for(ucLoop = 0; ucLoop < cAnzRad; ucLoop++){
+          ucHistoryIndex = ucGetColOfWP(ucLoop);
+          if(ucHistoryIndex >= cAnzRad){
             ucHistoryIndex = ucLoop;
           }
 
-            PutByteToBufferLOG( ucWarnBitOutInt[ucHistoryIndex]);
-            PutByteToBufferLOG( ucWarnBitTonnageInt[ucHistoryIndex]);
-            PutByteToBufferLOG( ucWarnBitAirmassInt[ucHistoryIndex]);
-            PutByteToBufferLOG( ucWarnVectorExt[ucHistoryIndex]);
+            PutByteToBufferLOG(ucWarnBitOutInt[ucHistoryIndex]);
+            PutByteToBufferLOG(ucWarnBitTonnageInt[ucHistoryIndex]);
+            PutByteToBufferLOG(ucWarnBitAirmassInt[ucHistoryIndex]);
+            PutByteToBufferLOG(ucWarnVectorExt[ucHistoryIndex]);
 
-                                                          GetWarnThresDM( ucHistoryIndex, cucIX_Ppanne, &ucSetLevel, &ucResetLevel);
-            PutWordToBufferLOG( ucSetLevel * 25);
-            PutWordToBufferLOG( ucResetLevel * 25);
+                                                          GetWarnThresDM(ucHistoryIndex, cucIX_Ppanne, &ucSetLevel, &ucResetLevel);
+            PutWordToBufferLOG(ucSetLevel * 25);
+            PutWordToBufferLOG(ucResetLevel * 25);
 
-                                                          GetWarnThresDM( ucHistoryIndex, cucIX_Pmin, &ucSetLevel, &ucResetLevel);
-            PutWordToBufferLOG( ucSetLevel * 25);
-            PutWordToBufferLOG( ucResetLevel * 25);
+                                                          GetWarnThresDM(ucHistoryIndex, cucIX_Pmin, &ucSetLevel, &ucResetLevel);
+            PutWordToBufferLOG(ucSetLevel * 25);
+            PutWordToBufferLOG(ucResetLevel * 25);
 
-                                                          GetWarnThresDM( ucHistoryIndex, cucIX_Pwarn, &ucSetLevel, &ucResetLevel);
-            PutWordToBufferLOG( ucSetLevel * 25);
-            PutWordToBufferLOG( ucResetLevel * 25);
+                                                          GetWarnThresDM(ucHistoryIndex, cucIX_Pwarn, &ucSetLevel, &ucResetLevel);
+            PutWordToBufferLOG(ucSetLevel * 25);
+            PutWordToBufferLOG(ucResetLevel * 25);
 
-                                                          GetWarnThresDM( ucHistoryIndex, cucIX_PwarnTol, &ucSetLevel, &ucResetLevel);
-            PutWordToBufferLOG( ucSetLevel * 25);
-            PutWordToBufferLOG( ucResetLevel * 25);
+                                                          GetWarnThresDM(ucHistoryIndex, cucIX_PwarnTol, &ucSetLevel, &ucResetLevel);
+            PutWordToBufferLOG(ucSetLevel * 25);
+            PutWordToBufferLOG(ucResetLevel * 25);
 
-                                                          GetWarnThresDM( ucHistoryIndex, cucIX_Pvorw, &ucSetLevel, &ucResetLevel);
-            PutWordToBufferLOG( ucSetLevel * 25);
-            PutWordToBufferLOG( ucResetLevel * 25);
+                                                          GetWarnThresDM(ucHistoryIndex, cucIX_Pvorw, &ucSetLevel, &ucResetLevel);
+            PutWordToBufferLOG(ucSetLevel * 25);
+            PutWordToBufferLOG(ucResetLevel * 25);
 
-                                                          GetWarnThresDM( ucHistoryIndex, cucIX_DHW, &ucSetLevel, &ucResetLevel);
-            PutWordToBufferLOG( ucSetLevel * 25);
-            PutWordToBufferLOG( ucResetLevel * 25);
+                                                          GetWarnThresDM(ucHistoryIndex, cucIX_DHW, &ucSetLevel, &ucResetLevel);
+            PutWordToBufferLOG(ucSetLevel * 25);
+            PutWordToBufferLOG(ucResetLevel * 25);
 
-                                                          GetWarnThresDM( ucHistoryIndex, cucIX_FT, &ucSetLevel, &ucResetLevel);
-            PutWordToBufferLOG( ucSetLevel * 25);
-            PutWordToBufferLOG( ucResetLevel * 25);
+                                                          GetWarnThresDM(ucHistoryIndex, cucIX_FT, &ucSetLevel, &ucResetLevel);
+            PutWordToBufferLOG(ucSetLevel * 25);
+            PutWordToBufferLOG(ucResetLevel * 25);
 
-                                                          GetTimerValPWARN( ucHistoryIndex, &ucTimerState, &ushTimerCounter);
-            PutWordToBufferLOG( ushTimerCounter);
+                                                          GetTimerValPWARN(ucHistoryIndex, &ucTimerState, &ushTimerCounter);
+            PutWordToBufferLOG(ushTimerCounter);
 
-                                                          GetTimerValPWARNTOL( ucHistoryIndex, &ucTimerState, &ushTimerCounter);
-            PutWordToBufferLOG( ushTimerCounter);
+                                                          GetTimerValPWARNTOL(ucHistoryIndex, &ucTimerState, &ushTimerCounter);
+            PutWordToBufferLOG(ushTimerCounter);
 
-                                                          GetTimerValDHW( ucHistoryIndex, &ucRefPres, &ucLastPres, &ushTimCnt, &ushTimCountLatch);
-            PutWordToBufferLOG( ucRefPres * 25);
-            PutWordToBufferLOG( ucLastPres * 25);
-            PutWordToBufferLOG( ushTimCnt);
-            PutWordToBufferLOG( ushTimCountLatch);
+                                                          GetTimerValDHW(ucHistoryIndex, &ucRefPres, &ucLastPres, &ushTimCnt, &ushTimCountLatch);
+            PutWordToBufferLOG(ucRefPres * 25);
+            PutWordToBufferLOG(ucLastPres * 25);
+            PutWordToBufferLOG(ushTimCnt);
+            PutWordToBufferLOG(ushTimCountLatch);
 
                                                           (void) ucGetPTSollUSWIF( Rte_Inst_CtApHufTpmsSWC, &ucPcold, &scTcold, &ucPwarm, &scTwarm, &ushMSoll, &ucPamb, ucHistoryIndex);
-            PutWordToBufferLOG( ucPcold * 25);
+            PutWordToBufferLOG(ucPcold * 25);
             PutSignedByteToBufferLOG( scTcold);
-            PutWordToBufferLOG( ucPwarm * 25);
+            PutWordToBufferLOG(ucPwarm * 25);
             PutSignedByteToBufferLOG( scTwarm);
-            PutWordToBufferLOG( ushMSoll);
-            PutWordToBufferLOG( ucPamb * 25);
+            PutWordToBufferLOG(ushMSoll);
+            PutWordToBufferLOG(ucPamb * 25);
         }
 
       }
 
-      if(checkBoxLogWAL->Checked == TRUE)
-      {
+      if(checkBoxLogWAL->Checked == TRUE){
 
         ucZomIndex = GetLastRecEventZomPos();
 
-        if(ucZomIndex < cSumWE)
-        {
+          if(ucZomIndex < cSumWE){
 
-           PutByteToBufferLOG( ucGetZomAbsoluteProbeCt(ucZomIndex));
-           PutByteToBufferLOG( ucGetZomLearnProbeCt(ucZomIndex));
-           PutByteToBufferLOG( ucGetZomLocateProbeCt(ucZomIndex));
-           PutWordToBufferLOG( ucGetZomDistanceValue(0, ucZomIndex, 0));
-           PutWordToBufferLOG( ucGetZomDistanceValue(0, ucZomIndex, 1));
-           PutWordToBufferLOG( ucGetZomDistanceValue(0, ucZomIndex, 2));
-           PutWordToBufferLOG( ucGetZomDistanceValue(0, ucZomIndex, 3));
-           PutWordToBufferLOG( ucGetZomDistanceValue(1, ucZomIndex, 0));
-           PutWordToBufferLOG( ucGetZomDistanceValue(1, ucZomIndex, 1));
-           PutWordToBufferLOG( ucGetZomDistanceValue(1, ucZomIndex, 2));
-           PutWordToBufferLOG( ucGetZomDistanceValue(1, ucZomIndex, 3));
-           PutWordToBufferLOG( ushGetZomAbsRefValue(0, ucZomIndex, 0));
-           PutWordToBufferLOG( ushGetZomAbsRefValue(0, ucZomIndex, 1));
-           PutWordToBufferLOG( ushGetZomAbsRefValue(0, ucZomIndex, 2));
-           PutWordToBufferLOG( ushGetZomAbsRefValue(0, ucZomIndex, 3));
-           PutWordToBufferLOG( ushGetZomAbsRefValue(1, ucZomIndex, 0));
-           PutWordToBufferLOG( ushGetZomAbsRefValue(1, ucZomIndex, 1));
-           PutWordToBufferLOG( ushGetZomAbsRefValue(1, ucZomIndex, 2));
-           PutWordToBufferLOG( ushGetZomAbsRefValue(1, ucZomIndex, 3));
-           PutWordToBufferLOG( ushGetZomDeltaSum(ucZomIndex, 0, 0));
-           PutWordToBufferLOG( ushGetZomDeltaSum(ucZomIndex, 1, 0));
-           PutWordToBufferLOG( ushGetZomDeltaSum(ucZomIndex, 2, 0));
-           PutWordToBufferLOG( ushGetZomDeltaSum(ucZomIndex, 3, 0));
-           PutWordToBufferLOG( ushGetZomDeltaSum(ucZomIndex, 0, 1));
-           PutWordToBufferLOG( ushGetZomDeltaSum(ucZomIndex, 1, 1));
-           PutWordToBufferLOG( ushGetZomDeltaSum(ucZomIndex, 2, 1));
-           PutWordToBufferLOG( ushGetZomDeltaSum(ucZomIndex, 3, 1));
-           PutByteToBufferLOG( ucGetZomAbsMetrics(ucZomIndex, 0));
-           PutByteToBufferLOG( ucGetZomAbsMetrics(ucZomIndex, 1));
-           PutByteToBufferLOG( ucGetZomAbsMetrics(ucZomIndex, 2));
-           PutByteToBufferLOG( ucGetZomAbsMetrics(ucZomIndex, 3));
-           PutByteToBufferLOG( ucGetZomDeltaMin(ucZomIndex));
-           PutByteToBufferLOG( ucGetZomAbsComp(ucZomIndex, 0));
-           PutByteToBufferLOG( ucGetZomAbsComp(ucZomIndex, 1));
-           PutByteToBufferLOG( ucGetZomAbsComp(ucZomIndex, 2));
-           PutByteToBufferLOG( ucGetZomAbsComp(ucZomIndex, 3));
+           PutByteToBufferLOG(ucGetZomAbsoluteProbeCt(ucZomIndex));
+           PutByteToBufferLOG(ucGetZomLearnProbeCt(ucZomIndex));
+           PutByteToBufferLOG(ucGetZomLocateProbeCt(ucZomIndex));
+           PutWordToBufferLOG(ucGetZomDistanceValue(0, ucZomIndex, 0));
+           PutWordToBufferLOG(ucGetZomDistanceValue(0, ucZomIndex, 1));
+           PutWordToBufferLOG(ucGetZomDistanceValue(0, ucZomIndex, 2));
+           PutWordToBufferLOG(ucGetZomDistanceValue(0, ucZomIndex, 3));
+           PutWordToBufferLOG(ucGetZomDistanceValue(1, ucZomIndex, 0));
+           PutWordToBufferLOG(ucGetZomDistanceValue(1, ucZomIndex, 1));
+           PutWordToBufferLOG(ucGetZomDistanceValue(1, ucZomIndex, 2));
+           PutWordToBufferLOG(ucGetZomDistanceValue(1, ucZomIndex, 3));
+           PutWordToBufferLOG(ushGetZomAbsRefValue(0, ucZomIndex, 0));
+           PutWordToBufferLOG(ushGetZomAbsRefValue(0, ucZomIndex, 1));
+           PutWordToBufferLOG(ushGetZomAbsRefValue(0, ucZomIndex, 2));
+           PutWordToBufferLOG(ushGetZomAbsRefValue(0, ucZomIndex, 3));
+           PutWordToBufferLOG(ushGetZomAbsRefValue(1, ucZomIndex, 0));
+           PutWordToBufferLOG(ushGetZomAbsRefValue(1, ucZomIndex, 1));
+           PutWordToBufferLOG(ushGetZomAbsRefValue(1, ucZomIndex, 2));
+           PutWordToBufferLOG(ushGetZomAbsRefValue(1, ucZomIndex, 3));
+           PutWordToBufferLOG(ushGetZomDeltaSum(ucZomIndex, 0, 0));
+           PutWordToBufferLOG(ushGetZomDeltaSum(ucZomIndex, 1, 0));
+           PutWordToBufferLOG(ushGetZomDeltaSum(ucZomIndex, 2, 0));
+           PutWordToBufferLOG(ushGetZomDeltaSum(ucZomIndex, 3, 0));
+           PutWordToBufferLOG(ushGetZomDeltaSum(ucZomIndex, 0, 1));
+           PutWordToBufferLOG(ushGetZomDeltaSum(ucZomIndex, 1, 1));
+           PutWordToBufferLOG(ushGetZomDeltaSum(ucZomIndex, 2, 1));
+           PutWordToBufferLOG(ushGetZomDeltaSum(ucZomIndex, 3, 1));
+           PutByteToBufferLOG(ucGetZomAbsMetrics(ucZomIndex, 0));
+           PutByteToBufferLOG(ucGetZomAbsMetrics(ucZomIndex, 1));
+           PutByteToBufferLOG(ucGetZomAbsMetrics(ucZomIndex, 2));
+           PutByteToBufferLOG(ucGetZomAbsMetrics(ucZomIndex, 3));
+           PutByteToBufferLOG(ucGetZomDeltaMin(ucZomIndex));
+           PutByteToBufferLOG(ucGetZomAbsComp(ucZomIndex, 0));
+           PutByteToBufferLOG(ucGetZomAbsComp(ucZomIndex, 1));
+           PutByteToBufferLOG(ucGetZomAbsComp(ucZomIndex, 2));
+           PutByteToBufferLOG(ucGetZomAbsComp(ucZomIndex, 3));
 
-        }else{
+         }
+         else{
           PutInitWalToBufferLOG();
         }
       }
 
-      if(checkBoxLogOUT->Checked == TRUE)
-      {
+      if(checkBoxLogOUT->Checked == TRUE){
         ucDbgByte = ucGetActualStateWL();
-        PutByteToBufferLOG( ucDbgByte);
+        PutByteToBufferLOG(ucDbgByte);
 
         ulDbgDword = ulGetStartedStateOfVklCCM();
-        PutDwordToBufferLOG( ulDbgDword);
+        PutDwordToBufferLOG(ulDbgDword);
 
         GetTyrePressureValueITY( Rte_Inst_CtApHufTpmsSWC, &ushPTyreFL, &ushPTyreFR, &ushPTyreRL, &ushPTyreRR);
-        PutWordToBufferLOG( ushPTyreFL);
-        PutWordToBufferLOG( ushPTyreFR);
-        PutWordToBufferLOG( ushPTyreRL);
-        PutWordToBufferLOG( ushPTyreRR);
+        PutWordToBufferLOG(ushPTyreFL);
+        PutWordToBufferLOG(ushPTyreFR);
+        PutWordToBufferLOG(ushPTyreRL);
+        PutWordToBufferLOG(ushPTyreRR);
 
         GetTyreTemperatureValueITY( Rte_Inst_CtApHufTpmsSWC, &ushTTyreFL, &ushTTyreFR, &ushTTyreRL, &ushTTyreRR);
-        if( (ushTTyreFL >= cTyreTemperatureNotAvailableValueITY) || (ushTTyreFR >= cTyreTemperatureNotAvailableValueITY) || (ushTTyreRL >= cTyreTemperatureNotAvailableValueITY) || (ushTTyreRR >= cTyreTemperatureNotAvailableValueITY))
-        {
-          PutWordToBufferLOG( ushTTyreFL);
-          PutWordToBufferLOG( ushTTyreFR);
-          PutWordToBufferLOG( ushTTyreRL);
-          PutWordToBufferLOG( ushTTyreRR);
-        }else{
+          if((ushTTyreFL >= cTyreTemperatureNotAvailableValueITY) || (ushTTyreFR >= cTyreTemperatureNotAvailableValueITY) || (ushTTyreRL >= cTyreTemperatureNotAvailableValueITY) || (ushTTyreRR >= cTyreTemperatureNotAvailableValueITY)){
+          PutWordToBufferLOG(ushTTyreFL);
+          PutWordToBufferLOG(ushTTyreFR);
+          PutWordToBufferLOG(ushTTyreRL);
+          PutWordToBufferLOG(ushTTyreRR);
+         }
+         else{
           PutSignedWordToBufferLOG( (sint16) (ushTTyreFL - cITYTyreTemperatureOffsetValue));
           PutSignedWordToBufferLOG( (sint16) (ushTTyreFR - cITYTyreTemperatureOffsetValue));
           PutSignedWordToBufferLOG( (sint16) (ushTTyreRL - cITYTyreTemperatureOffsetValue));
@@ -1544,15 +1417,15 @@
         }
 
         GetRelatedPressureValueITY( Rte_Inst_CtApHufTpmsSWC, &ushPTyreFL, &ushPTyreFR, &ushPTyreRL, &ushPTyreRR);
-        PutWordToBufferLOG( ushGetMaxValueDM( ushPTyreFL, ushPTyreFR));
-        PutWordToBufferLOG( ushGetMaxValueDM( ushPTyreFL, ushPTyreFR));
-        PutWordToBufferLOG( ushGetMaxValueDM( ushPTyreRL, ushPTyreRR));
-        PutWordToBufferLOG( ushGetMaxValueDM( ushPTyreRL, ushPTyreRR));
+        PutWordToBufferLOG(ushGetMaxValueDM(ushPTyreFL, ushPTyreFR));
+        PutWordToBufferLOG(ushGetMaxValueDM(ushPTyreFL, ushPTyreFR));
+        PutWordToBufferLOG(ushGetMaxValueDM(ushPTyreRL, ushPTyreRR));
+        PutWordToBufferLOG(ushGetMaxValueDM(ushPTyreRL, ushPTyreRR));
 
         GetStTyrITY( &ucStTyreINFO, &ucStTyreTPL, &ucStTyreTFAI);
-        PutByteToBufferLOG( ucStTyreINFO);
-        PutByteToBufferLOG( ucStTyreTPL);
-        PutByteToBufferLOG( ucStTyreTFAI);
+        PutByteToBufferLOG(ucStTyreINFO);
+        PutByteToBufferLOG(ucStTyreTPL);
+        PutByteToBufferLOG(ucStTyreTFAI);
 
         PutByteToBufferLOG( GETTyreSelectionActiveEE( Rte_Inst_CtApHufTpmsSWC));
 
@@ -1566,203 +1439,190 @@
 		    PutByteToBufferLOG( GetIDRMessageCenterDM());
         PutByteToBufferLOG( GetStatusManSelectionDM());
 
-        PutWordToBufferLOG( ushGetMaxCoolingDownTimeITY());
-        PutWordToBufferLOG( ushGetCorHoldOffTimeITY());
-        PutWordToBufferLOG( ucGetCRdciMaxCorRcpCD() * 25);
+        PutWordToBufferLOG(ushGetMaxCoolingDownTimeITY());
+        PutWordToBufferLOG(ushGetCorHoldOffTimeITY());
+        PutWordToBufferLOG(ucGetCRdciMaxCorRcpCD() * 25);
         PutByteToBufferLOG( bGetCRdciResetPlausiCD());
         PutByteToBufferLOG( bGetCRdciDispResetCD());
         PutByteToBufferLOG( bGetCRdciErfsEnableCD());
 
-        for( ucLoop = 0; ucLoop < cAnzRad; ucLoop++)
-        {
-          ucHistoryIndex = ucGetColOfWP( ucLoop);
-          if( ucHistoryIndex < cAnzRad)
-          {
+        for(ucLoop = 0; ucLoop < cAnzRad; ucLoop++){
+          ucHistoryIndex = ucGetColOfWP(ucLoop);
+          if(ucHistoryIndex < cAnzRad){
             ucPresVal = GETucLastWuPressureEE( Rte_Inst_CtApHufTpmsSWC, ucHistoryIndex);
             scTempVal = GETscLastWuTemperatureEE( Rte_Inst_CtApHufTpmsSWC, ucHistoryIndex);
-          }else{
+            }
+            else{
             ucPresVal = GETucLastWuPressureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop);
             scTempVal = GETscLastWuTemperatureEE( Rte_Inst_CtApHufTpmsSWC, ucLoop);
           }
 
-          if( ucPresVal == cInvalidREpressure)
-          {
+          if(ucPresVal == cInvalidREpressure){
             PutWordToBufferLOG( 0xffffu);
-          }else{
-            PutWordToBufferLOG( ucPresVal * 25);
+            }
+            else{
+            PutWordToBufferLOG(ucPresVal * 25);
           }
 
           PutSignedByteToBufferLOG( scTempVal);
         }
 
-        for( ucLoop = 0; ucLoop < cAnzRad; ucLoop++)
-        {
-          ucHistoryIndex = ucGetColOfWP( ucLoop);
-          if( ucHistoryIndex < cAnzRad)
-          {
+        for(ucLoop = 0; ucLoop < cAnzRad; ucLoop++){
+          ucHistoryIndex = ucGetColOfWP(ucLoop);
+          if(ucHistoryIndex < cAnzRad){
             ucGetPTSollUSWIF( Rte_Inst_CtApHufTpmsSWC, &ucPcold, &scTcold, &ucPwarm, &scTwarm, &ushMSoll, &ucPamb, ucHistoryIndex);
-          }else{
+            }
+            else{
             ucGetPTSollUSWIF( Rte_Inst_CtApHufTpmsSWC, &ucPcold, &scTcold, &ucPwarm, &scTwarm, &ushMSoll, &ucPamb, ucLoop);
 
           }
 
-          if( ucPcold == cInvalidREpressure)
-          {
+          if(ucPcold == cInvalidREpressure){
             PutWordToBufferLOG( 0xffffu);
-          }else{
-            PutWordToBufferLOG( ucPcold * 25);
+            }
+            else{
+            PutWordToBufferLOG(ucPcold * 25);
           }
 
           PutSignedByteToBufferLOG( scTcold);
 
-          if( ucPwarm == cInvalidREpressure)
-          {
+          if(ucPwarm == cInvalidREpressure){
             PutWordToBufferLOG( 0xffffu);
-          }else{
-            PutWordToBufferLOG( ucPwarm * 25);
+            }
+            else{
+            PutWordToBufferLOG(ucPwarm * 25);
           }
 
           PutSignedByteToBufferLOG( scTwarm);
-          PutWordToBufferLOG( ushMSoll);
-          PutWordToBufferLOG( ucPamb * 25);
+          PutWordToBufferLOG(ushMSoll);
+          PutWordToBufferLOG(ucPamb * 25);
         }
 
-        for( ucLoop = 0; ucLoop < cAnzRad; ucLoop++)
-        {
-          ucHistoryIndex = ucGetColOfWP( ucLoop);
-          if( ucHistoryIndex < cAnzRad)
-          {
-            ucPcold = ucGetPinitTinitDM( ucHistoryIndex);
-            scTcold = scGetTinitDM( ucHistoryIndex);
-          }else{
-            ucPcold = ucGetPinitTinitDM( ucLoop);
-            scTcold = scGetTinitDM( ucLoop);
+        for(ucLoop = 0; ucLoop < cAnzRad; ucLoop++){
+          ucHistoryIndex = ucGetColOfWP(ucLoop);
+          if(ucHistoryIndex < cAnzRad){
+            ucPcold = ucGetPinitTinitDM(ucHistoryIndex);
+            scTcold = scGetTinitDM(ucHistoryIndex);
+            }
+            else{
+            ucPcold = ucGetPinitTinitDM(ucLoop);
+            scTcold = scGetTinitDM(ucLoop);
           }
 
-          if( ucPcold < cInvalidREpressure)
-          {
-            PutWordToBufferLOG( ucPcold * 25);
-          }else{
-            PutWordToBufferLOG( ucPcold);
+          if(ucPcold < cInvalidREpressure){
+            PutWordToBufferLOG(ucPcold * 25);
+            }
+            else{
+            PutWordToBufferLOG(ucPcold);
           }
 
           PutSignedByteToBufferLOG( scTcold);
         }
 
-        PutWordToBufferLOG( ushGetMaxCoolingDownTimeITY());
+        PutWordToBufferLOG(ushGetMaxCoolingDownTimeITY());
 
-        for( ucLoop = 0; ucLoop < cAnzRad; ucLoop++)
-        {
-          ucHistoryIndex = ucGetColOfWP( ucLoop);
-          if( ucHistoryIndex < cAnzRad)
-          {
-            GetAvlPTyreCoolingValITY( ucHistoryIndex, &ucPwarm, &scTwarm, &ucPcold, &scTcold, &ucPist_t, &scTist_t, &ucPsollWarm, &ucPsollCold, &scTsollCold, &ucPsoll_t, &ushElapsedCoolingTime, &ushTimeTicks, &ulCoolingCaptTime);
-          }else{
-            GetAvlPTyreCoolingValITY( ucLoop, &ucPwarm, &scTwarm, &ucPcold, &scTcold, &ucPist_t, &scTist_t, &ucPsollWarm, &ucPsollCold, &scTsollCold, &ucPsoll_t, &ushElapsedCoolingTime, &ushTimeTicks, &ulCoolingCaptTime);
+        for(ucLoop = 0; ucLoop < cAnzRad; ucLoop++){
+          ucHistoryIndex = ucGetColOfWP(ucLoop);
+          if(ucHistoryIndex < cAnzRad){
+            GetAvlPTyreCoolingValITY(ucHistoryIndex, &ucPwarm, &scTwarm, &ucPcold, &scTcold, &ucPist_t, &scTist_t, &ucPsollWarm, &ucPsollCold, &scTsollCold, &ucPsoll_t, &ushElapsedCoolingTime, &ushTimeTicks, &ulCoolingCaptTime);
+            }
+            else{
+            GetAvlPTyreCoolingValITY(ucLoop, &ucPwarm, &scTwarm, &ucPcold, &scTcold, &ucPist_t, &scTist_t, &ucPsollWarm, &ucPsollCold, &scTsollCold, &ucPsoll_t, &ushElapsedCoolingTime, &ushTimeTicks, &ulCoolingCaptTime);
           }
 
-          if( ucPcold == cInvalidREpressure)
-          {
+          if(ucPcold == cInvalidREpressure){
             PutWordToBufferLOG( 0xffffu);
-          }else{
-            PutWordToBufferLOG( ucPcold * 25);
+            }
+            else{
+            PutWordToBufferLOG(ucPcold * 25);
           }
 
           PutSignedByteToBufferLOG( scTcold);
 
-          if( ucPwarm == cInvalidREpressure)
-          {
+          if(ucPwarm == cInvalidREpressure){
             PutWordToBufferLOG( 0xffffu);
-          }else{
-            PutWordToBufferLOG( ucPwarm * 25);
+            }
+            else{
+            PutWordToBufferLOG(ucPwarm * 25);
           }
 
           PutSignedByteToBufferLOG( scTwarm);
 
-          if( ucPist_t == cInvalidREpressure)
-          {
+          if(ucPist_t == cInvalidREpressure){
             PutWordToBufferLOG( 0xffffu);
-          }else{
-            PutWordToBufferLOG( ucPist_t * 25);
+            }
+            else{
+            PutWordToBufferLOG(ucPist_t * 25);
           }
 
           PutSignedByteToBufferLOG( scTist_t);
 
-          if( ucPsollCold == cInvalidREpressure)
-          {
+          if(ucPsollCold == cInvalidREpressure){
             PutWordToBufferLOG( 0xffffu);
-          }else{
-            PutWordToBufferLOG( ucPsollCold * 25);
+            }
+            else{
+            PutWordToBufferLOG(ucPsollCold * 25);
           }
 
           PutSignedByteToBufferLOG( scTsollCold);
 
-          if( ucPsollWarm == cInvalidREpressure)
-          {
+          if(ucPsollWarm == cInvalidREpressure){
             PutWordToBufferLOG( 0xffffu);
-          }else{
-            PutWordToBufferLOG( ucPsollWarm * 25);
+            }
+            else{
+            PutWordToBufferLOG(ucPsollWarm * 25);
           }
 
-          if( ucPsoll_t == cInvalidREpressure)
-          {
+          if(ucPsoll_t == cInvalidREpressure){
             PutWordToBufferLOG( 0xffffu);
-          }else{
-            PutWordToBufferLOG( ucPsoll_t * 25);
+            }
+            else{
+            PutWordToBufferLOG(ucPsoll_t * 25);
           }
         }
 
-        PutWordToBufferLOG( ushElapsedCoolingTime);
+        PutWordToBufferLOG(ushElapsedCoolingTime);
 
-        if( ushTimeTicks > cCoolingIntervalTicksVal)
-        {
-          PutWordToBufferLOG( ushTimeTicks);
-        }else{
-          PutWordToBufferLOG( ushTimeTicks / 10);
+          if(ushTimeTicks > cCoolingIntervalTicksVal){
+          PutWordToBufferLOG(ushTimeTicks);
+         }
+         else{
+          PutWordToBufferLOG(ushTimeTicks / 10);
         }
 
-        PutDwordToBufferLOG( ulCoolingCaptTime);
+        PutDwordToBufferLOG(ulCoolingCaptTime);
 
       }
 
-      if(checkBoxLogDTC->Checked == TRUE)
-      {
+      if(checkBoxLogDTC->Checked == TRUE){
 
         GetNwMonitoringDataNWM( &tNwMonData);
 
-        if(tNwMonData.tMonRDC_DT_PCKG[0].ushMsgTimeout < tNwMonData.tMonRDC_DT_PCKG[1].ushMsgTimeout)
-        {
+          if(tNwMonData.tMonRDC_DT_PCKG[0].ushMsgTimeout < tNwMonData.tMonRDC_DT_PCKG[1].ushMsgTimeout){
           PutWordToBufferLOG(tNwMonData.tMonRDC_DT_PCKG[0].ushMsgTimeout);
         }
-        else
-        {
+        else{
           PutWordToBufferLOG(tNwMonData.tMonRDC_DT_PCKG[1].ushMsgTimeout);
         }
 
-        if(tNwMonData.tMonRDC_DT_PCKG[0].ushSignalErrorTimeout < tNwMonData.tMonRDC_DT_PCKG[1].ushSignalErrorTimeout)
-        {
+          if(tNwMonData.tMonRDC_DT_PCKG[0].ushSignalErrorTimeout < tNwMonData.tMonRDC_DT_PCKG[1].ushSignalErrorTimeout){
           PutWordToBufferLOG(tNwMonData.tMonRDC_DT_PCKG[0].ushSignalErrorTimeout);
         }
-        else
-        {
+        else{
           PutWordToBufferLOG(tNwMonData.tMonRDC_DT_PCKG[1].ushSignalErrorTimeout);
         }
 
-        if(tNwMonData.tMonRDC_DT_PCKG[0].ucAliveErrorCounter < tNwMonData.tMonRDC_DT_PCKG[1].ucAliveErrorCounter)
-        {
+          if(tNwMonData.tMonRDC_DT_PCKG[0].ucAliveErrorCounter < tNwMonData.tMonRDC_DT_PCKG[1].ucAliveErrorCounter){
           PutByteToBufferLOG(tNwMonData.tMonRDC_DT_PCKG[0].ucAliveErrorCounter);
         }
-        else
-        {
+        else{
           PutByteToBufferLOG(tNwMonData.tMonRDC_DT_PCKG[1].ucAliveErrorCounter);
         }
 
-        if(tNwMonData.tMonRDC_DT_PCKG[0].ucAlvErrGoodCounter < tNwMonData.tMonRDC_DT_PCKG[1].ucAlvErrGoodCounter)
-        {
+          if(tNwMonData.tMonRDC_DT_PCKG[0].ucAlvErrGoodCounter < tNwMonData.tMonRDC_DT_PCKG[1].ucAlvErrGoodCounter){
           PutByteToBufferLOG(tNwMonData.tMonRDC_DT_PCKG[0].ucAlvErrGoodCounter);
         }
-        else
-        {
+        else{
           PutByteToBufferLOG(tNwMonData.tMonRDC_DT_PCKG[1].ucAlvErrGoodCounter);
         }
 
@@ -1805,7 +1665,7 @@
       }
 
       if(TRUE == checkBoxLogDBG->Checked){
-        if(ucFrDbgDscSuppMux != *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_0->value){
+          if(ucFrDbgDscSuppMux != *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_0->value){
           PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_0->value);
           PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_1->value);
           PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_2->value);
@@ -1840,18 +1700,15 @@
           PutByteToBufferLOG( *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_2_RDCI_DATA_31->value);
           ucFrDbgDscSuppMux = *(uint8*)&Rte_Inst_CtApHufTpmsSWC->RCyclicRDCiTask_PpFrPdu_FR_DBG_DSC_SUPP_1_RDCI_DATA_0->value;
         }
-        else
-        {
+        else{
           PutInitDbgToBufferLOG();
         }
       }
 
       PutNewLineToBufferLOG();
 
-      if(ucLogging == 1)
-      {
-        if(fileStreamIsOpen == 0)
-        {
+      if(ucLogging == 1){
+          if(fileStreamIsOpen == 0){
 
           StopLOG();
 
@@ -1860,6 +1717,6 @@
           ucLogging = 0;
         }
       }
-    }
-  }
+      }
+   }
 #endif

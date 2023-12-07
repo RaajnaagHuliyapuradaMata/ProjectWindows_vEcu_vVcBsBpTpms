@@ -13,7 +13,7 @@
 /* certain responsibilities, if you distribute copies of the software, or if  */
 /* you modify it: responsibilities to respect the freedom of others.          */
 /*                                                                            */
-/* All rights reserved. Copyright © 1982 Raajnaag HULIYAPURADA MATA           */
+/* All rights reserved. Copyright ï¿½ 1982 Raajnaag HULIYAPURADA MATA           */
 /*                                                                            */
 /* Always refer latest software version from:                                 */
 /* https://github.com/RaajnaagHuliyapuradaMata?tab=repositories               */
@@ -1523,12 +1523,7 @@ const struct Rte_CDS_CtApHufTpmsSWC tRte_CDS_CtApHufTpmsSWC = {
    tStbMB_AbsoluteTimeBaseValue
 };
 
-#ifdef _SwcApplTpms_CLAR_LCI
-       CONSTP2CONST(struct Rte_CDS_CtApHufTpmsSWC, RTE_CONST, RTE_CONST) Rte_Inst_CtApHufTpmsSWC = &tRte_CDS_CtApHufTpmsSWC;
-#else
-static CONSTP2CONST(struct Rte_CDS_CtApHufTpmsSWC, RTE_CONST, RTE_CONST) Rte_Inst_CtApHufTpmsSWC = &tRte_CDS_CtApHufTpmsSWC;
-#endif
-
+CONSTP2CONST(struct Rte_CDS_CtApHufTpmsSWC, RTE_CONST, RTE_CONST) Rte_Inst_CtApHufTpmsSWC = &tRte_CDS_CtApHufTpmsSWC;
 Rdci_TAR_P_TYR_FLH_Type                                 TAR_P_TYR_FLH;
 Rdci_TAR_P_TYR_FRH_Type                                 TAR_P_TYR_FRH;
 Rdci_TAR_P_TYR_RLH_Type                                 TAR_P_TYR_RLH;
@@ -1723,14 +1718,14 @@ void GetRDCiOutputDataWarningThresholdValueNc(                      Rdci_Warning
 void GetRDCiOutputDataExtParkSupConfig(                             Rdci_ExtParkSupConfig_Type*                             ptOutputData){*ptOutputData = ExtParkSupConfig;}
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Send_ST_TYR( P2CONST(Rdci_ST_TYR_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_DATA) data){
-  tST_TYR.ALIV_ST_TYR = data->ALIV_ST_TYR;
-  tST_TYR.CRC_ST_TYR = data->CRC_ST_TYR;
-  tST_TYR.QU_FN_TYR_INFO = data->QU_FN_TYR_INFO;
-  tST_TYR.QU_TFAI = data->QU_TFAI;
-  tST_TYR.QU_TPL = data->QU_TPL;
-  tST_TYR.ST_TYR_dummy_12_15 = data->ST_TYR_dummy_12_15;
+   tST_TYR.ALIV_ST_TYR = data->ALIV_ST_TYR;
+   tST_TYR.CRC_ST_TYR = data->CRC_ST_TYR;
+   tST_TYR.QU_FN_TYR_INFO = data->QU_FN_TYR_INFO;
+   tST_TYR.QU_TFAI = data->QU_TFAI;
+   tST_TYR.QU_TPL = data->QU_TPL;
+   tST_TYR.ST_TYR_dummy_12_15 = data->ST_TYR_dummy_12_15;
 
-  return 0;
+   return 0;
 }
 
 void RTE_Stub_CyclicOutputFunction(void){

@@ -72,16 +72,15 @@ tRDCiDtcListDef tRDCiDtclist[cMaxErrorCount] =
 };
 
 #ifdef _EcuVirtual
-static void SaveDTC( uint8 ucDtcNo, ImpTypeRefDem_EventStatusType EventStatus);
+static void SaveDTC(uint8 ucDtcNo, ImpTypeRefDem_EventStatusType EventStatus);
 #else
 #endif
 
 void ReadDtcListFromNvmBlock(void)
 {
-  uint8 ucLoop;
+   uint8 ucLoop;
 
-  for ( ucLoop = 0; ucLoop < cMaxErrorCount; ucLoop++)
-  {
+   for(ucLoop = 0; ucLoop < cMaxErrorCount; ucLoop++){
 
     tRDCiDtclist[ucLoop].ucStatus                                       = ucNvmDTC_ReadByte( (ucLoop * sizeof(tRDCiDtcListDef) +  4));
 
@@ -130,15 +129,14 @@ void ReadDtcListFromNvmBlock(void)
     tRDCiDtclist[ucLoop].tUwb.ush0x500B_FUNKTIONSZUSTAND                = (uint16) ((ucNvmDTC_ReadByte( (ucLoop * sizeof(tRDCiDtcListDef) + 56)) << 0) + (ucNvmDTC_ReadByte( (ucLoop * sizeof(tRDCiDtcListDef) + 57)) << 8));
     tRDCiDtclist[ucLoop].tUwb.uc0x500C_INTERNER_FUNKTIONSZUSTAND        = ucNvmDTC_ReadByte( (ucLoop * sizeof(tRDCiDtcListDef) + 58));
     tRDCiDtclist[ucLoop].tUwb.ush0x500E_INTERNE_FEHLERNUMMER            = (uint16) ((ucNvmDTC_ReadByte( (ucLoop * sizeof(tRDCiDtcListDef) + 59)) << 0) + (ucNvmDTC_ReadByte( (ucLoop * sizeof(tRDCiDtcListDef) + 60)) << 8));
-  }
+   }
 }
 
 void WriteDtcListToNvmBlock(void)
 {
-  uint8 ucLoop;
+   uint8 ucLoop;
 
-  for ( ucLoop = 0; ucLoop < cMaxErrorCount; ucLoop++)
-  {
+   for(ucLoop = 0; ucLoop < cMaxErrorCount; ucLoop++){
     NvmDTC_WriteByte( (ucLoop * sizeof(tRDCiDtcListDef) +  0), (uint8) (tRDCiDtclist[ucLoop].ulDtc >>  0) & 0xFFu);
     NvmDTC_WriteByte( (ucLoop * sizeof(tRDCiDtcListDef) +  1), (uint8) (tRDCiDtclist[ucLoop].ulDtc >>  8) & 0xFFu);
     NvmDTC_WriteByte( (ucLoop * sizeof(tRDCiDtcListDef) +  2), (uint8) (tRDCiDtclist[ucLoop].ulDtc >> 16) & 0xFFu);
@@ -200,152 +198,144 @@ void WriteDtcListToNvmBlock(void)
     NvmDTC_WriteByte( (ucLoop * sizeof(tRDCiDtcListDef) + 58), tRDCiDtclist[ucLoop].tUwb.uc0x500C_INTERNER_FUNKTIONSZUSTAND);
     NvmDTC_WriteByte( (ucLoop * sizeof(tRDCiDtcListDef) + 59), (uint8) (tRDCiDtclist[ucLoop].tUwb.ush0x500E_INTERNE_FEHLERNUMMER >>  0) & 0xFFu);
     NvmDTC_WriteByte( (ucLoop * sizeof(tRDCiDtcListDef) + 60), (uint8) (tRDCiDtclist[ucLoop].tUwb.ush0x500E_INTERNE_FEHLERNUMMER >>  8) & 0xFFu);
-  }
+   }
 
   NVM_WriteAllDTC();
 
 }
 
-void InitDtcUwbData( uint8 ucDtcNo)
+void InitDtcUwbData(uint8 ucDtcNo)
 {
-  uint8 ucLoop;
+   uint8 ucLoop;
 
-  tRDCiDtclist[ucDtcNo].ucUwbUpdateState                               = FALSE;
+   tRDCiDtclist[ucDtcNo].ucUwbUpdateState                               = FALSE;
 
-  for( ucLoop = 0; ucLoop < 3; ucLoop++)
-  {
+   for(ucLoop = 0; ucLoop < 3; ucLoop++){
     tRDCiDtclist[ucDtcNo].tUwb.auc0x1702_SAE_CODE[ucLoop]              = 0xFFu;
-  }
+   }
 
-  tRDCiDtclist[ucDtcNo].tUwb.ul0x1768_KM_STAND_SUPREME                 = 0xFFFFFFFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.ul0x1768_KM_STAND_SUPREME                 = 0xFFFFFFFFu;
 
-  for( ucLoop = 0; ucLoop < 6; ucLoop++)
-  {
+   for(ucLoop = 0; ucLoop < 6; ucLoop++){
     tRDCiDtclist[ucDtcNo].tUwb.auc0x1769_SYSTEMZEIT_SUPREME[ucLoop]    = 0xFFu;
-  }
+   }
 
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x190D_FUNKTIONEN_REIFENDRUCKKONTROLLE  = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x2805_AUSSENTEMPERATUR                 = 0x7F;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x2866_BETRIEBSSPANNUNG                 = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x2867_FAHRZEUGGESCHWINDIGKEIT          = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4100_RDC_SENSOR_HERSTELLER            = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4101_RDC_REFERENZ_AUSSENTEMPERATUR    = 0x7F;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4102_RDC_AUSSENDRUCK[0]              = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4102_RDC_AUSSENDRUCK[1]              = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4103_RDC_REIFENDRUCK_VL[0]           = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4103_RDC_REIFENDRUCK_VL[1]           = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4104_RDC_REIFENDRUCK_VR[0]           = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4104_RDC_REIFENDRUCK_VR[1]           = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4105_RDC_REIFENDRUCK_HL[0]           = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4105_RDC_REIFENDRUCK_HL[1]           = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4106_RDC_REIFENDRUCK_HR[0]           = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4106_RDC_REIFENDRUCK_HR[1]           = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4107_RDC_REIFENTEMPERATUR_VL          = 0x7F;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4108_RDC_REIFENTEMPERATUR_VR          = 0x7F;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4109_RDC_REIFENTEMPERATUR_HL          = 0x7F;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x410A_RDC_REIFENTEMPERATUR_HR          = 0x7F;
-  tRDCiDtclist[ucDtcNo].tUwb.sc0x410B_RDC_AKTUELLE_AUSSENTEMPERATUR    = 0x7F;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x410C_RDC_INAKTIV_STATUS               = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x410D_RDC_KALIBRIERUNG_STATUS          = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x410E_RDC_STATUS                       = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x410F_RDC_KONFIGURATION                = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4110_RDC_SOLLDRUCK_VORN[0]           = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4110_RDC_SOLLDRUCK_VORN[1]           = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4111_RDC_SOLLDRUCK_HINTEN[0]         = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4111_RDC_SOLLDRUCK_HINTEN[1]         = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4112_RDC_POSITION                     = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x5008_SPANNUNGSMASTER_VERFUEGBAR       = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x500A_GESCHWINDIGKEIT                  = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.ush0x500B_FUNKTIONSZUSTAND                = 0xFFFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x500C_INTERNER_FUNKTIONSZUSTAND        = 0xFFu;
-  tRDCiDtclist[ucDtcNo].tUwb.ush0x500E_INTERNE_FEHLERNUMMER            = 0xFFFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x190D_FUNKTIONEN_REIFENDRUCKKONTROLLE  = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x2805_AUSSENTEMPERATUR                 = 0x7F;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x2866_BETRIEBSSPANNUNG                 = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x2867_FAHRZEUGGESCHWINDIGKEIT          = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4100_RDC_SENSOR_HERSTELLER            = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4101_RDC_REFERENZ_AUSSENTEMPERATUR    = 0x7F;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4102_RDC_AUSSENDRUCK[0]              = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4102_RDC_AUSSENDRUCK[1]              = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4103_RDC_REIFENDRUCK_VL[0]           = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4103_RDC_REIFENDRUCK_VL[1]           = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4104_RDC_REIFENDRUCK_VR[0]           = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4104_RDC_REIFENDRUCK_VR[1]           = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4105_RDC_REIFENDRUCK_HL[0]           = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4105_RDC_REIFENDRUCK_HL[1]           = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4106_RDC_REIFENDRUCK_HR[0]           = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4106_RDC_REIFENDRUCK_HR[1]           = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4107_RDC_REIFENTEMPERATUR_VL          = 0x7F;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4108_RDC_REIFENTEMPERATUR_VR          = 0x7F;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4109_RDC_REIFENTEMPERATUR_HL          = 0x7F;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x410A_RDC_REIFENTEMPERATUR_HR          = 0x7F;
+   tRDCiDtclist[ucDtcNo].tUwb.sc0x410B_RDC_AKTUELLE_AUSSENTEMPERATUR    = 0x7F;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x410C_RDC_INAKTIV_STATUS               = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x410D_RDC_KALIBRIERUNG_STATUS          = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x410E_RDC_STATUS                       = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x410F_RDC_KONFIGURATION                = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4110_RDC_SOLLDRUCK_VORN[0]           = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4110_RDC_SOLLDRUCK_VORN[1]           = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4111_RDC_SOLLDRUCK_HINTEN[0]         = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4111_RDC_SOLLDRUCK_HINTEN[1]         = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4112_RDC_POSITION                     = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x5008_SPANNUNGSMASTER_VERFUEGBAR       = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x500A_GESCHWINDIGKEIT                  = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.ush0x500B_FUNKTIONSZUSTAND                = 0xFFFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x500C_INTERNER_FUNKTIONSZUSTAND        = 0xFFu;
+   tRDCiDtclist[ucDtcNo].tUwb.ush0x500E_INTERNE_FEHLERNUMMER            = 0xFFFFu;
 }
 
 #ifdef _EcuVirtual
 #else
-static void ClearDtcUwbData( uint8 ucDtcNo)
+static void ClearDtcUwbData(uint8 ucDtcNo)
 {
-  uint8 ucLoop;
+   uint8 ucLoop;
 
-  tRDCiDtclist[ucDtcNo].ucUwbUpdateState                               = FALSE;
+   tRDCiDtclist[ucDtcNo].ucUwbUpdateState                               = FALSE;
 
-  for( ucLoop = 0; ucLoop < 3; ucLoop++)
-  {
+   for(ucLoop = 0; ucLoop < 3; ucLoop++){
     tRDCiDtclist[ucDtcNo].tUwb.auc0x1702_SAE_CODE[ucLoop]              = 0;
-  }
+   }
 
-  tRDCiDtclist[ucDtcNo].tUwb.ul0x1768_KM_STAND_SUPREME                 = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.ul0x1768_KM_STAND_SUPREME                 = 0;
 
-  for( ucLoop = 0; ucLoop < 6; ucLoop++)
-  {
+   for(ucLoop = 0; ucLoop < 6; ucLoop++){
     tRDCiDtclist[ucDtcNo].tUwb.auc0x1769_SYSTEMZEIT_SUPREME[ucLoop]    = 0;
-  }
+   }
 
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x190D_FUNKTIONEN_REIFENDRUCKKONTROLLE  = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x2805_AUSSENTEMPERATUR                 = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x2866_BETRIEBSSPANNUNG                 = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x2867_FAHRZEUGGESCHWINDIGKEIT          = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4100_RDC_SENSOR_HERSTELLER            = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4101_RDC_REFERENZ_AUSSENTEMPERATUR    = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4102_RDC_AUSSENDRUCK[0]              = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4102_RDC_AUSSENDRUCK[1]              = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4103_RDC_REIFENDRUCK_VL[0]           = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4103_RDC_REIFENDRUCK_VL[1]           = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4104_RDC_REIFENDRUCK_VR[0]           = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4104_RDC_REIFENDRUCK_VR[1]           = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4105_RDC_REIFENDRUCK_HL[0]           = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4105_RDC_REIFENDRUCK_HL[1]           = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4106_RDC_REIFENDRUCK_HR[0]           = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4106_RDC_REIFENDRUCK_HR[1]           = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4107_RDC_REIFENTEMPERATUR_VL          = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4108_RDC_REIFENTEMPERATUR_VR          = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4109_RDC_REIFENTEMPERATUR_HL          = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x410A_RDC_REIFENTEMPERATUR_HR          = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.sc0x410B_RDC_AKTUELLE_AUSSENTEMPERATUR    = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x410C_RDC_INAKTIV_STATUS               = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x410D_RDC_KALIBRIERUNG_STATUS          = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x410E_RDC_STATUS                       = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x410F_RDC_KONFIGURATION                = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4110_RDC_SOLLDRUCK_VORN[0]           = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4110_RDC_SOLLDRUCK_VORN[1]           = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4111_RDC_SOLLDRUCK_HINTEN[0]         = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.auc0x4111_RDC_SOLLDRUCK_HINTEN[1]         = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x4112_RDC_POSITION                     = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x5008_SPANNUNGSMASTER_VERFUEGBAR       = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x500A_GESCHWINDIGKEIT                  = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.ush0x500B_FUNKTIONSZUSTAND                = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.uc0x500C_INTERNER_FUNKTIONSZUSTAND        = 0;
-  tRDCiDtclist[ucDtcNo].tUwb.ush0x500E_INTERNE_FEHLERNUMMER            = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x190D_FUNKTIONEN_REIFENDRUCKKONTROLLE  = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x2805_AUSSENTEMPERATUR                 = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x2866_BETRIEBSSPANNUNG                 = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x2867_FAHRZEUGGESCHWINDIGKEIT          = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4100_RDC_SENSOR_HERSTELLER            = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4101_RDC_REFERENZ_AUSSENTEMPERATUR    = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4102_RDC_AUSSENDRUCK[0]              = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4102_RDC_AUSSENDRUCK[1]              = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4103_RDC_REIFENDRUCK_VL[0]           = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4103_RDC_REIFENDRUCK_VL[1]           = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4104_RDC_REIFENDRUCK_VR[0]           = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4104_RDC_REIFENDRUCK_VR[1]           = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4105_RDC_REIFENDRUCK_HL[0]           = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4105_RDC_REIFENDRUCK_HL[1]           = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4106_RDC_REIFENDRUCK_HR[0]           = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4106_RDC_REIFENDRUCK_HR[1]           = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4107_RDC_REIFENTEMPERATUR_VL          = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4108_RDC_REIFENTEMPERATUR_VR          = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4109_RDC_REIFENTEMPERATUR_HL          = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x410A_RDC_REIFENTEMPERATUR_HR          = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.sc0x410B_RDC_AKTUELLE_AUSSENTEMPERATUR    = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x410C_RDC_INAKTIV_STATUS               = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x410D_RDC_KALIBRIERUNG_STATUS          = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x410E_RDC_STATUS                       = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x410F_RDC_KONFIGURATION                = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4110_RDC_SOLLDRUCK_VORN[0]           = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4110_RDC_SOLLDRUCK_VORN[1]           = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4111_RDC_SOLLDRUCK_HINTEN[0]         = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.auc0x4111_RDC_SOLLDRUCK_HINTEN[1]         = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x4112_RDC_POSITION                     = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x5008_SPANNUNGSMASTER_VERFUEGBAR       = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x500A_GESCHWINDIGKEIT                  = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.ush0x500B_FUNKTIONSZUSTAND                = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.uc0x500C_INTERNER_FUNKTIONSZUSTAND        = 0;
+   tRDCiDtclist[ucDtcNo].tUwb.ush0x500E_INTERNE_FEHLERNUMMER            = 0;
 }
 #endif
 
-void ReadDtcUwbData( uint8 ucDtcNo)
+void ReadDtcUwbData(uint8 ucDtcNo)
 {
-  uint8 ucLoop, ucHistId, ucPress;
-  sint8 scTemp;
-  uint32 ulSysTime;
+   uint8 ucLoop, ucHistId, ucPress;
+   sint8 scTemp;
+   uint32 ulSysTime;
 
   Rdci_MILE_KM_Type       ulMileKm;
   Rdci_AIP_ENG_DRV_Type   ucPamb;
 
-  InitDtcUwbData( ucDtcNo);
+  InitDtcUwbData(ucDtcNo);
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000001u) == 0x00000001u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000001u) == 0x00000001u){
 
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000002u) == 0x00000002u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000002u) == 0x00000002u){
     (void) Stub_Rte_Read_MILE_KM( &ulMileKm);
     tRDCiDtclist[ucDtcNo].tUwb.ul0x1768_KM_STAND_SUPREME                 = ulMileKm;
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000004u) == 0x00000004u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000004u) == 0x00000004u){
     (void) Stub_Rte_Read_T_SEC_COU_REL( &ulSysTime);
-    for( ucLoop = 0; ucLoop < 5; ucLoop++)
-    {
+      for(ucLoop = 0; ucLoop < 5; ucLoop++){
 
 #ifdef _EcuVirtual
       tRDCiDtclist[ucDtcNo].tUwb.auc0x1769_SYSTEMZEIT_SUPREME[ucLoop] = 0x55; //TBD: Insert correct logic
@@ -360,1557 +350,1425 @@ void ReadDtcUwbData( uint8 ucDtcNo)
       tRDCiDtclist[ucDtcNo].tUwb.auc0x1769_SYSTEMZEIT_SUPREME[ucLoop] |= (uint8) ((ulSysTime - (uint32) (ulSysTime / 10 * 10) & 0x0F) << 4);
       ulSysTime = (uint32) (ulSysTime / 10);
 #endif
-    }
+      }
     tRDCiDtclist[ucDtcNo].tUwb.auc0x1769_SYSTEMZEIT_SUPREME[5] = 0;
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000008u) == 0x00000008u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000008u) == 0x00000008u){
     (void) RTE_Stub_UWB_FunktionenReifendruckkontrolle_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x190D_FUNKTIONEN_REIFENDRUCKKONTROLLE);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000020u) == 0x00000020u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000020u) == 0x00000020u){
     (void) RTE_Stub_UWB_RdcAktuelleAussentemperatur_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x2805_AUSSENTEMPERATUR);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000040u) == 0x00000040u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000040u) == 0x00000040u){
 
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000080u) == 0x00000080u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000080u) == 0x00000080u){
     tRDCiDtclist[ucDtcNo].tUwb.uc0x2867_FAHRZEUGGESCHWINDIGKEIT          = ucGetSpeed();
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000100u) == 0x00000100u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000100u) == 0x00000100u){
     (void) RTE_Stub_UWB_RdcSensorHersteller_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x4100_RDC_SENSOR_HERSTELLER);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000200u) == 0x00000200u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000200u) == 0x00000200u){
     (void) RTE_Stub_UWB_RdcReferenzAussentemperatur_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x4101_RDC_REFERENZ_AUSSENTEMPERATUR);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000400u) == 0x00000400u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000400u) == 0x00000400u){
     (void) RTE_Stub_UWB_RdcAussendruck_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.auc0x4102_RDC_AUSSENDRUCK);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000800u) == 0x00000800u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00000800u) == 0x00000800u){
     (void) RTE_Stub_UWB_RdcReifendruckVl_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.auc0x4103_RDC_REIFENDRUCK_VL);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00001000u) == 0x00001000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00001000u) == 0x00001000u){
     (void) RTE_Stub_UWB_RdcReifendruckVr_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.auc0x4104_RDC_REIFENDRUCK_VR);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00002000u) == 0x00002000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00002000u) == 0x00002000u){
     (void) RTE_Stub_UWB_RdcReifendruckHl_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.auc0x4105_RDC_REIFENDRUCK_HL);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00004000u) == 0x00004000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00004000u) == 0x00004000u){
     (void) RTE_Stub_UWB_RdcReifendruckHr_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.auc0x4106_RDC_REIFENDRUCK_HR);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00008000u) == 0x00008000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00008000u) == 0x00008000u){
     (void) RTE_Stub_UWB_RdcReifentemperaturVl_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x4107_RDC_REIFENTEMPERATUR_VL);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00010000u) == 0x00010000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00010000u) == 0x00010000u){
     (void) RTE_Stub_UWB_RdcReifentemperaturVr_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x4108_RDC_REIFENTEMPERATUR_VR);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00020000u) == 0x00020000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00020000u) == 0x00020000u){
     (void) RTE_Stub_UWB_RdcReifentemperaturHl_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x4109_RDC_REIFENTEMPERATUR_HL);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00040000u) == 0x00040000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00040000u) == 0x00040000u){
     (void) RTE_Stub_UWB_RdcReifentemperaturHr_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x410A_RDC_REIFENTEMPERATUR_HR);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00080000u) == 0x00080000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00080000u) == 0x00080000u){
     tRDCiDtclist[ucDtcNo].tUwb.sc0x410B_RDC_AKTUELLE_AUSSENTEMPERATUR    = GETscOutdoorTemperatureFZZ();
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00100000u) == 0x00100000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00100000u) == 0x00100000u){
     (void) RTE_Stub_UWB_RdcInaktivStatus_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x410C_RDC_INAKTIV_STATUS);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00200000u) == 0x00200000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00200000u) == 0x00200000u){
     (void) RTE_Stub_UWB_RdcKalibrierungStatus_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x410D_RDC_KALIBRIERUNG_STATUS);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00400000u) == 0x00400000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00400000u) == 0x00400000u){
     (void) RTE_Stub_UWB_RdcStatus_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x410E_RDC_STATUS);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00800000u) == 0x00800000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x00800000u) == 0x00800000u){
     (void) RTE_Stub_UWB_RdcKonfiguration_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x410F_RDC_KONFIGURATION);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x01000000u) == 0x01000000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x01000000u) == 0x01000000u){
     (void) RTE_Stub_UWB_RdcSolldruckVorn_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.auc0x4110_RDC_SOLLDRUCK_VORN);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x02000000u) == 0x02000000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x02000000u) == 0x02000000u){
     (void) RTE_Stub_UWB_RdcSolldruckHinten_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.auc0x4111_RDC_SOLLDRUCK_HINTEN);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x04000000u) == 0x04000000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x04000000u) == 0x04000000u){
     (void) RTE_Stub_UWB_RdcPosition_ReadData( &tRDCiDtclist[ucDtcNo].tUwb.uc0x4112_RDC_POSITION);
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x08000000u) == 0x08000000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x08000000u) == 0x08000000u){
 
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x10000000u) == 0x10000000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x10000000u) == 0x10000000u){
     tRDCiDtclist[ucDtcNo].tUwb.uc0x500A_GESCHWINDIGKEIT                  = ucGetSpeed();
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x20000000u) == 0x20000000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x20000000u) == 0x20000000u){
 
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x40000000u) == 0x40000000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x40000000u) == 0x40000000u){
 
-  }
+   }
 
-  if( (tRDCiDtclist[ucDtcNo].ulUwbMask & 0x80000000u) == 0x80000000u)
-  {
+   if((tRDCiDtclist[ucDtcNo].ulUwbMask & 0x80000000u) == 0x80000000u){
 
-  }
+   }
 }
 
 #ifdef _EcuVirtual
 #else
 static uint8 ucGetRdcSensorHersteller(void)
 {
-  uint8 i, ucValue;
+   uint8 i, ucValue;
 
-  i = 0;
-  while ((ucGetSuppIdOfColWAL(i) == TAB_RDC_RE_HERSTELLER_HUF) && (i < cMaxLR))
-  {
+   i = 0;
+  while ((ucGetSuppIdOfColWAL(i) == TAB_RDC_RE_HERSTELLER_HUF) && (i < cMaxLR)){
     i++;
-  }
-  if(i == cMaxLR)
-  {
-    ucValue = TAB_RDC_RE_HERSTELLER_HUF;
-  }
-  else
-  {
-    ucValue = ucGetSuppIdOfColWAL(i);
-  }
+   }
+   if(i == cMaxLR){
+      ucValue = TAB_RDC_RE_HERSTELLER_HUF;
+   }
+   else{
+      ucValue = ucGetSuppIdOfColWAL(i);
+   }
 
-  if(bGetBitBetriebszustandBZ( cZO_FINISH) == FALSE)
-  {
-    ucValue |= 0x10;
-  }
-  else if(bGetBitBetriebszustandBZ( cZWANGSZUORDNUNG) == TRUE)
-  {
-    ucValue |= 0x10;
-  }
-  else {}
+   if(bGetBitBetriebszustandBZ( cZO_FINISH) == FALSE){
+      ucValue |= 0x10;
+   }
+   else if(bGetBitBetriebszustandBZ( cZWANGSZUORDNUNG) == TRUE){
+      ucValue |= 0x10;
+   }
+   else {}
 
-  return ucValue;
+   return ucValue;
 }
 #endif
 
-static void SaveDTC( uint8 ucDtcNo, ImpTypeRefDem_EventStatusType EventStatus)
+static void SaveDTC(uint8 ucDtcNo, ImpTypeRefDem_EventStatusType EventStatus)
 {
-  if( tRDCiDtclist[ucDtcNo].ucStatus != EventStatus)
-  {
+   if(tRDCiDtclist[ucDtcNo].ucStatus != EventStatus){
     tRDCiDtclist[ucDtcNo].ucStatus = EventStatus;
 
-    if( EventStatus == DEM_EVENT_STATUS_FAILED)
-    {
+      if(EventStatus == DEM_EVENT_STATUS_FAILED){
       tRDCiDtclist[ucDtcNo].ucUwbUpdateState = TRUE;
 
-    }else{
-      InitDtcUwbData( ucDtcNo);
+      }
+      else{
+      InitDtcUwbData(ucDtcNo);
 
       WriteDtcListToNvmBlock();
-    }
+      }
 
-  }
+   }
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_TpmsManufactoryModeInfo_GetEventStatus(P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciTpmsManufactoryMode].ucStatus == DEM_EVENT_STATUS_FAILED)
-  { *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR; }
-  else
-  { *EventStatusByte = 0; }
-  return E_OK;
+   if(tRDCiDtclist[cDemErrorRdciTpmsManufactoryMode].ucStatus == DEM_EVENT_STATUS_FAILED){ *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR; }
+   else{ *EventStatusByte = 0; }
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_TpmsManufactoryMode_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciTpmsManufactoryMode, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciTpmsManufactoryMode, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_TpmsManufactoryMode_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciTpmsManufactoryMode, EventStatus);
+   SaveDTC( cDemErrorRdciTpmsManufactoryMode, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_1To3WrongWuMountedInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdci1To3WrongWuMounted].ucStatus == DEM_EVENT_STATUS_FAILED)
-  { *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT; }
-  else
-  { *EventStatusByte = 0; }
-  return E_OK;
+   if(tRDCiDtclist[cDemErrorRdci1To3WrongWuMounted].ucStatus == DEM_EVENT_STATUS_FAILED){ *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT; }
+   else{ *EventStatusByte = 0; }
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_1To3WrongWuMounted_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdci1To3WrongWuMounted, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdci1To3WrongWuMounted, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_1To3WrongWuMounted_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdci1To3WrongWuMounted, EventStatus);
+   SaveDTC( cDemErrorRdci1To3WrongWuMounted, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_4WrongWuMountedInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdci4WrongWuMounted].ucStatus == DEM_EVENT_STATUS_FAILED)
-  { *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT; }
-  else
-  { *EventStatusByte = 0; }
-  return E_OK;
+   if(tRDCiDtclist[cDemErrorRdci4WrongWuMounted].ucStatus == DEM_EVENT_STATUS_FAILED){ *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT; }
+   else{ *EventStatusByte = 0; }
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_4WrongWuMounted_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdci4WrongWuMounted, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdci4WrongWuMounted, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_4WrongWuMounted_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdci4WrongWuMounted, EventStatus);
+   SaveDTC( cDemErrorRdci4WrongWuMounted, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_AutoLearningFailedInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciAutoLearningFailed].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciAutoLearningFailed].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_AutoLearningFailed_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciAutoLearningFailed, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciAutoLearningFailed, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_AutoLearningFailed_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciAutoLearningFailed, EventStatus);
+   SaveDTC( cDemErrorRdciAutoLearningFailed, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_GatewayOrAntennaErrorInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciGatewayOrAntennaError].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciGatewayOrAntennaError].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_GatewayOrAntennaError_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciGatewayOrAntennaError, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciGatewayOrAntennaError, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_GatewayOrAntennaError_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciGatewayOrAntennaError, EventStatus);
+   SaveDTC( cDemErrorRdciGatewayOrAntennaError, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_OtherWuSensorTypeInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciOtherWuSensorType].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciOtherWuSensorType].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_OtherWuSensorType_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciOtherWuSensorType, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciOtherWuSensorType, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_OtherWuSensorType_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciOtherWuSensorType, EventStatus);
+   SaveDTC( cDemErrorRdciOtherWuSensorType, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RfExternalInterferenceInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciRfExternalInterference].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciRfExternalInterference].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RfExternalInterference_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciRfExternalInterference, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciRfExternalInterference, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RfExternalInterference_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciRfExternalInterference, EventStatus);
+   SaveDTC( cDemErrorRdciRfExternalInterference, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_UnspecifiedWfcDefectInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciUnspecifiedWfcDefect].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciUnspecifiedWfcDefect].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_UnspecifiedWfcDefect_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciUnspecifiedWfcDefect, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciUnspecifiedWfcDefect, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_UnspecifiedWfcDefect_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciUnspecifiedWfcDefect, EventStatus);
+   SaveDTC( cDemErrorRdciUnspecifiedWfcDefect, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_UnspecifiedWuMuteInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciUnspecifiedWuMute].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciUnspecifiedWuMute].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_UnspecifiedWuMute_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciUnspecifiedWuMute, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciUnspecifiedWuMute, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_UnspecifiedWuMute_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciUnspecifiedWuMute, EventStatus);
+   SaveDTC( cDemErrorRdciUnspecifiedWuMute, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectFlInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuDefectFl].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuDefectFl].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectFl_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuDefectFl, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuDefectFl, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectFl_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuDefectFl, EventStatus);
+   SaveDTC( cDemErrorRdciWuDefectFl, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectFrInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuDefectFr].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuDefectFr].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectFr_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuDefectFr, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuDefectFr, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectFr_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuDefectFr, EventStatus);
+   SaveDTC( cDemErrorRdciWuDefectFr, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectRlInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuDefectRl].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuDefectRl].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectRl_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuDefectRl, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuDefectRl, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectRl_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuDefectRl, EventStatus);
+   SaveDTC( cDemErrorRdciWuDefectRl, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectRrInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuDefectRr].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuDefectRr].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectRr_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuDefectRr, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuDefectRr, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuDefectRr_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuDefectRr, EventStatus);
+   SaveDTC( cDemErrorRdciWuDefectRr, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLocalisationFailedInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuLocalisationFailed].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuLocalisationFailed].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLocalisationFailed_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuLocalisationFailed, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuLocalisationFailed, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLocalisationFailed_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuLocalisationFailed, EventStatus);
+   SaveDTC( cDemErrorRdciWuLocalisationFailed, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryFlInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuLowBatteryFl].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuLowBatteryFl].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryFl_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuLowBatteryFl, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuLowBatteryFl, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryFl_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuLowBatteryFl, EventStatus);
+   SaveDTC( cDemErrorRdciWuLowBatteryFl, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryFrInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuLowBatteryFr].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuLowBatteryFr].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryFr_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuLowBatteryFr, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuLowBatteryFr, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryFr_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuLowBatteryFr, EventStatus);
+   SaveDTC( cDemErrorRdciWuLowBatteryFr, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryRlInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuLowBatteryRl].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuLowBatteryRl].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryRl_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuLowBatteryRl, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuLowBatteryRl, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryRl_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuLowBatteryRl, EventStatus);
+   SaveDTC( cDemErrorRdciWuLowBatteryRl, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryRrInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuLowBatteryRr].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuLowBatteryRr].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryRr_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuLowBatteryRr, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuLowBatteryRr, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuLowBatteryRr_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuLowBatteryRr, EventStatus);
+   SaveDTC( cDemErrorRdciWuLowBatteryRr, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteFlInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuMuteFl].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuMuteFl].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteFl_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuMuteFl, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuMuteFl, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteFl_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuMuteFl, EventStatus);
+   SaveDTC( cDemErrorRdciWuMuteFl, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteFrInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuMuteFr].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuMuteFr].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteFr_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuMuteFr, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuMuteFr, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteFr_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuMuteFr, EventStatus);
+   SaveDTC( cDemErrorRdciWuMuteFr, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteRlInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuMuteRl].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuMuteRl].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteRl_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuMuteRl, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuMuteRl, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteRl_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuMuteRl, EventStatus);
+   SaveDTC( cDemErrorRdciWuMuteRl, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteRrInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWuMuteRr].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWuMuteRr].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteRr_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWuMuteRr, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWuMuteRr, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WuMuteRr_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWuMuteRr, EventStatus);
+   SaveDTC( cDemErrorRdciWuMuteRr, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ATempInvalidInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciATempInvalid].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciATempInvalid].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ATempInvalid_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciATempInvalid, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciATempInvalid, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ATempInvalid_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciATempInvalid, EventStatus);
+   SaveDTC( cDemErrorRdciATempInvalid, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ATempTimeoutInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciATempTimeout].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciATempTimeout].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ATempTimeout_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciATempTimeout, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciATempTimeout, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ATempTimeout_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciATempTimeout, EventStatus);
+   SaveDTC( cDemErrorRdciATempTimeout, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehAliveInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciConVehAlive].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciConVehAlive].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehAlive_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciConVehAlive, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciConVehAlive, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehAlive_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciConVehAlive, EventStatus);
+   SaveDTC( cDemErrorRdciConVehAlive, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehCrcInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciConVehCrc].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciConVehCrc].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehCrc_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciConVehCrc, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciConVehCrc, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehCrc_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciConVehCrc, EventStatus);
+   SaveDTC( cDemErrorRdciConVehCrc, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehInvalidInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciConVehInvalid].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciConVehInvalid].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehInvalid_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciConVehInvalid, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciConVehInvalid, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehInvalid_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciConVehInvalid, EventStatus);
+   SaveDTC( cDemErrorRdciConVehInvalid, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehTimeoutInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciConVehTimeout].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciConVehTimeout].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehTimeout_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciConVehTimeout, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciConVehTimeout, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ConVehTimeout_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciConVehTimeout, EventStatus);
+   SaveDTC( cDemErrorRdciConVehTimeout, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_EinheitenBn2020InvalidInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciEinheitenBn2020Invalid].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciEinheitenBn2020Invalid].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_EinheitenBn2020Invalid_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciEinheitenBn2020Invalid, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciEinheitenBn2020Invalid, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_EinheitenBn2020Invalid_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciEinheitenBn2020Invalid, EventStatus);
+   SaveDTC( cDemErrorRdciEinheitenBn2020Invalid, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_EinheitenBn2020TimeoutInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciEinheitenBn2020Timeout].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciEinheitenBn2020Timeout].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_EinheitenBn2020Timeout_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciEinheitenBn2020Timeout, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciEinheitenBn2020Timeout, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_EinheitenBn2020Timeout_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciEinheitenBn2020Timeout, EventStatus);
+   SaveDTC( cDemErrorRdciEinheitenBn2020Timeout, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ErfsCodingDataInconsistentInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciErfsCodingDataInconsistent].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciErfsCodingDataInconsistent].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ErfsCodingDataInconsistent_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciErfsCodingDataInconsistent, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciErfsCodingDataInconsistent, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_ErfsCodingDataInconsistent_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciErfsCodingDataInconsistent, EventStatus);
+   SaveDTC( cDemErrorRdciErfsCodingDataInconsistent, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RdcDtPckg1AliveInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciRdcDtPckg1Alive].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciRdcDtPckg1Alive].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RdcDtPckg1Alive_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciRdcDtPckg1Alive, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciRdcDtPckg1Alive, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RdcDtPckg1Alive_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciRdcDtPckg1Alive, EventStatus);
+   SaveDTC( cDemErrorRdciRdcDtPckg1Alive, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RdcDtPckg1InvalidInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciRdcDtPckg1Invalid].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciRdcDtPckg1Invalid].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RdcDtPckg1Invalid_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciRdcDtPckg1Invalid, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciRdcDtPckg1Invalid, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RdcDtPckg1Invalid_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciRdcDtPckg1Invalid, EventStatus);
+   SaveDTC( cDemErrorRdciRdcDtPckg1Invalid, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RdcDtPckg1TimeoutInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciRdcDtPckg1Timeout].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciRdcDtPckg1Timeout].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RdcDtPckg1Timeout_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciRdcDtPckg1Timeout, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciRdcDtPckg1Timeout, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RdcDtPckg1Timeout_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciRdcDtPckg1Timeout, EventStatus);
+   SaveDTC( cDemErrorRdciRdcDtPckg1Timeout, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RelativzeitInvalidInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciRelativzeitInvalid].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciRelativzeitInvalid].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RelativzeitInvalid_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciRelativzeitInvalid, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciRelativzeitInvalid, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RelativzeitInvalid_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciRelativzeitInvalid, EventStatus);
+   SaveDTC( cDemErrorRdciRelativzeitInvalid, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RelativzeitTimeoutInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciRelativzeitTimeout].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciRelativzeitTimeout].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RelativzeitTimeout_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciRelativzeitTimeout, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciRelativzeitTimeout, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_RelativzeitTimeout_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciRelativzeitTimeout, EventStatus);
+   SaveDTC( cDemErrorRdciRelativzeitTimeout, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehAliveFailureInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciVVehAliveFailure].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciVVehAliveFailure].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehAliveFailure_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciVVehAliveFailure, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciVVehAliveFailure, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehAliveFailure_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciVVehAliveFailure, EventStatus);
+   SaveDTC( cDemErrorRdciVVehAliveFailure, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehCogInvalidInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciVVehCogInvalid].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciVVehCogInvalid].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehCogInvalid_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciVVehCogInvalid, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciVVehCogInvalid, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehCogInvalid_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciVVehCogInvalid, EventStatus);
+   SaveDTC( cDemErrorRdciVVehCogInvalid, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehCogQualifierInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciVVehCogQualifier].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciVVehCogQualifier].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehCogQualifier_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciVVehCogQualifier, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciVVehCogQualifier, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehCogQualifier_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciVVehCogQualifier, EventStatus);
+   SaveDTC( cDemErrorRdciVVehCogQualifier, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehCrcFailureInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciVVehCrcFailure].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciVVehCrcFailure].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehCrcFailure_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciVVehCrcFailure, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciVVehCrcFailure, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehCrcFailure_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciVVehCrcFailure, EventStatus);
+   SaveDTC( cDemErrorRdciVVehCrcFailure, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehTimeoutInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciVVehTimeout].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciVVehTimeout].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehTimeout_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciVVehTimeout, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciVVehTimeout, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_VVehTimeout_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciVVehTimeout, EventStatus);
+   SaveDTC( cDemErrorRdciVVehTimeout, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_KalibrierungInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciKalibrierung].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciKalibrierung].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Kalibrierung_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciKalibrierung, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciKalibrierung, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Kalibrierung_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciKalibrierung, EventStatus);
+   SaveDTC( cDemErrorRdciKalibrierung, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_AusfallInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciAusfall].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciAusfall].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Ausfall_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciAusfall, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciAusfall, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Ausfall_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciAusfall, EventStatus);
+   SaveDTC( cDemErrorRdciAusfall, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_PannenwarnungInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciPannenwarnung].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciPannenwarnung].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Pannenwarnung_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciPannenwarnung, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciPannenwarnung, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Pannenwarnung_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciPannenwarnung, EventStatus);
+   SaveDTC( cDemErrorRdciPannenwarnung, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_PartialSystemAvailabilityInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciPartialSystemAvailability].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciPartialSystemAvailability].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_PartialSystemAvailability_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciPartialSystemAvailability, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciPartialSystemAvailability, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_PartialSystemAvailability_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciPartialSystemAvailability, EventStatus);
+   SaveDTC( cDemErrorRdciPartialSystemAvailability, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_SystemNotAvailableInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciSystemNotAvailable].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciSystemNotAvailable].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_SystemNotAvailable_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciSystemNotAvailable, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciSystemNotAvailable, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_SystemNotAvailable_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciSystemNotAvailable, EventStatus);
+   SaveDTC( cDemErrorRdciSystemNotAvailable, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_DruckwarnungInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciDruckwarnung].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciDruckwarnung].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Druckwarnung_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciDruckwarnung, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciDruckwarnung, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Druckwarnung_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciDruckwarnung, EventStatus);
+   SaveDTC( cDemErrorRdciDruckwarnung, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_BefuellhinweisInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciBefuellhinweis].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciBefuellhinweis].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Befuellhinweis_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciBefuellhinweis, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciBefuellhinweis, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Befuellhinweis_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciBefuellhinweis, EventStatus);
+   SaveDTC( cDemErrorRdciBefuellhinweis, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_WarnruecknahmeInfo_GetEventStatus( P2VAR(ImpTypeRefDem_UdsStatusByteType, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_VAR) EventStatusByte)
 {
-  if(tRDCiDtclist[cDemErrorRdciWarnruecknahme].ucStatus == DEM_EVENT_STATUS_FAILED)
-  {
+   if(tRDCiDtclist[cDemErrorRdciWarnruecknahme].ucStatus == DEM_EVENT_STATUS_FAILED){
     *EventStatusByte = DEM_UDS_STATUS_TF | DEM_UDS_STATUS_CDT | DEM_UDS_STATUS_WIR;
-  }
-  else
-  {
+   }
+   else{
     *EventStatusByte = 0;
-  }
+   }
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Warnruecknahme_ResetEventStatus(void)
 {
-  SaveDTC( cDemErrorRdciWarnruecknahme, DEM_EVENT_STATUS_PASSED);
+   SaveDTC( cDemErrorRdciWarnruecknahme, DEM_EVENT_STATUS_PASSED);
 
-  return E_OK;
+   return E_OK;
 }
 
 FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Call_Dem_Warnruecknahme_SetEventStatus( ImpTypeRefDem_EventStatusType EventStatus)
 {
-  SaveDTC( cDemErrorRdciWarnruecknahme, EventStatus);
+   SaveDTC( cDemErrorRdciWarnruecknahme, EventStatus);
 
-  return E_OK;
+   return E_OK;
 }

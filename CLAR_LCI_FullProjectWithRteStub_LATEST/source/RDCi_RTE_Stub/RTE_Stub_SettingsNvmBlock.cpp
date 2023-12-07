@@ -1,10 +1,10 @@
 #ifdef __cplusplus
-  extern "C"
+   extern "C"
   {
 #endif
 
 #ifdef __cplusplus
-  }
+   }
 #endif
 
 /******************************************************************************/
@@ -115,12 +115,13 @@ void NVM_ReadRteStubSettings(void){
   FILE* fStream;
   const char filename[] = "RteStubSettings.txt";
   const char mode[] = "rb";
-  if( fopen_s(&fStream, filename, mode) == 0){
+   if(fopen_s(&fStream, filename, mode) == 0){
     fread( &tRteStubSettingsDataRAM, sizeof(uint8), sizeof(tRteStubSettingsDataRAM), fStream);
     fclose( fStream);
-  }else{
+   }
+   else{
     tRteStubSettingsDataRAM = tRteStubSettingsDataROM;
-  }
+   }
 #else
 #endif
 }
@@ -132,18 +133,17 @@ void NVM_WriteRteStubSettings(void)
   const char filename[] = "RteStubSettings.txt";
   const char mode[] = "wb";
 
-  if( fopen_s(&fStream, filename, mode) == 0)
-  {
+   if(fopen_s(&fStream, filename, mode) == 0){
     fwrite( (uint8*) &tRteStubSettingsDataRAM, sizeof(uint8), sizeof(tRteStubSettingsDataRAM), fStream);
     fclose( fStream);
-  }
+   }
 #else
 #endif
 }
 
 void NVM_SetDefaultRteStubSettings(void)
 {
-  tRteStubSettingsDataRAM = tRteStubSettingsDataROM;
+   tRteStubSettingsDataRAM = tRteStubSettingsDataROM;
 }
 
 /******************************************************************************/
