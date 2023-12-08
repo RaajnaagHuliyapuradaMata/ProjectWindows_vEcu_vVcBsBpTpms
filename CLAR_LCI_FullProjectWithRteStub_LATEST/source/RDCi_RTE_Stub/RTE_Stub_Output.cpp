@@ -1717,7 +1717,7 @@ void GetRDCiOutputDataWarningThresholdValueC(                       Rdci_Warning
 void GetRDCiOutputDataWarningThresholdValueNc(                      Rdci_WarningThresholdValueNc_Type*                      ptOutputData){*ptOutputData = WarningThresholdValueNc;}
 void GetRDCiOutputDataExtParkSupConfig(                             Rdci_ExtParkSupConfig_Type*                             ptOutputData){*ptOutputData = ExtParkSupConfig;}
 
-FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Send_ST_TYR( P2CONST(Rdci_ST_TYR_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_DATA) data){
+FUNC(Std_ReturnType, RTE_CODE) RTE_Stub_Send_ST_TYR( P2CONST(Rdci_ST_TYR_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_DATA) data){
    tST_TYR.ALIV_ST_TYR = data->ALIV_ST_TYR;
    tST_TYR.CRC_ST_TYR = data->CRC_ST_TYR;
    tST_TYR.QU_FN_TYR_INFO = data->QU_FN_TYR_INFO;

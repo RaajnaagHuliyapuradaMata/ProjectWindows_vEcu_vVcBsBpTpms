@@ -66,7 +66,7 @@ private: System::Void timerRDCiCyclicTask_Tick(System::Object^  sender, System::
    String^ sLabelPressureUnit;
    String^ sLabelTemperatureUnit;
 
-  ImpTypeValFrBusState myBusState;
+   ImpTypeValFrBusState myBusState;
   Rdci_ST_ILK_ERRM_FZM_Type myFzzstd;
   Rdci_UHRZEIT_DATUM_Type myUhrzeitDatum;
 
@@ -1060,10 +1060,10 @@ private: System::Void timerRDCiCyclicTask_Tick(System::Object^  sender, System::
    }
 
    if(NvmDscCodierdatenRDCi_ReadByte( C_RDCI_DEFAULT_MENU_SEL_BYTE, C_RDCI_DEFAULT_MENU_SEL_MASK ) == 0 ){
-    radioButtonManual_eRFS->Checked = true;
+      radioButtonManual_eRFS->Checked = true;
    }
    else{
-    radioButtonAutomatic_RID->Checked = true;
+      radioButtonAutomatic_RID->Checked = true;
    }
 
    if(NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_ENABLE_BYTE, C_RDCI_SPEED_CCM_ENABLE_MASK ) == 0 ){

@@ -138,7 +138,7 @@ extern void GetRDCiOutputDataTolTempComp(                                  Rdci_
 extern void GetRDCiOutputDataWarningThresholdValueC(                       Rdci_WarningThresholdValueC_Type*                       ptOutputData);
 extern void GetRDCiOutputDataWarningThresholdValueNc(                      Rdci_WarningThresholdValueNc_Type*                      ptOutputData);
 extern void GetRDCiOutputDataExtParkSupConfig(                             Rdci_ExtParkSupConfig_Type*                             ptOutputData);
-FUNC(Std_ReturnType, RTE_CODE) Stub_Rte_Send_ST_TYR( P2CONST(Rdci_ST_TYR_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_DATA));
+FUNC(Std_ReturnType, RTE_CODE) RTE_Stub_Send_ST_TYR( P2CONST(Rdci_ST_TYR_Type, AUTOMATIC, RTE_CTAPHUFTPMSSWC_APPL_DATA));
 #ifdef __cplusplus
 }
 #endif

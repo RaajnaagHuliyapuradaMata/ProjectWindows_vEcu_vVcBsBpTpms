@@ -43,7 +43,7 @@ void ReadStringFromStream(unsigned char myString[], System::IO::Stream^ myStream
 
   myString[i] = 0;
 
-  do
+   do
   {
       ucChar = myStream->ReadByte();
 
@@ -102,9 +102,9 @@ long long ReadLongLongIntFromStream(System::IO::Stream^ myStream)
 
   #ifndef atoll
 
-    return ( (long long) atof((const char*)myString));
+      return ( (long long) atof((const char*)myString));
   #else
-    return ( atoll((const char*)myString));
+      return ( atoll((const char*)myString));
   #endif
 }
 #endif
@@ -374,7 +374,7 @@ long ReadMessageFromFile(System::IO::Stream^ myStream, uint32 dataType, unsigned
       break;
       }
 
-    return ulRet;
+      return ulRet;
 }
 #endif
 

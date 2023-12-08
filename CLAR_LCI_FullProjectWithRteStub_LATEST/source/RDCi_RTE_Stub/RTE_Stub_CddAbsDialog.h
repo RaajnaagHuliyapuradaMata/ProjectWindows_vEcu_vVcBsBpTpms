@@ -94,13 +94,13 @@ private: System::Void CanMessageTimer_Tick(System::Object^  sender, System::Even
 
    (void)SetTeleFilter(TELE_FILTER_OFF);
    if(checkBoxUseHufTelegrams->Checked == TRUE){
-    (void)SetTeleFilter(TELE_FILTER_HUF);
+      (void)SetTeleFilter(TELE_FILTER_HUF);
    }
    if(checkBoxUseSchraderTelegrams->Checked == TRUE){
-    (void)SetTeleFilter(TELE_FILTER_SCHRADER);
+      (void)SetTeleFilter(TELE_FILTER_SCHRADER);
    }
    if(checkBoxUseContiTelegrams->Checked == TRUE){
-    (void)SetTeleFilter(TELE_FILTER_CONTI);
+      (void)SetTeleFilter(TELE_FILTER_CONTI);
    }
 
   lastStreamPosition = myStream->Position;

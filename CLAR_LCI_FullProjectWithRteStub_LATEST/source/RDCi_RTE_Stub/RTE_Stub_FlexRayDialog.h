@@ -3,13 +3,13 @@
 
   private: System::Void SetFRDataTimer_Tick(System::Object^  sender, System::EventArgs^  e){
       sint16  temperatureHex;
-    Rdci_TEMP_EX_Type myTemperature = 0;
+      Rdci_TEMP_EX_Type myTemperature = 0;
     PhySensorTyrePresType ucEnvPressureHex;
       uint16  speedHex;
       uint8   myUnitMileData;
       uint8   myUnitAipData;
       uint8   myUnitTempData;
-    Rdci_MILE_KM_Type ulHelp;
+      Rdci_MILE_KM_Type ulHelp;
 
       static Rdci_V_VEH_Type myV_VEH = {0};
       static Rdci_WMOM_DRV_4_Type myWmomData = {0};
@@ -17,8 +17,8 @@
       static uint8 ucTime1sec = 0;
       static uint8 ucTime100msec = 0;
 
-    Rdci_UHRZEIT_DATUM_Type timeDate;
-    Rdci_T_SEC_COU_REL_Type relTime;
+      Rdci_UHRZEIT_DATUM_Type timeDate;
+      Rdci_T_SEC_COU_REL_Type relTime;
     StbMB_SystemTimeType sysTime;
     StbMB_SyncStatusType syncState;
 
@@ -521,19 +521,19 @@
    }
 
   private: System::Void checkBoxSelGearSource_CheckedChanged(System::Object^  sender, System::EventArgs^  e){
-    radioGearForward->Enabled = !(checkBoxSelGearSource->Checked);
-    radioGearNeutral->Enabled = !(checkBoxSelGearSource->Checked);
-    radioGearReverse->Enabled = !(checkBoxSelGearSource->Checked);
+      radioGearForward->Enabled = !(checkBoxSelGearSource->Checked);
+      radioGearNeutral->Enabled = !(checkBoxSelGearSource->Checked);
+      radioGearReverse->Enabled = !(checkBoxSelGearSource->Checked);
    }
 
   private: System::Void checkBoxSetPWFSource_CheckedChanged(System::Object^  sender, System::EventArgs^  e){
-    radioButtonStandfunktionen->Enabled = !(checkBoxSetPWFSource->Checked);
-    radioButtonParken->Enabled          = !(checkBoxSetPWFSource->Checked);
-    radioButtonWohnen->Enabled          = !(checkBoxSetPWFSource->Checked);
-    radioButtonPAD->Enabled             = !(checkBoxSetPWFSource->Checked);
-    radioButtonFBHerstellen->Enabled    = !(checkBoxSetPWFSource->Checked);
-    radioButtonFBBeenden->Enabled       = !(checkBoxSetPWFSource->Checked);
-    radioButtonFahren->Enabled          = !(checkBoxSetPWFSource->Checked);
+      radioButtonStandfunktionen->Enabled = !(checkBoxSetPWFSource->Checked);
+      radioButtonParken->Enabled          = !(checkBoxSetPWFSource->Checked);
+      radioButtonWohnen->Enabled          = !(checkBoxSetPWFSource->Checked);
+      radioButtonPAD->Enabled             = !(checkBoxSetPWFSource->Checked);
+      radioButtonFBHerstellen->Enabled    = !(checkBoxSetPWFSource->Checked);
+      radioButtonFBBeenden->Enabled       = !(checkBoxSetPWFSource->Checked);
+      radioButtonFahren->Enabled          = !(checkBoxSetPWFSource->Checked);
    }
 
   private: System::Void Beladungsauswahl_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e){
@@ -664,13 +664,13 @@
    }
 
   private: System::Void checkBoxSetUnitsSource_CheckedChanged(System::Object^  sender, System::EventArgs^  e){
-    radioUnitkmh->Enabled         = !(checkBoxSetUnitsSource->Checked);
-    radioUnitMile->Enabled        = !(checkBoxSetUnitsSource->Checked);
-    radioUnitCelsius->Enabled     = !(checkBoxSetUnitsSource->Checked);
-    radioUnitFahrenheit->Enabled  = !(checkBoxSetUnitsSource->Checked);
-    radioUnitBar->Enabled         = !(checkBoxSetUnitsSource->Checked);
-    radioUnitPsi->Enabled         = !(checkBoxSetUnitsSource->Checked);
-    radioUnitKpa->Enabled         = !(checkBoxSetUnitsSource->Checked);
+      radioUnitkmh->Enabled         = !(checkBoxSetUnitsSource->Checked);
+      radioUnitMile->Enabled        = !(checkBoxSetUnitsSource->Checked);
+      radioUnitCelsius->Enabled     = !(checkBoxSetUnitsSource->Checked);
+      radioUnitFahrenheit->Enabled  = !(checkBoxSetUnitsSource->Checked);
+      radioUnitBar->Enabled         = !(checkBoxSetUnitsSource->Checked);
+      radioUnitPsi->Enabled         = !(checkBoxSetUnitsSource->Checked);
+      radioUnitKpa->Enabled         = !(checkBoxSetUnitsSource->Checked);
    }
 
 #endif

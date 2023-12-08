@@ -49,22 +49,22 @@
     tNwMonitoringData tNwMonData;
 
     ImpTypeRecCcm_DISP_CC_BYPA_00                           tCC_BYPA_00;
-    Rdci_TAR_P_TYR_FLH_Type                                 TAR_P_TYR_FLH;
-    Rdci_TAR_P_TYR_FRH_Type                                 TAR_P_TYR_FRH;
-    Rdci_TAR_P_TYR_RLH_Type                                 TAR_P_TYR_RLH;
-    Rdci_TAR_P_TYR_RRH_Type                                 TAR_P_TYR_RRH;
+      Rdci_TAR_P_TYR_FLH_Type                                 TAR_P_TYR_FLH;
+      Rdci_TAR_P_TYR_FRH_Type                                 TAR_P_TYR_FRH;
+      Rdci_TAR_P_TYR_RLH_Type                                 TAR_P_TYR_RLH;
+      Rdci_TAR_P_TYR_RRH_Type                                 TAR_P_TYR_RRH;
 
-    Rdci_AVL_P_TYR_FLH_Type                                 AVL_P_TYR_FLH;
-    Rdci_AVL_P_TYR_FRH_Type                                 AVL_P_TYR_FRH;
-    Rdci_AVL_P_TYR_RLH_Type                                 AVL_P_TYR_RLH;
-    Rdci_AVL_P_TYR_RRH_Type                                 AVL_P_TYR_RRH;
+      Rdci_AVL_P_TYR_FLH_Type                                 AVL_P_TYR_FLH;
+      Rdci_AVL_P_TYR_FRH_Type                                 AVL_P_TYR_FRH;
+      Rdci_AVL_P_TYR_RLH_Type                                 AVL_P_TYR_RLH;
+      Rdci_AVL_P_TYR_RRH_Type                                 AVL_P_TYR_RRH;
 
-    Rdci_AVL_TEMP_TYR_FLH_Type                              AVL_TEMP_TYR_FLH;
-    Rdci_AVL_TEMP_TYR_FRH_Type                              AVL_TEMP_TYR_FRH;
-    Rdci_AVL_TEMP_TYR_RLH_Type                              AVL_TEMP_TYR_RLH;
-    Rdci_AVL_TEMP_TYR_RRH_Type                              AVL_TEMP_TYR_RRH;
+      Rdci_AVL_TEMP_TYR_FLH_Type                              AVL_TEMP_TYR_FLH;
+      Rdci_AVL_TEMP_TYR_FRH_Type                              AVL_TEMP_TYR_FRH;
+      Rdci_AVL_TEMP_TYR_RLH_Type                              AVL_TEMP_TYR_RLH;
+      Rdci_AVL_TEMP_TYR_RRH_Type                              AVL_TEMP_TYR_RRH;
 
-    Rdci_ST_TYR_Type                                        tST_TYR;
+      Rdci_ST_TYR_Type                                        tST_TYR;
 
 	  Rdci_L_OL_TYP_TYR_Type                                  L_OL_TYP_TYR;
 	  Rdci_QU_RDC_INIT_DISP_Type                              QU_RDC_INIT_DISP;
@@ -125,24 +125,24 @@
 	  Rdci_SEA_FTAX_TYP_TYR_Type                              SEA_FTAX_TYP_TYR;
 	  Rdci_WID_FTAX_TYP_TYR_Type                              WID_FTAX_TYP_TYR;
 
-    Rdci_StatusWheelTypeChangeDetection_Type                ST_WT_CHG_DET;
-    Rdci_StatusWheelTypeChangePosition_Type                 ST_WT_CHG_POS;
+      Rdci_StatusWheelTypeChangeDetection_Type                ST_WT_CHG_DET;
+      Rdci_StatusWheelTypeChangePosition_Type                 ST_WT_CHG_POS;
 
-    Rdci_LastReceivedAmbientPressure_Type                   LastReceivedAmbientPressure;
-    Rdci_MobilityLossThresholdValue_Type                    MobilityLossThresholdValue;
-    Rdci_NotificationThresholdValueC_Type                   NotificationThresholdValueC;
-    Rdci_NotificationThresholdValueNc_Type                  NotificationThresholdValueNc;
-    Rdci_RDCSystemReferenceTemp_Type                        RDCSystemReferenceTemp;
-    Rdci_PwfChange_Type                                     PwfChange;
-    Rdci_RelRecommendedColdInflationPressureFrontAxle_Type  RelRecommendedColdInflationPressureFrontAxle;
-    Rdci_RelRecommendedColdInflationPressureRearAxle_Type   RelRecommendedColdInflationPressureRearAxle;
-    Rdci_TolNoTempComp_Type                                 TolNoTempComp;
-    Rdci_TolTempComp_Type                                   TolTempComp;
-    Rdci_WarningThresholdValueC_Type                        WarningThresholdValueC;
-    Rdci_WarningThresholdValueNc_Type                       WarningThresholdValueNc;
-    Rdci_ExtParkSupConfig_Type                              ExtParkSupConfig;
+      Rdci_LastReceivedAmbientPressure_Type                   LastReceivedAmbientPressure;
+      Rdci_MobilityLossThresholdValue_Type                    MobilityLossThresholdValue;
+      Rdci_NotificationThresholdValueC_Type                   NotificationThresholdValueC;
+      Rdci_NotificationThresholdValueNc_Type                  NotificationThresholdValueNc;
+      Rdci_RDCSystemReferenceTemp_Type                        RDCSystemReferenceTemp;
+      Rdci_PwfChange_Type                                     PwfChange;
+      Rdci_RelRecommendedColdInflationPressureFrontAxle_Type  RelRecommendedColdInflationPressureFrontAxle;
+      Rdci_RelRecommendedColdInflationPressureRearAxle_Type   RelRecommendedColdInflationPressureRearAxle;
+      Rdci_TolNoTempComp_Type                                 TolNoTempComp;
+      Rdci_TolTempComp_Type                                   TolTempComp;
+      Rdci_WarningThresholdValueC_Type                        WarningThresholdValueC;
+      Rdci_WarningThresholdValueNc_Type                       WarningThresholdValueNc;
+      Rdci_ExtParkSupConfig_Type                              ExtParkSupConfig;
 
-    Rdci_UHRZEIT_DATUM_Type                                 timeDate;
+      Rdci_UHRZEIT_DATUM_Type                                 timeDate;
 
     String^ sLabelWheelPosition;
     String^ sLabelPackageId;
@@ -405,7 +405,7 @@
 		SUTR_ReifenbreiteVal-> Text = System::String::Format("{0}", WID_SUTR_TYP_TYR);
 	}
 
-  Index = GETSelectedWiTyreIndexEE(Rte_Inst_CtApHufTpmsSWC);
+   Index = GETSelectedWiTyreIndexEE(Rte_Inst_CtApHufTpmsSWC);
 
 	if(Index != CINIT_DISP_INVALID){
 		GetRDCiOutputDataCAC_WITR(&CAC_WITR_TYP_TYR);
