@@ -1,5 +1,3 @@
-
-
 #ifndef _RTE_STUB_CCM_X_H
 #define _RTE_STUB_CCM_X_H
 

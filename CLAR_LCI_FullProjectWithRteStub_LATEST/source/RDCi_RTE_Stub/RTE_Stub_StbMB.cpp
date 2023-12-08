@@ -1,6 +1,6 @@
-
-
-#include "RTE_Stub_StbMB.h"
+#include "Rte_CtApHufTpmsSWC_Type.h"
+#include "Rte_CtApHufTpmsSWC.h"
+#include "RTE_Stub_StbMBX.h"
 
 StbMB_SystemTimeType      sysTime;
 StbMB_SyncStatusType      sysTimeSyncState = STBM_STATE_NOT_SYNC;

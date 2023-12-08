@@ -1,6 +1,6 @@
-
-
-#include "RTE_Stub_Ccm.h"
+#include "Rte_CtApHufTpmsSWC_Type.h"
+#include "Rte_CtApHufTpmsSWC.h"
+#include "RTE_Stub_CcmX.h"
 
 uint16 u16CCWritePos;
 uint16 u16CCReadPos;

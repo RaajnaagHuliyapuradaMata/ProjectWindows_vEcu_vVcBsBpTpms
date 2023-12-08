@@ -1,6 +1,15 @@
+#include "Rte_CtApHufTpmsSWC_Type.h"
+#include "Rte_CtApHufTpmsSWC.h"
+#include "Rte_Stub_FlexRayDataX.h"
 
-
-#include "RTE_Stub_FlexRayData.h"
+#define cIx_DISP_HR           ((uint8) 0x01)
+#define cIx_DISP_MN           ((uint8) 0x02)
+#define cIx_DISP_SEC          ((uint8) 0x04)
+#define cIx_DISP_DATE_DAY     ((uint8) 0x08)
+#define cIx_DISP_DATE_WDAY    ((uint8) 0x10)
+#define cIx_DISP_DATE_MON     ((uint8) 0x20)
+#define cIx_DISP_DATE_YR      ((uint8) 0x40)
+#define cIx_ST_DISP_CTI_DATE  ((uint8) 0x80)
 
 Rdci_V_VEH_Type                   speedData;
 Rdci_WMOM_DRV_4_Type              directionData;

@@ -100,12 +100,12 @@ long long ReadLongLongIntFromStream(System::IO::Stream^ myStream)
 
   ReadStringFromStream(myString, myStream, sizeof(myString));
 
-  #ifndef atoll
+#ifndef atoll
 
       return ( (long long) atof((const char*)myString));
   #else
       return ( atoll((const char*)myString));
-  #endif
+#endif
 }
 #endif
 

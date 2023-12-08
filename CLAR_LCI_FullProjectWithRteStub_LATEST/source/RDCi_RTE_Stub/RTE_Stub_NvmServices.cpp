@@ -23,7 +23,9 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "RTE_Stub_NvmServices.h"
+#include "Rte_CtApHufTpmsSWC_Type.h"
+#include "Rte_CtApHufTpmsSWC.h"
+#include "RTE_Stub_NvmServicesX.h"
 
 #include <stdio.h>
 #include <string.h>

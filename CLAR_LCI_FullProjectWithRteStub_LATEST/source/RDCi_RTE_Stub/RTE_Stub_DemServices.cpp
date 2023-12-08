@@ -26,7 +26,9 @@
 #include "Rte_CtApHufTpmsSWC_Type.h"
 #include "Rte_CtApHufTpmsSWC.h"
 
-#include "RTE_Stub_DemServices.h"
+#include "Rte_Type.h"
+#include "RTE_Stub_DemServicesX.h"
+
 #include "RTE_Stub_DcmServices.h"
 #include "RTE_Stub_DtcNvmBlock.h"
 #include "RTE_Stub_FlexRayDataX.h"

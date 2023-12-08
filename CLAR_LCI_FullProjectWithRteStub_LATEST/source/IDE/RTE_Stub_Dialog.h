@@ -11,14 +11,11 @@
 
 #include "DataManagerX.h"
 #include "RTE_Stub.h"
-#include "RTE_Stub_FlexRayData.h"
 #include "RTE_Stub_Output.h"
 #include "RTE_Stub_CcmX.h"
 #include "RTE_Stub_StbMBX.h"
-#include "RTE_Stub_CddData.h"
 #include "RTE_Stub_RDCiSystem.h"
 #include "RTE_Stub_CalPrm.h"
-#include "RTE_Stub_NvmServices.h"
 #include "RTE_Stub_DcmServices.h"
 #include "RTE_Stub_DemServicesX.h"
 #include "Util.h"
@@ -39,8 +36,6 @@
 #include "wallocX.h"
 #include "fpa_X.h"
 #include "InfoTyreX.h"
-#include "InfoTyre.h"
-#include "Bandmode.h"
 #include "BandmodeX.h"
 #include "StatusRdcLesenX.h"
 #include "StatusRdcMessdatenblockX.h"
@@ -62,11 +57,9 @@
 #include "DebugMsgX.h"
 #include "WUMonitoringX.h"
 #include "NwMonitoringX.h"
-#include "NwMonitoring.h"
 #include "StatusReLesenDruckcodierungX.h"
 #include "SteuernRadelektronikVorgebenX.h"
 #include "SeasRcpAdjX.h"
-#include "WarningLamp.h"
 #include "HS_KalibrierereignisX.h"
 #include "DataManagerX.h"
 #include "SpeedCcmX.h"
@@ -78,10 +71,8 @@
    extern "C"
   {
 #endif
-
 extern void ReInitRdciSWC(void);
 extern void GetNvmWriteAttemptCounters(uint8*);
-
 #ifdef __cplusplus
    }
 #endif
