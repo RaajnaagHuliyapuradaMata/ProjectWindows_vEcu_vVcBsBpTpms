@@ -153,7 +153,7 @@ add_library(
    ${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/JumpTable/JumpTable.c
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG.cpp
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_CalPrm.cpp
-   ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_CalPrmNvmBlock.cpp
+#  ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_CalPrmNvmBlock.cpp - TBD: Remove in Real Wrapper as well!
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_Ccm.cpp
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_CddData.cpp
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_DcmServices.cpp
@@ -165,16 +165,29 @@ add_library(
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_RDCiSystem.cpp
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_SettingsNvmBlock.cpp
    ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_StbMB.cpp
-#  ${PROJECT_SOURCE_DIR}/source/Wrapper_HBG/Wrapper_HBG_JumpTable.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CalPrm.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CalPrmNvmBlock.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_Ccm.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_CddData.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_DcmServices.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_DemServices.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_DtcNvmBlock.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_FlexRayData.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_NvmServices.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_Output.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_RDCiSystem.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_SettingsNvmBlock.cpp
+   ${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub/RTE_Stub_StbMB.cpp
 )
 
 target_include_directories(
    ${PROJECT_NAME} PUBLIC
 
 #TBD: Rearrange as per priority
+   "${PROJECT_SOURCE_DIR}/source/common"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include/CtApHufTpmsSWC"
-   "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include/CtApHufTpmsSWC/_Common"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Bandmode"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/BedAnz"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Datamanager"
@@ -188,10 +201,11 @@ target_include_directories(
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/JumpTable"
 
    "${PROJECT_SOURCE_DIR}/source/Wrapper_HBG"
+   "${PROJECT_SOURCE_DIR}/source/RDCi_RTE_Stub"
    "${PROJECT_SOURCE_DIR}/source/IDE"
    "${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Logging"
+   "${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Util"
    "${PROJECT_SOURCE_DIR}/source/stubs"
-#  "${PROJECT_SOURCE_DIR}/source/IDE/RDCi_Util"
 )
 
 #set_target_properties( # Needed for install library in destination path

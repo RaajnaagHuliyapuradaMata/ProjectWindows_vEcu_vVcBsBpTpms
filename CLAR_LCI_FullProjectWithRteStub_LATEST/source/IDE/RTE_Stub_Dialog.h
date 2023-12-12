@@ -10,7 +10,7 @@
 #include <stdlib.h>
 
 #include "DataManagerX.h"
-#include "RTE_Stub.h"
+#include "Rte_Type.h"
 #include "RTE_Stub_Output.h"
 #include "RTE_Stub_CcmX.h"
 #include "RTE_Stub_StbMBX.h"

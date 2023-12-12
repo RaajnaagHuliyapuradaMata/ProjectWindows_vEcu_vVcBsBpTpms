@@ -132,9 +132,9 @@ target_include_directories(
    ${PROJECT_NAME} PUBLIC
 
 #TBD: Rearrange as per priority
+   "${PROJECT_SOURCE_DIR}/source/common"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include/CtApHufTpmsSWC"
-   "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/Appl/Include/CtApHufTpmsSWC/_Common"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Bandmode"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/BedAnz"
    "${PROJECT_SOURCE_DIR}/source/SwcApplTpms/SWC/Sources/Datamanager"
