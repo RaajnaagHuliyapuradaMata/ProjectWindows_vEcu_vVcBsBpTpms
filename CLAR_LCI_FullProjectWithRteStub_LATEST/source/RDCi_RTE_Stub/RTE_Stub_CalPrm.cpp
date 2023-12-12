@@ -23,7 +23,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "RTE_Stub_CalPrm.h"
+#include "Rte_CtApHufTpmsSWC_Type.h"
+#include "Rte_CtApHufTpmsSWC.h"
+#include "RTE_Stub_CalPrmX.h"
+
+
 #include "RTE_Stub_CalPrmNvmBlock.h"
 
 /******************************************************************************/

@@ -1,0 +1,788 @@
+IDE\RDCi_Logging\Logging.cpp:    PutWordToBufferLOG( GETushSpeedFZZ());
+IDE\RTE_Stub_Dialog.h:#include "SpeedCcmX.h"
+IDE\RTE_Stub_Dialog.h:  private: System::Windows::Forms::Label^  labelFileInputSpeed;
+IDE\RTE_Stub_Dialog.h:  private: System::Windows::Forms::NumericUpDown^  numericFileInputSpeed;
+IDE\RTE_Stub_Dialog.h:  private: System::Windows::Forms::NumericUpDown^  numericNoOfSpeedMsgs;
+IDE\RTE_Stub_Dialog.h:  private: System::Windows::Forms::Label^  labelNoOfSpeedMsgs;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelFATyreSpeedIndex;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelRATyreSpeedIndex;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelTyListSpeedIndex;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelSuTyreSpeedIndex;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelWiTyreSpeedIndex;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelErfsSpeedIndex;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::CheckBox^  checkBoxBandmodeServiceTestErFahrtNoSpeed;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::CheckBox^  checkBoxSelSpeedSource;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::CheckBox^  checkBoxCRdciSpeedCcmEnable;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelCRdciSpeedCcmTime;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::NumericUpDown^  numericUpDownCRdciSpeedCcmTime;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelCRdciSpeedCcmTh;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::NumericUpDown^  numericUpDownCRdciSpeedCcmTh;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelCRdciSpeedCcmPressOffsetRa;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::NumericUpDown^  numericUpDownCRdciSpeedCcmPressOffsetRa;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelCRdciSpeedCcmPressOffsetFa;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::NumericUpDown^  numericUpDownCRdciSpeedCcmPressOffsetFa;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelCRdciSpeedCcmHyst;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::NumericUpDown^  numericUpDownCRdciSpeedCcmHyst;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::TabPage^  tabSpeedCCM;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelSpeedCcmStatusbyteWert;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelSpeedCcmStatusbyteText;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelMMISpeedCcm2159;
+IDE\RTE_Stub_Dialog.h:private: System::Windows::Forms::Label^  labelMMISpeedCcm2158;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTime = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTime = (gcnew System::Windows::Forms::NumericUpDown());
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTh = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTh = (gcnew System::Windows::Forms::NumericUpDown());
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetRa = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetRa = (gcnew System::Windows::Forms::NumericUpDown());
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetFa = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetFa = (gcnew System::Windows::Forms::NumericUpDown());
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmHyst = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmHyst = (gcnew System::Windows::Forms::NumericUpDown());
+IDE\RTE_Stub_Dialog.h:      this->checkBoxCRdciSpeedCcmEnable = (gcnew System::Windows::Forms::CheckBox());
+IDE\RTE_Stub_Dialog.h:      this->labelFileInputSpeed = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->numericFileInputSpeed = (gcnew System::Windows::Forms::NumericUpDown());
+IDE\RTE_Stub_Dialog.h:      this->numericNoOfSpeedMsgs = (gcnew System::Windows::Forms::NumericUpDown());
+IDE\RTE_Stub_Dialog.h:      this->labelNoOfSpeedMsgs = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource = (gcnew System::Windows::Forms::CheckBox());
+IDE\RTE_Stub_Dialog.h:      this->checkBoxBandmodeServiceTestErFahrtNoSpeed = (gcnew System::Windows::Forms::CheckBox());
+IDE\RTE_Stub_Dialog.h:      this->labelFATyreSpeedIndex = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->labelRATyreSpeedIndex = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->labelTyListSpeedIndex = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->labelSuTyreSpeedIndex = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->labelWiTyreSpeedIndex = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->labelErfsSpeedIndex = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2159 = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2158 = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->tabSpeedCCM = (gcnew System::Windows::Forms::TabPage());
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteText = (gcnew System::Windows::Forms::Label());
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCRdciSpeedCcmTime))->BeginInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCRdciSpeedCcmTh))->BeginInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCRdciSpeedCcmPressOffsetRa))->BeginInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCRdciSpeedCcmPressOffsetFa))->BeginInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCRdciSpeedCcmHyst))->BeginInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericFileInputSpeed))->BeginInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericNoOfSpeedMsgs))->BeginInit();
+IDE\RTE_Stub_Dialog.h:      this->tabSpeedCCM->SuspendLayout();
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->labelCRdciSpeedCcmTime);
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->numericUpDownCRdciSpeedCcmTime);
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->labelCRdciSpeedCcmTh);
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->numericUpDownCRdciSpeedCcmTh);
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->labelCRdciSpeedCcmPressOffsetRa);
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->numericUpDownCRdciSpeedCcmPressOffsetRa);
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->labelCRdciSpeedCcmPressOffsetFa);
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->numericUpDownCRdciSpeedCcmPressOffsetFa);
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->labelCRdciSpeedCcmHyst);
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->numericUpDownCRdciSpeedCcmHyst);
+IDE\RTE_Stub_Dialog.h:      this->groupBoxDSC_CODIERDATEN_RDCI->Controls->Add(this->checkBoxCRdciSpeedCcmEnable);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTime->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTime->Location = System::Drawing::Point(462, 164);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTime->Name = L"labelCRdciSpeedCcmTime";
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTime->Size = System::Drawing::Size(167, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTime->TabIndex = 159;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTime->Text = L"CRdciSpeedCcmTime (0..100sec)";
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTime->Location = System::Drawing::Point(661, 163);
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTime->Name = L"numericUpDownCRdciSpeedCcmTime";
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTime->Size = System::Drawing::Size(55, 20);
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTime->TabIndex = 158;
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTime->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTime->ValueChanged += gcnew System::EventHandler(this, &RTE_Stub_Dialog::numericUpDownCRdciSpeedCcmTime_ValueChanged);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTh->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTh->Location = System::Drawing::Point(462, 146);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTh->Name = L"labelCRdciSpeedCcmTh";
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTh->Size = System::Drawing::Size(171, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTh->TabIndex = 157;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmTh->Text = L"CRdciSpeedCcmTh (0..1234km/h)";
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTh->Location = System::Drawing::Point(661, 145);
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTh->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1234, 0, 0, 0 });
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTh->Name = L"numericUpDownCRdciSpeedCcmTh";
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTh->Size = System::Drawing::Size(55, 20);
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTh->TabIndex = 156;
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTh->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 267, 0, 0, 0 });
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmTh->ValueChanged += gcnew System::EventHandler(this, &RTE_Stub_Dialog::numericUpDownCRdciSpeedCcmTh_ValueChanged);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetRa->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetRa->Location = System::Drawing::Point(374, 200);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetRa->Name = L"labelCRdciSpeedCcmPressOffsetRa";
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetRa->Size = System::Drawing::Size(241, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetRa->TabIndex = 155;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetRa->Text = L"CRdciSpeedCcmPressOffsetRa (-1000..+500hPa)";
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetRa->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetRa->Location = System::Drawing::Point(661, 199);
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetRa->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetRa->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) {
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetRa->Name = L"numericUpDownCRdciSpeedCcmPressOffsetRa";
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetRa->Size = System::Drawing::Size(55, 20);
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetRa->TabIndex = 154;
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetRa->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, System::Int32::MinValue });
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetRa->ValueChanged += gcnew System::EventHandler(this, &RTE_Stub_Dialog::numericUpDownCRdciSpeedCcmPressOffsetRa_ValueChanged);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetFa->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetFa->Location = System::Drawing::Point(374, 182);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetFa->Name = L"labelCRdciSpeedCcmPressOffsetFa";
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetFa->Size = System::Drawing::Size(239, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetFa->TabIndex = 153;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmPressOffsetFa->Text = L"CRdciSpeedCcmPressOffsetFa (-1000..+500hPa)";
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetFa->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) {
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetFa->Location = System::Drawing::Point(661, 181);
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetFa->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetFa->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) {
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetFa->Name = L"numericUpDownCRdciSpeedCcmPressOffsetFa";
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetFa->Size = System::Drawing::Size(55, 20);
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetFa->TabIndex = 152;
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetFa->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, System::Int32::MinValue });
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmPressOffsetFa->ValueChanged += gcnew System::EventHandler(this, &RTE_Stub_Dialog::numericUpDownCRdciSpeedCcmPressOffsetFa_ValueChanged);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmHyst->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmHyst->Location = System::Drawing::Point(462, 128);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmHyst->Name = L"labelCRdciSpeedCcmHyst";
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmHyst->Size = System::Drawing::Size(173, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmHyst->TabIndex = 151;
+IDE\RTE_Stub_Dialog.h:      this->labelCRdciSpeedCcmHyst->Text = L"CRdciSpeedCcmHyst (0..100km/h)";
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmHyst->Location = System::Drawing::Point(661, 127);
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmHyst->Name = L"numericUpDownCRdciSpeedCcmHyst";
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmHyst->Size = System::Drawing::Size(55, 20);
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmHyst->TabIndex = 150;
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmHyst->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
+IDE\RTE_Stub_Dialog.h:      this->numericUpDownCRdciSpeedCcmHyst->ValueChanged += gcnew System::EventHandler(this, &RTE_Stub_Dialog::numericUpDownCRdciSpeedCcmHyst_ValueChanged);
+IDE\RTE_Stub_Dialog.h:      this->checkBoxCRdciSpeedCcmEnable->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxCRdciSpeedCcmEnable->Location = System::Drawing::Point(1, 328);
+IDE\RTE_Stub_Dialog.h:      this->checkBoxCRdciSpeedCcmEnable->Name = L"checkBoxCRdciSpeedCcmEnable";
+IDE\RTE_Stub_Dialog.h:      this->checkBoxCRdciSpeedCcmEnable->Size = System::Drawing::Size(140, 17);
+IDE\RTE_Stub_Dialog.h:      this->checkBoxCRdciSpeedCcmEnable->TabIndex = 149;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxCRdciSpeedCcmEnable->Text = L"CRdciSpeedCcmEnable";
+IDE\RTE_Stub_Dialog.h:      this->checkBoxCRdciSpeedCcmEnable->UseVisualStyleBackColor = true;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxCRdciSpeedCcmEnable->CheckedChanged += gcnew System::EventHandler(this, &RTE_Stub_Dialog::checkBoxCRdciSpeedCcmEnable_CheckedChanged);
+IDE\RTE_Stub_Dialog.h:      this->TabAbsData->Controls->Add(this->labelFileInputSpeed);
+IDE\RTE_Stub_Dialog.h:      this->TabAbsData->Controls->Add(this->numericFileInputSpeed);
+IDE\RTE_Stub_Dialog.h:      this->TabAbsData->Controls->Add(this->numericNoOfSpeedMsgs);
+IDE\RTE_Stub_Dialog.h:      this->TabAbsData->Controls->Add(this->labelNoOfSpeedMsgs);
+IDE\RTE_Stub_Dialog.h:      this->labelFileInputSpeed->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelFileInputSpeed->Location = System::Drawing::Point(376, 136);
+IDE\RTE_Stub_Dialog.h:      this->labelFileInputSpeed->Name = L"labelFileInputSpeed";
+IDE\RTE_Stub_Dialog.h:      this->labelFileInputSpeed->Size = System::Drawing::Size(32, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelFileInputSpeed->TabIndex = 25;
+IDE\RTE_Stub_Dialog.h:      this->labelFileInputSpeed->Text = L"km/h";
+IDE\RTE_Stub_Dialog.h:      this->numericFileInputSpeed->Location = System::Drawing::Point(302, 134);
+IDE\RTE_Stub_Dialog.h:      this->numericFileInputSpeed->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 3500, 0, 0, 65536 });
+IDE\RTE_Stub_Dialog.h:      this->numericFileInputSpeed->Name = L"numericFileInputSpeed";
+IDE\RTE_Stub_Dialog.h:      this->numericFileInputSpeed->ReadOnly = true;
+IDE\RTE_Stub_Dialog.h:      this->numericFileInputSpeed->Size = System::Drawing::Size(60, 20);
+IDE\RTE_Stub_Dialog.h:      this->numericFileInputSpeed->TabIndex = 24;
+IDE\RTE_Stub_Dialog.h:      this->numericNoOfSpeedMsgs->Location = System::Drawing::Point(214, 134);
+IDE\RTE_Stub_Dialog.h:      this->numericNoOfSpeedMsgs->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2147483647, 0, 0, 0 });
+IDE\RTE_Stub_Dialog.h:      this->numericNoOfSpeedMsgs->Name = L"numericNoOfSpeedMsgs";
+IDE\RTE_Stub_Dialog.h:      this->numericNoOfSpeedMsgs->ReadOnly = true;
+IDE\RTE_Stub_Dialog.h:      this->numericNoOfSpeedMsgs->Size = System::Drawing::Size(82, 20);
+IDE\RTE_Stub_Dialog.h:      this->numericNoOfSpeedMsgs->TabIndex = 10;
+IDE\RTE_Stub_Dialog.h:      this->labelNoOfSpeedMsgs->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelNoOfSpeedMsgs->Location = System::Drawing::Point(25, 137);
+IDE\RTE_Stub_Dialog.h:      this->labelNoOfSpeedMsgs->Name = L"labelNoOfSpeedMsgs";
+IDE\RTE_Stub_Dialog.h:      this->labelNoOfSpeedMsgs->Size = System::Drawing::Size(115, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelNoOfSpeedMsgs->TabIndex = 5;
+IDE\RTE_Stub_Dialog.h:      this->labelNoOfSpeedMsgs->Text = L"No of speed messages";
+IDE\RTE_Stub_Dialog.h:      this->panelVEH_COG->Controls->Add(this->checkBoxSelSpeedSource);
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource->Checked = true;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource->CheckState = System::Windows::Forms::CheckState::Checked;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource->Location = System::Drawing::Point(106, 67);
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource->Name = L"checkBoxSelSpeedSource";
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource->Size = System::Drawing::Size(96, 17);
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource->TabIndex = 46;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource->Text = L"Speed from file";
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource->UseVisualStyleBackColor = true;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxSelSpeedSource->CheckedChanged += gcnew System::EventHandler(this, &RTE_Stub_Dialog::checkBoxSelSpeedSource_CheckedChanged);
+IDE\RTE_Stub_Dialog.h:      this->listBoxAktionsnummerSetReset->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"0: RESET", L"1: SET", L"2: SET_NO_SPEED" });
+IDE\RTE_Stub_Dialog.h:      this->groupBoxBandmodeServices->Controls->Add(this->checkBoxBandmodeServiceTestErFahrtNoSpeed);
+IDE\RTE_Stub_Dialog.h:      this->checkBoxBandmodeServiceTestErFahrtNoSpeed->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxBandmodeServiceTestErFahrtNoSpeed->Location = System::Drawing::Point(264, 24);
+IDE\RTE_Stub_Dialog.h:      this->checkBoxBandmodeServiceTestErFahrtNoSpeed->Name = L"checkBoxBandmodeServiceTestErFahrtNoSpeed";
+IDE\RTE_Stub_Dialog.h:      this->checkBoxBandmodeServiceTestErFahrtNoSpeed->Size = System::Drawing::Size(140, 17);
+IDE\RTE_Stub_Dialog.h:      this->checkBoxBandmodeServiceTestErFahrtNoSpeed->TabIndex = 113;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxBandmodeServiceTestErFahrtNoSpeed->Text = L"Test ER Fahrt NoSpeed";
+IDE\RTE_Stub_Dialog.h:      this->checkBoxBandmodeServiceTestErFahrtNoSpeed->UseVisualStyleBackColor = true;
+IDE\RTE_Stub_Dialog.h:      this->checkBoxBandmodeServiceTestErFahrt->Text = L"Test ER Fahrt Speed";
+IDE\RTE_Stub_Dialog.h:      this->panelMMA_FATyre->Controls->Add(this->labelFATyreSpeedIndex);
+IDE\RTE_Stub_Dialog.h:      this->labelFATyreSpeedIndex->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelFATyreSpeedIndex->Location = System::Drawing::Point(8, 149);
+IDE\RTE_Stub_Dialog.h:      this->labelFATyreSpeedIndex->Name = L"labelFATyreSpeedIndex";
+IDE\RTE_Stub_Dialog.h:      this->labelFATyreSpeedIndex->Size = System::Drawing::Size(75, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelFATyreSpeedIndex->TabIndex = 170;
+IDE\RTE_Stub_Dialog.h:      this->labelFATyreSpeedIndex->Text = L"Geschw.Index";
+IDE\RTE_Stub_Dialog.h:      this->panelMMA_RATyre->Controls->Add(this->labelRATyreSpeedIndex);
+IDE\RTE_Stub_Dialog.h:      this->labelRATyreSpeedIndex->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelRATyreSpeedIndex->Location = System::Drawing::Point(8, 149);
+IDE\RTE_Stub_Dialog.h:      this->labelRATyreSpeedIndex->Name = L"labelRATyreSpeedIndex";
+IDE\RTE_Stub_Dialog.h:      this->labelRATyreSpeedIndex->Size = System::Drawing::Size(75, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelRATyreSpeedIndex->TabIndex = 170;
+IDE\RTE_Stub_Dialog.h:      this->labelRATyreSpeedIndex->Text = L"Geschw.Index";
+IDE\RTE_Stub_Dialog.h:      this->panelMMI_TyreList->Controls->Add(this->labelTyListSpeedIndex);
+IDE\RTE_Stub_Dialog.h:      this->labelTyListSpeedIndex->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelTyListSpeedIndex->Location = System::Drawing::Point(3, 150);
+IDE\RTE_Stub_Dialog.h:      this->labelTyListSpeedIndex->Name = L"labelTyListSpeedIndex";
+IDE\RTE_Stub_Dialog.h:      this->labelTyListSpeedIndex->Size = System::Drawing::Size(75, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelTyListSpeedIndex->TabIndex = 153;
+IDE\RTE_Stub_Dialog.h:      this->labelTyListSpeedIndex->Text = L"Geschw.Index";
+IDE\RTE_Stub_Dialog.h:      this->panelMMI_SummerTyre->Controls->Add(this->labelSuTyreSpeedIndex);
+IDE\RTE_Stub_Dialog.h:      this->labelSuTyreSpeedIndex->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelSuTyreSpeedIndex->Location = System::Drawing::Point(4, 151);
+IDE\RTE_Stub_Dialog.h:      this->labelSuTyreSpeedIndex->Name = L"labelSuTyreSpeedIndex";
+IDE\RTE_Stub_Dialog.h:      this->labelSuTyreSpeedIndex->Size = System::Drawing::Size(75, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelSuTyreSpeedIndex->TabIndex = 153;
+IDE\RTE_Stub_Dialog.h:      this->labelSuTyreSpeedIndex->Text = L"Geschw.Index";
+IDE\RTE_Stub_Dialog.h:      this->panelMMI_WinterTyre->Controls->Add(this->labelWiTyreSpeedIndex);
+IDE\RTE_Stub_Dialog.h:      this->labelWiTyreSpeedIndex->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelWiTyreSpeedIndex->Location = System::Drawing::Point(3, 150);
+IDE\RTE_Stub_Dialog.h:      this->labelWiTyreSpeedIndex->Name = L"labelWiTyreSpeedIndex";
+IDE\RTE_Stub_Dialog.h:      this->labelWiTyreSpeedIndex->Size = System::Drawing::Size(75, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelWiTyreSpeedIndex->TabIndex = 153;
+IDE\RTE_Stub_Dialog.h:      this->labelWiTyreSpeedIndex->Text = L"Geschw.Index";
+IDE\RTE_Stub_Dialog.h:      this->tabPageERFS_Out->Controls->Add(this->labelErfsSpeedIndex);
+IDE\RTE_Stub_Dialog.h:      this->labelErfsSpeedIndex->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelErfsSpeedIndex->Location = System::Drawing::Point(23, 185);
+IDE\RTE_Stub_Dialog.h:      this->labelErfsSpeedIndex->Name = L"labelErfsSpeedIndex";
+IDE\RTE_Stub_Dialog.h:      this->labelErfsSpeedIndex->Size = System::Drawing::Size(75, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelErfsSpeedIndex->TabIndex = 136;
+IDE\RTE_Stub_Dialog.h:      this->labelErfsSpeedIndex->Text = L"Geschw.Index";
+IDE\RTE_Stub_Dialog.h:      this->tabPageMMI_CCM->Controls->Add(this->labelMMISpeedCcm2159);
+IDE\RTE_Stub_Dialog.h:      this->tabPageMMI_CCM->Controls->Add(this->labelMMISpeedCcm2158);
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2159->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2159->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2159->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(160)),
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2159->Location = System::Drawing::Point(327, 321);
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2159->Name = L"labelMMISpeedCcm2159";
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2159->Size = System::Drawing::Size(158, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2159->TabIndex = 168;
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2159->Text = L"0x086F - Speed CCM 2159";
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2158->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2158->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2158->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(160)),
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2158->Location = System::Drawing::Point(327, 303);
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2158->Name = L"labelMMISpeedCcm2158";
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2158->Size = System::Drawing::Size(159, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2158->TabIndex = 167;
+IDE\RTE_Stub_Dialog.h:      this->labelMMISpeedCcm2158->Text = L"0x086E - Speed CCM 2158";
+IDE\RTE_Stub_Dialog.h:      this->DataTabOutputControl->Controls->Add(this->tabSpeedCCM);
+IDE\RTE_Stub_Dialog.h:      this->tabSpeedCCM->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+IDE\RTE_Stub_Dialog.h:      this->tabSpeedCCM->Controls->Add(this->panel1);
+IDE\RTE_Stub_Dialog.h:      this->tabSpeedCCM->Location = System::Drawing::Point(4, 58);
+IDE\RTE_Stub_Dialog.h:      this->tabSpeedCCM->Name = L"tabSpeedCCM";
+IDE\RTE_Stub_Dialog.h:      this->tabSpeedCCM->Size = System::Drawing::Size(699, 440);
+IDE\RTE_Stub_Dialog.h:      this->tabSpeedCCM->TabIndex = 22;
+IDE\RTE_Stub_Dialog.h:      this->tabSpeedCCM->Text = L"SpeedCCM";
+IDE\RTE_Stub_Dialog.h:      this->panel1->Controls->Add(this->labelSpeedCcmStatusbyteWert);
+IDE\RTE_Stub_Dialog.h:      this->panel1->Controls->Add(this->labelSpeedCcmStatusbyteText);
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert->BackColor = System::Drawing::Color::White;
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert->Location = System::Drawing::Point(198, 7);
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert->MaximumSize = System::Drawing::Size(48, 20);
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert->MinimumSize = System::Drawing::Size(48, 20);
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert->Name = L"labelSpeedCcmStatusbyteWert";
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert->Size = System::Drawing::Size(48, 20);
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert->TabIndex = 213;
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteWert->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteText->AutoSize = true;
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteText->Location = System::Drawing::Point(4, 12);
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteText->Name = L"labelSpeedCcmStatusbyteText";
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteText->Size = System::Drawing::Size(83, 13);
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteText->TabIndex = 212;
+IDE\RTE_Stub_Dialog.h:      this->labelSpeedCcmStatusbyteText->Text = L"Statusbyte [hex]";
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCRdciSpeedCcmTime))->EndInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCRdciSpeedCcmTh))->EndInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCRdciSpeedCcmPressOffsetRa))->EndInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCRdciSpeedCcmPressOffsetFa))->EndInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownCRdciSpeedCcmHyst))->EndInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericFileInputSpeed))->EndInit();
+IDE\RTE_Stub_Dialog.h:      (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericNoOfSpeedMsgs))->EndInit();
+IDE\RTE_Stub_Dialog.h:      this->tabSpeedCCM->ResumeLayout(false);
+IDE\RTE_Stub_Dialog.h:          checkBoxSelSpeedSource->Checked = true;
+IDE\RTE_Stub_Dialog.h:          checkBoxSelSpeedSource->Checked = false;
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmEnable,                       RTE_CODE) RTE_Stub_Prm_CRdciSpeedCcmEnable                      (void){return (NvmDscCodierdatenRDCi_ReadByte(      C_RDCI_SPEED_CCM_ENABLE_BYTE,                         C_RDCI_SPEED_CCM_ENABLE_MASK                         ) >> 0);}
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmHyst,                         RTE_CODE) RTE_Stub_Prm_CRdciSpeedCcmHyst                        (void){return  NvmDscCodierdatenRDCi_ReadByte(      C_RDCI_SPEED_CCM_HYST_BYTE,                           C_RDCI_SPEED_CCM_HYST_MASK                           );}
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmTime,                         RTE_CODE) RTE_Stub_Prm_CRdciSpeedCcmTime                        (void){return  NvmDscCodierdatenRDCi_ReadByte(      C_RDCI_SPEED_CCM_TIME_BYTE,                           C_RDCI_SPEED_CCM_TIME_MASK                           );}
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmPressOffsetFa, RTE_CODE) RTE_Stub_Prm_CRdciSpeedCcmPressOffsetFa(void){
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:    ImpTypeValCRdciSpeedCcmPressOffsetFa SpeedCcmPressOffsetFa;
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:      uint8                                aucSpeedCcmPressOffsetFa[sizeof(ImpTypeValCRdciSpeedCcmPressOffsetFa)];
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   }tSpeedCcmPressOffsetFa;
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   tSpeedCcmPressOffsetFa.aucSpeedCcmPressOffsetFa[0] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_0);
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   tSpeedCcmPressOffsetFa.aucSpeedCcmPressOffsetFa[1] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_1);
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   return tSpeedCcmPressOffsetFa.SpeedCcmPressOffsetFa;
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmPressOffsetRa, RTE_CODE) RTE_Stub_Prm_CRdciSpeedCcmPressOffsetRa(void){
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:    ImpTypeValCRdciSpeedCcmPressOffsetRa SpeedCcmPressOffsetRa;
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:      uint8                                aucSpeedCcmPressOffsetRa[sizeof(ImpTypeValCRdciSpeedCcmPressOffsetRa)];
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   }tSpeedCcmPressOffsetRa;
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   tSpeedCcmPressOffsetRa.aucSpeedCcmPressOffsetRa[0] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_0);
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   tSpeedCcmPressOffsetRa.aucSpeedCcmPressOffsetRa[1] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_1);
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   return tSpeedCcmPressOffsetRa.SpeedCcmPressOffsetRa;
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmTh, RTE_CODE) RTE_Stub_Prm_CRdciSpeedCcmTh(void){
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:    ImpTypeValCRdciSpeedCcmTh SpeedCcmTh;
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:      uint8                     aucSpeedCcmTh[sizeof(ImpTypeValCRdciSpeedCcmTh)];
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   }tSpeedCcmTh;
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   tSpeedCcmTh.aucSpeedCcmTh[0] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_TH_BYTE_0, C_RDCI_SPEED_CCM_TH_MASK_0);
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   tSpeedCcmTh.aucSpeedCcmTh[1] = NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_TH_BYTE_1, C_RDCI_SPEED_CCM_TH_MASK_1);
+RDCi_RTE_Stub\RTE_Stub_CalPrm.cpp:   return tSpeedCcmTh.SpeedCcmTh;
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:private: System::Void checkBoxCRdciSpeedCcmEnable_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           if(checkBoxCRdciSpeedCcmEnable->Checked == TRUE)
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:             NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_ENABLE_BYTE, C_RDCI_T_PREWARN_NC_MASK, (uint8) C_RDCI_SPEED_CCM_ENABLE_MASK);
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:             NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_ENABLE_BYTE, C_RDCI_SPEED_CCM_ENABLE_MASK, (uint8) FALSE);
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:private: System::Void numericUpDownCRdciSpeedCcmHyst_ValueChanged(System::Object^  sender, System::EventArgs^  e)
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_HYST_BYTE, C_RDCI_SPEED_CCM_HYST_MASK, (uint8) System::Decimal::ToByte( numericUpDownCRdciSpeedCcmHyst->Value));
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:private: System::Void numericUpDownCRdciSpeedCcmTh_ValueChanged(System::Object^  sender, System::EventArgs^  e)
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           ImpTypeValCRdciSpeedCcmTh SpeedCcmTh;
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           SpeedCcmTh = (ImpTypeValCRdciSpeedCcmTh) System::Decimal::ToUInt16( numericUpDownCRdciSpeedCcmTh->Value);
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_TH_BYTE_0, C_RDCI_SPEED_CCM_TH_MASK_0, ((SpeedCcmTh >> 0) & 0x00ffu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_TH_BYTE_1, C_RDCI_SPEED_CCM_TH_MASK_1, ((SpeedCcmTh >> 8) & 0x00ffu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:private: System::Void numericUpDownCRdciSpeedCcmPressOffsetFa_ValueChanged(System::Object^  sender, System::EventArgs^  e)
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           ImpTypeValCRdciSpeedCcmPressOffsetFa SpeedCcmPressOffsetFa;
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           SpeedCcmPressOffsetFa = (ImpTypeValCRdciSpeedCcmTh) System::Decimal::ToInt16( numericUpDownCRdciSpeedCcmPressOffsetFa->Value);
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_0, ((SpeedCcmPressOffsetFa >> 0) & 0x00ffu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_1, ((SpeedCcmPressOffsetFa >> 8) & 0x00ffu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:private: System::Void numericUpDownCRdciSpeedCcmPressOffsetRa_ValueChanged(System::Object^  sender, System::EventArgs^  e)
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           ImpTypeValCRdciSpeedCcmPressOffsetRa SpeedCcmPressOffsetRa;
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           SpeedCcmPressOffsetRa = (ImpTypeValCRdciSpeedCcmTh) System::Decimal::ToInt16( numericUpDownCRdciSpeedCcmPressOffsetRa->Value);
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_0, ((SpeedCcmPressOffsetRa >> 0) & 0x00ffu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_1, ((SpeedCcmPressOffsetRa >> 8) & 0x00ffu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:private: System::Void numericUpDownCRdciSpeedCcmTime_ValueChanged(System::Object^  sender, System::EventArgs^  e)
+RDCi_RTE_Stub\RTE_Stub_CalPrmDialog.h:           NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_TIME_BYTE, C_RDCI_SPEED_CCM_TIME_MASK, (uint8) System::Decimal::ToByte( numericUpDownCRdciSpeedCcmTime->Value));
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.cpp:      NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_ENABLE_BYTE, C_RDCI_SPEED_CCM_ENABLE_MASK, (uint8) tCodingDataRomCD[i].bCRdciSpeedCcmEnable);
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.cpp:      NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_TH_BYTE_0, C_RDCI_SPEED_CCM_TH_MASK_0, (uint8) ((tCodingDataRomCD[i].ushCRdciSpeedCcmTh >> 0) & 0x00FFu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.cpp:      NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_TH_BYTE_1, C_RDCI_SPEED_CCM_TH_MASK_1, (uint8) ((tCodingDataRomCD[i].ushCRdciSpeedCcmTh >> 8) & 0x00FFu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.cpp:      NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_TIME_BYTE, C_RDCI_SPEED_CCM_TIME_MASK, (uint8) tCodingDataRomCD[i].ucCRdciSpeedCcmTime);
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.cpp:      NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_HYST_BYTE, C_RDCI_SPEED_CCM_HYST_MASK, (uint8) tCodingDataRomCD[i].ucCRdciSpeedCcmHyst);
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.cpp:      NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_0, (uint8) ((tCodingDataRomCD[i].sshCRdciSpeedCcmPressOffsetFa >> 0) & 0x00FFu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.cpp:      NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_1, (uint8) ((tCodingDataRomCD[i].sshCRdciSpeedCcmPressOffsetFa >> 8) & 0x00FFu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.cpp:      NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_0, (uint8) ((tCodingDataRomCD[i].sshCRdciSpeedCcmPressOffsetRa >> 0) & 0x00FFu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.cpp:      NvmDscCodierdatenRDCi_WriteByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_1, (uint8) ((tCodingDataRomCD[i].sshCRdciSpeedCcmPressOffsetRa >> 8) & 0x00FFu));
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_ENABLE_BYTE                          ( (uint8) 0x1E)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_HYST_BYTE                            ( (uint8) 0x1F)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_0               ( (uint8) 0x20)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_1               ( (uint8) 0x21)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_0               ( (uint8) 0x22)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_1               ( (uint8) 0x23)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_TH_BYTE_0                            ( (uint8) 0x24)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_TH_BYTE_1                            ( (uint8) 0x25)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_TIME_BYTE                            ( (uint8) 0x26)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_ENABLE_MASK                          ( (uint8) 0x01)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_HYST_MASK                            ( (uint8) 0xFF)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_0               ( (uint8) 0xFF)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_1               ( (uint8) 0xFF)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_0               ( (uint8) 0xFF)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_1               ( (uint8) 0xFF)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_TH_MASK_0                            ( (uint8) 0xFF)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_TH_MASK_1                            ( (uint8) 0xFF)
+RDCi_RTE_Stub\RTE_Stub_CalPrmNvmBlock.h:#define C_RDCI_SPEED_CCM_TIME_MASK                            ( (uint8) 0xFF)
+RDCi_RTE_Stub\RTE_Stub_CalPrmX.h:ImpTypeValCRdciSpeedCcmEnable RTE_Stub_Prm_CRdciSpeedCcmEnable(void);
+RDCi_RTE_Stub\RTE_Stub_CalPrmX.h:ImpTypeValCRdciSpeedCcmHyst RTE_Stub_Prm_CRdciSpeedCcmHyst(void);
+RDCi_RTE_Stub\RTE_Stub_CalPrmX.h:ImpTypeValCRdciSpeedCcmPressOffsetFa RTE_Stub_Prm_CRdciSpeedCcmPressOffsetFa(void);
+RDCi_RTE_Stub\RTE_Stub_CalPrmX.h:ImpTypeValCRdciSpeedCcmPressOffsetRa RTE_Stub_Prm_CRdciSpeedCcmPressOffsetRa(void);
+RDCi_RTE_Stub\RTE_Stub_CalPrmX.h:ImpTypeValCRdciSpeedCcmTh RTE_Stub_Prm_CRdciSpeedCcmTh(void);
+RDCi_RTE_Stub\RTE_Stub_CalPrmX.h:ImpTypeValCRdciSpeedCcmTime RTE_Stub_Prm_CRdciSpeedCcmTime(void);
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:      if(GETushSpeedFZZ() > 0){
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:  Rdci_V_VEH_Type speedData = {0};
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:      (void) ReadMessageFromFile( myStream, msgType, &ullMsgTimestamp, (void*) &speedData);
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:      if(checkBoxSelSpeedSource->Checked == true){
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:          if(numericNoOfSpeedMsgs->Value < numericNoOfSpeedMsgs->Maximum){
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:          numericNoOfSpeedMsgs->Value++;
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:          if(speedData.V_VEH_COG > (uint16) (numericFileInputSpeed->Maximum / (Decimal) 0.015625)){
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:          numericFileInputSpeed->Value = (uint16) numericFileInputSpeed->Maximum;
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:          ValueV_VEH_COG->Value = numericFileInputSpeed->Value;
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:          numericFileInputSpeed->Value = (uint16) (speedData.V_VEH_COG * 0.015625);
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:          ValueV_VEH_COG->Value = numericFileInputSpeed->Value;
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:              checkBoxSelSpeedSource->Checked = true;
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:              checkBoxSelSpeedSource->Enabled = true;
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:              checkBoxSelSpeedSource->Checked = false;
+RDCi_RTE_Stub\RTE_Stub_CddAbsDialog.h:              checkBoxSelSpeedSource->Enabled = false;
+RDCi_RTE_Stub\RTE_Stub_DcmDialog.h:             }else if(listBoxAktionsnummerSetReset->Text == "2: SET_NO_SPEED")
+RDCi_RTE_Stub\RTE_Stub_DcmDialog.h:               ucAktionsnummer = cActionNo_TestErFahrtSetNoSpeedDS;
+RDCi_RTE_Stub\RTE_Stub_DemServices.cpp:    tRDCiDtclist[ucDtcNo].tUwb.uc0x2867_FAHRZEUGGESCHWINDIGKEIT          = ucGetSpeed();
+RDCi_RTE_Stub\RTE_Stub_DemServices.cpp:    tRDCiDtclist[ucDtcNo].tUwb.uc0x500A_GESCHWINDIGKEIT                  = ucGetSpeed();
+RDCi_RTE_Stub\RTE_Stub_FlexRayData.cpp:Rdci_V_VEH_Type                   speedData;
+RDCi_RTE_Stub\RTE_Stub_FlexRayData.cpp:bool bNewSpeedData;
+RDCi_RTE_Stub\RTE_Stub_FlexRayData.cpp:void PutSpeedData(Rdci_V_VEH_Type* data)
+RDCi_RTE_Stub\RTE_Stub_FlexRayData.cpp:   speedData = *data;
+RDCi_RTE_Stub\RTE_Stub_FlexRayData.cpp:   bNewSpeedData = true;
+RDCi_RTE_Stub\RTE_Stub_FlexRayData.cpp:  *data = speedData;
+RDCi_RTE_Stub\RTE_Stub_FlexRayData.cpp:   bNewSpeedData = false;
+RDCi_RTE_Stub\RTE_Stub_FlexRayData.cpp:   return bNewSpeedData;
+RDCi_RTE_Stub\RTE_Stub_FlexRayDialog.h:      uint16  speedHex;
+RDCi_RTE_Stub\RTE_Stub_FlexRayDialog.h:      speedHex = System::Decimal::ToUInt16(ValueV_VEH_COG->Value);
+RDCi_RTE_Stub\RTE_Stub_FlexRayDialog.h:      speedHex = (uint16)((double)(speedHex) / 0.015625);
+RDCi_RTE_Stub\RTE_Stub_FlexRayDialog.h:        myV_VEH.V_VEH_COG = speedHex;
+RDCi_RTE_Stub\RTE_Stub_FlexRayDialog.h:        PutSpeedData(&myV_VEH);
+RDCi_RTE_Stub\RTE_Stub_FlexRayDialog.h:  private: System::Void checkBoxSelSpeedSource_CheckedChanged(System::Object^  sender, System::EventArgs^  e){
+RDCi_RTE_Stub\RTE_Stub_FlexRayDialog.h:    SliderV_VEH_COG->Enabled = !(checkBoxSelSpeedSource->Checked);
+RDCi_RTE_Stub\RTE_Stub_FlexRayDialog.h:    ValueV_VEH_COG->Enabled = !(checkBoxSelSpeedSource->Checked);
+RDCi_RTE_Stub\RTE_Stub_Output.cpp:Rte_DE_Rdci_TpmsErfsActTireDimSummerSpeedIndex_Type               tTpmsErfsActTireDimSummerSpeedIndex             = { Rte_InitValue_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex             };
+RDCi_RTE_Stub\RTE_Stub_Output.cpp:Rte_DE_Rdci_TpmsErfsActTireDimWinterSpeedIndex_Type               tTpmsErfsActTireDimWinterSpeedIndex             = { Rte_InitValue_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex             };
+RDCi_RTE_Stub\RTE_Stub_Output.cpp:   &tTpmsErfsActTireDimSummerSpeedIndex,
+RDCi_RTE_Stub\RTE_Stub_Output.cpp:   &tTpmsErfsActTireDimWinterSpeedIndex,
+RDCi_RTE_Stub\RTE_Stub_Output.cpp:   &tTpmsErfsActTireDimSummerSpeedIndex,
+RDCi_RTE_Stub\RTE_Stub_Output.cpp:   &tTpmsErfsActTireDimWinterSpeedIndex,
+RDCi_RTE_Stub\RTE_Stub_Output.cpp:   &tTpmsErfsActTireDimSummerSpeedIndex,
+RDCi_RTE_Stub\RTE_Stub_Output.cpp:   &tTpmsErfsActTireDimWinterSpeedIndex,
+RDCi_RTE_Stub\RTE_Stub_OutputDialog.h:      uint16 ushSpeedVmaxTimeSCC, ushSpeedCcmThFaSCC, ushSpeedCcmThRaSCC;
+RDCi_RTE_Stub\RTE_Stub_OutputDialog.h:  GetSpeedCcmValSCC_debug( &ucStateSCC, &ushSpeedVmaxTimeSCC, &ushSpeedCcmThFaSCC, &ushSpeedCcmThRaSCC);
+RDCi_RTE_Stub\RTE_Stub_OutputDialog.h:  labelSpeedCcmStatusbyteWert->Text = System::String::Format("0x{0:X2}", ucStateSCC);
+RDCi_RTE_Stub\RTE_Stub_OutputDialog.h:   if(ushSpeedVmaxTimeSCC == 0xffffu) { labelVmaxTimerWert->Text    = "- -"; }else{ labelVmaxTimerWert->Text    = System::String::Format("{0}", (ushSpeedVmaxTimeSCC / 10)); }
+RDCi_RTE_Stub\RTE_Stub_OutputDialog.h:   if(ushSpeedCcmThFaSCC  == 0)       { labelPressureThFaWert->Text = "- -"; }else{ labelPressureThFaWert->Text = System::String::Format("{0}", ushSpeedCcmThFaSCC);         }
+RDCi_RTE_Stub\RTE_Stub_OutputDialog.h:   if(ushSpeedCcmThRaSCC  == 0)       { labelPressureThRaWert->Text = "- -"; }else{ labelPressureThRaWert->Text = System::String::Format("{0}", ushSpeedCcmThRaSCC);         }
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:   if(NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_ENABLE_BYTE, C_RDCI_SPEED_CCM_ENABLE_MASK ) == 0 ){
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:    checkBoxCRdciSpeedCcmEnable->Checked = FALSE;
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:    checkBoxCRdciSpeedCcmEnable->Checked = TRUE;
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:  numericUpDownCRdciSpeedCcmTh->Value                           = (ImpTypeValCRdciSpeedCcmTh) ((NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_TH_BYTE_0, C_RDCI_SPEED_CCM_TH_MASK_0 ) << 0) + (NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_TH_BYTE_1, C_RDCI_SPEED_CCM_TH_MASK_1 ) << 8) );
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:  numericUpDownCRdciSpeedCcmTime->Value                         = (uint8) NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_TIME_BYTE, C_RDCI_SPEED_CCM_TIME_MASK );
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:  numericUpDownCRdciSpeedCcmHyst->Value                         = (uint8) NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_HYST_BYTE, C_RDCI_SPEED_CCM_HYST_MASK );
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:  numericUpDownCRdciSpeedCcmPressOffsetFa->Value                = (ImpTypeValCRdciSpeedCcmPressOffsetFa) ((NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_0 ) << 0) + (NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_FA_MASK_1 ) << 8) );
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:  numericUpDownCRdciSpeedCcmPressOffsetRa->Value                = (ImpTypeValCRdciSpeedCcmPressOffsetRa) ((NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_0, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_0 ) << 0) + (NvmDscCodierdatenRDCi_ReadByte( C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_BYTE_1, C_RDCI_SPEED_CCM_PRESS_OFFSET_RA_MASK_1 ) << 8) );
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:   uint8 ucSpeedIndex;
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:      ucSpeedIndex = GetGeschwIndexRaw(ucTyreListRow);
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:      switch(ucSpeedIndex){
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:   if(bGetStateBitBM( cushTestEigenradFahrtNoSpeedBM ) == TRUE ){
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:    checkBoxBandmodeServiceTestErFahrtNoSpeed->Checked = true;
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:    checkBoxBandmodeServiceTestErFahrtNoSpeed->Checked = false;
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:                                        if((ulTemp & ((uint32)1 << cCcIX_SpeedCcm2158)) > 0)
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:                                          labelMMISpeedCcm2158->ForeColor = System::Drawing::Color::FromArgb(0, 0, 0);
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:                                          labelMMISpeedCcm2158->ForeColor = System::Drawing::Color::FromArgb(160,160,160);
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:                                        if((ulTemp & ((uint32)1 << cCcIX_SpeedCcm2159)) > 0)
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:                                          labelMMISpeedCcm2159->ForeColor = System::Drawing::Color::FromArgb(0, 0, 0);
+RDCi_RTE_Stub\RTE_Stub_RDCiSystemDialog.h:                                          labelMMISpeedCcm2159->ForeColor = System::Drawing::Color::FromArgb(160,160,160);
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2FUNC(ImpTypeValCRdciSpeedCcmEnable,                                                 RTE_CODE, Prm_CRdciSpeedCcmEnable                      )(void);
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2FUNC(ImpTypeValCRdciSpeedCcmHyst,                                                   RTE_CODE, Prm_CRdciSpeedCcmHyst                        )(void);
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2FUNC(ImpTypeValCRdciSpeedCcmPressOffsetFa,                                          RTE_CODE, Prm_CRdciSpeedCcmPressOffsetFa               )(void);
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2FUNC(ImpTypeValCRdciSpeedCcmPressOffsetRa,                                          RTE_CODE, Prm_CRdciSpeedCcmPressOffsetRa               )(void);
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2FUNC(ImpTypeValCRdciSpeedCcmTh,                                                     RTE_CODE, Prm_CRdciSpeedCcmTh                          )(void);
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2FUNC(ImpTypeValCRdciSpeedCcmTime,                                                   RTE_CODE, Prm_CRdciSpeedCcmTime                        )(void);
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2VAR(Rte_DE_Rdci_TpmsErfsActTireDimSummerSpeedIndex_Type,             TYPEDEF, RTE_CTAPHUFTPMSSWC_APPL_VAR) RCyclicRDCiTask_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2VAR(Rte_DE_Rdci_TpmsErfsActTireDimWinterSpeedIndex_Type,             TYPEDEF, RTE_CTAPHUFTPMSSWC_APPL_VAR) RCyclicRDCiTask_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2VAR(Rte_DE_Rdci_TpmsErfsActTireDimSummerSpeedIndex_Type,             TYPEDEF, RTE_CTAPHUFTPMSSWC_APPL_VAR) RExitRDCiBye_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2VAR(Rte_DE_Rdci_TpmsErfsActTireDimWinterSpeedIndex_Type,             TYPEDEF, RTE_CTAPHUFTPMSSWC_APPL_VAR) RExitRDCiBye_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2VAR(Rte_DE_Rdci_TpmsErfsActTireDimSummerSpeedIndex_Type,             TYPEDEF, RTE_CTAPHUFTPMSSWC_APPL_VAR) RInitRDCiStartup_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:   P2VAR(Rte_DE_Rdci_TpmsErfsActTireDimWinterSpeedIndex_Type,             TYPEDEF, RTE_CTAPHUFTPMSSWC_APPL_VAR) RInitRDCiStartup_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_InitValue_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex (255U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_InitValue_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex (255U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_IWrite_RCyclicRDCiTask_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex(self, data)              ((self)->RCyclicRDCiTask_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex->value = (data))
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_IWrite_RCyclicRDCiTask_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex(self, data)              ((self)->RCyclicRDCiTask_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex->value = (data))
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_IWrite_RExitRDCiBye_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex(self, data)                 ((self)->RExitRDCiBye_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex->value = (data))
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_IWrite_RExitRDCiBye_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex(self, data)                 ((self)->RExitRDCiBye_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex->value = (data))
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_IWrite_RInitRDCiStartup_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex(self, data)             ((self)->RInitRDCiStartup_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex->value = (data))
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_IWrite_RInitRDCiStartup_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex(self, data)             ((self)->RInitRDCiStartup_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex->value = (data))
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_IWriteRef_RExitRDCiBye_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex(self)                    (&(self)->RExitRDCiBye_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex->value)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_IWriteRef_RExitRDCiBye_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex(self)                    (&(self)->RExitRDCiBye_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex->value)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmTh(self)                                     ((self)->RpCalPrmRDCi.Prm_CRdciSpeedCcmTh())
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmPressOffsetFa(self)                          ((self)->RpCalPrmRDCi.Prm_CRdciSpeedCcmPressOffsetFa())
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmPressOffsetRa(self)                          ((self)->RpCalPrmRDCi.Prm_CRdciSpeedCcmPressOffsetRa())
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmEnable(self)                                 ((self)->RpCalPrmRDCi.Prm_CRdciSpeedCcmEnable())
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmHyst(self)                                   ((self)->RpCalPrmRDCi.Prm_CRdciSpeedCcmHyst())
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC.h:#define Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmTime(self)                                   ((self)->RpCalPrmRDCi.Prm_CRdciSpeedCcmTime())
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define AppTypeValCRdciSpeedCcmHyst_LowerLimit (0U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define AppTypeValCRdciSpeedCcmHyst_UpperLimit (255U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define AppTypeValCRdciSpeedCcmTime_LowerLimit (0U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define AppTypeValCRdciSpeedCcmTime_UpperLimit (255U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:# ifndef DCM_E_VEHICLESPEEDTOOHIGH
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define DCM_E_VEHICLESPEEDTOOHIGH (136U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:# ifndef DCM_E_VEHICLESPEEDTOOLOW
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define DCM_E_VEHICLESPEEDTOOLOW (137U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define AppTypeValCRdciSpeedCcmEnable_LowerLimit (0U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define AppTypeValCRdciSpeedCcmEnable_UpperLimit (255U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:# ifndef TAB_RDC_INT_FEHLER_SPEED_SIGNAL_FAILURE
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define TAB_RDC_INT_FEHLER_SPEED_SIGNAL_FAILURE (17U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define AppTypeValFrPdu_TpmsErfsActTireDimSummerSpeedIndex_LowerLimit (0U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define AppTypeValFrPdu_TpmsErfsActTireDimSummerSpeedIndex_UpperLimit (254U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define AppTypeValFrPdu_TpmsErfsActTireDimWinterSpeedIndex_LowerLimit (0U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_CtApHufTpmsSWC_Type.h:#define AppTypeValFrPdu_TpmsErfsActTireDimWinterSpeedIndex_UpperLimit (254U)
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_DataHandleType.h:   Rdci_TpmsErfsActTireDimSummerSpeedIndex_Type value;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_DataHandleType.h:}Rte_DE_Rdci_TpmsErfsActTireDimSummerSpeedIndex_Type;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_DataHandleType.h:   Rdci_TpmsErfsActTireDimWinterSpeedIndex_Type value;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_DataHandleType.h:}Rte_DE_Rdci_TpmsErfsActTireDimWinterSpeedIndex_Type;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_Type.h:typedef uint8  ImpTypeValCRdciSpeedCcmHyst;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_Type.h:typedef sint16 ImpTypeValCRdciSpeedCcmPressOffsetFa;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_Type.h:typedef sint16 ImpTypeValCRdciSpeedCcmPressOffsetRa;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_Type.h:typedef uint16 ImpTypeValCRdciSpeedCcmTh;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_Type.h:typedef uint8  ImpTypeValCRdciSpeedCcmTime;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_Type.h:typedef uint8  ImpTypeValCRdciSpeedCcmEnable;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_Type.h:typedef uint8  Rdci_TpmsErfsActTireDimSummerSpeedIndex_Type;
+SwcApplTpms\Appl\Include\CtApHufTpmsSWC\Rte_Type.h:typedef uint8  Rdci_TpmsErfsActTireDimWinterSpeedIndex_Type;
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:#include "SpeedCcmX.h"
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:   static Rdci_V_VEH_Type                   speedData               = {0};
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:         (void) Rte_Read_RpFrPdu_V_VEH_V_VEH(self, &speedData);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:         if(CheckV_VEH_MsgNWM(self, speedData) != cNoError){
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:            speedData.V_VEH_COG = 0;
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:         SetVehicleSpeedWAM(self, speedData);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:            speedData.V_VEH_COG = 0;
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:            SetVehicleSpeedWAM(self, speedData);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:   PutCRdciSpeedCcmEnableCD(             (boolean) Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmEnable(                      self));
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:   PutCRdciSpeedCcmThCD(                 (uint16)  Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmTh(                          self));
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:   PutCRdciSpeedCcmTimeCD(               (uint8)   Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmTime(                        self));
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:   PutCRdciSpeedCcmHystCD(               (uint8)   Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmHyst(                        self));
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:   PutCRdciSpeedCcmPressOffsetFaCD(      (sint16)  Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmPressOffsetFa(               self));
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:   PutCRdciSpeedCcmPressOffsetRaCD(      (sint16)  Rte_Prm_RpCalPrmRDCi_CRdciSpeedCcmPressOffsetRa(               self));
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:        IeFiFoWriteEntryDS(self, cDtcSpeedSignalFailure);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:        IeFiFoWriteEntryDS(self, cDtcSpeedSignalFailure);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:        IeFiFoWriteEntryDS(self, cDtcSpeedSignalFailure);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:        IeFiFoWriteEntryDS(self, cDtcSpeedSignalFailure);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:		Rte_IWrite_RCyclicRDCiTask_PpFrPdu_SOTR_TYP_TYR_IDX_V_SUTR_TYP_TYR(self, TData.SpeedIndex);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:		Rte_IWrite_RCyclicRDCiTask_PpFrPdu_WITR_TYP_TYR_IDX_V_WITR_TYP_TYR(self, TData.SpeedIndex);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:   TData.SpeedIndex = 0;
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:      Rte_IWrite_RCyclicRDCiTask_PpFrPdu_BAX_TYP_TYR_IDX_V_BAX_TYP_TYR(self, TData.SpeedIndex);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:      Rte_IWrite_RCyclicRDCiTask_PpFrPdu_FTAX_TYP_TYR_IDX_V_FTAX_TYP_TYR(self, TData.SpeedIndex);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:				Rte_IWrite_RCyclicRDCiTask_PpFrPdu_OL_AVLB_TYP_TYR_IDX_V_TYP_TYR(self, TData.SpeedIndex);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:      Rte_IWrite_RCyclicRDCiTask_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex(self, (Rdci_TpmsErfsActTireDimSummerSpeedIndex_Type)GetGeschwIndexRaw(ucSuIndex));
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:      Rte_IWrite_RCyclicRDCiTask_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimSummerSpeedIndex(self, TpmsTireMountState_Funktionsschnittstelle_ist_nicht_verfuegbar);
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:      Rte_IWrite_RCyclicRDCiTask_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex(self, (Rdci_TpmsErfsActTireDimWinterSpeedIndex_Type)GetGeschwIndexRaw(ucWiIndex));
+SwcApplTpms\SWC\CtApHufTpmsSWC.c:      Rte_IWrite_RCyclicRDCiTask_PpFrPdu_TpmsErfsActualTireData_TpmsErfsActTireDimWinterSpeedIndex(self, TpmsTireMountState_Funktionsschnittstelle_ist_nicht_verfuegbar);
+SwcApplTpms\SWC\Sources\Bandmode\Bandmode.c:void CycleBandModeServiceBM (Rte_Instance self, boolean bSpeedThresBM)
+SwcApplTpms\SWC\Sources\Bandmode\Bandmode.c:    SetStateBitBM ( cushErFahrtVThresBM, bSpeedThresBM);
+SwcApplTpms\SWC\Sources\Bandmode\Bandmode.c:   else if(bGetStateBitBM( cushTestEigenradFahrtNoSpeedBM) == TRUE){
+SwcApplTpms\SWC\Sources\Bandmode\Bandmode.c:   bState = (bGetBandmodeBM() & (bGetStateBitBM ( cushTestEigenradFahrtNoSpeedBM) | (bGetStateBitBM ( cushTestEigenradFahrtBM) & bGetStateBitBM ( cushErFahrtVThresBM))));
+SwcApplTpms\SWC\Sources\Bandmode\BandmodeX.h:#define cushTestEigenradFahrtNoSpeedBM                         ((uint16) 0x0004)
+SwcApplTpms\SWC\Sources\Bandmode\BandmodeX.h:extern void    CycleBandModeServiceBM (Rte_Instance self, boolean bSpeedThresBM);
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:#include "SpeedCcmX.h"
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:   {  cCcSpeedCcm2158,         cCcFixLampStateOff      },
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:   {  cCcSpeedCcm2159,         cCcFixLampStateOff      },
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:static uint8 ucCcIxSpeedCcm2158                     = cCcIX_Invalid;
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:static uint8 ucCcIxSpeedCcm2159                     = cCcIX_Invalid;
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:static uint8 ucGetSpeedCcm2158CCM(void);
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:static uint8 ucGetSpeedCcm2159CCM(void);
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:   ucCcIxSpeedCcm2158                    = cCcIX_Invalid;
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:   ucCcIxSpeedCcm2159                    = cCcIX_Invalid;
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:   ucCcIxSpeedCcm2158        = ucGetSpeedCcm2158CCM();
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:   ucCcIxSpeedCcm2159        = ucGetSpeedCcm2159CCM();
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:   if(ucCcIxSpeedCcm2158 != cCcIX_Invalid){
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:    StartCCM( cCcIX_SpeedCcm2158);
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:    StopCCM( cCcIX_SpeedCcm2158);
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:   if(ucCcIxSpeedCcm2159 != cCcIX_Invalid){
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:    StartCCM( cCcIX_SpeedCcm2159);
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:    StopCCM( cCcIX_SpeedCcm2159);
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:static uint8 ucGetSpeedCcm2158CCM(void)
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:      ucRet = cCcIX_SpeedCcm2158;
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:static uint8 ucGetSpeedCcm2159CCM(void)
+SwcApplTpms\SWC\Sources\BedAnz\ccm.c:      ucRet = cCcIX_SpeedCcm2159;
+SwcApplTpms\SWC\Sources\BedAnz\ccmX.h:#define cCcSpeedCcm2158                                       ((uint16) 0x086Eu)
+SwcApplTpms\SWC\Sources\BedAnz\ccmX.h:#define cCcSpeedCcm2159                                       ((uint16) 0x086Fu)
+SwcApplTpms\SWC\Sources\BedAnz\ccmX.h:#define cCcIX_SpeedCcm2158                                    ((uint8)      23u)
+SwcApplTpms\SWC\Sources\BedAnz\ccmX.h:#define cCcIX_SpeedCcm2159                                    ((uint8)      24u)
+SwcApplTpms\SWC\Sources\BedAnz\InfoTyre.c:   ListTyreData->SpeedIndex   = 0x00;
+SwcApplTpms\SWC\Sources\BedAnz\InfoTyre.c:         ListTyreData->SpeedIndex = GetGeschwIndexRaw(ucIndex);
+SwcApplTpms\SWC\Sources\BedAnz\InfoTyre.c:  FATyreData->SpeedIndex   = ResHistReDimData[2] & 0x0F;
+SwcApplTpms\SWC\Sources\BedAnz\InfoTyre.c:         RATyreData->SpeedIndex   = ResHistReDimData[2] & 0x0F;
+SwcApplTpms\SWC\Sources\BedAnz\InfoTyre.c:      RATyreData->SpeedIndex   = 0x00;
+SwcApplTpms\SWC\Sources\BedAnz\InfoTyreX.h:   uint8 SpeedIndex;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:/* File   : SpeedCcm.c                                                        */
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:#include "SpeedCcmX.h"
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:static uint16 ushSpeedVmaxTimeSCC;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:static uint16 ushSpeedCcmThFaSCC;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:static uint16 ushSpeedCcmThRaSCC;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:static boolean  bIsSpeedTooHighSCC(void);
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushSpeedVmaxTimeSCC = 0xffffu;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushSpeedCcmThFaSCC = 0;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushSpeedCcmThRaSCC = 0;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   if(bGetCRdciSpeedCcmEnableCD() == TRUE){
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      ucStateSCC |= cSCC_STATE_SPEED_CCM_ENABLED;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   if((ucStateSCC & cSCC_STATE_SPEED_CCM_ENABLED) == cSCC_STATE_SPEED_CCM_ENABLED){
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      if(bIsSpeedTooHighSCC() == TRUE){
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      ushSpeedVmaxTimeSCC = 0xffffu;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:void GetSpeedCcmValSCC_debug(uint8* pucState, uint16* pushSpeedVmaxTime, uint16* pushSpeedCcmThFa, uint16* pushSpeedCcmThRa)
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:  *pushSpeedVmaxTime  = ushSpeedVmaxTimeSCC;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:  *pushSpeedCcmThFa   = ushSpeedCcmThFaSCC;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:  *pushSpeedCcmThRa   = ushSpeedCcmThRaSCC;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushSpeedCcmThFaSCC = (uint16) (((sint16) GetFrontAxleSetPressTyreList(REQ_ECO_LOAD, ucTyreIx) * 25) + sshGetCRdciSpeedCcmPressOffsetFaCD());
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushM = ushMIso( (uint8) (ushSpeedCcmThFaSCC / 25), scTinit, ucPamb);
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushSpeedCcmThFaSCC = (uint16) (((sint16) GetFrontAxleSetPressTyreList(REQ_ECO_LOAD, ucTyreIx) * 25) + sshGetCRdciSpeedCcmPressOffsetFaCD());
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushM = ushMIso( (uint8) (ushSpeedCcmThFaSCC / 25), scTinit, ucPamb);
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      ushSpeedCcmThFaSCC = (uint16)ucPl * 25;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      ushSpeedCcmThFaSCC = (uint16)ucPr * 25;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushSpeedCcmThRaSCC = (uint16) (((sint16) GetRearAxleSetPressTyreList(REQ_ECO_LOAD, ucTyreIx) * 25) + sshGetCRdciSpeedCcmPressOffsetRaCD());
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushM = ushMIso( (uint8) (ushSpeedCcmThRaSCC / 25), scTinit, ucPamb);
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushSpeedCcmThRaSCC = (uint16) (((sint16) GetRearAxleSetPressTyreList(REQ_ECO_LOAD, ucTyreIx) * 25) + sshGetCRdciSpeedCcmPressOffsetRaCD());
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   ushM = ushMIso( (uint8) (ushSpeedCcmThRaSCC / 25), scTinit, ucPamb);
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      ushSpeedCcmThRaSCC = (uint16)ucPl * 25;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      ushSpeedCcmThRaSCC = (uint16)ucPr * 25;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:          if(((uint16) ucGetRePressureRelDM(ucHistId) * 25) < ushSpeedCcmThFaSCC){
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:          if(((uint16) ucGetRePressureRelDM(ucHistId) * 25) < ushSpeedCcmThRaSCC){
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:static boolean bIsSpeedTooHighSCC(void)
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   static boolean bSpeedTooHigh = FALSE;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   if(GETushSpeedFZZ() >= ushGetCRdciSpeedCcmThCD()){
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      if(ushSpeedVmaxTimeSCC == 0xffffu){
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      ushSpeedVmaxTimeSCC = ((uint16) ucGetCRdciSpeedCcmTimeCD() * 10);
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      bSpeedTooHigh = FALSE;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      if(ushSpeedVmaxTimeSCC > 0){
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:        ushSpeedVmaxTimeSCC--;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:        bSpeedTooHigh = TRUE;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   else if(GETushSpeedFZZ() < (ushGetCRdciSpeedCcmThCD() - ucGetCRdciSpeedCcmHystCD())){
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      ushSpeedVmaxTimeSCC = 0xffffu;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:    bSpeedTooHigh = FALSE;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      if(bSpeedTooHigh == FALSE){
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:      ushSpeedVmaxTimeSCC = 0xffffu;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcm.c:   return bSpeedTooHigh;
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcmX.h:#ifndef _speed_ccm_X_H
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcmX.h:#define _speed_ccm_X_H
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcmX.h:/* File   : SpeedCcmX.h                                                       */
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcmX.h:#define cSCC_STATE_SPEED_CCM_ENABLED                             ((uint8) 0x01u)
+SwcApplTpms\SWC\Sources\BedAnz\SpeedCcmX.h:extern void  GetSpeedCcmValSCC_debug(uint8* pucState, uint16* pushSpeedVmaxTime, uint16* pushSpeedCcmThFa, uint16* pushSpeedCcmThRa);
+SwcApplTpms\SWC\Sources\BedAnz\Statusbar.c:      if(GETushSpeedFZZ() < (cSPW_THRESHOLD - 5)){
+SwcApplTpms\SWC\Sources\BedAnz\Statusbar.c:      else if(GETushSpeedFZZ() >= cSPW_THRESHOLD){
+SwcApplTpms\SWC\Sources\BedAnz\Statusbar.c:      if(GETushSpeedFZZ() < (cSPW_THRESHOLD - 5)){
+SwcApplTpms\SWC\Sources\BedAnz\Statusbar.c:      else if(GETushSpeedFZZ() >= cSPW_THRESHOLD){
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:boolean bGetCRdciSpeedCcmEnableCD              (void)                                         {return tCodingDataCD.bCRdciSpeedCcmEnable              ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:uint16  ushGetCRdciSpeedCcmThCD                (void)                                         {return tCodingDataCD.ushCRdciSpeedCcmTh                ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:uint8   ucGetCRdciSpeedCcmTimeCD               (void)                                         {return tCodingDataCD.ucCRdciSpeedCcmTime               ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:uint8   ucGetCRdciSpeedCcmHystCD               (void)                                         {return tCodingDataCD.ucCRdciSpeedCcmHyst               ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:sint16  sshGetCRdciSpeedCcmPressOffsetFaCD     (void)                                         {return tCodingDataCD.sshCRdciSpeedCcmPressOffsetFa     ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:sint16  sshGetCRdciSpeedCcmPressOffsetRaCD     (void)                                         {return tCodingDataCD.sshCRdciSpeedCcmPressOffsetRa     ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:void    PutCRdciSpeedCcmEnableCD               (boolean bCRdciSpeedCcmEnable                 ){       tCodingDataCD.bCRdciSpeedCcmEnable              = bCRdciSpeedCcmEnable              ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:void    PutCRdciSpeedCcmThCD                   (uint16  ushCRdciSpeedCcmTh                   ){       tCodingDataCD.ushCRdciSpeedCcmTh                = ushCRdciSpeedCcmTh                ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:void    PutCRdciSpeedCcmTimeCD                 (uint8   ucCRdciSpeedCcmTime                  ){       tCodingDataCD.ucCRdciSpeedCcmTime               = ucCRdciSpeedCcmTime               ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:void    PutCRdciSpeedCcmHystCD                 (uint8   ucCRdciSpeedCcmHyst                  ){       tCodingDataCD.ucCRdciSpeedCcmHyst               = ucCRdciSpeedCcmHyst               ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:void    PutCRdciSpeedCcmPressOffsetFaCD        (sint16  sshCRdciSpeedCcmPressOffsetFa        ){       tCodingDataCD.sshCRdciSpeedCcmPressOffsetFa     = sshCRdciSpeedCcmPressOffsetFa     ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingData.c:void    PutCRdciSpeedCcmPressOffsetRaCD        (sint16  sshCRdciSpeedCcmPressOffsetRa        ){       tCodingDataCD.sshCRdciSpeedCcmPressOffsetRa     = sshCRdciSpeedCcmPressOffsetRa     ;}
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:   boolean bCRdciSpeedCcmEnable;
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:   uint16  ushCRdciSpeedCcmTh;
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:   uint8   ucCRdciSpeedCcmTime;
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:   uint8   ucCRdciSpeedCcmHyst;
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:   sint16  sshCRdciSpeedCcmPressOffsetFa;
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:   sint16  sshCRdciSpeedCcmPressOffsetRa;
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern boolean bGetCRdciSpeedCcmEnableCD(void);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern uint16  ushGetCRdciSpeedCcmThCD(void);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern uint8   ucGetCRdciSpeedCcmTimeCD(void);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern uint8   ucGetCRdciSpeedCcmHystCD(void);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern sint16  sshGetCRdciSpeedCcmPressOffsetFaCD(void);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern sint16  sshGetCRdciSpeedCcmPressOffsetRaCD(void);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern void PutCRdciSpeedCcmEnableCD( boolean bCRdciSpeedCcmEnable);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern void PutCRdciSpeedCcmThCD(uint16 ushCRdciSpeedCcmTh);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern void PutCRdciSpeedCcmTimeCD(uint8 ucCRdciSpeedCcmTime);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern void PutCRdciSpeedCcmHystCD(uint8 ucCRdciSpeedCcmHyst);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern void PutCRdciSpeedCcmPressOffsetFaCD( sint16 sshCRdciSpeedCcmPressOffsetFa);
+SwcApplTpms\SWC\Sources\Datamanager\CodingDataX.h:extern void PutCRdciSpeedCcmPressOffsetRaCD( sint16 sshCRdciSpeedCcmPressOffsetRa);
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:#include "SpeedCcmX.h"
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:#define DIA_SPEED_IX     (uint8)2
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:static void CompareSpeedIxToErfsDM(const uint8* pConvRidData, uint8* pIxArray);
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:   uint16 ushSpeed;
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:   ushSpeed = GETushSpeedFZZ();
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:   if((0xffffU != ushSpeed) && (ushSpeed >= 20)){
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:      else if(TRUE == bGetStateBitBM(cushTestEigenradFahrtNoSpeedBM)){SetWumActivityStatusWUM(self, cWUM_BM_DIENST_RUN, cNO_EVALUATION);}
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:   tHFTel.ushVehicleSpeed = GETushSpeedFZZ();
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:      CompareSpeedIxToErfsDM(ConvRidData, &IxArray[0]);
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:               if(DIA_SPEED_IX == j){
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:               if(DIA_SPEED_IX == j){
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:static void CompareSpeedIxToErfsDM(const uint8* pConvRidData, uint8* pIxArray){
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:         MemValue = GetTyreListMember (i, DIA_SPEED_IX);
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:            if((pConvRidData[DIA_SPEED_IX] & CheckMask) < (MemValue & CheckMask)){
+SwcApplTpms\SWC\Sources\Datamanager\datamanager.c:            if((pConvRidData[DIA_SPEED_IX] & CheckMask) > (MemValue & CheckMask)){
+SwcApplTpms\SWC\Sources\Datamanager\DebugMsg.c:#include "SpeedCcmX.h"
+SwcApplTpms\SWC\Sources\Datamanager\DebugMsg.c:      ushValue = GETushSpeedFZZ();
+SwcApplTpms\SWC\Sources\Datamanager\SeasRcpAdj.c:static void CyclicOATSampleFuncSRA(uint16 ushCurSpeed, Rte_Instance self);
+SwcApplTpms\SWC\Sources\Datamanager\SeasRcpAdj.c:    CyclicOATSampleFuncSRA(GETushSpeedFZZ(), self);
+SwcApplTpms\SWC\Sources\Datamanager\SeasRcpAdj.c:static void CyclicOATSampleFuncSRA(uint16 ushCurSpeed, Rte_Instance self)
+SwcApplTpms\SWC\Sources\Datamanager\SeasRcpAdj.c:   if((ushCurSpeed != 0xffffU) && (ushCurSpeed >= 20u)){
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:#define cResetRefPoint_SpeedOk (uint8)0x02
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:static boolean bLearningWheelPosActiveWAM(uint8 ucSpeedThreshold);
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:void SetVehicleSpeedWAM(Rte_Instance self, Rdci_V_VEH_Type vspeed){
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:   uint16 ushSpeed;
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:   ushSpeed = vspeed.V_VEH_COG >> 6;
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:   SETSpeedFZZ(ushSpeed);
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:      ucResetAbsRef |= cResetRefPoint_SpeedOk;
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:      if(ucResetAbsRef == (cResRefPoint_DDBackOk | cResetRefPoint_SpeedOk)){
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:static boolean bLearningWheelPosActiveWAM(uint8 ucSpeedThreshold)
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:   boolean bSpeedCondition = FALSE;
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:   if((bGetBitFahrzeugzustandFZZ(cFAHRZEUG_LERNT) == TRUE) && (ucSpeedThreshold == cFAHRZEUG_LERNT)){
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:    bSpeedCondition = TRUE;
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:   else if((bGetBitFahrzeugzustandFZZ(cRS_VTHRES) == TRUE) && (ucSpeedThreshold == cRS_VTHRES)){
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:    bSpeedCondition = TRUE;
+SwcApplTpms\SWC\Sources\Datamanager\walloc_manager.c:   else if(bSpeedCondition == TRUE){
+SwcApplTpms\SWC\Sources\Datamanager\walloc_managerX.h:extern void SetVehicleSpeedWAM(Rte_Instance self, Rdci_V_VEH_Type vspeed);
+SwcApplTpms\SWC\Sources\DiagServices\HS_Inaktivereignis.c:      case (uint8)cDtcSpeedSignalFailure:
+SwcApplTpms\SWC\Sources\DiagServices\HS_InaktivereignisX.h:  cDtcSpeedSignalFailure,
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:static void SaveHighestSpeedWithActiveWarningDS(Rte_Instance self, uint8 ucVMax);
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:   uint16 ushSpeed;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:   uint8  ucSpeed;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:   static uint8 ucSpeedState = 0;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:   ushSpeed = GETushSpeedFZZ();
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:   if(ushSpeed <= 500){
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      ucSpeed = (uint8)(ushSpeed >> 1);
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      ucSpeed = 0;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      ushSpeed = 0;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:   SaveHighestSpeedWithActiveWarningDS(self, ucSpeed);
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:   switch(ucSpeedState){
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      if(ushSpeed > 0){
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      ucSpeedState = 1;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      if(ushSpeed > 100){
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      ucSpeedState = 2;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      else if(ushSpeed == 0){
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      ucSpeedState = 0;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      if(ushSpeed > 160){
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      ucSpeedState = 3;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      else if(ushSpeed <= 100){
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      ucSpeedState = 1;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      if(ushSpeed <= 160){
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:      ucSpeedState = 2;
+SwcApplTpms\SWC\Sources\DiagServices\HS_Warnereignis.c:static void SaveHighestSpeedWithActiveWarningDS(Rte_Instance self, uint8 ucVMax)
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:   uint16 ushSpeedCcmVal;
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:   if(bGetCRdciSpeedCcmEnableCD() == TRUE){
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:   ushSpeedCcmVal = ushGetCRdciSpeedCcmThCD();
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:  pucData[2] = (uint8) ((ushSpeedCcmVal >> 8) & 0x00ffu);
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:  pucData[3] = (uint8) ((ushSpeedCcmVal >> 0) & 0x00ffu);
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:  pucData[4] = ucGetCRdciSpeedCcmTimeCD();
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:  pucData[5] = ucGetCRdciSpeedCcmHystCD();
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:   ushSpeedCcmVal = (uint16) sshGetCRdciSpeedCcmPressOffsetFaCD();
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:  pucData[6] = (uint8) ((ushSpeedCcmVal >> 8) & 0x00ffu);
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:  pucData[7] = (uint8) ((ushSpeedCcmVal >> 0) & 0x00ffu);
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:   ushSpeedCcmVal = (uint16) sshGetCRdciSpeedCcmPressOffsetRaCD();
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:  pucData[8] = (uint8) ((ushSpeedCcmVal >> 8) & 0x00ffu);
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcDeveloperDataLesen.c:  pucData[9] = (uint8) ((ushSpeedCcmVal >> 0) & 0x00ffu);
+SwcApplTpms\SWC\Sources\DiagServices\StatusRdcLesen.c:   else if(bGetStateBitBM( cushTestEigenradFahrtNoSpeedBM) == TRUE){
+SwcApplTpms\SWC\Sources\DiagServices\SteuernDigitalRdc.c:                  case cActionNo_TestErFahrtSetNoSpeedDS:
+SwcApplTpms\SWC\Sources\DiagServices\SteuernDigitalRdc.c:                     if(TRUE == bStartServiceBM(cushTestEigenradFahrtNoSpeedBM)){
+SwcApplTpms\SWC\Sources\DiagServices\SteuernDigitalRdcX.h:#define cActionNo_TestErFahrtSetNoSpeedDS ( (uint8) 2)
+SwcApplTpms\SWC\Sources\EEPROM\EeCommonBlock.c:tMileageUnitType     GETucUnMileEE(                Rte_Instance self                                       ){return((tMileageUnitType)      ((tCommonNvmBlockType*) (void*) Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock(self)->Data)->ucUnitSpeed);}
+SwcApplTpms\SWC\Sources\EEPROM\EeCommonBlock.c:void                 PUTucUnMileEE(                Rte_Instance self, tMileageUnitType     ucLastUnMile    ){                               ((tCommonNvmBlockType*) (void*) Rte_Pim_NvmRdciCommonBlock_NVBlock_MirrorBlock(self)->Data)->ucUnitSpeed       = (uint8) ucLastUnMile;}
+SwcApplTpms\SWC\Sources\EEPROM\EeCommonBlockX.h:   uint8                         ucUnitSpeed;
+SwcApplTpms\SWC\Sources\RID\RID.c:static uint8 ConvertSpeedIndex( const uint8 ucIndexValue);
+SwcApplTpms\SWC\Sources\RID\RID.c:	GeschwIx = ConvertSpeedIndex((uint8)ushTemp);
+SwcApplTpms\SWC\Sources\RID\RID.c:static uint8 ConvertSpeedIndex (const uint8 ucIndexValue)
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:static uint16 ushVehicleSpeedFzz = 0;
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:   ushVehicleSpeedFzz = 0;
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:void SETSpeedFZZ(uint16 speed)
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:   static uint16 ushLastVehicleSpeed = 0;
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:   ushVehicleSpeedFzz = speed;
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:   if(ushVehicleSpeedFzz < cV_TH_FAHRZEUG_LERNT_SET){
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:   if(ushVehicleSpeedFzz < cV_TH_FAHRZEUG_FAEHRT_SET){
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:      if(ushLastVehicleSpeed >= cV_TH_FAHRZEUG_FAEHRT_SET){
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:   if(ushVehicleSpeedFzz >= cV_MIN_PAL){
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:   if(ushVehicleSpeedFzz >= cV_MIN_BM){
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:   if(ushVehicleSpeedFzz > cV_MAX_PAL){
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:   ushLastVehicleSpeed = ushVehicleSpeedFzz;
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:uint16 GETushSpeedFZZ(void)
+SwcApplTpms\SWC\Sources\Statemanager\state_fzz.c:   return (ushVehicleSpeedFzz);
+SwcApplTpms\SWC\Sources\Statemanager\state_fzzX.h:extern void SETSpeedFZZ(uint16 speed);
+SwcApplTpms\SWC\Sources\Statemanager\state_fzzX.h:extern uint16 GETushSpeedFZZ(void);
+SwcApplTpms\SWC\Sources\Walloc\FPA.c:      #ifdef SPEEDWEIGHT
+SwcApplTpms\SWC\Sources\Walloc\FPA.c:      if(ucGetSpeed() < cSPW_THRESHOLD){
+SwcApplTpms\SWC\Sources\Walloc\FPA.c:   ushVtmp =  (uint16) ucGetSpeed();
+SwcApplTpms\SWC\Sources\Walloc\FPA.c:   ushVtmp =  (uint16) ucGetSpeed();
+SwcApplTpms\SWC\Sources\Walloc\FPA_X.h:#define SPEEDWEIGHT
+SwcApplTpms\SWC\Sources\Walloc\Walloc_IF.c:uint8 ucGetSpeed(void){
+SwcApplTpms\SWC\Sources\Walloc\Walloc_IF.c:   uint16 ushV = GETushSpeedFZZ();
+SwcApplTpms\SWC\Sources\Walloc\Walloc_IF.h:extern uint8 ucGetSpeed(void);
+SwcApplTpms\SWC\Sources\WarnHler\WnTypePar.h:   uint16 ushVehicleSpeed;
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmEnable, RTE_CODE) Wrap_HBG_Prm_CRdciSpeedCcmEnable(void){
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:      RTE_Stub_Prm_CRdciSpeedCcmEnable()
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmHyst, RTE_CODE) Wrap_HBG_Prm_CRdciSpeedCcmHyst(void){
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:      RTE_Stub_Prm_CRdciSpeedCcmHyst()
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmPressOffsetFa, RTE_CODE) Wrap_HBG_Prm_CRdciSpeedCcmPressOffsetFa(void){
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:      RTE_Stub_Prm_CRdciSpeedCcmPressOffsetFa()
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmPressOffsetRa, RTE_CODE) Wrap_HBG_Prm_CRdciSpeedCcmPressOffsetRa(void){
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:      RTE_Stub_Prm_CRdciSpeedCcmPressOffsetRa()
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmTh, RTE_CODE) Wrap_HBG_Prm_CRdciSpeedCcmTh(void){
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:      RTE_Stub_Prm_CRdciSpeedCcmTh()
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:FUNC(ImpTypeValCRdciSpeedCcmTime, RTE_CODE) Wrap_HBG_Prm_CRdciSpeedCcmTime(void){
+Wrapper_HBG\Wrapper_HBG_CalPrm.cpp:      RTE_Stub_Prm_CRdciSpeedCcmTime()
+Wrapper_HBG\Wrapper_HBG_CalPrmX.h:ImpTypeValCRdciSpeedCcmEnable Wrap_HBG_Prm_CRdciSpeedCcmEnable(void);
+Wrapper_HBG\Wrapper_HBG_CalPrmX.h:ImpTypeValCRdciSpeedCcmHyst Wrap_HBG_Prm_CRdciSpeedCcmHyst(void);
+Wrapper_HBG\Wrapper_HBG_CalPrmX.h:ImpTypeValCRdciSpeedCcmPressOffsetFa Wrap_HBG_Prm_CRdciSpeedCcmPressOffsetFa(void);
+Wrapper_HBG\Wrapper_HBG_CalPrmX.h:ImpTypeValCRdciSpeedCcmPressOffsetRa Wrap_HBG_Prm_CRdciSpeedCcmPressOffsetRa(void);
+Wrapper_HBG\Wrapper_HBG_CalPrmX.h:ImpTypeValCRdciSpeedCcmTh Wrap_HBG_Prm_CRdciSpeedCcmTh(void);
+Wrapper_HBG\Wrapper_HBG_CalPrmX.h:ImpTypeValCRdciSpeedCcmTime Wrap_HBG_Prm_CRdciSpeedCcmTime(void);
+Wrapper_HBG\Wrapper_HBG_Output.cpp:                                                                                                                      &Wrap_HBG_Prm_CRdciSpeedCcmEnable,
+Wrapper_HBG\Wrapper_HBG_Output.cpp:                                                                                                                      &Wrap_HBG_Prm_CRdciSpeedCcmHyst,
+Wrapper_HBG\Wrapper_HBG_Output.cpp:                                                                                                                      &Wrap_HBG_Prm_CRdciSpeedCcmPressOffsetFa,
+Wrapper_HBG\Wrapper_HBG_Output.cpp:                                                                                                                      &Wrap_HBG_Prm_CRdciSpeedCcmPressOffsetRa,
+Wrapper_HBG\Wrapper_HBG_Output.cpp:                                                                                                                      &Wrap_HBG_Prm_CRdciSpeedCcmTh,
+Wrapper_HBG\Wrapper_HBG_Output.cpp:                                                                                                                      &Wrap_HBG_Prm_CRdciSpeedCcmTime,
