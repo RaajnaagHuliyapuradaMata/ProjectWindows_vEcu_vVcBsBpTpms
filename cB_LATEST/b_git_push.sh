@@ -37,5 +37,5 @@ cd ../SwcServiceNvM
 cd ../..
 git add .
 git status
-git commit -m "AUTOSAR Migration Activities - EcuResim_vVcBsBpTpms_cB_LATEST"
+git commit -m "AUTOSAR Migration Activities - vEcu_vVcBsBpTpms_cB_LATEST"
 git push

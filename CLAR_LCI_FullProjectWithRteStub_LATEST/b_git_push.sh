@@ -7,5 +7,5 @@ cd ../Wrapper_HBG
 cd ../..
 git add .
 git status
-git commit -m "AUTOSAR Migration Activities - EcuResim_vVcBsBpTpms_CLAR_LCI_FullProjectWithRteStub_LATEST"
+git commit -m "AUTOSAR Migration Activities - vEcu_vVcBsBpTpms_CLAR_LCI_FullProjectWithRteStub_LATEST"
 git push

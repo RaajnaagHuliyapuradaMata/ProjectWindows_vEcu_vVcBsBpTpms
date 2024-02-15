@@ -4,5 +4,5 @@ cd ./source/SwcApplTpms
 cd ../..
 git add .
 git status
-git commit -m "AUTOSAR Migration Activities - EcuResim_vVcBsBpTpms_CLAR_LCI_LibSwcApplTpms_LATEST"
+git commit -m "AUTOSAR Migration Activities - vEcu_vVcBsBpTpms_CLAR_LCI_LibSwcApplTpms_LATEST"
 git push
